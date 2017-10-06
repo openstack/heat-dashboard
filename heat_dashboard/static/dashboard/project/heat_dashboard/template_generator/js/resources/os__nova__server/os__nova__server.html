@@ -1,0 +1,472 @@
+<md-tabs md-dynamic-height md-stretch-tabs="never" md-border-bottom>
+    <md-tab label="Details">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Name</label>
+                <input ng-model="$ctrl.instance.name" name="name" type="text" ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">That doesn't look like a valid instance name.
+                  </div>
+                  <div ng-message="md-maxlength" class="my-message">
+                    Too long instance name.
+                  </div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Flavor</label>
+                <md-select ng-model="$ctrl.instance.flavor" required name="flavor">
+                    <md-option ng-repeat="flavor in options.flavors" ng-value="flavor.id">
+                      {$ flavor.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.flavor.$error" role="alert" multiple>
+                  <div ng-message="required" class="my-message">You must supply a flavor.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Boot from source</label>
+                <md-select ng-model="boot_source" ng-change="update_boot_source()">
+                    <md-option ng-repeat="source in options.boot_sources" ng-value="source.id">
+                        {$ source.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block animate-show-hide" ng-if="boot_source=='image'" flex-gt-xs>
+                <label>Image</label>
+                <md-select ng-model="$ctrl.instance.image" >
+                    <md-option ng-repeat="image in options.images" ng-value="image.id">
+                        {$ image.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block animate-show-hide" ng-if="boot_source=='image_snapshot'" flex-gt-xs>
+                <label>Image Snapshot</label>
+                <md-select ng-model="$ctrl.instance.image_snapshot" >
+                    <md-option ng-repeat="iss in options.image_snapshots" ng-value="iss.id">
+                        {$ iss.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block animate-show-hide" ng-if="boot_source=='volume'" flex-gt-xs>
+                <label>Volume</label>
+                <md-select ng-model="$ctrl.instance.volume">
+                    <md-option ng-repeat="vol in update.volumes" ng-value="vol.id">
+                        {$ vol.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block animate-show-hide" ng-if="boot_source=='volume_snapshot'" flex-gt-xs>
+                <label>Volume Snapshot</label>
+                <md-select ng-model="$ctrl.instance.volume_snapshot">
+                    <md-option ng-repeat="volss in options.volume_snapshots" ng-value="volss.id">
+                        {$ volss.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Availability Zone</label>
+                <md-select ng-model="$ctrl.instance.availability_zone">
+                    <md-option ng-repeat="az in options.availability_zones" ng-value="az.id">
+                      {$ az.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-switch class="md-primary" name="show_more" ng-model="show_more">
+              {$ 'Show More Properties' | translate $}
+            </md-switch>
+        </md-content>
+    </md-tab>
+    <md-tab label="Access & Security">
+        <md-content class="md-padding">
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Key Name</label>
+                <md-select ng-model="$ctrl.instance.key_name" ng-disabled="$ctrl.disable.key_name">
+                    <md-option ng-repeat="kname in update.keypairs" ng-value="kname.name" >
+                        {$ kname.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Security Groups</label>
+                <md-select ng-model="$ctrl.instance.security_groups"  multiple>
+                    <md-option ng-repeat="sg in update.security_groups" ng-value="sg.id" ng-disabled="$ctrl.disable.security_groups.indexOf(sg.id) > -1">
+                        {$ sg.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </md-content>
+    </md-tab>
+    <md-tab label="Block Devices" ng-if="show_more">
+        <md-content class="md-padding">
+            <md-switch class="md-primary" ng-model="block_device_mapping_v2" ng-disabled="true">
+              Use block_device_mapping_v2
+            </md-switch>
+            <div class="animate-show-hide" ng-if="block_device_mapping_v2">
+                <!-- Block Device Mapping V2 -->
+                <label>Block Device Mapping v2</label>
+                <md-button ng-click="$ctrl.add_block_device_mapping_v2()" aria-label="Add"  class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+                <div ng-repeat="record in $ctrl.instance.block_device_mapping_v2" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div layout-gt-xs="row" >
+
+                        <md-input-container class="md-block" flex-gt-xs="30">
+                            <label>Device Name</label>
+                            <input ng-model="record.device_name"  type="text">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="20">
+                            <label>Boot Index</label>
+                            <input ng-model="record.boot_index"  type="number" step="1" min="0">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="20">
+                            <label>Disk Type</label>
+                            <md-select ng-model="record.disk_type">
+                                <md-option ng-repeat="dtype in options.disk_types" ng-value="dtype.name">
+                                    {$ dtype.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="20">
+                            <label>Disk Bus</label>
+                            <md-select ng-model="record.disk_bus">
+                                <md-option ng-repeat="diskbus in options.disk_buses" ng-value="diskbus.name">
+                                    {$ diskbus.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-button ng-click="$ctrl.delete_block_device_mapping_v2($index)" aria-label="Delete" class="md-icon-button" ng-disabled="$ctrl.disable['block_device_mapping_v2.volume_id'].indexOf(record.volume_id) > -1"><i class="fa fa-fw fa-times"></i></md-button>
+                    </div>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs="30">
+                            <label>Ephemeral Format</label>
+                            <md-select ng-model="record.ephemeral_format">
+                                <md-option ng-repeat="eformat in options.ephemeral_formats" ng-value="eformat.name">
+                                    {$ eformat.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="20">
+                            <label>Ephemeral Size (G)</label>
+                            <input ng-model="record.ephemeral_size"  type="number" step="1" min="0">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="20">
+                            <label>Swap Size (M)</label>
+                            <input ng-model="record.swap_size"  type="number" step="1" min="0">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="30">
+                            <md-checkbox ng-model="record.delete_on_termination" aria-label="delete_on_termination">
+                              Delete On Termination
+                            </md-checkbox>
+                        </md-input-container>
+                    </div>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs="90">
+                            <label>Source</label>
+                            <md-select ng-model="bdpv2_source[$index]" name="bdpv2_source" ng-change="update_source($index)" ng-disabled="$ctrl.disable['block_device_mapping_v2.volume_id'].indexOf(record.volume_id) > -1">
+                                <md-option ng-repeat="source in options.volume_sources_v2" ng-value="source.id">
+                                    {$ source.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" ng-if="bdpv2_source[$index]=='image'" flex-gt-xs="90">
+                            <label>Image</label>
+                            <md-select ng-model="record.image">
+                                <md-option ng-repeat="image in options.images" ng-value="image.id">
+                                    {$ image.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" ng-if="bdpv2_source[$index]=='volume'" flex-gt-xs="70">
+                            <label>Volume</label>
+                            <md-select ng-model="record.volume_id" ng-disabled="$ctrl.disable['block_device_mapping_v2.volume_id'].indexOf(record.volume_id) > -1">
+                                <md-option ng-repeat="vol in update.volumes" ng-value="vol.id" ng-disabled="$ctrl.disable['block_device_mapping_v2.volume_id'].indexOf(vol.id) > -1">
+                                    {$ vol.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container class="md-block" ng-if="bdpv2_source[$index]=='volume'" flex-gt-xs="20">
+                            <label>Volume Size (G)</label>
+                            <input ng-model="record.volume_size"  type="number" step="1" min="0">
+                        </md-input-container>
+
+                        <md-input-container class="md-block" ng-if="bdpv2_source[$index]=='volume_snapshot'" flex-gt-xs="90">
+                            <label>Snapshot</label>
+                            <md-select ng-model="record.snapshot_id">
+                                <md-option ng-repeat="volss in options.volume_snapshots" ng-value="volss.id">
+                                    {$ volss.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </md-content>
+    </md-tab>
+    <md-tab label="Networks">
+        <md-content class="md-padding">
+            <label>Network</label>
+                <md-button ng-click="$ctrl.add_networks()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+                <div ng-repeat="record in $ctrl.instance.networks" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs="45">
+                            <label>Allocate Network</label>
+                            <md-select ng-model="record.allocate_network" name="allocate_network" ng-disabled="how2config_networks[$index].length > 0 ">
+                                <md-option value=""></md-option>
+                                <md-option ng-repeat="alloc_net in options.allocate_networks" ng-value="alloc_net.name">
+                                    {$ alloc_net.name $}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs="45" ng-disabled="record.allocate_network.length > 0 ">
+                            <label>Specify Property</label>
+                            <md-select ng-model="how2config_networks[$index]" ng-disabled="$ctrl.disable.networks[$index]">
+                                <md-option value="network">network</md-option>
+                                <md-option value="subnet">subnet</md-option>
+                                <md-option value="port">port</md-option>
+                                <md-option value="floating_ip">floating_ip</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-button ng-click="$ctrl.delete_networks($index)" aria-label="Delete" class="md-icon-button" ng-disabled="$ctrl.disable.networks[$index]">
+                            <i class="fa fa-fw fa-times"></i>
+                        </md-button>
+                    </div>
+                    <div ng-if="record.allocate_network == null || record.allocate_network == '' ">
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs ng-if="how2config_networks[$index] == 'network' ">
+                                <label>Network ID</label>
+                                <md-select ng-model="record.network" name="network" ng-disabled="$ctrl.disable.networks[$index]">
+                                    <md-option ng-repeat="nw in update.networks" ng-value="nw.id" ng-disabled="nw.id.indexOf('get_resource') != -1">
+                                        {$ nw.name $}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-xs ng-if="how2config_networks[$index] == 'subnet' ">
+                                <label>Subnet</label>
+                                <md-select ng-model="record.subnet" name="subnet" ng-disabled="$ctrl.disable.networks[$index]">
+                                    <md-option ng-repeat="subnet in update.subnets" ng-value="subnet.id" ng-disabled="subnet.id.indexOf('get_resource') != -1">
+                                        {$ subnet.name $}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-xs ng-if="how2config_networks[$index] == 'port' ">
+                                <label>Port</label>
+                                <md-select ng-model="record.port" name="port" ng-disabled="$ctrl.disable.networks[$index]">
+                                    <md-option ng-repeat="port in update.ports" ng-value="port.id" ng-disabled="port.id.indexOf('get_resource') != -1">
+                                        {$ port.name $}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-xs ng-if="how2config_networks[$index] == 'floating_ip' ">
+                                <label>Floating IP</label>
+                                <md-select ng-model="record.floating_ip" name="floating_ip" ng-disabled="$ctrl.disable.networks[$index]">
+                                    <md-option ng-repeat="fip in update.floatingips" ng-value="fip.id" ng-disabled="fip.id.indexOf('get_resource') != -1">
+                                        {$ fip.id $}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Fixed IP Address</label>
+                                <input ng-model="record.fixed_ip" name="fixed_ip_{$ $index $}" ng-pattern="validate_ip_address" ng-disabled="how2config_networks[$index] == 'floating_ip' || how2config_networks[$index] == 'port'" />
+                                <div ng-messages="$ctrl.formReference['fixed_ip_'+$index].$error" role="alert" multiple>
+                                  <div ng-message="pattern" class="my-message">Please input a valid IP address.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Tag</label>
+                                <input ng-model="record.tag"  type="text" >
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+        </md-content>
+    </md-tab>
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content class="md-padding">
+            <div layout-gt-xs="row" >
+                <md-input-container class="md-block" flex-gt-xs>
+                <label>Admin Password</label>
+                    <input ng-model="$ctrl.instance.admin_pass" name="admin_pass" type="{$ show_passwd_type $}" >
+                </md-input-container>
+                <md-switch class="md-primary" name="show_passwd" ng-model="show_passwd">
+                  Show Password
+                </md-switch>
+            </div>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Flavor Update Policy</label>
+                <md-select ng-model="$ctrl.instance.flavor_update_policy">
+                    <md-option ng-repeat="fup in options.flavor_update_policies" ng-value="fup.name">
+                      {$ fup.name $} <span ng-if="fup.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block animate-show-hide" ng-if="boot_source=='image'" flex-gt-xs>
+                <label>Image Update Policy</label>
+                <md-select ng-model="$ctrl.instance.image_update_policy">
+                    <md-option ng-repeat="iup in options.image_update_policies" ng-value="iup.name">
+                      {$ iup.name $} <span ng-if="iup.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <!-- Reservation ID -->
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Reservation ID</label>
+                <input ng-model="$ctrl.instance.reservation_id" name="reservation_id" type="text" ng-pattern="validate_uuid4">
+                <div ng-messages="$ctrl.formReference.reservation_id.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">That doesn't look like a valid uuid.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Scheduler Hints -->
+            <label>Scheduler Hints</label>
+            <md-button ng-click="$ctrl.add_scheduler_hints()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.instance.scheduler_hints" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text" name="scheduler.hint.key">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text" name="scheduler.hint.value">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_scheduler_hints($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+        </md-content>
+    </md-tab>
+    <md-tab label="Disk Config & User Data" ng-if="show_more">
+        <md-content class="md-padding">
+            <md-input-container class="md-block" flex-gt-xs>
+                <md-checkbox ng-model="$ctrl.instance.config_drive" aria-label="config_drive">
+                  Config Drive
+                </md-checkbox>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Disk Config</label>
+                <md-select ng-model="$ctrl.instance.disk_config">
+                    <md-option ng-repeat="dc in options.disk_configs" ng-value="dc.name">
+                        {$ dc.name $} <span ng-if="dc.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>User Data Format</label>
+                <md-select ng-model="$ctrl.instance.user_data_format">
+                    <md-option ng-repeat="udf in options.user_data_formats" ng-value="udf.name">
+                        {$ udf.name $}  <span ng-if="udf.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs  ng-if="$ctrl.instance.user_data_format=='SOFTWARE_CONFIG'" >
+                <label>Software Config Transport</label>
+                <md-select ng-model="$ctrl.instance.software_config_transport">
+                    <md-option ng-repeat="sct in options.software_config_transports" ng-value="sct.name">
+                        {$ sct.name $}  <span ng-if="sct.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs ng-if="$ctrl.instance.user_data_format=='RAW'">
+                <label>User Data Update Policy</label>
+                <md-select ng-model="$ctrl.instance.user_data_update_policy">
+                    <md-option ng-repeat="udup in options.user_data_update_policies" ng-value="udup.name">
+                        {$ udup.name $}  <span ng-if="udup.default">(Default)</span>
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs ng-if="$ctrl.instance.user_data_format=='RAW'">
+                <label>User Data</label>
+                <textarea ng-model="$ctrl.instance.user_data" md-maxlength="1000" rows="5" cols="150"></textarea>
+            </md-input-container>
+            <div ng-if="$ctrl.instance.software_config_transport == 'POLL_TEMP_URL'">
+                <label>Deployment Swift Data</label>
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Container</label>
+                        <input ng-model="$ctrl.instance.deployment_swift_data.container" type="text"/>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Object</label>
+                        <input ng-model="$ctrl.instance.deployment_swift_data.object" type="text"/>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-content>
+    </md-tab>
+    <md-tab label="Customize" ng-if="show_more">
+        <md-content class="md-padding">
+            <!-- Tags -->
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Tags</label>
+                <md-chips ng-model="$ctrl.instance.tags"
+                          placeholder="+ tags"
+                          readonly="false"
+                          md-removeable="true"
+                          md-max-chips="255">
+                </md-chips>
+            </md-input-container>
+
+            <!-- Metadata -->
+            <label>Metadata</label>
+            <md-button ng-click="$ctrl.add_metadata()" aria-label="Add"  class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.instance.metadata" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_metadata($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+        </md-content>
+    </md-tab>
+    <md-tab label="Personality" ng-if="show_more">
+        <md-content class="md-padding">
+
+            <!-- Personality -->
+            <label>Personality</label>
+            <md-button ng-click="$ctrl.add_personality()" aria-label="Add"  class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.instance.personality" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Filename</label>
+                        <input ng-model="record.filename" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Content</label>
+                        <textarea ng-model="record.content" rows="3" cols="150"></textarea>
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_personality($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>

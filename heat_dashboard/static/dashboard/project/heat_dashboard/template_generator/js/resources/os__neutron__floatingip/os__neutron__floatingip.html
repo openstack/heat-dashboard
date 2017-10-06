@@ -1,0 +1,89 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Details">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Floating Network</label>
+                <md-select ng-model="$ctrl.floatingip.floating_network" name="floating_network" ng-disabled='$ctrl.disable.floating_network' required>
+                    <md-option ng-repeat="fnet in update.floating_networks" ng-value="fnet.id">
+                        {$ fnet.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.floating_network.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply an floating network.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Fixed IP Address</label>
+                <input ng-model="$ctrl.floatingip.fixed_ip_address" name="fixed_ip_address" ng-pattern="validate_ip_address" />
+                <div ng-messages="$ctrl.formReference.fixed_ip_address.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">Please input a valid IP address.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Floating IP Address</label>
+                <input ng-model="$ctrl.floatingip.floating_ip_address" name="floating_ip_address" ng-pattern="validate_ip_address" />
+                <div ng-messages="$ctrl.formReference.floating_ip_address.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">Please input a valid IP address.</div>
+                </div>
+            </md-input-container>
+             <md-switch class="md-primary" name="show_more" ng-model="show_more">
+                  {$ 'Show More Properties' | translate $}
+             </md-switch>
+        </md-content>
+    </md-tab>
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Floating Subnet</label>
+                <md-select ng-model="$ctrl.floatingip.floating_subnet" name="floating_subnet" ng-disabled='$ctrl.disable.floating_subnet'>
+                    <md-option ng-repeat="fsubnet in update.floating_subnets" ng-value="fsubnet.id">
+                        {$ fsubnet.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Port ID</label>
+                <md-select ng-model="$ctrl.floatingip.port_id" name="port_id" ng-disabled='$ctrl.disable.port_id'>
+                    <md-option ng-repeat="port in update.ports" ng-value="port.id">
+                        {$ port.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>DNS Domain</label>
+                <input ng-model="$ctrl.floatingip.dns_domain" name="dns_domain" ng-pattern="validate_ip_address" />
+                <div ng-messages="$ctrl.formReference.dns_domain.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">Please input a valid DNS Domain.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>DNS Name</label>
+                <input ng-model="$ctrl.floatingip.dns_name" name="dns_name" ng-pattern="validate_ip_address" />
+                <div ng-messages="$ctrl.formReference.dns_name.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">Please input a valid DNS Name.</div>
+                </div>
+            </md-input-container>
+            <label>Value Specs</label>
+            <md-button ng-click="$ctrl.add_value_specs()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.floatingip.value_specs" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_value_specs($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>

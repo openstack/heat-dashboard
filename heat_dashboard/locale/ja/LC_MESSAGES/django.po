@@ -1,0 +1,19 @@
+# Kazunori Shinohara <kazunori.shinohara@ntt.com>, 2017. #zanata
+# Keiichi Hikita <keiichi.hikita@ntt.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-06-08 09:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-15 01:51+0000\n"
+"Last-Translator: Keiichi Hikita <keiichi.hikita@ntt.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 3.7.3\n"
+
+msgid "Generate Template"
+msgstr "テンプレートの生成"

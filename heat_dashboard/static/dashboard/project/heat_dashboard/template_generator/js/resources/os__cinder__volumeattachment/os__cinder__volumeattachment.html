@@ -1,0 +1,44 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Instance UUID</label>
+                <md-select ng-model="$ctrl.volumeattachment.instance_uuid" name="instance_uuid" required ng-disabled='$ctrl.disable.instance_uuid'>
+                    <md-option ng-repeat="iuuid in update.instances" ng-value="iuuid.id">
+                        {$ iuuid.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.instance_uuid.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply an instance uuid.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Volume ID</label>
+                <md-select ng-model="$ctrl.volumeattachment.volume_id" name="volume_id" required ng-disabled='$ctrl.disable.volume_id'>
+                    <md-option ng-repeat="vol in update.volumes" ng-value="vol.id">
+                        {$ vol.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.volume_id.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply an volume id.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>mountpoint</label>
+                <input ng-model="$ctrl.volumeattachment.mountpoint" name="mountpoint" ng-pattern="validatePath" />
+                <div ng-messages="$ctrl.formReference.mountpoint.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">Please input a valid device path.</div>
+                </div>
+            </md-input-container>
+
+      </md-content>
+    </md-tab>
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>

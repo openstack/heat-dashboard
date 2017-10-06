@@ -1,0 +1,42 @@
+<md-dialog aria-label="Template">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2 class="md-title">{$ 'Heat Orchestration Template' | translate $}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()" aria-label="cancel">
+                <i class="fa fa-times"></i>
+            </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-content layout-gt-sm="row" layout-padding>
+                <div>
+                    <div ng-if="all_saved">
+                        <md-input-container class="md-block">
+                                <label>{$ template.title $}</label>
+                                <textarea ng-model="template.content" md-maxlength="65530" rows="35" cols="150" md-select-on-focus>
+                                </textarea>
+                        </md-input-container>
+                    </div>
+                    <div ng-if="all_saved == false " md-colors="{color: 'default-red-A200'}" >
+                        <span >{$ template.content $}</span>
+                    </div>
+                </div>
+          </md-content>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+          <span flex></span>
+          <md-button ng-click="cancel()" >
+            {$ 'Cancel' | translate $}
+          </md-button>
+          <md-button ng-click="download()" class="md-raised md-accent" ng-disabled="all_saved == false" >
+            {$ 'Download' | translate $}
+          </md-button>
+          <md-button ng-click="save()" class="md-raised md-primary" style="margin-right:20px;" ng-disabled="all_saved == false" >
+            {$ 'Create Stack' | translate $}
+          </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

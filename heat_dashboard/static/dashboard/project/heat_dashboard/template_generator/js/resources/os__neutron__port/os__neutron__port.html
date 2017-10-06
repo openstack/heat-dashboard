@@ -1,0 +1,192 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Details" >
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Name</label>
+                <input ng-model="$ctrl.port.name" name="name" type="text" ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid port name.</div>
+                    <div ng-message="md-maxlength" class="my-message">Too long port name.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Network</label>
+                <md-select ng-model="$ctrl.port.network" name="network" required ng-disabled='$ctrl.disable.network'>
+                    <md-option ng-repeat="nw in update.networks" ng-value="nw.id">
+                        {$ nw.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.network.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a network.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Security Groups</label>
+                <md-select ng-model="$ctrl.port.security_groups"  multiple>
+                    <md-option ng-repeat="sg in update.security_groups" ng-value="sg.id" ng-disabled="$ctrl.disable.security_groups.indexOf(sg.id) > -1">
+                        {$ sg.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <div layout-gt-xs="row" style="padding:0">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.port.admin_state_up" aria-label="admin_state_up">
+                      Admin State UP
+                    </md-checkbox>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.port.port_security_enabled" aria-label="port_security_enabled">
+                      Port Security Enabled
+                    </md-checkbox>
+                </md-input-container>
+            </div>
+
+             <md-switch class="md-primary" name="show_more" ng-model="show_more">
+                  {$ 'Show More Properties' | translate $}
+             </md-switch>
+        </md-content>
+    </md-tab>
+    <md-tab label="Addresses">
+        <md-content layout-padding>
+
+            <label>Allowed Address Pairs</label>
+            <md-button ng-click="$ctrl.add_allowed_address_pair()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+
+            <div ng-repeat="pair in $ctrl.port.allowed_address_pairs" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>MAC Address</label>
+                        <input ng-model="pair.mac_address" type="text" name="mac_address_{$ $index $}" ng-pattern="validate_mac_address">
+                        <div ng-messages="$ctrl.formReference['mac_address_'+$index].$error" role="alert" multiple>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid mac address.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>IP Address</label>
+                        <input ng-model="pair.ip_address" type="text" name='pair_ip_address_{$ $index $}' ng-pattern="validate_ip_address" />
+                        <div ng-messages="$ctrl.formReference['pair_ip_address_'+$index].$error" role="alert" multiple>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid ip address.</div>
+                        </div>
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_allowed_address_pair($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+            <br/>
+            <label>Fixed IPs</label>
+            <md-button ng-click="$ctrl.add_fixed_ip()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="fixed_ip in $ctrl.port.fixed_ips" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs="50">
+                        <label>IP Address</label>
+                        <input ng-model="fixed_ip.ip_address" type="text" name="fixed_ip_address_{$ $index $}" ng-pattern="validate_ip_address" />
+                        <div ng-messages="$ctrl.formReference['fixed_ip_address_'+$index].$error" role="alert" multiple>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid ip address.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs="50">
+                        <label>Subnet</label>
+                        <md-select ng-model="fixed_ip.subnet" ng-disabled="$ctrl.disable.subnets.indexOf(fixed_ip.subnet) > -1">
+                            <md-option ng-repeat="subnet in update.subnets" ng-value="subnet.id" ng-disabled="$ctrl.disable.subnets.indexOf(subnet.id) > -1">
+                                {$ subnet.name $}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_fixed_ip($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+      </md-content>
+    </md-tab>
+
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>bind:vnic_type</label>
+                <input ng-model="$ctrl.port.binding.vnic_type" name="vnic_type" type="text">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Device ID</label>
+                <input ng-model="$ctrl.port.device_id" name="device_id" type="text">
+            </md-input-container>
+
+            <md-autocomplete
+                  md-search-text="$ctrl.searchText"
+                  md-items="item in $ctrl.querySearch($ctrl.searchText)"
+                  md-item-text="item.display"
+                  md-selected-item="$ctrl.selectedItem"
+                  md-selected-item-change="$ctrl.selectedItemChange(item)"
+                  md-search-text-change="$ctrl.searchTextChange($ctrl.searchText)"
+                  md-min-length="0"
+                md-floating-label="Device Owner" style="padding:0" flex-gt-xs>
+              <md-item-template>
+                <span md-highlight-text="$ctrl.searchText" md-highlight-flags="^i">{$ item.display $}</span>
+              </md-item-template>
+              <md-not-found ng-if="$ctrl.show_not_found">
+                <span style="color:orangered">Warning: "{$ $ctrl.searchText $}" saved with no pre-defined device owner found.</span>
+              </md-not-found>
+
+            </md-autocomplete>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>QoS Policy</label>
+                <md-select ng-model="$ctrl.port.qos_policy" >
+                    <md-option ng-repeat="qos in options.qos_policies" ng-value="qos.id">
+                        {$ qos.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>MAC Address</label>
+                <input ng-model="$ctrl.port.mac_address" name="mac_address" type="text" ng-pattern="validate_mac_address">
+                <div ng-messages="$ctrl.formReference.mac_address.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid mac address.</div>
+                </div>
+            </md-input-container>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Tags"  ng-if="show_more" >
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Tags</label>
+                <md-chips ng-model="$ctrl.port.tags"
+                          placeholder="+ tags"
+                          readonly="false"
+                          md-removeable="true"
+                          md-max-chips="255">
+                </md-chips>
+            </md-input-container>
+
+            <label>Value Specs</label>
+            <md-button ng-click="$ctrl.add_value_specs()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.port.value_specs" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_value_specs($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+      </md-content>
+    </md-tab>
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>

@@ -1,0 +1,60 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Details" >
+        <md-content layout-padding>
+            <md-input-container class="md-block">
+                <label>Name</label>
+                <input ng-model="$ctrl.keypair.name" name="name" type="text" required ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a name.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid name.
+                    </div>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long name.
+                    </div>
+                </div>
+            </md-input-container>
+            <!--<md-input-container class="md-block" flex-gt-xs>-->
+                <!--<label>Type</label>-->
+                <!--<md-select ng-model="$ctrl.keypair.type">-->
+                    <!--<md-option ng-repeat="ktype in options.keypair_types" ng-value="ktype.name">-->
+                        <!--{$ ktype.name $}-->
+                    <!--</md-option>-->
+                <!--</md-select>-->
+            <!--</md-input-container>-->
+
+            <md-input-container class="md-block">
+                <label>Public Key</label>
+                <textarea ng-model="$ctrl.keypair.public_key" name="public_key" rows="10" cols="150" ng-pattern="validate_keypair"></textarea>
+                <div ng-messages="$ctrl.formReference.public_key.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid public key.
+                    </div>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long name.
+                    </div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <md-checkbox ng-model="$ctrl.keypair.save_private_key" aria-label="save private key">
+                save private key
+                </md-checkbox>
+            </md-input-container>
+        </md-content>
+    </md-tab>
+    <md-tab label="Administrator" ng-if="admin">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>UserID</label>
+                <input ng-model="$ctrl.keypair.user" name="user" type="text" ng-pattern="validate_uuid_nohyphen">
+                <div ng-messages="$ctrl.formReference.user.$error" role="alert" multiple>
+                  <div ng-message="pattern" class="my-message">That doesn't look like a valid user.</div>
+                </div>
+          </md-input-container>
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>

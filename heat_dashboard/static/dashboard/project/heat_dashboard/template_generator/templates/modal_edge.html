@@ -1,0 +1,51 @@
+<md-dialog aria-label="ResourceDialog">
+    <form name="edgeForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 class="md-title"><b>Relations</b><span ng-show="is_depends"> - depends on</span></h2>
+
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="close">
+                    <i class="fa fa-times"></i>
+                </md-button>
+          </div>
+        </md-toolbar>
+        <md-dialog-content ng-cloak layout-gt-sm="row" layout="column" layout-align="center center">
+            <md-list flex>
+                <md-subheader class="md-no-sticky">FROM</md-subheader>
+                <md-list-item class="md-3-line">
+                    <span class="fa-stack fa-3x" style="color: {$from_node.color $}">
+                        <i class="fa {$ from_node.class $} fa-stack-1x "></i>
+                    </span>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{$ from_type $}</h3>
+                        <h4>{$ from_node.id $}</h4>
+                    </div>
+                </md-list-item>
+            </md-list>
+            <md-divider></md-divider>
+            <md-list flex>
+                <md-subheader class="md-no-sticky">TO</md-subheader>
+                <md-list-item class="md-3-line">
+                    <span class="fa-stack fa-3x" style="color: {$ to_node.color $}">
+                        <i class="fa {$ to_node.class $} fa-stack-1x "></i>
+                    </span>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{$ to_type $}</h3>
+                        <h4>{$ to_node.id $}</h4>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-warn" ng-click="delete_resource()" ng-disabled="is_depends">
+              {$ 'Delete Resource' | translate $}
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="cancel()" >
+              {$ 'OK' | translate $}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

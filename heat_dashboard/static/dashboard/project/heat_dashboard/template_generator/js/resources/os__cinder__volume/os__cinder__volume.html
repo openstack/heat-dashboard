@@ -1,0 +1,155 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Name</label>
+                <input ng-model="$ctrl.volume.name" name="name" type="text" ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid volume name.</div>
+                    <div ng-message="md-maxlength" class="my-message">Your volume name is too long.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Size (GB)</label>
+                <input ng-model="$ctrl.volume.size" name="size" type="number" step="1" min="1"/>
+                <div ng-messages="$ctrl.formReference.size.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid number.</div>
+                    <div ng-message="min">You did not enter a positive number.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Volume Type</label>
+                <md-select ng-model="$ctrl.volume.volume_type" >
+                    <md-option ng-repeat="vtype in options.volume_types" ng-value="vtype.id">
+                        {$ vtype.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Availability Zone</label>
+                <md-select ng-model="$ctrl.volume.availability_zone">
+                    <md-option ng-repeat="az in options.availability_zones" ng-value="az.id">
+                      {$ az.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+             <md-switch class="md-primary" name="show_more" ng-model="show_more">
+                  {$ 'Show More Properties' | translate $}
+             </md-switch>
+        </md-content>
+    </md-tab>
+
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Description</label>
+                <textarea ng-model="$ctrl.volume.description" rows="3" cols="150" md-maxlength="255"></textarea>
+                <div ng-messages="$ctrl.formReference.description.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">Please do not input invalid characters!</div>
+                    <div ng-message="md-maxlength" class="my-message">Please input the description less than 255 characters.</div>
+                    </div>
+               </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <md-checkbox ng-model="$ctrl.volume.multiattach" aria-label="multiattach">
+                  multiattach
+                </md-checkbox>
+
+                <md-checkbox ng-model="$ctrl.volume.readonly" aria-label="readonly">
+                  readonly
+                </md-checkbox>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Create from source</label>
+                <md-select ng-model="$ctrl.volume.boot_source">
+                    <md-option ng-repeat="source in boot_sources" ng-value="source.id">
+                        {$ source.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-if="$ctrl.volume.boot_source=='backup'" flex-gt-xs>
+                <label>Backup ID</label>
+                <md-select ng-model="$ctrl.volume.backup_id" >
+                    <md-option ng-repeat="backup in options.volume_backups" ng-value="backup.id">
+                        {$ backup.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-if="$ctrl.volume.boot_source=='image'" flex-gt-xs>
+                <label>Image</label>
+                <md-select ng-model="$ctrl.volume.image" >
+                    <md-option ng-repeat="image in options.images" ng-value="image.id">
+                        {$ image.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-if="$ctrl.volume.boot_source=='volume_snapshot'" flex-gt-xs>
+                <label>Snapshot</label>
+                <md-select ng-model="$ctrl.volume.snapshot_id" >
+                    <md-option ng-repeat="snapshot in options.volume_snapshots" ng-value="snapshot.id">
+                        {$ snapshot.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-if="$ctrl.volume.boot_source=='volume'" flex-gt-xs>
+                <label>Source Volume</label>
+                <md-select ng-model="$ctrl.volume.source_volid" >
+                    <md-option ng-repeat="volume in options.volumes" ng-value="volume.id">
+                        {$ volume.name $} 
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <label>Metadata</label>
+            <md-button ng-click="$ctrl.add_metadata()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.volume.metadata" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_metadata($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+            <label>Scheduler Hints</label>
+            <md-button ng-click="$ctrl.add_scheduler_hints()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.volume.scheduler_hints" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_scheduler_hints($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>

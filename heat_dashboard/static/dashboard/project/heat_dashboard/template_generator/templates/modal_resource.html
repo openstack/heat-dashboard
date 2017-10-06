@@ -1,0 +1,29 @@
+<md-dialog aria-label="ResourceDialog" style="width:700px; min-width:600px; min-height:500px;">
+    <form name="resourceForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 class="md-title"><b>Resource {$ resource_type $}</b></h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="close">
+                    <i class="fa fa-times"></i>
+                </md-button>
+          </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div compile="{$ component $}"></div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-warn" ng-click="delete_resource()" >
+              {$ 'Delete Resource' | translate $}
+            </md-button>
+            <md-button class="md-raised" ng-click="cancel()" >
+              {$ 'Cancel' | translate $}
+            </md-button>
+            <md-button class="md-raised  md-primary" ng-disabled="resourceForm.$invalid" ng-click="save()" style="margin-right:20px;" type="submit">
+              {$ 'Save' | translate $}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

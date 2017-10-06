@@ -1,0 +1,28 @@
+<md-dialog aria-label="Drafts" style="min-width: 400px;">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+        <h2>{$ 'Saved Drafts' | translate $}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="close">
+            <i class="fa fa-times"></i>
+        </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+          <md-content layout-gt-sm="row" layout-padding>
+            <div>
+                <md-subheader class="md-no-sticky" ng-if="latest_draft">Last saved draft is {$ latest_draft.time $}.</md-subheader>
+                <md-subheader class="md-no-sticky" ng-if="!latest_draft">You haven't saved any draft yet!</md-subheader>
+                <md-list>
+                    <md-list-item ng-repeat="draft in draft_list" ng-click="load(draft)">{$ draft.time $}</md-list-item>
+                </md-list>
+            </div>
+          </md-content>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()" >
+        {$ 'OK' | translate $}
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>

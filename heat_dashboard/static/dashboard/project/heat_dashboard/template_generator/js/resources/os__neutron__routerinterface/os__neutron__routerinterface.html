@@ -1,0 +1,40 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Details" >
+        <md-content layout-padding>
+            <p ng-if="$ctrl.message">{$ $ctrl.message $}</p>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Router</label>
+                <md-select ng-model="$ctrl.routerinterface.router" name="router" required ng-disabled="$ctrl.disable.router">
+                    <md-option ng-repeat="router in update.routers" ng-value="router.id" >
+                        {$ router.name $}
+                    </md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.router.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a router.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Port</label>
+                <md-select ng-model="$ctrl.routerinterface.port" ng-disabled="$ctrl.disable.port">
+                    <md-option ng-repeat="port in update.ports" ng-value="port.id" >
+                        {$ port.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Subnet</label>
+                <md-select ng-model="$ctrl.routerinterface.subnet" ng-disabled="$ctrl.disable.subnet">
+                    <md-option ng-repeat="subnet in update.subnets" ng-value="subnet.id" >
+                        {$ subnet.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+      </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>

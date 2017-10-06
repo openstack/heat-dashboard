@@ -1,0 +1,111 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Count</label>
+                <input ng-model="$ctrl.resourcegroup.count" name="count" type="number" step="1" min="1"/>
+                <div ng-messages="$ctrl.formReference.count.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid number.</div>
+                    <div ng-message="min">You did not enter a positive number.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+            <label>Select Resource Type by: </label>
+                <md-select ng-model="is_upload" aria-label="" required name="is_upload">
+                    <md-option value="false">existing items</md-option>
+                    <md-option value="true">uploading a template file</md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.is_upload.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You did not select Resource Reference Type.</div>
+                </div>
+            </md-input-container>
+
+            <div ng-if="is_upload == 'false'">
+                <label>Resource Reference Type</label>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-select ng-model="controller.resourcegroup.resource_def.type" aria-label="Resource Reference Type">
+                        <md-option ng-repeat="resource_type in resource_types" ng-value="resource_type">{$ resource_type $}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <label>Resource Reference Properties</label>
+                <md-button ng-click="$ctrl.add_property()" aria-label="Add" class="md-icon-button">
+                    <i class="fa fa-fw fa-plus"></i>
+                </md-button>
+                <div ng-repeat="record in $ctrl.resourcegroup.resource_def.properties" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <div layout-gt-xs="row" >
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>Property</label>
+                            <input ng-model="record.key" type="text">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>Value</label>
+                            <input ng-model="record.value" type="text">
+                        </md-input-container>
+                        <md-button ng-click="$ctrl.delete_property($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="is_upload == 'true'">
+                <div layout-gt-sm="row" style="padding:0">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Resource Reference Type</label>
+                        <input ng-model="controller.resourcegroup.resource_def.type" name="filename" type="text" readonly/>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="clickUpload()" style="font-size:11px; top:-15px;">
+                            <span class="ng-scope">choose a file</span>
+                        </md-button>
+                    </md-input-container>
+                </div>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                <label>Reference Template Content</label>
+                    <textarea ng-model="filecontent" readonly rows="10" maxlength="65536" name="filecontent"></textarea>
+                </md-input-container>
+
+                <input ng-show="false" multiple="" ng-model="file" id="resourceref-file" name="file" type="file" onchange="angular.element(this).scope().file_upload(this)" accept=".yaml"/>
+            </div>
+            <md-switch class="md-primary" name="show_more" ng-model="show_more">
+               {$ 'Show More Properties' | translate $}
+            </md-switch>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Index_var</label>
+                <input ng-model="$ctrl.resourcegroup.index_var" name="index_var" type="text" />
+            </md-input-container>
+
+            <label>Metadata</label>
+            <md-button ng-click="$ctrl.add_metadata()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+            <div ng-repeat="record in $ctrl.resourcegroup.resource_def.metadata" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Key</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_metadata($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>

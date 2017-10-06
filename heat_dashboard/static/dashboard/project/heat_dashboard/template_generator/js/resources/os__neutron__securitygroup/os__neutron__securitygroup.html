@@ -1,0 +1,94 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Details" >
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Name</label>
+                <input ng-model="$ctrl.securitygroup.name" name="name" type="text" ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply an volume name.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid volume name.</div>
+                    <div ng-message="md-maxlength" class="my-message">Too long volume name.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Description</label>
+                <textarea ng-model="$ctrl.securitygroup.description" rows="3" cols="150" md-maxlength="255"></textarea>
+                <div ng-messages="$ctrl.formReference.description.$error" role="alert" multiple>
+                    <div ng-message="pattern" class="my-message">Please do not input invalid characters!</div>
+                    <div ng-message="md-maxlength" class="my-message">Please input the description less than 255 characters.</div>
+                    </div>
+                </div>
+            </md-input-container>
+      </md-content>
+    </md-tab>
+    <md-tab label="Rules" >
+        <md-content layout-padding>
+            <label>Rules</label>
+            <md-button ng-click="$ctrl.add_rule()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
+
+            <div ng-repeat="rule in $ctrl.securitygroup.rules" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block " flex-gt-xs>
+                        <label>Direction</label>
+                        <md-select ng-model="rule.direction" name="direction" >
+                            <md-option value="ingress">ingress</md-option>
+                            <md-option value="egress">egress</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block " flex-gt-xs>
+                        <label>Ethertype</label>
+                        <md-select ng-model="rule.ethertype" name="ethertype" >
+                            <md-option value="IPv4">IPv4</md-option>
+                            <md-option value="IPv6">IPv6</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Protocol</label>
+                        <md-select ng-model="rule.protocol" name="protocol" >
+                            <md-option value="tcp">TCP</md-option>
+                            <md-option value="udp">UDP</md-option>
+                            <md-option value="icmp">ICMP</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block " flex-gt-xs>
+                        <label>Remote Mode</label>
+                        <md-select ng-model="rule.remote_mode" name="remote_mode" >
+                            <md-option value="remote_ip_prefix">remote_ip_prefix</md-option>
+                            <md-option value="remote_group_id">remote_group_id</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_rule($index)" aria-label="Delete"  class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                      <label>Port Range Min</label>
+                      <input ng-model="rule.port_range_min" type="number" name="port_range_min" step="1" min="0" max="65535" ng-disabled="rule.protocol==='icmp'" />
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                      <label>Port Range Max</label>
+                      <input ng-model="rule.port_range_max" type="number" name="port_range_max" step="1" min="0" max="65535" ng-disabled="rule.protocol==='icmp'"  />
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs ng-if="rule.remote_mode==='remote_ip_prefix'">
+                        <label>Remote IP Prefix</label>
+                        <input ng-model="rule.remote_ip_prefix" name="remote_ip_prefix_{$ $index $}" ng-pattern="validate_cidr"/>
+                        <div ng-messages="$ctrl.formReference['remote_ip_prefix_'+$index].$error" role="alert" multiple>
+                            <div ng-message="pattern" class="my-message">It doesn't looks like a valid IP prefix!</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs ng-if="rule.remote_mode==='remote_group_id'">
+                        <label>Remote Group ID</label>
+                        <input ng-model="rule.remote_group_id" name="remote_group_id" />
+                    </md-input-container>
+                </div>
+            </div>
+
+      </md-content>
+    </md-tab>
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>
