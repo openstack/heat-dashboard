@@ -1,0 +1,4 @@
+recursive-include heat_dashboard *.html *.scss *.css *.js *.map *.svg *.png
+
+include AUTHORS
+include ChangeLog
