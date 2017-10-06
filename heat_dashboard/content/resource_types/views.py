@@ -20,11 +20,14 @@ from horizon import exceptions
 from horizon import tables
 from horizon import tabs
 
-from openstack_dashboard import api
-import openstack_dashboard.dashboards.project.stacks.resource_types.tables \
-    as project_tables
-import openstack_dashboard.dashboards.project.stacks.resource_types.tabs \
-    as project_tabs
+# from openstack_dashboard import api
+# import openstack_dashboard.dashboards.project.stacks.resource_types.tables \
+#     as project_tables
+# import openstack_dashboard.dashboards.project.stacks.resource_types.tabs \
+#     as project_tabs
+from heat_dashboard import api
+import heat_dashboard.content.resource_types.tables as project_tables
+import heat_dashboard.content.resource_types.tabs as project_tabs
 
 
 class ResourceTypesView(tables.DataTableView):
@@ -75,4 +78,4 @@ class DetailView(tabs.TabView):
 
     @staticmethod
     def get_redirect_url():
-        return reverse('horizon:project:stacks.resources:index')
+        return reverse('horizon:project:resource_types:index')

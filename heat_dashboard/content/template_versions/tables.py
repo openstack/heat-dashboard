@@ -21,7 +21,7 @@ class TemplateVersionsTable(tables.DataTable):
     version = tables.Column(
         "version",
         verbose_name=_("Version"),
-        link="horizon:project:stacks.template_versions:details",)
+        link="horizon:project:template_versions:details",)
     type = tables.Column(
         "type",
         verbose_name=_("Type"),

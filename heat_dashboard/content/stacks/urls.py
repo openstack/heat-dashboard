@@ -12,7 +12,7 @@
 
 from django.conf.urls import url
 
-from openstack_dashboard.dashboards.project.stacks import views
+from heat_dashboard.content.stacks import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),

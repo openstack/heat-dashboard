@@ -16,15 +16,17 @@ from django.template.defaultfilters import title
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
-from heatclient import exc
 
-from horizon import exceptions
 from horizon import messages
 from horizon import tables
 from horizon.utils import filters
 
-from openstack_dashboard import api
-from openstack_dashboard.dashboards.project.stacks import mappings
+from heatclient import exc
+
+# from openstack_dashboard import api
+# from openstack_dashboard.dashboards.project.stacks import mappings
+from heat_dashboard import api
+from heat_dashboard.content.stacks import mappings
 
 
 class LaunchStack(tables.LinkAction):
@@ -96,11 +98,8 @@ class SuspendStack(tables.BatchAction):
         )
 
     def action(self, request, stack_id):
-        try:
-            api.heat.action_suspend(request, stack_id)
-        except Exception:
-            msg = _('Failed to suspend stack.')
-            exceptions.handle(request, msg)
+        # api.heat.action_suspend(request, stack_id)
+        api.heat.action_suspend(request, stack_id)
 
 
 class ResumeStack(tables.BatchAction):
@@ -126,11 +125,8 @@ class ResumeStack(tables.BatchAction):
         )
 
     def action(self, request, stack_id):
-        try:
-            api.heat.action_resume(request, stack_id)
-        except Exception:
-            msg = _('Failed to resume stack.')
-            exceptions.handle(request, msg)
+        # api.heat.action_resume(request, stack_id)
+        api.heat.action_resume(request, stack_id)
 
 
 class ChangeStackTemplate(tables.LinkAction):
@@ -164,11 +160,8 @@ class DeleteStack(tables.DeleteAction):
     policy_rules = (("orchestration", "stacks:delete"),)
 
     def delete(self, request, stack_id):
-        try:
-            api.heat.stack_delete(request, stack_id)
-        except Exception:
-            msg = _('Failed to delete stack.')
-            exceptions.handle(request, msg)
+        # api.heat.stack_delete(request, stack_id)
+        api.heat.stack_delete(request, stack_id)
 
     def allowed(self, request, stack):
         if stack is not None:
@@ -184,6 +177,7 @@ class StacksUpdateRow(tables.Row):
 
     def get_data(self, request, stack_id):
         try:
+            # stack = api.heat.stack_get(request, stack_id)
             stack = api.heat.stack_get(request, stack_id)
             if stack.stack_status == 'DELETE_COMPLETE':
                 # returning 404 to the ajax call removes the
@@ -351,8 +345,11 @@ class ResourcesUpdateRow(tables.Row):
         try:
             stack = self.table.stack
             stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
-            return api.heat.resource_get(
-                request, stack_identifier, resource_name)
+            # return api.heat.resource_get(
+            #     request, stack_identifier, resource_name)
+            return api.heat.resource_get(request,
+                                         stack_identifier,
+                                         resource_name)
         except exc.HTTPNotFound:
             # returning 404 to the ajax call removes the
             # row from the table on the ui

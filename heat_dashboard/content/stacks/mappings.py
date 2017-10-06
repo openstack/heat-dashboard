@@ -142,7 +142,9 @@ def stack_output(output):
         output = json.dumps(output, indent=2)
     return safestring.mark_safe(u'<pre>%s</pre>' % html.escape(output))
 
+
 static_url = getattr(settings, "STATIC_URL", "/static/")
+
 resource_images = {
     'LB_FAILED': static_url + 'dashboard/img/lb-red.svg',
     'LB_DELETE': static_url + 'dashboard/img/lb-red.svg',

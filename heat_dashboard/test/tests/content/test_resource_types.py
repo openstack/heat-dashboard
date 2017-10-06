@@ -16,8 +16,9 @@ from django import http
 
 from mox3.mox import IsA
 
-from openstack_dashboard import api
-from openstack_dashboard.test import helpers as test
+# from openstack_dashboard import api
+from heat_dashboard import api
+from heat_dashboard.test import helpers as test
 
 
 class ResourceTypesTests(test.TestCase):

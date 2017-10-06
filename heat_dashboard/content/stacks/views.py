@@ -19,7 +19,14 @@ from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
+
 import django.views.generic
+
+from heat_dashboard import api
+from heat_dashboard.content.stacks import api as project_api
+from heat_dashboard.content.stacks import forms as project_forms
+from heat_dashboard.content.stacks import tables as project_tables
+from heat_dashboard.content.stacks import tabs as project_tabs
 
 from horizon import exceptions
 from horizon import forms
@@ -27,15 +34,6 @@ from horizon import tables
 from horizon import tabs
 from horizon.utils import memoized
 from horizon import views
-from openstack_dashboard import api
-from openstack_dashboard.dashboards.project.stacks \
-    import api as project_api
-from openstack_dashboard.dashboards.project.stacks \
-    import forms as project_forms
-from openstack_dashboard.dashboards.project.stacks \
-    import tables as project_tables
-from openstack_dashboard.dashboards.project.stacks \
-    import tabs as project_tabs
 
 
 class IndexView(tables.DataTableView):

@@ -13,7 +13,7 @@
 
 from django.conf.urls import url
 
-from openstack_dashboard.dashboards.project.stacks.resource_types import views
+from heat_dashboard.content.resource_types import views
 
 urlpatterns = [
     url(r'^$', views.ResourceTypesView.as_view(), name='index'),

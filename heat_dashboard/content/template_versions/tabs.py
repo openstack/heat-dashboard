@@ -18,14 +18,15 @@ from horizon import tabs
 from openstack_dashboard import api
 from openstack_dashboard import policy
 
-from openstack_dashboard.dashboards.project.stacks.template_versions \
-    import tables as project_tables
+# from openstack_dashboard.dashboards.project.stacks.template_versions \
+#     import tables as project_tables
+from heat_dashboard.content.template_versions import tables as project_tables
 
 
 class TemplateFunctionsTab(tabs.Tab):
     name = _("Template Functions")
     slug = "template_functions"
-    template_name = "project/stacks.template_versions/_details.html"
+    template_name = "project/template_versions/_details.html"
     preload = False
 
     def allowed(self, request):

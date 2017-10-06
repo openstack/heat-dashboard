@@ -12,15 +12,17 @@
 
 import contextlib
 
+import six
+
+from six.moves.urllib import request
+
 from django.conf import settings
+from oslo_serialization import jsonutils
+
 from heatclient import client as heat_client
 from heatclient.common import template_format
 from heatclient.common import template_utils
 from heatclient.common import utils as heat_utils
-from oslo_serialization import jsonutils
-import six
-from six.moves.urllib import request
-
 from horizon import exceptions
 from horizon.utils import functions as utils
 from horizon.utils.memoized import memoized

@@ -14,9 +14,12 @@ import six
 from django.conf import settings
 from django.test.utils import override_settings
 
+# from openstack_dashboard import api
+# from openstack_dashboard.test import helpers as test
+from heat_dashboard import api
+from heat_dashboard.test import helpers as test
+
 from horizon import exceptions
-from openstack_dashboard import api
-from openstack_dashboard.test import helpers as test
 
 
 class HeatApiTests(test.APITestCase):

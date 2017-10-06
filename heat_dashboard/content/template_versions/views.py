@@ -18,16 +18,19 @@ from horizon import exceptions
 from horizon import tables
 from horizon import tabs
 
-from openstack_dashboard import api
-import openstack_dashboard.dashboards.project.stacks.template_versions.tables \
-    as project_tables
-import openstack_dashboard.dashboards.project.stacks.template_versions.tabs \
-    as project_tabs
+# from openstack_dashboard import api
+# import openstack_dashboard.dashboards.project.\
+#     stacks.template_versions.tables as project_tables
+# import openstack_dashboard.dashboards.project.\
+#     stacks.template_versions.tabs as project_tabs
+from heat_dashboard import api
+import heat_dashboard.content.template_versions.tables as project_tables
+import heat_dashboard.content.template_versions.tabs as project_tabs
 
 
 class TemplateVersionsView(tables.DataTableView):
     table_class = project_tables.TemplateVersionsTable
-    template_name = 'project/stacks.template_versions/index.html'
+    template_name = 'project/template_versions/index.html'
     page_title = _("Template Versions")
 
     def get_data(self):

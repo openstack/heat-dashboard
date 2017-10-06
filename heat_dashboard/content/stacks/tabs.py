@@ -16,14 +16,13 @@ from django.utils.translation import ugettext_lazy as _
 
 from horizon import messages
 from horizon import tabs
-from openstack_dashboard import api
-from openstack_dashboard import policy
 
-from openstack_dashboard.dashboards.project.stacks \
-    import api as project_api
-from openstack_dashboard.dashboards.project.stacks import mappings
-from openstack_dashboard.dashboards.project.stacks \
-    import tables as project_tables
+from heat_dashboard import api
+from heat_dashboard.content.stacks import api as project_api
+from heat_dashboard.content.stacks import mappings
+from heat_dashboard.content.stacks import tables as project_tables
+
+from openstack_dashboard import policy
 
 
 LOG = logging.getLogger(__name__)
@@ -33,6 +32,7 @@ class StackTopologyTab(tabs.Tab):
     name = _("Topology")
     slug = "topology"
     template_name = "project/stacks/_detail_topology.html"
+    # template_name = "stacks/_detail_topology.html"
     preload = False
 
     def allowed(self, request):
@@ -55,6 +55,7 @@ class StackOverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "overview"
     template_name = "project/stacks/_detail_overview.html"
+    # template_name = "stacks/_detail_overview.html"
 
     def allowed(self, request):
         return policy.check(
@@ -71,6 +72,7 @@ class ResourceOverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "resource_overview"
     template_name = "project/stacks/_resource_overview.html"
+    # template_name = "stacks/_resource_overview.html"
 
     def get_context_data(self, request):
         resource = self.tab_group.kwargs['resource']
@@ -85,6 +87,7 @@ class StackEventsTab(tabs.Tab):
     name = _("Events")
     slug = "events"
     template_name = "project/stacks/_detail_events.html"
+    # template_name = "stacks/_detail_events.html"
     preload = False
 
     def allowed(self, request):
@@ -116,6 +119,7 @@ class StackResourcesTab(tabs.Tab):
     name = _("Resources")
     slug = "resources"
     template_name = "project/stacks/_detail_resources.html"
+    # template_name = "stacks/_detail_resources.html"
     preload = False
 
     def allowed(self, request):
@@ -148,6 +152,7 @@ class StackTemplateTab(tabs.Tab):
     name = _("Template")
     slug = "stack_template"
     template_name = "project/stacks/_stack_template.html"
+    # template_name = "stacks/_stack_template.html"
 
     def allowed(self, request):
         return policy.check(

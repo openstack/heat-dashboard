@@ -18,6 +18,6 @@ import horizon
 
 class ResourceTypes(horizon.Panel):
     name = _("Resource Types")
-    slug = "stacks.resource_types"
+    slug = "resource_types"
     permissions = ('openstack.services.orchestration',)
     policy_rules = (("orchestration", "stacks:list_resource_types"),)

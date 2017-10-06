@@ -20,16 +20,23 @@ from django.core.urlresolvers import reverse
 from django import http
 from django.test.utils import override_settings
 from django.utils import html
-from heatclient.common import template_format as hc_format
+
 from mox3.mox import IsA
 import six
 
-from openstack_dashboard import api
-from openstack_dashboard.dashboards.project.stacks import api as project_api
-from openstack_dashboard.dashboards.project.stacks import forms
-from openstack_dashboard.dashboards.project.stacks import mappings
-from openstack_dashboard.dashboards.project.stacks import tables
-from openstack_dashboard.test import helpers as test
+from heatclient.common import template_format as hc_format
+
+from heat_dashboard import api
+from heat_dashboard.test import helpers as test
+from openstack_dashboard import api as dashboard_api
+
+# from openstack_dashboard.dashboards.project.stacks import api as project_api
+# from openstack_dashboard.dashboards.project.stacks import forms
+# from openstack_dashboard.dashboards.project.stacks import mappings
+# from openstack_dashboard.dashboards.project.stacks import tables
+from heat_dashboard.content.stacks import forms
+from heat_dashboard.content.stacks import mappings
+from heat_dashboard.content.stacks import tables
 
 
 INDEX_TEMPLATE = 'horizon/common/_data_table_view.html'
@@ -234,7 +241,7 @@ class StackTests(test.TestCase):
                          settings.API_RESULT_PAGE_SIZE)
 
     @test.create_stubs({api.heat: ('stack_create', 'template_validate'),
-                        api.neutron: ('network_list_for_tenant', )})
+                        dashboard_api.neutron: ('network_list_for_tenant', )})
     def test_launch_stack(self):
         template = self.stack_templates.first()
         stack = self.stacks.first()
@@ -252,11 +259,11 @@ class StackTests(test.TestCase):
                               parameters=IsA(dict),
                               password='password',
                               files=None)
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
 
         self.mox.ReplayAll()
@@ -292,7 +299,7 @@ class StackTests(test.TestCase):
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_stubs({api.heat: ('stack_create', 'template_validate'),
-                        api.neutron: ('network_list_for_tenant', )})
+                        dashboard_api.neutron: ('network_list_for_tenant', )})
     def test_launch_stack_with_environment(self):
         template = self.stack_templates.first()
         environment = self.stack_environments.first()
@@ -313,11 +320,11 @@ class StackTests(test.TestCase):
                               parameters=IsA(dict),
                               password='password',
                               files=None)
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
 
         self.mox.ReplayAll()
@@ -384,10 +391,11 @@ class StackTests(test.TestCase):
                 }
             }
         }
-        api.heat.template_validate(IsA(http.HttpRequest),
-                                   files={},
-                                   template=hc_format.parse(template['data'])) \
-           .AndReturn(template['validate'])
+        api.heat.template_validate(
+            IsA(http.HttpRequest),
+            files={},
+            template=hc_format.parse(template['data']))\
+            .AndReturn(template['validate'])
 
         self.mox.ReplayAll()
 
@@ -471,10 +479,11 @@ class StackTests(test.TestCase):
                 ]
             }
         }
-        api.heat.template_validate(IsA(http.HttpRequest),
-                                   files={},
-                                   template=hc_format.parse(template['data'])) \
-           .AndReturn(template['validate'])
+        api.heat.template_validate(
+            IsA(http.HttpRequest),
+            files={},
+            template=hc_format.parse(template['data'])).\
+            AndReturn(template['validate'])
 
         self.mox.ReplayAll()
 
@@ -546,10 +555,11 @@ class StackTests(test.TestCase):
         }
         stack = self.stacks.first()
 
-        api.heat.template_validate(IsA(http.HttpRequest),
-                                   files={},
-                                   template=hc_format.parse(template['data'])) \
-           .AndReturn(template['validate'])
+        api.heat.template_validate(
+            IsA(http.HttpRequest),
+            files={},
+            template=hc_format.parse(template['data']))\
+            .AndReturn(template['validate'])
 
         api.heat.stack_create(IsA(http.HttpRequest),
                               stack_name=stack.stack_name,
@@ -587,10 +597,12 @@ class StackTests(test.TestCase):
                          'name="__param_param{0}" type="{1}"/>')
 
         self.assertContains(res, input_str.format(1, 'text'), html=True)
-        # the custom number spinner produces an input element
-        # that doesn't match the input_strs above
-        # validate with id alone
-        self.assertContains(res, 'id="id___param_param2"')
+        self.assertContains(
+            res,
+            '<input autocomplete="off" class="form-control" '
+            'id="id___param_param2" name="__param_param2" '
+            'type="number"/>',
+            html=True)
         self.assertContains(res, input_str.format(3, 'text'), html=True)
         self.assertContains(res, input_str.format(4, 'text'), html=True)
         self.assertContains(
@@ -619,7 +631,7 @@ class StackTests(test.TestCase):
 
     @test.create_stubs({api.heat: ('stack_update', 'stack_get', 'template_get',
                                    'template_validate'),
-                        api.neutron: ('network_list_for_tenant', )})
+                        dashboard_api.neutron: ('network_list_for_tenant', )})
     def test_edit_stack_template(self):
         template = self.stack_templates.first()
         stack = self.stacks.first()
@@ -656,8 +668,8 @@ class StackTests(test.TestCase):
         api.heat.stack_update(IsA(http.HttpRequest),
                               stack_id=stack.id,
                               **fields)
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
 
         self.mox.ReplayAll()
@@ -703,10 +715,10 @@ class StackTests(test.TestCase):
     def test_launch_stack_form_invalid_name_point(self):
         self._test_launch_stack_invalid_name('.StartWithPoint')
 
-    @test.create_stubs({api.neutron: ('network_list_for_tenant', )})
+    @test.create_stubs({dashboard_api.neutron: ('network_list_for_tenant', )})
     def _test_launch_stack_invalid_name(self, name):
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
-                                            self.tenant.id) \
+        dashboard_api.neutron.network_list_for_tenant(IsA(http.HttpRequest),
+                                                      self.tenant.id) \
             .AndReturn(self.networks.list())
         self.mox.ReplayAll()
 
@@ -844,17 +856,21 @@ class StackTests(test.TestCase):
         self.assertIn('stack-green.svg', d3_data)
         self.assertIn('Create Complete', d3_data)
 
-    @test.create_stubs({api.heat: ('stack_get', 'template_get'),
-                        project_api: ('d3_data',)})
+    # @test.create_stubs({api.heat: ('stack_get', 'template_get'),
+    #                     project_api: ('d3_data',)})
+    @test.create_stubs({api.heat: ('stack_get', 'template_get',
+                                   'resources_list')})
     def test_detail_stack_overview(self):
         stack = self.stacks.first()
         template = self.stack_templates.first()
         api.heat.stack_get(IsA(http.HttpRequest), stack.id) \
             .MultipleTimes().AndReturn(stack)
+        api.heat.resources_list(IsA(http.HttpRequest), stack.id) \
+            .MultipleTimes().AndReturn([])
         api.heat.template_get(IsA(http.HttpRequest), stack.id) \
             .AndReturn(json.loads(template.validate))
-        project_api.d3_data(IsA(http.HttpRequest), stack_id=stack.id) \
-            .AndReturn(json.dumps({"nodes": [], "stack": {}}))
+        # project_api.d3_data(IsA(http.HttpRequest), stack_id=stack.id) \
+        #     .AndReturn(json.dumps({"nodes": [], "stack": {}}))
         self.mox.ReplayAll()
 
         url = '?'.join([reverse(DETAIL_URL, args=[stack.id]),
@@ -866,17 +882,26 @@ class StackTests(test.TestCase):
                          'project/stacks/_detail_overview.html')
         self.assertEqual(stack.stack_name, overview_data.stack_name)
 
-    @test.create_stubs({api.heat: ('stack_get', 'template_get'),
-                        project_api: ('d3_data',)})
+    # @test.create_stubs({api.heat: ('stack_get',
+    #                                'template_get', 'resources_list'),
+    #                     project_api: ('d3_data',)})
+    @test.create_stubs({api.heat: ('stack_get', 'template_get',
+                                   'resources_list')})
     def test_detail_stack_resources(self):
         stack = self.stacks.first()
         template = self.stack_templates.first()
         api.heat.stack_get(IsA(http.HttpRequest), stack.id) \
             .MultipleTimes().AndReturn(stack)
+        api.heat.resources_list(IsA(http.HttpRequest), stack.id) \
+            .MultipleTimes().AndReturn([])
         api.heat.template_get(IsA(http.HttpRequest), stack.id) \
             .AndReturn(json.loads(template.validate))
-        project_api.d3_data(IsA(http.HttpRequest), stack_id=stack.id) \
-            .AndReturn(json.dumps({"nodes": [], "stack": {}}))
+
+        # Needs to move into JSONView test
+        # because this part will be called from Ajax
+        # project_api.d3_data(IsA(http.HttpRequest), stack_id=stack.id) \
+        #     .AndReturn(json.dumps({"nodes": [], "stack": {}}))
+
         self.mox.ReplayAll()
 
         url = '?'.join([reverse(DETAIL_URL, args=[stack.id]),

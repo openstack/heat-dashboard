@@ -24,7 +24,7 @@ class ResourceTypesFilterAction(tables.FilterAction):
 class ResourceTypesTable(tables.DataTable):
     name = tables.Column("resource_type",
                          verbose_name=_("Type"),
-                         link="horizon:project:stacks.resource_types:details",)
+                         link="horizon:project:resource_types:details",)
 
     def get_object_id(self, resource):
         return resource.resource_type
