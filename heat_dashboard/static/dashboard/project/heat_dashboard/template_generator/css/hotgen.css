@@ -163,3 +163,7 @@ md-icon.spinner{
     color: #fff;
 }
 
+.div-scroll{
+    overflow: auto;
+    max-height: 500px;
+}

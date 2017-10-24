@@ -64,9 +64,12 @@ ADD_JS_FILES.extend(
                      'static'),
         sub_path='%s/components' % JS_BASE,
         ext='.js',
-        trim_base_path=True) if file not in ADD_JS_FILES
+        trim_base_path=True)
+        if file not in ADD_JS_FILES and 'spec.js' not in file
      ])
 ADD_JS_FILES.extend(
-    discover_files(os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
-                   sub_path='%s/resources' % JS_BASE,
-                   ext='.js', trim_base_path=True))
+    [file for file in discover_files(
+        os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
+        sub_path='%s/resources' % JS_BASE,
+        ext='.js', trim_base_path=True) if 'spec.js' not in file
+     ])

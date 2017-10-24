@@ -76,13 +76,13 @@
             osNovaServerSettings.resource_key,
             osNovaServerSettings.modal_component);
 
-        for (var i in osNovaServerSettings.edge_settings){
-            if (osNovaServerSettings.edge_settings[i].modal){
-                hotgenGlobals.update_resource_components(
-                    osNovaServerSettings.resource_key+'_'+i,
-                    osNovaServerSettings.edge_settings[i].modal);
-            }
-        }
+//        for (var i in osNovaServerSettings.edge_settings){
+//            if (osNovaServerSettings.edge_settings[i].modal){
+//                hotgenGlobals.update_resource_components(
+//                    osNovaServerSettings.resource_key+'_'+i,
+//                    osNovaServerSettings.edge_settings[i].modal);
+//            }
+//        }
 
         hotgenGlobals.update_edge_directions(
             osNovaServerSettings.resource_key,
@@ -109,9 +109,6 @@
             if (typeof this.instance.personality === 'undefined'){
                 this.instance.personality = [{}];
             }
-            if (typeof this.instance.scheduler_hints === 'undefined'){
-                this.instance.scheduler_hints = [];
-            }
             if (typeof this.instance.block_device_mapping === 'undefined'){
                 this.instance.block_device_mapping = [];
             }
@@ -123,7 +120,7 @@
             }
             if (typeof this.instance.networks === 'undefined'){
                 this.instance.networks = [{}];
-            };
+            }
 
             this.disable = {
                 'key_name': false,
@@ -303,7 +300,7 @@
         $scope.show_passwd_type = "password";
         $scope.bdpv2_source = {}; // Mark the source selected of every block_device_mapping_v2 item.
         $scope.how2config_networks = {}
-        $scope.update_boot_source = function(index){
+        $scope.update_boot_source = function(){
             if ($scope.boot_source == 'image'){
                 this.$ctrl.instance.image_snapshot = null;
                 this.$ctrl.instance.volume = null;

@@ -131,7 +131,7 @@
             }
             return $scope.options.routers;
         }
-    };
+    }
 
     osNeutronRouterInterfaceController.$inject = ['$scope', 'hotgenGlobals', ];
     osNeutronRouterInterfacePath.$inject = ['horizon.dashboard.project.heat_dashboard.template_generator.basePath'];

@@ -70,12 +70,13 @@
             if (oldValue === newValue){
                 return;
             }
-            if (newValue === true){
+            if (newValue === true || newValue === 'true'){
                 $scope.controller.resourcegroup.resource_def.properties = [{}];
                 if (!($scope.filecontent && $scope.filecontent.length >= 0)){
                     $scope.controller.resourcegroup.resource_def.type = '';
                 }
             } else{
+            //  ;
             }
         });
         $scope.file_upload = function(element){
@@ -91,8 +92,8 @@
                     hotgenNotify.show_success('Read file content.');
                     hotgenGlobals.set_reference_file(file.name, reader.result)
                     $scope.filecontent = reader.result;
-               }
-               reader.readAsText(file);
+                }
+                reader.readAsText(file);
            } else {
                hotgenNotify.show_error('File type is not supported.');
            }
@@ -103,26 +104,26 @@
             }, 0);
         };
         this.delete_property = function(index){
-            this.resourcegroup.resource_def.properties.splice(index, 1)
+            this.resourcegroup.resource_def.properties.splice(index, 1);
 
         }
         this.add_property = function(){
-            this.resourcegroup.resource_def.properties.push({})
+            this.resourcegroup.resource_def.properties.push({});
         }
 
         this.delete_metadata = function(index){
-            this.resourcegroup.resource_def.metadata.splice(index, 1)
+            this.resourcegroup.resource_def.metadata.splice(index, 1);
 
         }
         this.add_metadata = function(){
-            this.resourcegroup.resource_def.metadata.push({})
+            this.resourcegroup.resource_def.metadata.push({});
         }
 
-    };
+    }
 
     function osHeatResourceGroupPath (basePath){
         return  basePath + 'js/resources/os__heat__resourcegroup/os__heat__resourcegroup.html';
-    };
+    }
 
     osHeatResourceGroupController.$inject = ['$scope', 'hotgenGlobals', 'hotgenNotify',
         'horizon.dashboard.project.heat_dashboard.template_generator.validationRules',

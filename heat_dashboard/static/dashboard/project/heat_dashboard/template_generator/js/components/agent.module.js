@@ -4,11 +4,11 @@
     angular.module('hotgen-agent', ['hotgen-utils', ])
          .factory('hotgenAgent', ['$http', '$location', 'hotgenNotify',
             function($http, $location, hotgenNotify) {
-              var static_url = $location.absUrl();
-              if (static_url.substr(-1) != '/'){
-                static_url += '/';
-              }
               var get_resource_options = function(){
+                var static_url = $location.absUrl();
+                  if (static_url.substr(-1) != '/'){
+                    static_url += '/';
+                  }
                 return $http({
                       method: 'GET',
                       url: static_url+'get_resource_options'

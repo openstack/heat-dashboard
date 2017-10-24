@@ -14,22 +14,18 @@
             <md-list flex>
                 <md-subheader class="md-no-sticky">FROM</md-subheader>
                 <md-list-item class="md-3-line">
-                    <span class="fa-stack fa-3x" style="color: {$from_node.color $}">
-                        <i class="fa {$ from_node.class $} fa-stack-1x "></i>
-                    </span>
-                    <div class="md-list-item-text" layout="column">
+                   <md-icon style="height: 50px; width: 50px;" md-svg-src="{$ from_node.image $}"></md-icon>
+                   <div class="md-list-item-text" layout="column">
                         <h3>{$ from_type $}</h3>
                         <h4>{$ from_node.id $}</h4>
-                    </div>
+                   </div>
                 </md-list-item>
             </md-list>
             <md-divider></md-divider>
             <md-list flex>
                 <md-subheader class="md-no-sticky">TO</md-subheader>
                 <md-list-item class="md-3-line">
-                    <span class="fa-stack fa-3x" style="color: {$ to_node.color $}">
-                        <i class="fa {$ to_node.class $} fa-stack-1x "></i>
-                    </span>
+                   <md-icon style="height: 50px; width: 50px;" md-svg-src="{$ to_node.image $}"></md-icon>
                     <div class="md-list-item-text" layout="column">
                         <h3>{$ to_type $}</h3>
                         <h4>{$ to_node.id $}</h4>

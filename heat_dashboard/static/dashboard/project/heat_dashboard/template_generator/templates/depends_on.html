@@ -9,8 +9,10 @@
     </md-icon>
 </md-button>
 
-<md-input-container class="md-block" flex-gt-xs ng-repeat="node in nodes._data" ng-if="node.id !== selected.id">
-    <md-checkbox ng-checked="exists(node.id, dependson)" ng-click="toggle(node.id, dependson)" aria-label="node.label">
-     {{ node.label }}
-    </md-checkbox>
-</md-input-container>
+<div class="div-scroll">
+    <md-input-container class="md-block" flex-gt-xs ng-repeat="node in nodes._data" ng-if="node.id !== selected.id">
+        <md-checkbox ng-checked="exists(node.id, dependson)" ng-click="toggle(node.id, dependson)" aria-label="node.label">
+         {{ node.label }}
+        </md-checkbox>
+    </md-input-container>
+</div>
