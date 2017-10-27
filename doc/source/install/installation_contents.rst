@@ -1,23 +1,3 @@
-========================
-Team and repository tags
-========================
-
-.. image:: https://governance.openstack.org/tc/badges/heat-dashboard.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
-
-.. Change things from this point on
-
-==============
-Heat Dashboard
-==============
-
-Horizon plugin for Heat
-
-* License: Apache license
-* Source: http://git.openstack.org/cgit/openstack/heat-dashboard
-* Bugs: http://bugs.launchpad.net/heat-dashboard
-
-
 Use Heat Dashboard in DevStack
 ------------------------------
 

@@ -1,5 +1,8 @@
-=============
-Configuration
-=============
+==================================
+heat-dashboard configuration guide
+==================================
 
-Configuration of openstack.
+.. toctree::
+   :maxdepth: 1
+
+   configuration

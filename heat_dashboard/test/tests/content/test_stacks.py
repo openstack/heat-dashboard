@@ -410,7 +410,7 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if django.VERSION >= (1, 10):
+        if (1, 10) <= django.VERSION < (2, 0):
             pattern = ('<input class="form-control" '
                        'id="id___param_public_string" '
                        'name="__param_public_string" type="text" required/>')
@@ -587,7 +587,7 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if django.VERSION >= (1, 10):
+        if (1, 10) <= django.VERSION < (2, 0):
             input_str = ('<input class="form-control" '
                          'id="id___param_param{0}" '
                          'name="__param_param{0}" type="{1}" required/>')
@@ -596,20 +596,25 @@ class StackTests(test.TestCase):
                          'id="id___param_param{0}" '
                          'name="__param_param{0}" type="{1}"/>')
 
-        self.assertContains(res, input_str.format(1, 'text'), html=True)
-        self.assertContains(
-            res,
-            '<input autocomplete="off" class="form-control" '
-            'id="id___param_param2" name="__param_param2" '
-            'type="number"/>',
-            html=True)
         self.assertContains(res, input_str.format(3, 'text'), html=True)
         self.assertContains(res, input_str.format(4, 'text'), html=True)
-        self.assertContains(
-            res,
-            '<input id="id___param_param5" name="__param_param5" '
-            'type="checkbox">',
-            html=True)
+
+        if (1, 11) <= django.VERSION < (2, 0):
+            input_str_param2 = ('<input type="number" name="__param_param2" '
+                                'autocomplete="off" '
+                                'required class="form-control" '
+                                'id="id___param_param2" />')
+        elif (1, 10) <= django.VERSION < (1, 11):
+            input_str_param2 = ('<input autocomplete="off" '
+                                'class="form-control" id="id___param_param2" '
+                                'name="__param_param2" type="number" '
+                                'required />')
+        else:
+            input_str_param2 = ('<input autocomplete="off" '
+                                'class ="form-control" '
+                                'id="id___param_param2" '
+                                'name="__param_param2" type="number" />')
+        self.assertContains(res, input_str_param2, html=True)
 
         # post some sample data and make sure it validates
         url = reverse('horizon:project:stacks:launch')
