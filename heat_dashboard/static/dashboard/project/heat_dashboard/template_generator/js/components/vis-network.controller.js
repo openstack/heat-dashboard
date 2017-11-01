@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('horizon.dashboard.project.heat_dashboard.template_generator')
-        .controller('horizon.dashboard.project.heat_dashboard.template_generator.VisCtrl',
+        .controller('horizon.dashboard.project.heat_dashboard.template_generator.VisController',
             ['$scope', '$rootScope', 'hotgenNotify', 'hotgenMessage', 'hotgenGlobals', 'hotgenStates',
              'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
             function($scope, $rootScope, hotgenNotify, hotgenMessage, hotgenGlobals, hotgenStates, basePath) {
@@ -127,6 +127,7 @@
 
                 $scope.click = function(params){
                     if (params.nodes.length > 0){
+                        $scope.network.disableEditMode();
                         var selected_id = params.nodes[0];
                         var selected_node = $scope.data.nodes.get(selected_id);
                         var selected_type = selected_node.title
@@ -136,9 +137,9 @@
                             id: selected_id,
                             node: selected_node,
                         }) ;
-
                         hotgenMessage.broadcast_edit_node(selected_type);
                     } else if (params.edges.length > 0){
+                        $scope.network.disableEditMode();
                         var selected_id = params.edges[0];
                         var selected_edge = $scope.data.edges.get(selected_id);
                         var from_node = $scope.data.nodes.get(selected_edge.from);
@@ -154,7 +155,7 @@
                         });
                         hotgenMessage.broadcast_edit_edge(from_node.title, to_node.title, from_node.id, to_node.id);
                     } else {
-                        ;
+//                        ;
                     }
                 };
 
@@ -199,7 +200,7 @@
 
                 $scope.validate_edge = function(data){
                     if (data.from == data.to ){
-                        hotgenNotify.show_error("The resource cannot be connected with itself.");
+//                        hotgenNotify.show_warning("");
                         return false;
                     }
                     var from_node = $scope.get_node(data.from);

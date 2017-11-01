@@ -92,7 +92,7 @@
             this.subnet.host_routes.splice(index, 1)
         }
         $scope.validate_dns = function (input_string){
-            var re =  /^.*$/;
+            var re =  /^[A-Za-z0-9_.-]+$/;
             var match = re.exec(input_string);
             if (match){
                 return input_string;

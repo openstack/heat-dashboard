@@ -14,42 +14,50 @@
             });
             var show_success = function(message) {
                 if ($rootScope.message_level < 2){
-                    return;
+                    return -1;
                 }
                 notify({
                         message: message,
                         classes: ['alert-success',],
                         duration: 3000,
-                }); };
+                });
+                return 0;
+            };
 
             var show_error = function(message) {
                 if ($rootScope.message_level < 0){
-                    return;
+                    return -1;
                 }
                 notify({
                         message: message,
                         classes: ['alert-danger',],
 //                        duration: 5000,
-                });};
+                });
+                return 0;
+            };
             var show_info = function(message) {
                 if ($rootScope.message_level < 3){
-                    return;
+                    return -1;
                 }
                 notify({
                         message: message,
                         classes: ['alert-info',],
                         duration: 3000,
-                });};
+                });
+                return 0;
+            };
 
             var show_warning = function(message) {
                 if ($rootScope.message_level < 1){
-                    return;
+                    return -1;
                 }
                 notify({
                         message: message,
                         classes: ['alert-warning',],
                         duration: 5000,
-                });};
+                });
+                return 0;
+            };
 
             return {
                 show_success: show_success,
@@ -72,13 +80,17 @@
                 $rootScope.$broadcast('handle_load_draft');
             };
             var broadcast_resources_loaded = function(){
-                $rootScope.$broadcast('handle_resources_loaded')
+                $rootScope.$broadcast('handle_resources_loaded');
+            };
+            var broadcast_update_template_version = function(){
+                $rootScope.$broadcast('update_template_version');
             };
             return {
                 broadcast_edit_node: broadcast_edit_node,
                 broadcast_edit_edge: broadcast_edit_edge,
                 broadcast_load_draft: broadcast_load_draft,
                 broadcast_resources_loaded: broadcast_resources_loaded,
+                broadcast_update_template_version: broadcast_update_template_version,
             }
         }])
         .factory('hotgenUtils', function(){
@@ -104,7 +116,7 @@
             }
             var escape_characters = function(value){
                 return '"'+value.replace(/\\/g, '\\\\')
-                                .replace(/\"/g, '\\"')
+                                .replace(/"/g, '\\"')
                                 .replace(/\n/g, "\\n")+'"';
             }
             var extract_keyvalue = function(value){
@@ -127,24 +139,26 @@
             }
             var extract_list_of_keyvalue = function(value_list){
                 if (value_list instanceof Array ){
-                    for (var idx in value_list){
+                    for (var idx=value_list.length-1; idx>=0; --idx){
                         if (Object.keys(value_list[idx]).length == 0){
-                            value_list.splice(idx,1)
+                            value_list.splice(idx, 1)
                         }
                     }
+                    if (value_list.length == 0){
+                        return null;
+                    }
+                    return value_list
                 }
-                if (value_list.length == 0){
-                    return null;
-                }
-                return value_list
+                return null;
             }
             var extract_list = function(value_list){
                 if (value_list instanceof Array){
                     if (value_list.length == 0){
                         return null;
                     }
+                    return value_list
                 }
-                return value_list
+                return null;
             }
             var extract_dicts = function check_dicts(value_dict){
                 for (var key in value_dict){
@@ -160,7 +174,7 @@
                 }
             }
             var extract_array = function extract_array(value_list){
-                for (var idx in value_list){
+                for (var idx=value_list.length-1; idx>=0; --idx){
                     if (value_list[idx] == null || value_list[idx] == ''){
                         value_list.splice(idx, 1)
                     } else if (value_list[idx].constructor && value_list[idx].constructor == Object){

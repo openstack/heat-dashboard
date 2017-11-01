@@ -11,13 +11,7 @@
                     nodes: hotgenStates.get_nodes(),
                     edges: hotgenStates.get_edges(),
                 }
-                var el = element[0];
-                el.addEventListener('dragover', function(e){
-                    if (e.preventDefault){
-                        e.preventDefault();
-                    }
-                },true);
-                el.addEventListener('drop', function(e){
+                $scope.dropHandler = function(e){
                     var resource_types = hotgenGlobals.get_resource_icons();
                     var dropped_elem_id = e.dataTransfer.getData("text");
                     var dropped_elem_base = document.getElementById(dropped_elem_id);
@@ -31,7 +25,7 @@
                     $scope.data.nodes.add({
                         id: id,
                         label: node_label,
-                        shape: 'image',
+                        shape: 'circularImage',
                         title: resource_type,
                         icon: {
                             face: 'FontAwesome',
@@ -39,11 +33,22 @@
                             size: 50,
                             color: dragged_resource.color,
                         },
+                        borderWidth: 0,
+                        borderWidthSelected: 0,
+                        color: {border: '#ffffff', background: '#ffffff', highlight: '#ffffff', hover: '#ffffff'},
                         image: basePath+'js/resources/'+resource_type.toLowerCase()+'/'+resource_type.toLowerCase()+'-gray.svg',
                     });
                     hotgenStates.update_saved_flags(id, false)
                     e.preventDefault();
-                },false);
+                }
+                $scope.dragoverHandler = function(e){
+                    if (e.preventDefault){
+                        e.preventDefault();
+                    }
+                }
+                var el = element[0];
+                el.addEventListener('dragover', $scope.dragoverHandler, true);
+                el.addEventListener('drop', $scope.dropHandler, false);
             }
         }
     }]);

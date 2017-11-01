@@ -66,7 +66,7 @@
                 saved_dependsons = to_set;
             }
             var is_all_saved = function(){
-                return ! (false in Object.keys(saved_flags));
+                return(Object.values(saved_flags).indexOf(false) == -1);
             };
             var get_saved_flags_length = function(){
                 return Object.keys(saved_flags).length;

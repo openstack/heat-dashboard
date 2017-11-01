@@ -212,7 +212,7 @@
                     display: dev_owner
                 }
             });
-        };
+        }
 
         function querySearch (query) {
             return query ? this.device_owners.filter( createFilterFor(query) ) : this.device_owners;

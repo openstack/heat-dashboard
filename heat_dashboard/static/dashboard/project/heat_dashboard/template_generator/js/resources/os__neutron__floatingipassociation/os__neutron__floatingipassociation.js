@@ -14,7 +14,7 @@
                 color: '#40a5f2'
             },
             label: 'fixed_ip_address',
-            modal_component: '<os-neutron-floatingip-association floatingipassociation="resource" dependson="dependson"  connectedoptions="connectedoptions" form-reference="resourceForm"></os-neutron-floatingip-association>',
+            modal_component: '<os-neutron-floatingip-association floatingipassociation="resource" dependson="dependson" connectedoptions="connectedoptions" form-reference="resourceForm"></os-neutron-floatingip-association>',
             edge_settings: {
                 'OS__Neutron__FloatingIP': {
                     'type': 'property',

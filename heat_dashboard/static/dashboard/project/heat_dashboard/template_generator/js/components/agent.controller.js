@@ -3,11 +3,11 @@
     'use strict';
 
     angular.module('horizon.dashboard.project.heat_dashboard.template_generator')
-        .controller('horizon.dashboard.project.heat_dashboard.template_generator.AgentCtrl', [
+        .controller('horizon.dashboard.project.heat_dashboard.template_generator.AgentController', [
             '$scope','hotgenAgent', 'hotgenGlobals', 'hotgenMessage',
             function($scope, hotgenAgent, hotgenGlobals, hotgenMessage){
-
-            var init = function(){
+            $scope.template_versions = [];
+            $scope.init = function(){
                 /* *********************************************************************
                  * The following selections should be replaced by OpenStack API response
                  */
@@ -35,10 +35,15 @@
                 });
             };
 
-            init();
+            $scope.init();
             $scope.update_template_version = function(template_version){
-                hotgenGlobals.set_template_version(template_version)
+                hotgenGlobals.set_template_version(template_version);
+                return true;
+            };
+            $scope.load_template_version = function(){
+                $scope.template_version = hotgenGlobals.get_template_version()
             }
+            $scope.$on('update_template_version', $scope.load_template_version);
         }])
 
 })();

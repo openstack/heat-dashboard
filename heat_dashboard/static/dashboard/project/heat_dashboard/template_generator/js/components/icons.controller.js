@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('horizon.dashboard.project.heat_dashboard.template_generator')
-    .controller('horizon.dashboard.project.heat_dashboard.template_generator.IconCtrl', ['$scope', 'hotgenGlobals',
+    .controller('horizon.dashboard.project.heat_dashboard.template_generator.IconController', ['$scope', 'hotgenGlobals',
      'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
      function($scope, hotgenGlobals, basePath){
         $scope.resource_types = hotgenGlobals.get_resource_icons();

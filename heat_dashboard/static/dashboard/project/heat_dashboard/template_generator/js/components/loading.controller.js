@@ -4,7 +4,7 @@
 
     angular
         .module('horizon.dashboard.project.heat_dashboard.template_generator')
-        .controller('horizon.dashboard.project.heat_dashboard.template_generator.LoadingCtrl', [
+        .controller('horizon.dashboard.project.heat_dashboard.template_generator.LoadingController', [
             '$scope', 'hotgenNotify',
             'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
             function($scope, hotgenNotify, basePath){

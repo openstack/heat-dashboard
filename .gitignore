@@ -110,3 +110,7 @@ ENV/
 
 # backup files
 *.bak
+
+coverage/*
+node_modules/*
+package-lock.json

@@ -4,13 +4,15 @@
 
     angular
       .module('horizon.dashboard.project.heat_dashboard.template_generator')
-      .controller('horizon.dashboard.project.heat_dashboard.template_generator.DraftMenuCtrl', ['$scope',
-        '$mdDialog', 'hotgenStates', 'hotgenNotify', 'hotgenMessage',
+      .controller('horizon.dashboard.project.heat_dashboard.template_generator.DraftMenuController', ['$scope',
+        '$mdDialog', 'hotgenStates', 'hotgenGlobals', 'hotgenNotify', 'hotgenMessage',
         'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
-        function($scope, $mdDialog, hotgenStates, hotgenNotify, hotgenMessage, basePath){
+        function($scope, $mdDialog, hotgenStates, hotgenGlobals, hotgenNotify, hotgenMessage, basePath){
             $scope.basePath = basePath;
-            $scope.openMenu = function($mdOpenMenu, ev){
-                $mdOpenMenu(ev);
+            var originatorEv;
+            $scope.openMenu = function($mdMenu, ev){
+                originatorEv = ev;
+                $mdMenu.open(ev);
             };
             $scope.data = {
                 nodes: hotgenStates.get_nodes(),
@@ -33,7 +35,8 @@
                     saved_depends_ons: hotgenStates.get_saved_dependsons(),
                     is_saved: hotgenStates.get_saved_flags(),
                     incremented_labels: hotgenStates.get_incremented_labels(),
-                    counter: hotgenStates.get_counters()
+                    counter: hotgenStates.get_counters(),
+                    template_version: hotgenGlobals.get_template_version(),
                 }
 
                 var today = new Date();
@@ -55,7 +58,7 @@
     }]);
 
     angular.module('horizon.dashboard.project.heat_dashboard.template_generator')
-        .controller('horizon.dashboard.project.heat_dashboard.template_generator.ClearCanvasCtrl', ['$scope',
+        .controller('horizon.dashboard.project.heat_dashboard.template_generator.ClearCanvasController', ['$scope',
             'hotgenStates', 'hotgenNotify',
             'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
             function($scope, hotgenStates, hotgenNotify, basePath){

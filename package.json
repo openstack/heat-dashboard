@@ -1,0 +1,33 @@
+{
+  "name": "heat-dashboard",
+  "version": "0.0.0",
+  "description": "OpenStack Heat Dashboard - Angular",
+  "main": "karma.conf.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "angular-ui-router": "0.4.3",
+    "angular-mocks": "1.5.8",
+    "angular": "1.5.8",
+    "jasmine": "2.8.0",
+    "jasmine-core": "2.8.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-firefox-launcher": "1.0.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-ng-html2js-preprocessor": "1.0.0",
+    "karma": "1.7.1"
+  },
+  "devDependencies": {
+    "eslint": "4.9.0",
+    "eslint-plugin-angular": "3.1.1",
+    "eslint-plugin-jasmine": "2.9.1"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run",
+    "eslint": "eslint --no-color heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}

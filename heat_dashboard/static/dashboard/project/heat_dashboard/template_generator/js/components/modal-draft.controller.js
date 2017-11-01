@@ -2,23 +2,11 @@
     'use strict';
 
     angular.module('horizon.dashboard.project.heat_dashboard.template_generator')
-      .controller('horizon.dashboard.project.heat_dashboard.template_generator.DraftModalCtrl', ['$scope',
-        '$mdDialog', 'hotgenNotify', 'hotgenMessage', 'hotgenStates',
+      .controller('horizon.dashboard.project.heat_dashboard.template_generator.DraftModalController', ['$scope',
+        '$mdDialog', 'hotgenNotify', 'hotgenMessage', 'hotgenStates', 'hotgenGlobals',
         'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
-         function($scope, $mdDialog, hotgenNotify, hotgenMessage, hotgenStates, basePath){
-            $scope.showDialog = function(){
-                $mdDialog.show({
-                  controller: DraftDialogController,
-                  templateUrl: basePath + 'templates/modal_draft.html',
-                  parent: angular.element(document.body),
-                  clickOutsideToClose:true
-                }).then(function(){
-                    hotgenNotify.show_success('The draft is loaded successfully.');
-                }, function(){
-//                    hotgenNotify.show_error('dismiss a modal');
-                });
-                DraftDialogController.$inject = ['$scope', '$mdDialog', 'hotgenStates'];
-                function DraftDialogController($scope, $mdDialog, hotgenStates) {
+         function($scope, $mdDialog, hotgenNotify, hotgenMessage, hotgenStates, hotgenGlobals, basePath){
+            $scope.draftDialogController = function ($scope, $mdDialog, hotgenStates) {
                     $scope.draft_list = [];
                     $scope.latest_draft = JSON.parse(localStorage.getItem('draft_'+localStorage.saved_counter));
                     for (var i = 0 ; i < 10; i++){
@@ -46,16 +34,31 @@
                         hotgenStates.set_saved_flags(draft.is_saved);
                         hotgenStates.set_counters(draft.counter);
                         hotgenStates.set_incremented_labels(draft.incremented_labels);
+                        hotgenGlobals.set_template_version(draft.template_version);
+                        hotgenMessage.broadcast_update_template_version();
 
                     };
                     $scope.cancel = function() {
                       $mdDialog.cancel();
                     };
-                }
-            }
-            $scope.$on('handle_load_draft', function(event, args){
-                $scope.showDialog();
-            });
+            };
+            $scope.showDialog = function(){
+                $scope.draftDialogController.$inject = ['$scope', '$mdDialog', 'hotgenStates'];
 
+                $mdDialog.show({
+                  controller: $scope.draftDialogController,
+                  templateUrl: basePath + 'templates/modal_draft.html',
+                  parent: angular.element(document.body),
+                  clickOutsideToClose:true
+                }).then(function(){
+                    hotgenNotify.show_success('The draft is loaded successfully.');
+                }, function(){
+//                    hotgenNotify.show_error('dismiss a modal');
+                });
+            }
+            $scope.handle_load_draft = function(event, args){
+                $scope.showDialog();
+            }
+            $scope.$on('handle_load_draft', $scope.handle_load_draft);
          }]);
 })();
