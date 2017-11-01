@@ -1,0 +1,55 @@
+- project:
+    name: openstack/heat-dashboard
+    check:
+      jobs:
+        - legacy-horizon-tox-py27dj18:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon
+        - legacy-horizon-tox-py27dj19:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon
+        - legacy-horizon-tox-py27dj110:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon
+    gate:
+      queue: heat-dashboard
+      jobs:
+        - legacy-horizon-tox-py27dj18:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon
+        - legacy-horizon-tox-py27dj19:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon
+        - legacy-horizon-tox-py27dj110:
+            irrelevant-files:
+              - ^.*\.rst$
+              - ^doc/.*$
+              - ^heat_dashboard/locale/.*$
+              - ^releasenotes/.*$
+            required-projects:
+              - openstack/horizon

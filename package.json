@@ -25,8 +25,8 @@
     "eslint-plugin-jasmine": "2.9.1"
   },
   "scripts": {
-    "test": "karma start karma.conf.js --single-run",
-    "eslint": "eslint --no-color heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/"
+    "test": "if [ -z $CHROME_BIN ];then export CHROME_BIN=/usr/bin/chromium-browser;fi && karma start karma.conf.js --single-run",
+    "lint": "eslint --no-color heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/"
   },
   "author": "",
   "license": "Apache-2.0"
