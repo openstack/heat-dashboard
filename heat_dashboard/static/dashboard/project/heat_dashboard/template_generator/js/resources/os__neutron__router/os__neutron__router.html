@@ -19,61 +19,6 @@
                 </md-select>
             </md-input-container>
 
-            <div layout-gt-xs="row" >
-                <md-input-container class="md-block" flex-gt-xs>
-                    <md-checkbox ng-model="$ctrl.router.admin_state_up" aria-label="admin_state_up">
-                      Admin State UP
-                    </md-checkbox>
-                </md-input-container>
-            </div>
-
-            <md-switch class="md-primary" name="show_more" ng-model="show_more">
-              {$ 'Show More Properties' | translate $}
-            </md-switch>
-
-        </md-content>
-    </md-tab>
-    <md-tab label="More Properties" ng-if="show_more">
-        <md-content layout-padding>
-
-            <div layout-gt-xs="row" >
-                <md-input-container class="md-block" flex-gt-xs>
-                    <md-checkbox ng-model="$ctrl.router.external_gateway_info.enable_snat" aria-label="enable_snat">
-                      Enable SNAT
-                    </md-checkbox>
-                </md-input-container>
-                <md-input-container class="md-block" flex-gt-xs>
-                    <md-checkbox ng-model="$ctrl.router.distributed" aria-label="distributed">
-                      Distributed
-                    </md-checkbox>
-                </md-input-container>
-
-                <md-input-container class="md-block" flex-gt-xs>
-                    <md-checkbox ng-model="$ctrl.router.ha" aria-label="ha">
-                      HA
-                    </md-checkbox>
-                </md-input-container>
-            </div>
-
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>L3 Agents</label>
-                <md-chips ng-model="$ctrl.router.l3_agent_ids"
-                          placeholder="+ l3 agent id"
-                          readonly="false"
-                          md-removeable="true"
-                          md-max-chips="255">
-                </md-chips>
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Tags</label>
-                <md-chips ng-model="$ctrl.router.tags"
-                          placeholder="+ tags"
-                          readonly="false"
-                          md-removeable="true"
-                          md-max-chips="255">
-                </md-chips>
-            </md-input-container>
-
             <label>External Fixed IP Addresses</label>
             <md-button ng-click="$ctrl.add_external_fixed_ip()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
 
@@ -97,6 +42,63 @@
                     <md-button ng-click="$ctrl.delete_external_fixed_ip($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
                 </div>
             </div>
+
+
+            <div layout-gt-xs="row" >
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.router.admin_state_up" aria-label="admin_state_up">
+                      Admin State UP
+                    </md-checkbox>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.router.external_gateway_info.enable_snat" aria-label="enable_snat">
+                      Enable SNAT
+                    </md-checkbox>
+                </md-input-container>
+            </div>
+
+            <md-switch class="md-primary" name="show_more" ng-model="show_more">
+              {$ 'Show More Properties' | translate $}
+            </md-switch>
+
+        </md-content>
+    </md-tab>
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+
+            <div layout-gt-xs="row" >
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.router.distributed" aria-label="distributed">
+                      Distributed
+                    </md-checkbox>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-checkbox ng-model="$ctrl.router.ha" aria-label="ha">
+                      HA
+                    </md-checkbox>
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>L3 Agents</label>
+                <md-chips ng-model="$ctrl.router.l3_agent_ids"
+                          placeholder="+ l3 agent id"
+                          readonly="false"
+                          md-removeable="true"
+                          md-max-chips="255">
+                </md-chips>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Tags</label>
+                <md-chips ng-model="$ctrl.router.tags"
+                          placeholder="+ tags"
+                          readonly="false"
+                          md-removeable="true"
+                          md-max-chips="255">
+                </md-chips>
+            </md-input-container>
 
             <label>Value Specs</label>
             <md-button ng-click="$ctrl.add_value_specs()" aria-label="Add" class="md-icon-button"><i class="fa fa-fw fa-plus"></i></md-button>
