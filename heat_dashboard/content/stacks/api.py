@@ -12,10 +12,10 @@
 
 import json
 
-from openstack_dashboard.api import heat
+from heat_dashboard.api import heat
 
-from openstack_dashboard.dashboards.project.stacks import mappings
-from openstack_dashboard.dashboards.project.stacks import sro
+from heat_dashboard.content.stacks import mappings
+from heat_dashboard.content.stacks import sro
 
 
 class Stack(object):

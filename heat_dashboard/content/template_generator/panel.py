@@ -15,13 +15,9 @@
 from django.utils.translation import ugettext_lazy as _
 
 import horizon
-# from openstack_dashboard.dashboards.project import dashboard
 
 
 class TemplateGenerator(horizon.Panel):
     name = _("Template Generator")
     slug = 'template_generator'
     permissions = ('openstack.services.orchestration',)
-
-
-# dashboard.Project.register(TemplateGenerator)

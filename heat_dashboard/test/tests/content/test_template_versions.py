@@ -16,14 +16,13 @@ from django import http
 
 from mox3.mox import IsA
 
-# from openstack_dashboard import api
-# from openstack_dashboard.test import helpers as test
 from heat_dashboard import api
 from heat_dashboard.test import helpers as test
 
 
 class TemplateVersionsTests(test.TestCase):
-    INDEX_URL = reverse('horizon:project:stacks.template_versions:index')
+
+    INDEX_URL = reverse('horizon:project:template_versions:index')
 
     @test.create_stubs({api.heat: ('template_version_list',)})
     def test_index(self):
@@ -33,7 +32,7 @@ class TemplateVersionsTests(test.TestCase):
 
         res = self.client.get(self.INDEX_URL)
         self.assertTemplateUsed(
-            res, 'project/stacks.template_versions/index.html')
+            res, 'project/template_versions/index.html')
         self.assertContains(res, 'HeatTemplateFormatVersion.2012-12-12')
 
     @test.create_stubs({api.heat: ('template_version_list',)})
@@ -44,7 +43,7 @@ class TemplateVersionsTests(test.TestCase):
 
         res = self.client.get(self.INDEX_URL)
         self.assertTemplateUsed(
-            res, 'project/stacks.template_versions/index.html')
+            res, 'project/template_versions/index.html')
         self.assertEqual(len(res.context['table'].data), 0)
         self.assertMessageCount(res, error=1)
 
@@ -57,7 +56,7 @@ class TemplateVersionsTests(test.TestCase):
             IsA(http.HttpRequest), t_version).AndReturn(t_functions)
         self.mox.ReplayAll()
 
-        url = reverse('horizon:project:stacks.template_versions:details',
+        url = reverse('horizon:project:template_versions:details',
                       args=[t_version])
         res = self.client.get(url)
 
@@ -69,10 +68,11 @@ class TemplateVersionsTests(test.TestCase):
         t_version = self.template_versions.first().version
 
         api.heat.template_function_list(
-            IsA(http.HttpRequest), t_version).AndRaise(self.exceptions.heat)
+            IsA(http.HttpRequest), t_version).\
+            AndRaise(self.exceptions.heat)
         self.mox.ReplayAll()
 
-        url = reverse('horizon:project:stacks.template_versions:details',
+        url = reverse('horizon:project:template_versions:details',
                       args=[t_version])
         res = self.client.get(url)
 

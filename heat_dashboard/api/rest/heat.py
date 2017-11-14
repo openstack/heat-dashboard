@@ -13,8 +13,9 @@
 
 from django.views import generic
 
-# from openstack_dashboard import api
 from heat_dashboard import api
+
+from openstack_dashboard import api as dashboard_api
 from openstack_dashboard.api.rest import urls
 from openstack_dashboard.api.rest import utils as rest_utils
 
@@ -45,7 +46,7 @@ class Services(generic.View):
     @rest_utils.ajax()
     def get(self, request):
         """Get a list of heat services."""
-        if api.base.is_service_enabled(request, 'orchestration'):
+        if dashboard_api.base.is_service_enabled(request, 'orchestration'):
             result = api.heat.service_list(request)
             return {'items': [u.to_dict() for u in result]}
         else:

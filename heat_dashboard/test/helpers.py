@@ -16,8 +16,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import collections
-import copy
 from functools import wraps
 from importlib import import_module
 import os
@@ -28,34 +26,27 @@ import django
 from django.conf import settings
 from django.contrib.messages.storage import default_storage
 from django.core.handlers import wsgi
-from django.core import urlresolvers
 from django.test.client import RequestFactory
-from django.test import utils as django_test_utils
 from django.utils import http
 
-from cinderclient import client as cinder_client
-import glanceclient
 from heatclient import client as heat_client
 from keystoneclient.v2_0 import client as keystone_client
 import mock
-from mox3 import mox
 from neutronclient.v2_0 import client as neutron_client
-from novaclient import api_versions as nova_api_versions
-from novaclient.v2 import client as nova_client
 from openstack_auth import user
 from openstack_auth import utils
 from requests.packages.urllib3.connection import HTTPConnection
+
 import six
 from six import moves
-from swiftclient import client as swift_client
 
-from horizon import base
-from horizon import conf
 from horizon.test import helpers as horizon_helpers
-from openstack_dashboard import api
-from openstack_dashboard import context_processors
-from openstack_dashboard.test.test_data import utils as test_utils
 
+from openstack_dashboard import api as project_api
+from openstack_dashboard import context_processors
+
+from heat_dashboard import api
+from heat_dashboard.test.test_data import utils as test_utils
 
 # Makes output of failing mox tests much easier to read.
 wsgi.WSGIRequest.__repr__ = lambda self: "<class 'django.http.HttpRequest'>"
@@ -412,62 +403,19 @@ class APITestCase(TestCase):
             """
             return self.stub_keystoneclient()
 
-        def fake_glanceclient(request, version='1'):
-            """Returns the stub glanceclient.
-
-            Only necessary because the function takes too many arguments to
-            conveniently be a lambda.
-            """
-            return self.stub_glanceclient()
-
-        def fake_novaclient(request, version=None):
-            return self.stub_novaclient()
-
         # Store the original clients
-        self._original_glanceclient = api.glance.glanceclient
-        self._original_keystoneclient = api.keystone.keystoneclient
-        self._original_novaclient = api.nova.novaclient
-        self._original_neutronclient = api.neutron.neutronclient
-        self._original_cinderclient = api.cinder.cinderclient
+        self._original_keystoneclient = project_api.keystone.keystoneclient
         self._original_heatclient = api.heat.heatclient
 
         # Replace the clients with our stubs.
-        api.glance.glanceclient = fake_glanceclient
-        api.keystone.keystoneclient = fake_keystoneclient
-        api.nova.novaclient = fake_novaclient
-        api.neutron.neutronclient = lambda request: self.stub_neutronclient()
-        api.cinder.cinderclient = lambda request: self.stub_cinderclient()
+        project_api.keystone.keystoneclient = fake_keystoneclient
         api.heat.heatclient = (lambda request, password=None:
                                self.stub_heatclient())
 
     def tearDown(self):
         super(APITestCase, self).tearDown()
-        api.glance.glanceclient = self._original_glanceclient
-        api.nova.novaclient = self._original_novaclient
-        api.keystone.keystoneclient = self._original_keystoneclient
-        api.neutron.neutronclient = self._original_neutronclient
-        api.cinder.cinderclient = self._original_cinderclient
+        project_api.keystone.keystoneclient = self._original_keystoneclient
         api.heat.heatclient = self._original_heatclient
-
-    def stub_novaclient(self):
-        if not hasattr(self, "novaclient"):
-            self.mox.StubOutWithMock(nova_client, 'Client')
-            # mock the api_version since MockObject.__init__ ignores it.
-            # The preferred version in the api.nova code is 2 but that's
-            # equivalent to 2.1 now and is the base version that's backward
-            # compatible to 2.0 anyway.
-            api_version = nova_api_versions.APIVersion('2.1')
-            nova_client.Client.api_version = api_version
-            nova_client.Client.projectid = 'fake_project'
-            nova_client.Client.tenant_id = 'fake_tenant'
-            self.novaclient = self.mox.CreateMock(nova_client.Client)
-        return self.novaclient
-
-    def stub_cinderclient(self):
-        if not hasattr(self, "cinderclient"):
-            self.mox.StubOutWithMock(cinder_client, 'Client')
-            self.cinderclient = self.mox.CreateMock(cinder_client.Client)
-        return self.cinderclient
 
     def stub_keystoneclient(self):
         if not hasattr(self, "keystoneclient"):
@@ -482,34 +430,11 @@ class APITestCase(TestCase):
             self.keystoneclient = self.mox.CreateMock(keystone_client.Client)
         return self.keystoneclient
 
-    def stub_glanceclient(self):
-        if not hasattr(self, "glanceclient"):
-            self.mox.StubOutWithMock(glanceclient, 'Client')
-            self.glanceclient = self.mox.CreateMock(glanceclient.Client)
-        return self.glanceclient
-
     def stub_neutronclient(self):
         if not hasattr(self, "neutronclient"):
             self.mox.StubOutWithMock(neutron_client, 'Client')
             self.neutronclient = self.mox.CreateMock(neutron_client.Client)
         return self.neutronclient
-
-    def stub_swiftclient(self, expected_calls=1):
-        if not hasattr(self, "swiftclient"):
-            self.mox.StubOutWithMock(swift_client, 'Connection')
-            self.swiftclient = self.mox.CreateMock(swift_client.Connection)
-            while expected_calls:
-                swift_client.Connection(None,
-                                        mox.IgnoreArg(),
-                                        None,
-                                        preauthtoken=mox.IgnoreArg(),
-                                        preauthurl=mox.IgnoreArg(),
-                                        cacert=None,
-                                        insecure=False,
-                                        auth_version="2.0") \
-                            .AndReturn(self.swiftclient)
-                expected_calls -= 1
-        return self.swiftclient
 
     def stub_heatclient(self):
         if not hasattr(self, "heatclient"):
@@ -522,161 +447,8 @@ class APITestCase(TestCase):
 class ResetImageAPIVersionMixin(object):
     def setUp(self):
         super(ResetImageAPIVersionMixin, self).setUp()
-        api.glance.VERSIONS.clear_active_cache()
+        project_api.glance.VERSIONS.clear_active_cache()
 
     def tearDown(self):
-        api.glance.VERSIONS.clear_active_cache()
+        project_api.glance.VERSIONS.clear_active_cache()
         super(ResetImageAPIVersionMixin, self).tearDown()
-
-
-@unittest.skipUnless(os.environ.get('WITH_SELENIUM', False),
-                     "The WITH_SELENIUM env variable is not set.")
-class SeleniumTestCase(horizon_helpers.SeleniumTestCase):
-
-    def setUp(self):
-        super(SeleniumTestCase, self).setUp()
-
-        test_utils.load_test_data(self)
-        self.mox = mox.Mox()
-
-        self._real_get_user = utils.get_user
-        self.setActiveUser(id=self.user.id,
-                           token=self.token,
-                           username=self.user.name,
-                           tenant_id=self.tenant.id,
-                           service_catalog=self.service_catalog,
-                           authorized_tenants=self.tenants.list())
-        self.patchers = _apply_panel_mocks()
-        os.environ["HORIZON_TEST_RUN"] = "True"
-
-    def tearDown(self):
-        self.mox.UnsetStubs()
-        utils.get_user = self._real_get_user
-        mock.patch.stopall()
-        self.mox.VerifyAll()
-        del os.environ["HORIZON_TEST_RUN"]
-
-    def setActiveUser(self, id=None, token=None, username=None, tenant_id=None,
-                      service_catalog=None, tenant_name=None, roles=None,
-                      authorized_tenants=None, enabled=True):
-        def get_user(request):
-            return user.User(id=id,
-                             token=token,
-                             user=username,
-                             tenant_id=tenant_id,
-                             service_catalog=service_catalog,
-                             roles=roles,
-                             enabled=enabled,
-                             authorized_tenants=authorized_tenants,
-                             endpoint=settings.OPENSTACK_KEYSTONE_URL)
-        utils.get_user = get_user
-
-
-class SeleniumAdminTestCase(SeleniumTestCase):
-    """Version of AdminTestCase for Selenium.
-
-    Sets an active user with the "admin" role for testing admin-only views and
-    functionality.
-    """
-    def setActiveUser(self, *args, **kwargs):
-        if "roles" not in kwargs:
-            kwargs['roles'] = [self.roles.admin._info]
-        super(SeleniumAdminTestCase, self).setActiveUser(*args, **kwargs)
-
-
-def my_custom_sort(flavor):
-    sort_order = {
-        'm1.secret': 0,
-        'm1.tiny': 1,
-        'm1.massive': 2,
-        'm1.metadata': 3,
-    }
-    return sort_order[flavor.name]
-
-
-class PluginTestCase(TestCase):
-    """Test case for testing plugin system of Horizon.
-
-    For use with tests which deal with the pluggable dashboard and panel
-    configuration, it takes care of backing up and restoring the Horizon
-    configuration.
-    """
-    def setUp(self):
-        super(PluginTestCase, self).setUp()
-        self.old_horizon_config = conf.HORIZON_CONFIG
-        conf.HORIZON_CONFIG = conf.LazySettings()
-        base.Horizon._urls()
-        # Store our original dashboards
-        self._discovered_dashboards = base.Horizon._registry.keys()
-        # Gather up and store our original panels for each dashboard
-        self._discovered_panels = {}
-        for dash in self._discovered_dashboards:
-            panels = base.Horizon._registry[dash]._registry.keys()
-            self._discovered_panels[dash] = panels
-
-    def tearDown(self):
-        super(PluginTestCase, self).tearDown()
-        conf.HORIZON_CONFIG = self.old_horizon_config
-        # Destroy our singleton and re-create it.
-        base.HorizonSite._instance = None
-        del base.Horizon
-        base.Horizon = base.HorizonSite()
-        # Reload the convenience references to Horizon stored in __init__
-        moves.reload_module(import_module("horizon"))
-        # Re-register our original dashboards and panels.
-        # This is necessary because autodiscovery only works on the first
-        # import, and calling reload introduces innumerable additional
-        # problems. Manual re-registration is the only good way for testing.
-        for dash in self._discovered_dashboards:
-            base.Horizon.register(dash)
-            for panel in self._discovered_panels[dash]:
-                dash.register(panel)
-        self._reload_urls()
-
-    def _reload_urls(self):
-        """CLeans up URLs.
-
-        Clears out the URL caches, reloads the root urls module, and
-        re-triggers the autodiscovery mechanism for Horizon. Allows URLs
-        to be re-calculated after registering new dashboards. Useful
-        only for testing and should never be used on a live site.
-        """
-        urlresolvers.clear_url_caches()
-        moves.reload_module(import_module(settings.ROOT_URLCONF))
-        base.Horizon._urls()
-
-
-class update_settings(django_test_utils.override_settings):
-    """override_settings which allows override an item in dict.
-
-    django original override_settings replaces a dict completely,
-    however OpenStack dashboard setting has many dictionary configuration
-    and there are test case where we want to override only one item in
-    a dictionary and keep other items in the dictionary.
-    This version of override_settings allows this if keep_dict is True.
-
-    If keep_dict False is specified, the original behavior of
-    Django override_settings is used.
-    """
-
-    def __init__(self, keep_dict=True, **kwargs):
-        if keep_dict:
-            for key, new_value in kwargs.items():
-                value = getattr(settings, key, None)
-                if (isinstance(new_value, collections.Mapping) and
-                        isinstance(value, collections.Mapping)):
-                    copied = copy.copy(value)
-                    copied.update(new_value)
-                    kwargs[key] = copied
-        super(update_settings, self).__init__(**kwargs)
-
-
-def mock_obj_to_dict(r):
-    return mock.Mock(**{'to_dict.return_value': r})
-
-
-def mock_factory(r):
-    """mocks all the attributes as well as the to_dict """
-    mocked = mock_obj_to_dict(r)
-    mocked.configure_mock(**r)
-    return mocked

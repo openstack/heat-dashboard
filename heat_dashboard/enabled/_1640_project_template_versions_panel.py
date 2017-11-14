@@ -22,5 +22,3 @@ ADD_PANEL = 'heat_dashboard.content.template_versions.panel.TemplateVersions'
 
 # Automatically discover static resources in installed apps
 AUTO_DISCOVER_STATIC_FILES = True
-
-# ADD_INSTALLED_APPS = ['heat_dashboard.content.template_versions', ]
