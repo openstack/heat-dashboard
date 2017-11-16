@@ -55,7 +55,6 @@ class StackOverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "overview"
     template_name = "project/stacks/_detail_overview.html"
-    # template_name = "stacks/_detail_overview.html"
 
     def allowed(self, request):
         return policy.check(
@@ -72,7 +71,6 @@ class ResourceOverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "resource_overview"
     template_name = "project/stacks/_resource_overview.html"
-    # template_name = "stacks/_resource_overview.html"
 
     def get_context_data(self, request):
         resource = self.tab_group.kwargs['resource']
@@ -87,7 +85,6 @@ class StackEventsTab(tabs.Tab):
     name = _("Events")
     slug = "events"
     template_name = "project/stacks/_detail_events.html"
-    # template_name = "stacks/_detail_events.html"
     preload = False
 
     def allowed(self, request):
@@ -119,7 +116,6 @@ class StackResourcesTab(tabs.Tab):
     name = _("Resources")
     slug = "resources"
     template_name = "project/stacks/_detail_resources.html"
-    # template_name = "stacks/_detail_resources.html"
     preload = False
 
     def allowed(self, request):
@@ -152,7 +148,6 @@ class StackTemplateTab(tabs.Tab):
     name = _("Template")
     slug = "stack_template"
     template_name = "project/stacks/_stack_template.html"
-    # template_name = "stacks/_stack_template.html"
 
     def allowed(self, request):
         return policy.check(

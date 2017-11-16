@@ -15,11 +15,10 @@ from django.utils.translation import ugettext_lazy as _
 
 from horizon import messages
 from horizon import tabs
-from openstack_dashboard import api
 from openstack_dashboard import policy
 
-# from openstack_dashboard.dashboards.project.stacks.template_versions \
-#     import tables as project_tables
+from heat_dashboard import api
+
 from heat_dashboard.content.template_versions import tables as project_tables
 
 

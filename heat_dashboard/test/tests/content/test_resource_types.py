@@ -16,7 +16,6 @@ from django import http
 
 from mox3.mox import IsA
 
-# from openstack_dashboard import api
 from heat_dashboard import api
 from heat_dashboard.test import helpers as test
 
@@ -32,7 +31,7 @@ class ResourceTypesTests(test.TestCase):
         self.mox.ReplayAll()
 
         res = self.client.get(
-            reverse('horizon:project:stacks.resource_types:index'))
+            reverse('horizon:project:resource_types:index'))
         self.assertTemplateUsed(
             res, 'horizon/common/_data_table_view.html')
         self.assertContains(res, 'AWS::CloudFormation::Stack')
@@ -45,7 +44,7 @@ class ResourceTypesTests(test.TestCase):
             IsA(http.HttpRequest), rt['resource_type']).AndReturn(rt)
         self.mox.ReplayAll()
 
-        url = reverse('horizon:project:stacks.resource_types:details',
+        url = reverse('horizon:project:resource_types:details',
                       args=[rt['resource_type']])
         res = self.client.get(url)
 

@@ -31,7 +31,7 @@ In other words, Horizon developers not working on openstack_dashboard.api
 shouldn't need to understand the finer details of APIs for
 Keystone/Nova/Glance/Swift et. al.
 """
-from openstack_dashboard.api import heat
+from heat_dashboard.api import heat
 
 
 __all__ = [

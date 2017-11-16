@@ -11,14 +11,29 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from horizon.test.settings import *  # noqa
-from openstack_dashboard.test.settings import *  # noqa
+# Default to Horizons test settings to avoid any missing keys
+import heat_dashboard.enabled
+
+from openstack_dashboard.test.settings import *  # noqa: F403,H303
+
+from openstack_dashboard.utils import settings
 
 
-INSTALLED_APPS = list(INSTALLED_APPS)
-INSTALLED_APPS.append('heat_dashboard.content.stacks')
-INSTALLED_APPS.append('heat_dashboard.content.resource_types')
-INSTALLED_APPS.append('heat_dashboard.content.template_versions')
+# pop these keys to avoid log warnings about deprecation
+# update_dashboards will populate them anyway
+HORIZON_CONFIG.pop('dashboards', None)
+HORIZON_CONFIG.pop('default_dashboard', None)
 
-# further implementation
-# INSTALLED_APPS.append('heat_dashboard.content.template_generator')
+# Update the dashboards with heat_dashboard enabled files
+# and current INSTALLED_APPS
+settings.update_dashboards(
+    [
+        openstack_dashboard.enabled,
+        heat_dashboard.enabled,
+    ],
+    HORIZON_CONFIG,
+    INSTALLED_APPS
+)
+
+# Remove duplicated apps
+INSTALLED_APPS = list(set(INSTALLED_APPS))

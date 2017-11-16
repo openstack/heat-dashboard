@@ -23,8 +23,6 @@ from horizon.utils import filters
 
 from heatclient import exc
 
-# from openstack_dashboard import api
-# from openstack_dashboard.dashboards.project.stacks import mappings
 from heat_dashboard import api
 from heat_dashboard.content.stacks import mappings
 
@@ -160,7 +158,6 @@ class DeleteStack(tables.DeleteAction):
     policy_rules = (("orchestration", "stacks:delete"),)
 
     def delete(self, request, stack_id):
-        # api.heat.stack_delete(request, stack_id)
         api.heat.stack_delete(request, stack_id)
 
     def allowed(self, request, stack):
@@ -177,7 +174,6 @@ class StacksUpdateRow(tables.Row):
 
     def get_data(self, request, stack_id):
         try:
-            # stack = api.heat.stack_get(request, stack_id)
             stack = api.heat.stack_get(request, stack_id)
             if stack.stack_status == 'DELETE_COMPLETE':
                 # returning 404 to the ajax call removes the

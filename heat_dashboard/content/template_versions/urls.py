@@ -13,8 +13,6 @@
 
 from django.conf.urls import url
 
-# from openstack_dashboard.dashboards.project.stacks.template_versions \
-#     import views
 from heat_dashboard.content.template_versions import views
 
 

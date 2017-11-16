@@ -21,27 +21,9 @@ It does not promise to adhere to the general OpenStack API Guidelines set out
 in https://wiki.openstack.org/wiki/APIChangeGuidelines.
 """
 
-from openstack_dashboard.api.rest import cinder
-from openstack_dashboard.api.rest import config
-from openstack_dashboard.api.rest import glance
-from openstack_dashboard.api.rest import heat
-from openstack_dashboard.api.rest import keystone
-from openstack_dashboard.api.rest import network
-from openstack_dashboard.api.rest import neutron
-from openstack_dashboard.api.rest import nova
-from openstack_dashboard.api.rest import policy
-from openstack_dashboard.api.rest import swift
+from heat_dashboard.api.rest import heat
 
 
 __all__ = [
-    'cinder',
-    'config',
-    'glance',
     'heat',
-    'keystone',
-    'network',
-    'neutron',
-    'nova',
-    'policy',
-    'swift',
 ]

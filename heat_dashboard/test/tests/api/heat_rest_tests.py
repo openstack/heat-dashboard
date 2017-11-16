@@ -15,8 +15,6 @@ import json
 
 import mock
 
-# from openstack_dashboard.api.rest import heat
-# from openstack_dashboard.test import helpers as test
 from heat_dashboard.api.rest import heat
 from heat_dashboard.test import helpers as test
 from openstack_dashboard import api

@@ -30,10 +30,6 @@ from heat_dashboard import api
 from heat_dashboard.test import helpers as test
 from openstack_dashboard import api as dashboard_api
 
-# from openstack_dashboard.dashboards.project.stacks import api as project_api
-# from openstack_dashboard.dashboards.project.stacks import forms
-# from openstack_dashboard.dashboards.project.stacks import mappings
-# from openstack_dashboard.dashboards.project.stacks import tables
 from heat_dashboard.content.stacks import forms
 from heat_dashboard.content.stacks import mappings
 from heat_dashboard.content.stacks import tables

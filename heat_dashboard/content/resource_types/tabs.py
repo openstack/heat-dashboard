@@ -19,7 +19,6 @@ from horizon import tabs
 class ResourceTypeOverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "resource_type_overview"
-    # template_name = "project/stacks.resource_types/_details.html"
     template_name = "project/resource_types/_details.html"
 
     def get_context_data(self, request):
