@@ -6,6 +6,11 @@ Set up your ``local.conf`` to enable heat-dashboard::
     [[local|localrc]]
     enable_plugin heat-dashboard https://git.openstack.org/openstack/heat-dashboard
 
+
+.. note::
+
+    You also need to install Heat itself into DevStack to use Heat Dashboard.
+
 Manual Installation
 -------------------
 
@@ -38,6 +43,11 @@ Enable heat-dashboard plugin in your Horizon environment::
 
     cp heat-dashboard/heat_dashboard/enabled/* \
       horizon/openstack_dashboard/local/enabled
+
+Copy Heat policy file to your Horizon  environment::
+
+    cp heat-dashboard/etc/heat_policy.json \
+      horizon/openstack_dashboard/conf
 
 Finally you can launch Horizon with Heat Dashboard plugin::
 
