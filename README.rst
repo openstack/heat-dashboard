@@ -58,13 +58,16 @@ and set some parameter to connect to your OpenStack environment:
    environment. (They should be correct unless you modified your
    OpenStack server to change them.)
 
+Install Heat Dashboard with all relevant packages to your Horizon environment::
+
+    pip install -e ./heat-dashboard/
 
 Enable heat-dashboard plugin in your Horizon environment::
 
     cp heat-dashboard/heat_dashboard/enabled/* \
       horizon/openstack_dashboard/local/enabled
 
-Copy Heat policy file to your Horizon  environment::
+Copy Heat policy file to your Horizon environment::
 
     cp heat-dashboard/etc/heat_policy.json \
       horizon/openstack_dashboard/conf
