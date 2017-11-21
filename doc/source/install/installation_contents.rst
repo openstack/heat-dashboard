@@ -52,6 +52,18 @@ Copy Heat policy file to your Horizon environment::
     cp heat-dashboard/etc/heat_policy.json \
       horizon/openstack_dashboard/conf
 
+Add 'orchestration' key to POLICY_FILES value in local_settings.py::
+
+    POLICY_FILES = {
+        'identity': 'keystone_policy.json',
+        'compute': 'nova_policy.json',
+        'volume': 'cinder_policy.json',
+        'image': 'glance_policy.json',
+        'orchestration': 'heat_policy.json', <-- Add this if it does not exist
+        'network': 'neutron_policy.json',
+    }
+
+
 Finally you can launch Horizon with Heat Dashboard plugin::
 
     cd horizon
