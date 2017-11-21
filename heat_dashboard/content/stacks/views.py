@@ -39,6 +39,7 @@ from horizon import views
 class IndexView(tables.DataTableView):
     table_class = project_tables.StacksTable
     page_title = _("Stacks")
+    template_name = 'project/stacks/index.html'
 
     def __init__(self, *args, **kwargs):
         super(IndexView, self).__init__(*args, **kwargs)

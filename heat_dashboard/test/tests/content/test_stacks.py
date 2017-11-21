@@ -35,7 +35,7 @@ from heat_dashboard.content.stacks import mappings
 from heat_dashboard.content.stacks import tables
 
 
-INDEX_TEMPLATE = 'horizon/common/_data_table_view.html'
+INDEX_TEMPLATE = 'project/stacks/index.html'
 INDEX_URL = reverse('horizon:project:stacks:index')
 DETAIL_URL = 'horizon:project:stacks:detail'
 
@@ -270,6 +270,7 @@ class StackTests(test.TestCase):
 
         form_data = {'template_source': 'raw',
                      'template_data': template.data,
+                     'referenced_files': {},
                      'method': forms.TemplateForm.__name__}
         res = self.client.post(url, form_data)
         self.assertTemplateUsed(res, 'project/stacks/create.html')

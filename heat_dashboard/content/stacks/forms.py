@@ -127,6 +127,10 @@ class TemplateForm(forms.SelfHandlingForm):
         widget=forms.widgets.Textarea(attrs=attributes),
         required=False)
 
+    referenced_files = forms.CharField(label=_('Referenced Files'),
+                                       widget=forms.widgets.HiddenInput,
+                                       required=False)
+
     if django.VERSION >= (1, 9):
         # Note(Itxaka): On django>=1.9 Charfield has an strip option that
         # we need to set to False as to not hit
@@ -146,6 +150,12 @@ class TemplateForm(forms.SelfHandlingForm):
         self.clean_uploaded_files('environment', _('environment'), cleaned,
                                   files)
 
+        referenced_files = cleaned.get('referenced_files')
+        if referenced_files:
+            referenced_files = json.loads(referenced_files)
+        elif referenced_files == '':
+            referenced_files = {}
+
         # Validate the template and get back the params.
         kwargs = {}
         if cleaned['environment_data']:
@@ -153,7 +163,8 @@ class TemplateForm(forms.SelfHandlingForm):
         try:
             files, tpl =\
                 api.heat.get_template_files(cleaned.get('template_data'),
-                                            cleaned.get('template_url'))
+                                            cleaned.get('template_url'),
+                                            referenced_files)
             kwargs['files'] = files
             kwargs['template'] = tpl
             validated = api.heat.template_validate(self.request, **kwargs)
@@ -181,7 +192,6 @@ class TemplateForm(forms.SelfHandlingForm):
         :rtype: dict
         :return: cleaned dict including environment & template data
         """
-
         upload_str = prefix + "_upload"
         data_str = prefix + "_data"
         url = cleaned.get(prefix + '_url')

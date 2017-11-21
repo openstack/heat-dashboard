@@ -14,7 +14,7 @@
                 resource_options: {'auth': {'admin': false}},
                 template_version: null,
                 resource_outputs: {},
-                reference_file: {},
+                reference_files: {},
             };
 
             return {
@@ -79,10 +79,13 @@
                     return Object.keys(globals.resource_icons);
                 },
                 set_reference_file: function(key, value){
-                    globals.reference_file[key] = value;
+                    globals.reference_files[key] = value;
                 },
                 get_reference_file: function(key){
-                    return globals.reference_file[key];
+                    return globals.reference_files[key];
+                },
+                get_reference_files: function(key){
+                    return globals.reference_files;
                 },
 
             };
