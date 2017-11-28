@@ -5,8 +5,10 @@
     .controller('horizon.dashboard.project.heat_dashboard.template_generator.TempModalController', ['$scope',
         '$mdDialog', 'hotgenNotify', 'hotgenUtils', 'hotgenStates', 'hotgenGlobals',
         'horizon.dashboard.project.heat_dashboard.template_generator.basePath',
-        function($scope, $mdDialog, hotgenNotify, hotgenUtils, hotgenStates, hotgenGlobals, basePath){
+        'horizon.dashboard.project.heat_dashboard.template_generator.projectPath',
+        function($scope, $mdDialog, hotgenNotify, hotgenUtils, hotgenStates, hotgenGlobals, basePath, projectPath){
             $scope.basePath = basePath;
+            $scope.projectPath = projectPath;
             $scope.dialogController = function ($scope, $mdDialog, hotgenStates, hotgenGlobals, hotgenNotify) {
                 $scope.all_saved = false;
                 $scope.cancel = function() {
@@ -22,11 +24,20 @@
 
                   hotgenNotify.show_success('Template is downloaded.');
                 };
-                $scope.save = function() {
-                  hotgenNotify.show_warning('Not implemented yet. To submit to create a stack.')
-                  $mdDialog.cancel();
+
+                $scope.redirect = function(){
+                  var redirect = window.location.origin + projectPath + 'stacks/';
+                  window.location.href = redirect;
                 };
 
+                $scope.save = function() {
+                  var files = hotgenGlobals.get_reference_files();
+                  sessionStorage.setItem('files', JSON.stringify(files));
+                  sessionStorage.setItem('generated', true);
+                  sessionStorage.setItem('template', $scope.template_contents);
+                  $scope.redirect();
+//                  $mdDialog.cancel();
+                };
                 $scope.extract_properties = function(resource_data){
                     for (var property in resource_data){
                         var func = null;

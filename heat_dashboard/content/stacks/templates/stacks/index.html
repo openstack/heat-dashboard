@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block main %}{{ table.render }}{% endblock %}
+
+{% block js %}
+  {% include "horizon/_scripts.html" %}
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          var session = window.sessionStorage;
+          if (session.getItem('generated') == 'true'){
+              $("#stacks__action_launch").attr('href', window.location.pathname+'select_template?template_source=raw');
+              $("#stacks__action_launch").click();
+          };
+      });
+  </script>
+{% endblock %}

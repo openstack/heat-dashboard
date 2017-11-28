@@ -7,12 +7,13 @@
 
         beforeEach(module('appTemplates'));
 
-        var hotgenGlobals, hotgenStates, hotgenNotify, basePath;
+        var hotgenGlobals, hotgenStates, hotgenNotify, basePath, projectPath;
         beforeEach(inject(function($injector){
             hotgenGlobals = $injector.get('hotgenGlobals');
             hotgenStates = $injector.get('hotgenStates');
             hotgenNotify = $injector.get('hotgenNotify');
             basePath = $injector.get('horizon.dashboard.project.heat_dashboard.template_generator.basePath');
+            projectPath = $injector.get('horizon.dashboard.project.heat_dashboard.template_generator.projectPath');
         }));
 
         var $controller, controller, $scope, $rootScope, $mdDialog;
@@ -83,9 +84,13 @@
 
         it('$scope.dialogController save', function(){
             $scope.dialogController($scope, $mdDialog, hotgenStates, hotgenGlobals, hotgenNotify);
+
+            $scope.redirect = jasmine.createSpy().and.callFake(function() {
+                return function(){return true};
+            });
             $scope.save();
 
-            expect($mdDialog.cancel).toHaveBeenCalled();
+            expect($scope.redirect).toHaveBeenCalled();
         });
 
         it('$scope.dialogController extract_properties', function(){

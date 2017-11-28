@@ -20,8 +20,11 @@
                 });
             }])
         .config(['$provide', '$windowProvider', function($provide, $windowProvider){
-                var path = $windowProvider.$get().STATIC_URL + 'dashboard/project/heat_dashboard/template_generator/';
-                $provide.constant('horizon.dashboard.project.heat_dashboard.template_generator.basePath', path);
+                var project_window = $windowProvider.$get();
+                var staticPath = project_window.STATIC_URL + 'dashboard/project/heat_dashboard/template_generator/';
+                var projectPath = project_window.WEBROOT+'project/';
+                $provide.constant('horizon.dashboard.project.heat_dashboard.template_generator.basePath', staticPath);
+                $provide.constant('horizon.dashboard.project.heat_dashboard.template_generator.projectPath', projectPath);
 
             }])
         .constant('horizon.dashboard.project.heat_dashboard.template_generator.validationRules', {

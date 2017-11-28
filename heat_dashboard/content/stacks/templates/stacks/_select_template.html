@@ -4,4 +4,15 @@
 {% block modal-body-right %}
   <h3>{% trans "Description:" %}</h3>
   <p>{% trans "Use one of the available template source options to specify the template to be used in creating this stack." %}</p>
+
+  <script type="text/javascript">
+      if (window.sessionStorage.generated == 'true'){
+          $("#id_template_data").val(window.sessionStorage.getItem("template"));
+          $("#id_referenced_files").val(window.sessionStorage.getItem("files"));
+      }
+      window.sessionStorage.setItem('generated', false);
+      // window.sessionStorage.removeItem('template');
+
+  </script>
+
 {% endblock %}

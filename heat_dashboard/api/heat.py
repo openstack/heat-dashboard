@@ -112,7 +112,7 @@ def _ignore_if(key, value):
 
 
 @profiler.trace
-def get_template_files(template_data=None, template_url=None):
+def get_template_files(template_data=None, template_url=None, files=None):
     if template_data:
         tpl = template_data
     elif template_url:
@@ -125,7 +125,8 @@ def get_template_files(template_data=None, template_url=None):
     if isinstance(tpl, six.binary_type):
         tpl = tpl.decode('utf-8')
     template = template_format.parse(tpl)
-    files = {}
+    if files is None:
+        files = {}
     _get_file_contents(template, files)
     return files, template
 
@@ -137,6 +138,8 @@ def _get_file_contents(from_data, files):
         recurse_data = from_data.values()
         for key, value in from_data.items():
             if _ignore_if(key, value):
+                continue
+            if value in files:
                 continue
             if not value.startswith(('http://', 'https://')):
                 raise exceptions.GetFileError(value, 'get_file')
