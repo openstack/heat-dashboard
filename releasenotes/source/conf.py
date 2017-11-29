@@ -52,13 +52,14 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'../horizon Release Notes'
-copyright = u'2017, OpenStack Developers'
+project = u'Heat Dashboard Release Notes'
+copyright = u'2017, OpenStack Foundation'
 
 # openstackdocstheme options
-repository_name = 'openstack/openstack'
-bug_project = '../horizon'
-bug_tag = ''
+repository_name = 'openstack/heat-dashboard'
+bug_project = 'heat-dashboard'
+bug_tag = 'doc'
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # Release notes are version independent, no need to set version and release
 release = ''
@@ -185,7 +186,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '../horizonReleaseNotesdoc'
+htmlhelp_basename = 'HeatDashboardReleaseNotesdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -205,8 +206,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', '../horizonReleaseNotes.tex',
-     u'../horizon  Release Notes Documentation',
+    ('index', 'HeatDashboardReleaseNotes.tex',
+     u'Heat Dashboard Release Notes Documentation',
      u'OpenStack Foundation', 'manual'),
 ]
 
@@ -236,8 +237,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '../horizonrereleasenotes',
-     u'../horizon  Release Notes Documentation',
+    ('index', 'HeatDashboardReleaseNotes',
+     u'Heat Dashboard  Release Notes Documentation',
      [u'OpenStack Foundation'], 1)
 ]
 
@@ -251,10 +252,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', '../horizon ReleaseNotes',
-     u'../horizon Release Notes Documentation',
-     u'OpenStack Foundation', '../horizonReleaseNotes',
-     'One line description of project.',
+    ('index', 'HeatDashboardReleaseNotes',
+     u'Heat Dashboard Release Notes Documentation',
+     u'OpenStack Foundation', 'HeatDashboardReleaseNotes',
+     'Dashboard for Heat',
      'Miscellaneous'),
 ]
 

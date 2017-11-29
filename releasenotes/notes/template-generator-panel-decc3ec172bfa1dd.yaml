@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    A panel for ``Template Generator`` is newly added.  There is not specific
+    installation process.  After installing heat-dashboard, this panel
+    will be displayed along with ``Stacks``, ``Resource Types`` and
+    ``Template Versions``.

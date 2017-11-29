@@ -1,0 +1,12 @@
+---
+prelude: >
+    Heat support in OpenStack Dashboard is now split into
+    a separated python package.
+features:
+  - |
+    Heat support in OpenStack Dashboard is now split into
+    a separete package ``heat-dashboard``. You need to install
+    ``heat-dashboard`` afeter upgrading OpenStack Dashboard
+    to Queens release and add ``enabled`` file for Heat Dashboard.
+    For detail information, see
+    https://docs.openstack.org/heat-dashboard/latest/.

@@ -1,8 +1,9 @@
-============================================
- Heat Dashboard Release Notes
-============================================
+============================
+Heat Dashboard Release Notes
+============================
 
 .. toctree::
    :maxdepth: 1
 
    unreleased
+   queens
