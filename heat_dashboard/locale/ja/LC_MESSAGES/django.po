@@ -15,5 +15,5 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: Zanata 3.7.3\n"
 
-msgid "Generate Template"
+msgid "Template Generator"
 msgstr "テンプレートの生成"

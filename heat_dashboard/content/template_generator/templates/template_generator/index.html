@@ -4,7 +4,7 @@
 
 {% block page_header %}
     <div class="page-header" ng-cloak>
-        <h1>{$  'Generate Template' | translate $}</h1>
+        <h1>{$  'Template Generator' | translate $}</h1>
         <p>{$  'Please drag and drop resource icons into center canvas to define resource for template.' | translate $}</p>
     </div>
 {% endblock %}
@@ -30,8 +30,8 @@
                     </md-input-container>
                 </div>
                 <div ng-controller="horizon.dashboard.project.heat_dashboard.template_generator.TempModalController" style="display:inline-block">
-                    <md-tooltip style="font-size:12px !important;" md-direction="top">Generate Template</md-tooltip>
-                    <md-button class="md-fab md-mini md-primary" ng-click="open()" aria-label="Generate Template">
+                    <md-tooltip style="font-size:12px !important;" md-direction="top">Template Generator</md-tooltip>
+                    <md-button class="md-fab md-mini md-primary" ng-click="open()" aria-label="Template Generator">
                         <md-icon md-svg-src="{$ basePath $}css/img/icons/file-text-o.svg"></md-icon>
                     </md-button>
                 </div>
