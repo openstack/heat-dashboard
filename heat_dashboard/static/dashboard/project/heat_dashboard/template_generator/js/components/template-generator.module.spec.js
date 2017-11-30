@@ -35,7 +35,7 @@
     
     it('should set html5 mode', function() {
         expect($locationProvider.html5Mode)
-            .toHaveBeenCalledWith({ enabled: true, requireBase: false });
+            .toHaveBeenCalledWith({ enabled: true, requireBase: false, rewriteLinks: false });
     });
 
   });
