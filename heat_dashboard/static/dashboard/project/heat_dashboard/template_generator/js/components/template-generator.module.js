@@ -16,7 +16,8 @@
         .config(['$locationProvider', function($locationProvider) {
             $locationProvider.html5Mode({
                   enabled: true,
-                  requireBase: false
+                  requireBase: false,
+                  rewriteLinks: false,
                 });
             }])
         .config(['$provide', '$windowProvider', function($provide, $windowProvider){
