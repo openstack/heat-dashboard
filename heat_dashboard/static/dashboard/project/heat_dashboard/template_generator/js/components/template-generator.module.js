@@ -13,13 +13,6 @@
             .warnPalette('red')
             ;
           }])
-        .config(['$locationProvider', function($locationProvider) {
-            $locationProvider.html5Mode({
-                  enabled: true,
-                  requireBase: false,
-                  rewriteLinks: false,
-                });
-            }])
         .config(['$provide', '$windowProvider', function($provide, $windowProvider){
                 var project_window = $windowProvider.$get();
                 var staticPath = project_window.STATIC_URL + 'dashboard/project/heat_dashboard/template_generator/';
