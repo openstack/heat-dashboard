@@ -37,13 +37,14 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'openstack'
+project = u'Heat Dashboard'
 copyright = u'2017, OpenStack Developers'
 
 # openstackdocstheme options
-repository_name = 'openstack/openstack'
-bug_project = '../horizon'
-bug_tag = ''
+repository_name = 'openstack/heat-dashboard'
+bug_project = 'heat-dashboard'
+bug_tag = 'doc'
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = True
@@ -75,6 +76,13 @@ latex_documents = [
      '%s.tex' % project,
      u'%s Documentation' % project,
      u'OpenStack Developers', 'manual'),
+]
+
+man_pages = [
+    ('index', u'Heat Dashboard Documentation',
+     'Documentation for Heat Dashboard plugin to Openstack\
+      Dashboard (Horizon)',
+     [u'OpenStack'], 1)
 ]
 
 # Example configuration for intersphinx: refer to the Python standard library.

@@ -1,5 +1,5 @@
 ==================================
-heat-dashboard configuration guide
+Heat Dashboard configuration guide
 ==================================
 
 .. toctree::

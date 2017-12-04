@@ -16,6 +16,7 @@ Contents:
    install/index
    contributor/index
    configuration/index
+   user/index
 
 Indices and tables
 ==================
