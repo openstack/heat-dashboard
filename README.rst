@@ -67,16 +67,11 @@ Enable heat-dashboard plugin in your Horizon environment::
     cp heat-dashboard/heat_dashboard/enabled/* \
       horizon/openstack_dashboard/local/enabled
 
-Add 'orchestration' entry to POLICY_FILES value in local_settings.py::
+    cp heat-dashboard/etc/* \
+      horizon/openstack_dashboard/conf/
 
-    POLICY_FILES = {
-        'identity': 'keystone_policy.json',
-        'compute': 'nova_policy.json',
-        'volume': 'cinder_policy.json',
-        'image': 'glance_policy.json',
-        'orchestration': '<Heat-Dashboard path>/etc/heat_policy.json', <-- add this key/value pair
-        'network': 'neutron_policy.json',
-    }
+    cp heat-dashboard/heat_dashboard/local_settings.d/* \
+      horizon/openstack_dashboard/local/local_settings.d/
 
 
 Finally you can launch Horizon with Heat Dashboard plugin::
