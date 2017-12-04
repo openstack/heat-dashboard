@@ -3,6 +3,7 @@ Heat Dashboard User Documentation
 =================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    stacks.rst
+   template_generator.rst
