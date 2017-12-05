@@ -119,7 +119,7 @@
                 this.instance.block_device_mapping_v2 = [];
             }
             if (typeof this.instance.networks === 'undefined'){
-                this.instance.networks = [{}];
+                this.instance.networks = [];
             }
 
             this.disable = {
@@ -427,7 +427,7 @@
                 }
                 return $scope.options.subnets.concat(resource_subnet);
             }
-            return $scope.options.networks;
+            return $scope.options.subnets;
         }
         $scope.get_floatingips_options = function(){
             if ('networks.floating_ip' in $scope.connected_options){
@@ -561,8 +561,12 @@
             for (var i = index; i < this.instance.networks.length; i=i+1){
                 $scope.how2config_networks[i] = $scope.how2config_networks[i+1];
             }
+            delete $scope.how2config_networks[this.instance.networks.length];
             this.instance.networks.splice(index, 1);
-
+            for (var i = index; i < this.instance.networks.length; i=i+1){
+                this.disable.networks[i] = this.disable.networks[i+1];
+            }
+            delete this.disable.networks[this.instance.networks.length];
         }
         this.add_networks = function(){
             this.instance.networks.push({})

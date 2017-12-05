@@ -272,7 +272,7 @@
             var $ctrl = $isolateScope.$ctrl;
             $ctrl.add_networks();
 
-            expect($scope.resource.networks.length).toEqual(2);
+            expect($scope.resource.networks.length).toEqual(1);
         });
 
         it('networks should be successfully deleted',  function() {
