@@ -16,7 +16,8 @@ function install_heat_dashboard {
 
 function configure_heat_dashboard {
     cp -a ${HEAT_DASHBOARD_DIR}/heat_dashboard/enabled/* ${DEST}/horizon/openstack_dashboard/local/enabled/
-    cp -a ${HEAT_DASHBOARD_DIR}/heat_dashboard/local_settings.d ${DEST}/horizon/openstack_dashboard/local/local_settings.d/
+    sed -i -e "25s/console/test/" ${HEAT_DASHBOARD_DIR}/heat_dashboard/local_settings.d/_1699_orchestration_settings.py
+    cp -a ${HEAT_DASHBOARD_DIR}/heat_dashboard/local_settings.d/_1699_orchestration_settings.py ${DEST}/horizon/openstack_dashboard/local/local_settings.d/
     cp -a ${HEAT_DASHBOARD_DIR}/etc/heat_policy.json ${DEST}/horizon/openstack_dashboard/conf/
     # NOTE: If locale directory does not exist, compilemessages will fail,
     # so check for an existence of locale directory is required.
