@@ -20,14 +20,15 @@ OPENSTACK_HEAT_STACK = {
     'enable_user_pass': True,
 }
 
-settings.LOGGING['loggers'].update({
-    'heatclient': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
-        'propagate': False,
-    }
-})
-
 settings.POLICY_FILES.update({
     'orchestration': 'heat_policy.json',
 })
+
+# Sample
+# settings.LOGGING['loggers'].update({
+#     'heatclient': {
+#         'handlers': ['console'],
+#         'level': 'DEBUG',
+#         'propagate': False,
+#     }
+# })
