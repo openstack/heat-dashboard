@@ -15,7 +15,17 @@
                     }).then(function successCallback(response) {
                         // this callback will be called asynchronously
                         // when the response is available
-                        hotgenNotify.show_success('Retrieve openstack resources successfully.');
+                        if (response.data.errors){
+                            var msg = '';
+                            angular.forEach(response.data.errors, function(value, key){
+                               msg += key + ': '+ value + '. '
+                            })
+
+                            hotgenNotify.show_warning('Unable to retrieve resources '+msg+'.');
+                        }
+                        else{
+                            hotgenNotify.show_success('Retrieve openstack resources successfully.');
+                        }
                         return response.data;
                     }, function errorCallback(response) {
                         // called asynchronously if an error occurs

@@ -32,3 +32,9 @@ settings.POLICY_FILES.update({
 #         'propagate': False,
 #     }
 # })
+
+# Template Generator retrieve options API TIMEOUT
+API_TIMEOUT = 60
+
+# Template Generator retrieve options API PARALLEL LEVEL
+API_PARALLEL = 2

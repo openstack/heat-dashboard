@@ -14,18 +14,21 @@
 
 
 def load_test_data(load_onto=None):
+    from heat_dashboard.test.test_data import cinder_data
     from heat_dashboard.test.test_data import exceptions
+    from heat_dashboard.test.test_data import glance_data
     from heat_dashboard.test.test_data import heat_data
     from heat_dashboard.test.test_data import keystone_data
     from heat_dashboard.test.test_data import neutron_data
+    from heat_dashboard.test.test_data import nova_data
 
     # The order of these loaders matters, some depend on others.
     loaders = (
         exceptions.data,
         keystone_data.data,
-        # glance_data.data,
-        # nova_data.data,
-        # cinder_data.data,
+        glance_data.data,
+        nova_data.data,
+        cinder_data.data,
         neutron_data.data,
         # swift_data.data,
         heat_data.data,

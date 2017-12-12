@@ -16,8 +16,6 @@ from heat_dashboard.content.template_generator import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^get_resources$',
-        views.ApiView.as_view(), name="options"),
     url(r'^get_resource_options$',
         views.OptionView.as_view(), name="apis"),
 ]

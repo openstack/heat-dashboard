@@ -60,6 +60,26 @@
 
     });
 
+    it('should return get_resource_options with errors', function(){
+        spyOn($location, 'absUrl').and.callFake(function (p) {
+            return 'http://some-url/';
+        });
+        requestHandler.respond(200, {
+                               'auth': {
+                                   'tenant_id': 'tenant-id',
+                                   'admin': false,
+                               },'errors': {'a': 'b'}}
+                       );
+        $httpBackend.expectGET('http://some-url/get_resource_options');
+        var optionsPromise = hotgenAgent.get_resource_options();
+        optionsPromise.then(function(options){
+            expect(options.auth.tenant_id).toEqual('tenant-id');
+            expect(options.auth.admin).toEqual(false);
+        });
+        $httpBackend.flush();
+
+    });
+
     it('should return error', function(){
         spyOn($location, 'absUrl').and.callFake(function (p) {
             return 'http://some-url';

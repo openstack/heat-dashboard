@@ -17,18 +17,12 @@ from django.views import generic
 
 from horizon.browsers.views import AngularIndexView
 
-import api
+from heat_dashboard.content.template_generator import api
 
 
 class IndexView(AngularIndexView):
     template_name = 'project/template_generator/index.html'
     page_title = _("Template Generator")
-
-
-class ApiView(generic.View):
-    def get(self, request):
-        return HttpResponse(api.get_resources(request),
-                            content_type="application/json")
 
 
 class OptionView(generic.View):
