@@ -1,0 +1,473 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2015. #zanata
+# Yuko Katabami <yukokatabami@gmail.com>, 2015. #zanata
+# Akihiro Motoki <amotoki@gmail.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2016. #zanata
+# Mie Yamamoto <myamamot@redhat.com>, 2016. #zanata
+# Shu Muto <shu-mutou@rf.jp.nec.com>, 2016. #zanata
+# Yuko Katabami <yukokatabami@gmail.com>, 2016. #zanata
+# Yusuke Higashino <yusuke_higashino@adoc.co.jp>, 2016. #zanata
+# Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
+# KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2017. #zanata
+# Shu Muto <shu-mutou@rf.jp.nec.com>, 2017. #zanata
+# Yuko Katabami <yukokatabami@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-09-01 07:51+0000\n"
+"Last-Translator: Yuko Katabami <yukokatabami@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A local environment to upload."
+msgstr "アップロードする必要のあるローカルの環境設定データ"
+
+msgid "A local template to upload."
+msgstr "アップロードする必要のあるローカルのテンプレート"
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "導入完了"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "導入に失敗"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "導入中"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "テンプレートを読み込む外部 (HTTP) URL"
+
+msgid "Case sensitive"
+msgstr "大文字小文字を区別"
+
+msgid "Case-sensitive"
+msgstr "大文字小文字を区別"
+
+msgid "Change Stack Template"
+msgstr "スタックテンプレートの変更"
+
+msgid "Change Template"
+msgstr "テンプレートの変更"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "チェック完了"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "チェックに失敗"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "チェック中"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "スタックのチェック"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "チェック済みのスタック"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "作成完了"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "作成に失敗"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "作成中"
+
+msgid "Create Stack"
+msgstr "スタックの作成"
+
+msgid "Created"
+msgstr "作成時刻"
+
+msgid "Creation Timeout (minutes)"
+msgstr "作成タイムアウト時間 (分単位)"
+
+msgid "Date Updated"
+msgstr "更新日"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "削除完了"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "削除に失敗"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "削除中"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "スタックの削除"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "スタックを削除しました"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Direct Input"
+msgstr "直接入力"
+
+msgid "Edit Template"
+msgstr "テンプレートの編集"
+
+msgid "Enable rollback on create/update failure."
+msgstr "作成/更新失敗時のロールバックを有効にします。"
+
+msgid "Environment Data"
+msgstr "環境設定データ"
+
+msgid "Environment File"
+msgstr "環境設定ファイル"
+
+msgid "Environment Source"
+msgstr "環境設定の指定方法"
+
+msgid "Events"
+msgstr "イベント"
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "Function"
+msgstr "関数"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "init 完了"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "init に失敗"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "init 実行中"
+
+msgid "Launch"
+msgstr "起動"
+
+msgid "Launch Stack"
+msgstr "スタックの起動"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"名前の 1 文字目にはアルファベットを指定する必要があります。また、名前に使用で"
+"きるのは、英数字、アンダースコア、ピリオド、ハイフンのみです。"
+
+msgid "Name of the stack to create."
+msgstr "作成するスタックの名前。"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "Orchestration"
+msgstr "オーケストレーション"
+
+msgid "Overview"
+msgstr "概要"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "ユーザー \"%s\" のパスワード"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "ソースメソッドが 1 つだけの %s を指定してください。"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Preview Stack"
+msgstr "スタックのプレビュー"
+
+msgid "Preview Stack Details"
+msgstr "プレビューしたスタックの詳細"
+
+msgid "Preview Stack Parameters"
+msgstr "プレビューするスタックのパラメーター"
+
+msgid "Preview Template"
+msgstr "テンプレートのプレビュー"
+
+msgid "Resource"
+msgstr "リソース"
+
+msgid "Resource Types"
+msgstr "リソース種別"
+
+msgid "Resources"
+msgstr "リソース"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "再開完了"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "再開に失敗"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "再開中"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "スタックの再開"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "スタックを再開しました。"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "ロールバック完了"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "ロールバックに失敗"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "ロールバック中"
+
+msgid "Rollback On Failure"
+msgstr "失敗時のロールバック"
+
+msgid "Select Template"
+msgstr "テンプレートの選択"
+
+msgid "Select a new template to preview a stack."
+msgstr "プレビューするスタックのテンプレートを選択してください。"
+
+msgid "Select a new template to re-launch a stack."
+msgstr "スタックの再起動に使うテンプレートを選択してください"
+
+msgid "Select a template to launch a stack."
+msgstr "スタックの起動に使うテンプレートを選択してください"
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "スナップショット作成完了"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "スナップショットの作成に失敗"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "スナップショット作成中"
+
+msgid "Stack Events"
+msgstr "スタックイベント"
+
+msgid "Stack ID"
+msgstr "スタック ID"
+
+msgid "Stack ID ="
+msgstr "スタック ID ="
+
+msgid "Stack Name"
+msgstr "スタック名"
+
+msgid "Stack Name ="
+msgstr "スタック名 ="
+
+msgid "Stack Resource"
+msgstr "スタックリソース"
+
+msgid "Stack Resource Type"
+msgstr "スタックリソース種別"
+
+msgid "Stack Resources"
+msgstr "スタックリソース"
+
+msgid "Stack creation started."
+msgstr "スタックの作成を開始しました。"
+
+msgid "Stack creation timeout in minutes."
+msgstr "スタック作成のタイムアウト時間 (分単位)。"
+
+msgid "Stack update started."
+msgstr "スタックの更新を開始しました。"
+
+msgid "Stacks"
+msgstr "スタック"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "Status ="
+msgstr "ステータス ="
+
+msgid "Status Reason"
+msgstr "ステータスの理由"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "休止完了"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "休止に失敗"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "休止中"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "スタックの休止"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "スタックを休止しました"
+
+msgid "Template"
+msgstr "テンプレート"
+
+msgid "Template Data"
+msgstr "テンプレートデータ"
+
+msgid "Template File"
+msgstr "テンプレートファイル"
+
+msgid "Template Functions"
+msgstr "テンプレート関数"
+
+msgid "Template Source"
+msgstr "テンプレートの指定方法"
+
+msgid "Template URL"
+msgstr "テンプレート URL"
+
+msgid "Template Versions"
+msgstr "テンプレートのバージョン"
+
+msgid "The raw contents of the environment file."
+msgstr "環境設定ファイルの RAW データ"
+
+msgid "The raw contents of the template."
+msgstr "テンプレートの RAW データ。"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "%(prefix)s の解析中に問題がありました: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "スタックの生存期間全体を通して、各種操作の実行に必要です。"
+
+msgid "Time Since Event"
+msgstr "イベントからの経過時間"
+
+msgid "Topology"
+msgstr "トポロジー"
+
+msgid "Type"
+msgstr "種別"
+
+msgid "Type ="
+msgstr "種別 ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "スタック \"%s\" のイベントを取得できません。"
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "テンプレートバージョン「%s」の関数を取得できません。"
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "スタック \"%s\" のリソースを取得できません。"
+
+msgid "Unable to retrieve metadata."
+msgstr "メタデータを取得できません。"
+
+msgid "Unable to retrieve resource type details."
+msgstr "リソース種別の詳細を取得できません。"
+
+msgid "Unable to retrieve resource."
+msgstr "リソースを取得できません。"
+
+msgid "Unable to retrieve stack list."
+msgstr "スタック一覧を取得できません。"
+
+msgid "Unable to retrieve stack resource types."
+msgstr "スタックのリソース種別の一覧を取得できません。"
+
+msgid "Unable to retrieve stack template."
+msgstr "スタックテンプレートを取得できません"
+
+msgid "Unable to retrieve stack."
+msgstr "スタックを取得できません。"
+
+msgid "Unable to retrieve template functions."
+msgstr "テンプレートの関数一覧を取得できません。"
+
+msgid "Unable to retrieve template versions."
+msgstr "テンプレートのバージョン一覧を取得できません。"
+
+msgid "Update"
+msgstr "更新"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "更新完了"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "更新に失敗"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "更新中"
+
+msgid "Update Stack"
+msgstr "スタックの更新"
+
+msgid "Update Stack Parameters"
+msgstr "スタックのパラメーターの更新"
+
+msgid "Updated"
+msgstr "更新時刻"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "いずれかの方法でテンプレートを指定する必要があります。"
+
+msgid "environment"
+msgstr "環境設定"
+
+msgid "template"
+msgstr "テンプレート"

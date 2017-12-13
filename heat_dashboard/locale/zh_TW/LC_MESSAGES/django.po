@@ -1,0 +1,464 @@
+# Zhang Xiaowei <zero00072@gmail.com>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Jennifer <cristxu@tw.ibm.com>, 2016. #zanata
+# Gene Kuo <gene@openstack.org>, 2017. #zanata
+# Terry Tai <terry@cloudcube.com.tw>, 2017. #zanata
+# Tom Fifield <tom@openstack.org>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-09-16 08:03+0000\n"
+"Last-Translator: Gene Kuo <gene@openstack.org>\n"
+"Language-Team: Chinese (Taiwan)\n"
+"Language: zh-TW\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A local environment to upload."
+msgstr "要上傳的本端環境。"
+
+msgid "A local template to upload."
+msgstr "要上傳的本端範本。"
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "完成採用"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "採用失敗"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "正在採用"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "要從其載入範本的外部 (HTTP) URL。"
+
+msgid "Case sensitive"
+msgstr "區分大小寫"
+
+msgid "Case-sensitive"
+msgstr "區分大小寫"
+
+msgid "Change Stack Template"
+msgstr "變更堆疊範本"
+
+msgid "Change Template"
+msgstr "變更範本"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "檢查完成"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "檢查失敗"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "正在檢查"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "檢查機櫃"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "已檢查堆疊"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "建立完成"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "建立失敗"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "正在建立"
+
+msgid "Create Stack"
+msgstr "建立堆疊"
+
+msgid "Created"
+msgstr "已新增"
+
+msgid "Creation Timeout (minutes)"
+msgstr "建立逾時（分鐘）"
+
+msgid "Date Updated"
+msgstr "更新日期"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "刪除完成"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "刪除失敗"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "正在刪除"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "刪除堆疊"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "已刪除堆疊"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Direct Input"
+msgstr "直接輸入"
+
+msgid "Edit Template"
+msgstr "編輯範本"
+
+msgid "Enable rollback on create/update failure."
+msgstr "啟用在建立/更新失敗時回復"
+
+msgid "Environment Data"
+msgstr "環境資料"
+
+msgid "Environment File"
+msgstr "環境檔案"
+
+msgid "Environment Source"
+msgstr "環境來源"
+
+msgid "Events"
+msgstr "事件"
+
+msgid "File"
+msgstr "檔案"
+
+msgid "Function"
+msgstr "功能"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "起始設定完成"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "起始設定失敗"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "正在起始設定"
+
+msgid "Launch"
+msgstr "啟動"
+
+msgid "Launch Stack"
+msgstr "啟動堆疊"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr "名稱必須以字母開頭，並且只能包含字母、數字、底線、句點和連字號。"
+
+msgid "Name of the stack to create."
+msgstr "要建立的堆疊名稱。"
+
+msgid "Next"
+msgstr "下一頁"
+
+msgid "Orchestration"
+msgstr "編配"
+
+msgid "Overview"
+msgstr "概觀"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "使用者 \"%s\" 的密碼"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "請只使用一個來源方法來指定 %s。"
+
+msgid "Preview"
+msgstr "預覽"
+
+msgid "Preview Stack"
+msgstr "預覽堆疊"
+
+msgid "Preview Stack Details"
+msgstr "預覽堆疊詳細資料"
+
+msgid "Preview Stack Parameters"
+msgstr "預覽堆疊參數"
+
+msgid "Preview Template"
+msgstr "預覽範本"
+
+msgid "Resource"
+msgstr "資源"
+
+msgid "Resource Types"
+msgstr "資源類型"
+
+msgid "Resources"
+msgstr "資源"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "回復完成"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "回復失敗"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "正在回復"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "恢復機櫃"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "已回復堆疊"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "回復完成"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "回復失敗"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "正在回復"
+
+msgid "Rollback On Failure"
+msgstr "在失敗時回復"
+
+msgid "Select Template"
+msgstr "選取範本"
+
+msgid "Select a new template to preview a stack."
+msgstr "選取新範本來預覽堆疊。"
+
+msgid "Select a new template to re-launch a stack."
+msgstr "選取新範本以重新啟動堆疊。"
+
+msgid "Select a template to launch a stack."
+msgstr "選取範本來啟動堆疊。"
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "完成建立 Snapshot "
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "建立 Snapshot 失敗"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "正在建立 Snapshot "
+
+msgid "Stack Events"
+msgstr "堆疊事件"
+
+msgid "Stack ID"
+msgstr "堆疊 ID"
+
+msgid "Stack ID ="
+msgstr "堆疊 ID ="
+
+msgid "Stack Name"
+msgstr "堆疊名稱"
+
+msgid "Stack Name ="
+msgstr "堆疊名稱 ="
+
+msgid "Stack Resource"
+msgstr "堆疊資源"
+
+msgid "Stack Resource Type"
+msgstr "堆疊資源類型"
+
+msgid "Stack Resources"
+msgstr "堆疊資源"
+
+msgid "Stack creation started."
+msgstr "已開始建立堆疊。"
+
+msgid "Stack creation timeout in minutes."
+msgstr "堆疊建立逾時（分鐘）。"
+
+msgid "Stack update started."
+msgstr "已開始更新堆疊。"
+
+msgid "Stacks"
+msgstr "堆疊"
+
+msgid "Status"
+msgstr "狀態"
+
+msgid "Status ="
+msgstr "狀態 ="
+
+msgid "Status Reason"
+msgstr "狀態原因"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "已完成停止"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "停止失敗"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "正在停止"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "停止機櫃"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "已停止堆疊"
+
+msgid "Template"
+msgstr "範本"
+
+msgid "Template Data"
+msgstr "範本資料"
+
+msgid "Template File"
+msgstr "範本檔案"
+
+msgid "Template Functions"
+msgstr "範本功能"
+
+msgid "Template Source"
+msgstr "範本來源"
+
+msgid "Template URL"
+msgstr "範本 URL"
+
+msgid "Template Versions"
+msgstr "範本版本"
+
+msgid "The raw contents of the environment file."
+msgstr "環境檔案的原始內容。"
+
+msgid "The raw contents of the template."
+msgstr "範本的原始內容。"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "解析 %(prefix)s 時遇到問題：%(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "這是堆疊整個生命週期中執行作業所需要的"
+
+msgid "Time Since Event"
+msgstr "事件已經歷時間"
+
+msgid "Topology"
+msgstr "拓撲"
+
+msgid "Type"
+msgstr "類型"
+
+msgid "Type ="
+msgstr "類型 ="
+
+msgid "URL"
+msgstr "網址"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "無法取得堆疊 \"%s\" 的事件。"
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "無法取得範本 \"%s\" 的功能。"
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "無法取得堆疊 \"%s\" 的資源。"
+
+msgid "Unable to retrieve metadata."
+msgstr "無法擷取 meta 資料。"
+
+msgid "Unable to retrieve resource type details."
+msgstr "無法擷取資源類型詳細資料。"
+
+msgid "Unable to retrieve resource."
+msgstr "無法擷取資源。"
+
+msgid "Unable to retrieve stack list."
+msgstr "無法擷取堆疊清單。"
+
+msgid "Unable to retrieve stack resource types."
+msgstr "無法擷取堆疊資源類型。"
+
+msgid "Unable to retrieve stack template."
+msgstr "無法擷取堆疊範本。"
+
+msgid "Unable to retrieve stack."
+msgstr "無法擷取堆疊。"
+
+msgid "Unable to retrieve template functions."
+msgstr "無法獲得範本功能"
+
+msgid "Unable to retrieve template versions."
+msgstr "無法獲得範本版本。"
+
+msgid "Update"
+msgstr "更新"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "更新完成"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "更新失敗"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "正在更新"
+
+msgid "Update Stack"
+msgstr "更新堆疊"
+
+msgid "Update Stack Parameters"
+msgstr "更新堆疊參數"
+
+msgid "Updated"
+msgstr "已更新"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "您必須透過一個可用的來源來指定範本。"
+
+msgid "environment"
+msgstr "環境"
+
+msgid "template"
+msgstr "範本"

@@ -1,0 +1,466 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-12-03 04:07+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A local environment to upload."
+msgstr "Sebuah lingkungan lokal untuk meng-upload."
+
+msgid "A local template to upload."
+msgstr "Sebuah template lokal untuk meng-upload."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adopt Complete"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adopt Failed"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adopt In Progress"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "URL (HTTP) Eksternal untuk memuat template"
+
+msgid "Case sensitive"
+msgstr "Case sensitive (case sensitive)"
+
+msgid "Case-sensitive"
+msgstr "Case-sensitive (case sensitive)"
+
+msgid "Change Stack Template"
+msgstr "Change Stack Template"
+
+msgid "Change Template"
+msgstr "Merubah template"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Check Complete"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Check Failed"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Check In Progress"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Check Stack"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Checked Stack"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Create Complete"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Create Failed"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Create In Progress"
+
+msgid "Create Stack"
+msgstr "Buat stack "
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Creation Timeout (minutes)"
+
+msgid "Date Updated"
+msgstr "Date Updated"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Delete Complete"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Delete Failed"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Delete In Progress"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Delete Stack"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Deleted Stack"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Direct Input"
+msgstr "Direct Input (masukan langsung)"
+
+msgid "Edit Template"
+msgstr "Edit Template (edit template)"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Aktifkan rollback pada kegagalan create/update."
+
+msgid "Environment Data"
+msgstr "Environment Data"
+
+msgid "Environment File"
+msgstr "Environment File"
+
+msgid "Environment Source"
+msgstr "Environment Source"
+
+msgid "Events"
+msgstr "Acara"
+
+msgid "File"
+msgstr "File"
+
+msgid "Function"
+msgstr "Function"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Init Complete"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Init Failed"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Init In Progress"
+
+msgid "Launch"
+msgstr "Launch (luncurkan)"
+
+msgid "Launch Stack"
+msgstr "Launch Stack"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Nama harus dimulai dengan huruf dan hanya dapat berisi huruf, angka, garis "
+"bawah, periode dan tanda hubung."
+
+msgid "Name of the stack to create."
+msgstr "Nama dari tumpukan untuk membuat."
+
+msgid "Next"
+msgstr "Next (berikutnya)"
+
+msgid "Orchestration"
+msgstr "Orchestration"
+
+msgid "Overview"
+msgstr "Ikhtisar"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Password untuk pengguna \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Silakan tentukan %s hanya menggunakan satu metode sumber."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Preview Stack"
+msgstr "Preview Stack"
+
+msgid "Preview Stack Details"
+msgstr "Preview Stack Details"
+
+msgid "Preview Stack Parameters"
+msgstr "Preview Stack Parameters"
+
+msgid "Preview Template"
+msgstr "Preview Template (lihat template)"
+
+msgid "Resource"
+msgstr "Resource"
+
+msgid "Resource Types"
+msgstr "Resource Types (tipe sumber daya)"
+
+msgid "Resources"
+msgstr "Sumber daya"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Resume Complete"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Resume Failed"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Resume In Progress"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Resume Stack"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Resumed Stack"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Rollback Complete"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Rollback Failed"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Rollback In Progress"
+
+msgid "Rollback On Failure"
+msgstr "Rollback On Failure"
+
+msgid "Select Template"
+msgstr "Pilih template"
+
+msgid "Select a new template to preview a stack."
+msgstr "Pilih template baru untuk melihat setumpuk (stack)."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Pilih template baru untuk meluncurkan kembali tumpukan (stack)."
+
+msgid "Select a template to launch a stack."
+msgstr "Pilih template untuk meluncurkan stack."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Snapshot Complete"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Snapshot Failed"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Snapshot In Progress"
+
+msgid "Stack Events"
+msgstr "Stack Events"
+
+msgid "Stack ID"
+msgstr "Stack ID (ID stack)"
+
+msgid "Stack ID ="
+msgstr "Stack ID =  (stack ID=)"
+
+msgid "Stack Name"
+msgstr "Stack Name (nama stack)"
+
+msgid "Stack Name ="
+msgstr "Stack Name ="
+
+msgid "Stack Resource"
+msgstr "Stack Resource"
+
+msgid "Stack Resource Type"
+msgstr "Stack Resource Type"
+
+msgid "Stack Resources"
+msgstr "Stack Resources"
+
+msgid "Stack creation started."
+msgstr "Pembuatan Stack mulai."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Batas waktu  pembuatan stack dalam hitungan menit."
+
+msgid "Stack update started."
+msgstr "Stack pembaruan mulai."
+
+msgid "Stacks"
+msgstr "Stacks"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Status = "
+
+msgid "Status Reason"
+msgstr "Status Reason"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspend Complete"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspend Failed"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspend In Progress"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Suspend Stack"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Suspended Stack"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Template Data"
+msgstr "Template Data"
+
+msgid "Template File"
+msgstr "Template File"
+
+msgid "Template Functions"
+msgstr "Template Functions"
+
+msgid "Template Source"
+msgstr "Template Source"
+
+msgid "Template URL"
+msgstr "URL template"
+
+msgid "Template Versions"
+msgstr "Template Versions"
+
+msgid "The raw contents of the environment file."
+msgstr "Isi baku file lingkungan."
+
+msgid "The raw contents of the template."
+msgstr "Isi baku template."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Ada masalah parsing (analisa) %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Hal ini diperlukan untuk operasi yang akan dilakukan di seluruh siklus hidup "
+"stack"
+
+msgid "Time Since Event"
+msgstr "Time Since Event"
+
+msgid "Topology"
+msgstr "Topology (topologi)"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Type ="
+msgstr "Type =    (tipe=)"
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Tidak dapat mendapatkan events untuk stack \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Tidak dapat mendapatkan fungsi untuk versi template \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Tidak dapat mendapatkan sumber daya untuk stack \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Tidak dapat mengambil metadata."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Tidak dapat mengambil rincian jenis sumber daya."
+
+msgid "Unable to retrieve resource."
+msgstr "Tidak dapat mengambil sumber daya."
+
+msgid "Unable to retrieve stack list."
+msgstr "Tidak dapat mengambil daftar stack."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Tidak dapat mengambil jenis sumber daya stack."
+
+msgid "Unable to retrieve stack template."
+msgstr "Tidak dapat mengambil template stack."
+
+msgid "Unable to retrieve stack."
+msgstr "Tidak dapat mengambil tumpukan (stack)."
+
+msgid "Unable to retrieve template functions."
+msgstr "Tidak dapat mengambil fungsi template."
+
+msgid "Unable to retrieve template versions."
+msgstr "Tidak dapat mengambil versi Template."
+
+msgid "Update"
+msgstr "Update"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Update Complete"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Update Failed"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Update In Progress"
+
+msgid "Update Stack"
+msgstr "Update Stack"
+
+msgid "Update Stack Parameters"
+msgstr "Update Stack Parameters"
+
+msgid "Updated"
+msgstr "Updated"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "You must specify a template via one of the available sources."
+msgstr ""
+"Anda harus menentukan template melalui salah satu sumber yang tersedia."
+
+msgid "environment"
+msgstr "environment"
+
+msgid "template"
+msgstr "template"

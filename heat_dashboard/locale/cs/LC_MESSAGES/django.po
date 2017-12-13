@@ -1,0 +1,474 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Daniel Čech <daniel.cech@tcpcloud.eu>, 2016. #zanata
+# Lenka Husáková <lenka.husakova@ultimum.io>, 2016. #zanata
+# Stanislav Ulrych <stanislav.ulrych@ultimum.io>, 2016. #zanata
+# Zbyněk Schwarz <zbynek.schwarz@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-11-17 09:25+0000\n"
+"Last-Translator: Zbyněk Schwarz <zbynek.schwarz@gmail.com>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+
+msgid "A local environment to upload."
+msgstr "Lokální prostředí pro nahrání."
+
+msgid "A local template to upload."
+msgstr "Lokální šablona pro nahrání."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adoptování dokončeno"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adoptování selhalo"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Probíhá adoptování"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Externí (HTTP) URL z které načíst šablonu."
+
+msgid "Change Stack Template"
+msgstr "Změnit šablonu zásobníku"
+
+msgid "Change Template"
+msgstr "Změnit šablonu"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Kontrola dokončena"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Kontrola selhala"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Probíhá kontrola"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Zkontrolovat stack"
+msgstr[1] "Zkontrolovat stacky"
+msgstr[2] "Zkontrolovat stacků"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Zásobník zkontrolován"
+msgstr[1] "Zásobníky zkontrolovány"
+msgstr[2] "Zásobníků zkontrolováno"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Vytvoření dokončeno"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Vytvoření selhalo"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Probíhá vytváření"
+
+msgid "Create Stack"
+msgstr "Vytvořit zásobník"
+
+msgid "Created"
+msgstr "Vytvořeno"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Časový limit vytvoření (v minutách)"
+
+msgid "Date Updated"
+msgstr "Nahráno dne"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Smazání dokončeno"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Smazání selhalo"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Probíhá mazání"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Smazat zásobník"
+msgstr[1] "Smazat zásobníky"
+msgstr[2] "Smazat zásobníky"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Zásobník smazán"
+msgstr[1] "Zásobníky smazány"
+msgstr[2] "Zásobníků smazáno"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Direct Input"
+msgstr "Přímý vstup"
+
+msgid "Edit Template"
+msgstr "Upravit šablonu"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Povolit zpětné vrácení při chybě ve vytváření/aktualizaci."
+
+msgid "Environment Data"
+msgstr "Data prostředí"
+
+msgid "Environment File"
+msgstr "Soubor prostředí"
+
+msgid "Environment Source"
+msgstr "Zdroj prostředí"
+
+msgid "Events"
+msgstr "Události"
+
+msgid "File"
+msgstr "Soubor"
+
+msgid "Function"
+msgstr "Funkce"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Zavedení dokončeno"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Zavedení selhalo"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Probíhá zavádění"
+
+msgid "Launch"
+msgstr "Spustit"
+
+msgid "Launch Stack"
+msgstr "Spustit zásobník"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Názvy musí začínat pouze písmenem a může obsahovat pouze písmena, čísla, "
+"podtržítka, tečky a pomlčky."
+
+msgid "Name of the stack to create."
+msgstr "Název zásobníku pro vytvoření."
+
+msgid "Next"
+msgstr "Další"
+
+msgid "Orchestration"
+msgstr "Orchestrace"
+
+msgid "Overview"
+msgstr "Přehled"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Heslo pro uživatele \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Zadejte prosím %s pomocí pouze jedné zdrojové metody."
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Preview Stack"
+msgstr "Náhled zásobníku"
+
+msgid "Preview Stack Details"
+msgstr "Podrobnosti náhledu zásobníku"
+
+msgid "Preview Stack Parameters"
+msgstr "Parametry náhledu zásobníku"
+
+msgid "Preview Template"
+msgstr "Náhled šablony"
+
+msgid "Resource"
+msgstr "Prostředek"
+
+msgid "Resource Types"
+msgstr "Typy prostředků"
+
+msgid "Resources"
+msgstr "Prostředky"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Obnovení dokončeno"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Obnovení selhalo"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Probíhá obnovení"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Obnovit stack"
+msgstr[1] "Obnovit stacky"
+msgstr[2] "Obnovit stacků"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Zásobník obnoven"
+msgstr[1] "Zásobníky obnoveny"
+msgstr[2] "Zásobníků obnoveno"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Zpětné vrácení dokončeno"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Zpětné vrácení selhalo"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Probíhá zpětné vrácení"
+
+msgid "Rollback On Failure"
+msgstr "Zpětné vrácení při selhání"
+
+msgid "Select Template"
+msgstr "Vybrat šablonu"
+
+msgid "Select a new template to preview a stack."
+msgstr "Vyberte novou šablonu pro náhled zásobníku."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Vyberte novou šablonu pro znovu spuštění zásobníku."
+
+msgid "Select a template to launch a stack."
+msgstr "Vyberte šablonu pro spuštění zásobníku."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Snapshotování dokončeno"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Snapshotování selhalo"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Probíhá snapshotování"
+
+msgid "Stack Events"
+msgstr "Události zásobníku"
+
+msgid "Stack ID"
+msgstr "Stack ID"
+
+msgid "Stack ID ="
+msgstr "ID zásobníku"
+
+msgid "Stack Name"
+msgstr "Název zásobníku"
+
+msgid "Stack Resource"
+msgstr "Zdroj stack"
+
+msgid "Stack Resource Type"
+msgstr "Typ prostředku zásobníku"
+
+msgid "Stack Resources"
+msgstr "Zdroje stack"
+
+msgid "Stack creation started."
+msgstr "Zahájeno vytváření zásobníku."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Časový limit vytvoření zásobníku v minutách."
+
+msgid "Stack update started."
+msgstr "Zahájena aktualizace zásobníku."
+
+msgid "Stacks"
+msgstr "Zásobníky"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Stav ="
+
+msgid "Status Reason"
+msgstr "Důvod stavu"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Uspání dokončeno"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Uspání selhalo"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Probíhá uspání"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Uspat stack"
+msgstr[1] "Uspat stacky"
+msgstr[2] "Uspat stacků"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Zásobník uspán"
+msgstr[1] "Zásobníky uspány"
+msgstr[2] "Zásobníků uspáno"
+
+msgid "Template"
+msgstr "Šablona"
+
+msgid "Template Data"
+msgstr "Data šablony"
+
+msgid "Template File"
+msgstr "Soubor šablony"
+
+msgid "Template Functions"
+msgstr "Funkce šablony"
+
+msgid "Template Source"
+msgstr "Zdroj šablony"
+
+msgid "Template URL"
+msgstr "URL šablony"
+
+msgid "Template Versions"
+msgstr "Verze šablon"
+
+msgid "The raw contents of the environment file."
+msgstr "Čistý obsah souboru prostředí."
+
+msgid "The raw contents of the template."
+msgstr "Čistý obsah šablony."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Při parsování %(prefix)s nastal problém: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Toto je vyžadováno pro operace prováděné během životního cyklu zásobníku"
+
+msgid "Time Since Event"
+msgstr "Doba od události"
+
+msgid "Topology"
+msgstr "Topologie"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type ="
+msgstr "Typ ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Nelze získat události zásobníku \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Nelze získat funkce pro verzi šablony \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Nelze získat prostředky zásobníku \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Nelze získat metadata."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Nelze získat podrobnosti typu prostředků."
+
+msgid "Unable to retrieve resource."
+msgstr "Nelze získat prostředek."
+
+msgid "Unable to retrieve stack list."
+msgstr "Nelze získat seznam zásobníků."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Nelze získat typy prostředků zásobníku."
+
+msgid "Unable to retrieve stack template."
+msgstr "Nelze získat šablonu zásobníku."
+
+msgid "Unable to retrieve stack."
+msgstr "Nelze získat zásobník."
+
+msgid "Unable to retrieve template functions."
+msgstr " Nelze získat funkce šablony."
+
+msgid "Unable to retrieve template versions."
+msgstr "Nelze získat verze šablon."
+
+msgid "Update"
+msgstr "Aktualizovat"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Aktualizace dokončena"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Aktualizace selhala."
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Probíhá aktualizace"
+
+msgid "Update Stack"
+msgstr "Aktualizovat zásobník"
+
+msgid "Update Stack Parameters"
+msgstr "Aktualizovat parametry zásobníku"
+
+msgid "Updated"
+msgstr "Aktualizováno"
+
+msgid "Version"
+msgstr "Verze"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Musíte zadat šablonu pomocí jednoho z dostupných zdrojů."
+
+msgid "environment"
+msgstr "prostředí"
+
+msgid "template"
+msgstr "šablona"

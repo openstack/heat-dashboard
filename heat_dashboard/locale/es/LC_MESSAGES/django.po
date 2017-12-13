@@ -1,0 +1,445 @@
+# Eddie Ramirez <djedi.r@gmail.com>, 2016. #zanata
+# Eugènia Torrella <tester03@es.ibm.com>, 2016. #zanata
+# Jose Porrua <jose.porrua@netapp.com>, 2016. #zanata
+# Carlos Camacho <ccamacho@redhat.com>, 2017. #zanata
+# Zeus Arias Lucero <zeusariaslucero@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-24 11:28+0000\n"
+"Last-Translator: Zeus Arias Lucero <zeusariaslucero@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "A local environment to upload."
+msgstr "Entorno local a cargar"
+
+msgid "A local template to upload."
+msgstr "Una plantilla local a cargar."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adoptar completado"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adoptar fallido"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adoptar en curso"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Una URL externa (HTTP) desde la que cargar la plantilla."
+
+msgid "Change Stack Template"
+msgstr "Cambiar plantilla de la pila"
+
+msgid "Change Template"
+msgstr "Cambiar plantilla"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Marcar completado"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Marcar fallido"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Verificar en curso"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Comprobar pila"
+msgstr[1] "Comprobar pilas"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Pila comprobada"
+msgstr[1] "Pilas comprobadas"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Creación completada"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Crear fallido"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Crear en curso"
+
+msgid "Create Stack"
+msgstr "Crear pila"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Tiempo de espera de creación (minutos)"
+
+msgid "Date Updated"
+msgstr "Fecha actualizada"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Suprimir completado"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Suprimir fallido"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Suprimir en curso"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Suprimir pila"
+msgstr[1] "Suprimir pilas"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Pila suprimida"
+msgstr[1] "Pilas suprimidas"
+
+msgid "Description"
+msgstr "Descripción "
+
+msgid "Direct Input"
+msgstr "Entrada directa"
+
+msgid "Edit Template"
+msgstr "Editar plantilla"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Habilitar restauración tras fallo de creación/actualización."
+
+msgid "Environment Data"
+msgstr "Datos del entorno"
+
+msgid "Environment File"
+msgstr "Archivo de entorno"
+
+msgid "Environment Source"
+msgstr "Origen de entorno"
+
+msgid "Events"
+msgstr "Sucesos"
+
+msgid "File"
+msgstr "Archivo"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Inicio completado"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Inicio fallido"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Inicio en curso"
+
+msgid "Launch"
+msgstr "Iniciar "
+
+msgid "Launch Stack"
+msgstr "Lanzar pila"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"El nombre debe comenzar con una letra y sólo puede incluir letras, números, "
+"guiones bajos, puntos y guiones."
+
+msgid "Name of the stack to create."
+msgstr "Nombre de la pila a crear."
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Orchestration"
+msgstr "Orquestación"
+
+msgid "Overview"
+msgstr "Visión general"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Contraseña del usuario \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Especifique una %s utilizando solo un método de origen"
+
+msgid "Preview"
+msgstr "Vista previa"
+
+msgid "Preview Stack"
+msgstr "Previsualizar pila"
+
+msgid "Preview Stack Details"
+msgstr "Previsualizar detalles de la pila"
+
+msgid "Preview Stack Parameters"
+msgstr "Vista preliminar de parámetros de la pila"
+
+msgid "Preview Template"
+msgstr "Previsualizar plantilla"
+
+msgid "Resource"
+msgstr "Recurso"
+
+msgid "Resource Types"
+msgstr "Tipos de recurso"
+
+msgid "Resources"
+msgstr "Recursos"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Reanudar completado"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Reanudar fallido"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Reanudar en curso"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Reanudar pila"
+msgstr[1] "Reanudar pilas"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Pila reanudada"
+msgstr[1] "Pilas reanudadas"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Retroceso completado"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Retroceso fallido"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Retroceso en curso"
+
+msgid "Rollback On Failure"
+msgstr "Restauración tras fallo"
+
+msgid "Select Template"
+msgstr "Seleccionar plantilla"
+
+msgid "Select a new template to preview a stack."
+msgstr "Seleccione una nueva plantilla para una vista preliminar de una pila."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Seleccione una nueva plantilla para relanzar una pila."
+
+msgid "Select a template to launch a stack."
+msgstr "Seleccione una plantilla para iniciar una pila."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Instantánea completada"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Instantánea fallida"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Instantánea en curso"
+
+msgid "Stack Events"
+msgstr "Sucesos de pilas"
+
+msgid "Stack ID"
+msgstr "ID de pila"
+
+msgid "Stack Name"
+msgstr "Nombre de la pila"
+
+msgid "Stack Resource"
+msgstr "Recurso de pila"
+
+msgid "Stack Resource Type"
+msgstr "Tipo de recurso de pila"
+
+msgid "Stack Resources"
+msgstr "Recursos de pila"
+
+msgid "Stack creation started."
+msgstr "Se ha iniciado la creación de la pila."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Tiempo de espera para la creación de la pila en minutos."
+
+msgid "Stack update started."
+msgstr "Se ha comenzado la actualización de la pila"
+
+msgid "Stacks"
+msgstr "Pilas"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Status ="
+msgstr "Estado ="
+
+msgid "Status Reason"
+msgstr "Razón del estado"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspender completado"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspender fallido"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspender en curso"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Suspender pila"
+msgstr[1] "Suspender pilas"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Pila suspendida"
+msgstr[1] "Pilas suspendidas"
+
+msgid "Template"
+msgstr "Plantilla"
+
+msgid "Template Data"
+msgstr "Plantilla de datos"
+
+msgid "Template File"
+msgstr "Archivo de plantilla"
+
+msgid "Template Functions"
+msgstr "Plantilla de funciones"
+
+msgid "Template Source"
+msgstr "Origen de la plantilla"
+
+msgid "Template URL"
+msgstr "URL de plantilla"
+
+msgid "The raw contents of the environment file."
+msgstr "Los contenidos planos de el archivo de entorno."
+
+msgid "The raw contents of the template."
+msgstr "El contenido en bruto de la plantilla"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Ha habido un problema al analizar el %(prefix)s:%(error)s "
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Esto es indispensable para operaciones que se ejecuten durante el ciclo de "
+"vida de la pila."
+
+msgid "Time Since Event"
+msgstr "Tiempo desde el suceso"
+
+msgid "Topology"
+msgstr "Topología"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "No se han podido obtener sucesos para la pila \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "No se han podido obtener recursos para la pila \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "No se han podido recuperar los metadatos."
+
+msgid "Unable to retrieve resource type details."
+msgstr "No se han podido recuperar los detalles del tipo de recurso."
+
+msgid "Unable to retrieve resource."
+msgstr "No se ha podido recuperar el recurso."
+
+msgid "Unable to retrieve stack list."
+msgstr "No se ha podido recuperar la lista de pilas."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "No se han podido recuperar tipos de recurso de pila"
+
+msgid "Unable to retrieve stack template."
+msgstr "No se ha podido recuperar la plantilla de la pila"
+
+msgid "Unable to retrieve stack."
+msgstr "No se han podido recuperar las pilas."
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Actualizar completado"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Actualizar fallido"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Actualizar en curso"
+
+msgid "Update Stack"
+msgstr "Actualizar plantilla"
+
+msgid "Update Stack Parameters"
+msgstr "Actualizar los parámetros de la pila"
+
+msgid "Updated"
+msgstr "Actualizado"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "You must specify a template via one of the available sources."
+msgstr ""
+"Debe especificar una plantilla mediante uno de los orígenes disponibles."
+
+msgid "environment"
+msgstr "entorno"
+
+msgid "template"
+msgstr "plantilla"

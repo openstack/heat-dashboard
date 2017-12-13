@@ -1,0 +1,472 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# işbaran akçayır <isbaran@gmail.com>, 2017. #zanata
+# yasemin demiral <yasemin.demiral@tubitak.gov.tr>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-10-23 08:56+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Turkish (Turkey)\n"
+"Language: tr-TR\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n>1)\n"
+
+msgid "A local environment to upload."
+msgstr "Yüklenecek yerel çevre."
+
+msgid "A local template to upload."
+msgstr "Yüklenecek yerel bir şablon."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Uyum Sağlama Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Uyum Sağlama Başarısız"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Uyum Sağlama Sürüyor"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Şablonun yükleneceği harici (HTTP) URL."
+
+msgid "Case sensitive"
+msgstr "Büyük küçük harf duyarlı"
+
+msgid "Case-sensitive"
+msgstr "Büyük küçük harf duyarlı"
+
+msgid "Change Stack Template"
+msgstr "Yığın Şablonunu Değiştir"
+
+msgid "Change Template"
+msgstr "Şablon Değiştir"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Kontrol Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Kontrol Başarısız"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Kontrol Sürüyor"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Yığını Kontrol Et"
+msgstr[1] "Yığınları Kontrol Et"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Yığın Kontrol Edildi"
+msgstr[1] "Yığınlar Kontrol Edildi"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Oluşturma Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Oluşturma Başarısız"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Oluşturma Sürüyor"
+
+msgid "Create Stack"
+msgstr "Yığın Oluştur"
+
+msgid "Created"
+msgstr "Oluşturuldu"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Oluşturma Zaman Aşımı (dakika)"
+
+msgid "Date Updated"
+msgstr "Tarih Güncellendi"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Silme Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Silme Başarısız"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Silme Sürüyor"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Yığını Sil"
+msgstr[1] "Yığınları Sil"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Yığın Silindi"
+msgstr[1] "Yığınlar Silindi"
+
+msgid "Description"
+msgstr "Açıklama"
+
+msgid "Direct Input"
+msgstr "Doğrudan Girdi"
+
+msgid "Edit Template"
+msgstr "Şamblonu Düzenle"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Oluştur/güncelle başarısızlığında geri dönmeyi etkinleştir."
+
+msgid "Environment Data"
+msgstr "Çevre Verisi"
+
+msgid "Environment File"
+msgstr "Çevre Dosyası"
+
+msgid "Environment Source"
+msgstr "Çevre Kaynağı"
+
+msgid "Events"
+msgstr "Etkinlikler"
+
+msgid "File"
+msgstr "Dosya"
+
+msgid "Function"
+msgstr "Fonksiyon"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Init Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Init Başarısız"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Init Sürüyor"
+
+msgid "Launch"
+msgstr "Başlat"
+
+msgid "Launch Stack"
+msgstr "Yığını Başlat"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"İsim bir harfle başlamalı ve yalnızca harf, numaralar, alt çizgiler, nokta "
+"ve tireler içermelidir."
+
+msgid "Name of the stack to create."
+msgstr "Oluşturulacak yığının ismi."
+
+msgid "Next"
+msgstr "Sonraki"
+
+msgid "Orchestration"
+msgstr "Orkestrasyon"
+
+msgid "Overview"
+msgstr "Genel görünüm"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "\"%s\" kullanıcısı için parola"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Lütfen yalnızca bir kaynak metodu kullanarak %s belirtin."
+
+msgid "Preview"
+msgstr "Önizleme"
+
+msgid "Preview Stack"
+msgstr "Yığını Ön İzle"
+
+msgid "Preview Stack Details"
+msgstr "Yığın Detaylarını Önizle"
+
+msgid "Preview Stack Parameters"
+msgstr "Yığın Parametrelerini Önizleyin"
+
+msgid "Preview Template"
+msgstr "Şablon Önizlemesi"
+
+msgid "Resource"
+msgstr "Kaynak"
+
+msgid "Resource Types"
+msgstr "Kaynak Türleri"
+
+msgid "Resources"
+msgstr "Kaynaklar"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Sürdürme Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Sürdürme Başarısız"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Sürdürme Sürüyor"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Yığını Sürdür"
+msgstr[1] "Yığınları Sürdür"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Yığın Sürdürüldü"
+msgstr[1] "Yığınlar Sürdürüldü"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Geri Alma Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Geri Alma Başarısız"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Geri Alma Sürüyor"
+
+msgid "Rollback On Failure"
+msgstr "Başarısızlık Durumunda Geri Dön"
+
+msgid "Select Template"
+msgstr "Şablon Seç"
+
+msgid "Select a new template to preview a stack."
+msgstr "Bir yığını ön izlemek için yeni bir şablon seçin."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Yığını tekrar başlatmak için yeni bir şablon seçin."
+
+msgid "Select a template to launch a stack."
+msgstr "Bir yığın başlatmak için şablon seçin."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Anlık Görüntü Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Anlık Görüntü Başarısız"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Anlık Görüntü Sürüyor"
+
+msgid "Stack Events"
+msgstr "Yığın Olayları"
+
+msgid "Stack ID"
+msgstr "Yığın ID'si"
+
+msgid "Stack ID ="
+msgstr "Yığın ID'si ="
+
+msgid "Stack Name"
+msgstr "Yığın İsmi"
+
+msgid "Stack Name ="
+msgstr "Yığın İsmi ="
+
+msgid "Stack Resource"
+msgstr "Yığın Kaynağı"
+
+msgid "Stack Resource Type"
+msgstr "Yığın Kaynak Türü"
+
+msgid "Stack Resources"
+msgstr "Yığın Kaynakları"
+
+msgid "Stack creation started."
+msgstr "Yığın oluşturma başladı."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Dakika olarak yığın oluşturma zaman aşımı."
+
+msgid "Stack update started."
+msgstr "Yığın güncellemesi başlatıldı."
+
+msgid "Stacks"
+msgstr "Yığınlar"
+
+msgid "Status"
+msgstr "Durum"
+
+msgid "Status ="
+msgstr "Durum ="
+
+msgid "Status Reason"
+msgstr "Durum Sebebi"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Askıya Alma Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Askıya Alma Başarısız"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Askıya Alma Sürüyor"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Yığını Askıya Al"
+msgstr[1] "Yığınları Askıya Al"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Yığın Askıya Alındı"
+msgstr[1] "Yığınlar Askıya Alındı"
+
+msgid "Template"
+msgstr "Şablon"
+
+msgid "Template Data"
+msgstr "Şablon Verisi"
+
+msgid "Template File"
+msgstr "Şablon Dosyası"
+
+msgid "Template Functions"
+msgstr "Şablon Fonksiyonları"
+
+msgid "Template Source"
+msgstr "Şablon Kaynağı"
+
+msgid "Template URL"
+msgstr "Şablon URL'si"
+
+msgid "Template Versions"
+msgstr "Şablon Sürümleri"
+
+msgid "The raw contents of the environment file."
+msgstr "Çevre dosyasının ham içerikleri."
+
+msgid "The raw contents of the template."
+msgstr "Şablonun ham içerikleri."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "%(prefix)s ayrıştırmasında hata: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "Yığının ömrü sürecinde yürütülecek işlemler için gereklidir"
+
+msgid "Time Since Event"
+msgstr "Olaydan Beri Geçen Zaman"
+
+msgid "Topology"
+msgstr "Topoloji"
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "Type ="
+msgstr "Tür ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Yığın \"%s\" için olaylar alınamıyor."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "\"%s\" sürümlü şablon için fonksiyonlar alınamıyor."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Yığın \"%s\" için kaynaklar alınamıyor."
+
+msgid "Unable to retrieve metadata."
+msgstr "Metaveri alınamıyor."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Kaynak türü ayrıntıları alınamadı."
+
+msgid "Unable to retrieve resource."
+msgstr "Kaynak alınamıyor."
+
+msgid "Unable to retrieve stack list."
+msgstr "Yığın listesi alınamıyor."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Yığın kaynak türleri alınamadı."
+
+msgid "Unable to retrieve stack template."
+msgstr "Yığın şablonu alınamadı."
+
+msgid "Unable to retrieve stack."
+msgstr "Yığın alınamıyor."
+
+msgid "Unable to retrieve template functions."
+msgstr "Şablon fonksiyonları alınamıyor."
+
+msgid "Unable to retrieve template versions."
+msgstr "Şablon sürümleri alınamıyor."
+
+msgid "Update"
+msgstr "Güncelle"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Güncelleme Tamamlandı"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Güncelleme Başarısız"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Güncelleme Sürüyor"
+
+msgid "Update Stack"
+msgstr "Yığını Güncelle"
+
+msgid "Update Stack Parameters"
+msgstr "Yığın Parametrelerini Güncelle"
+
+msgid "Updated"
+msgstr "Güncellendi"
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "You must specify a template via one of the available sources."
+msgstr ""
+"Kullanılabilir kaynaklardan biri aracılığıyla bir şablon belirtmelisiniz"
+
+msgid "environment"
+msgstr "çevre"
+
+msgid "template"
+msgstr "şablon"

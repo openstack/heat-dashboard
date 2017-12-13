@@ -1,0 +1,489 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Aleksey Alekseenko <9118250541@mail.ru>, 2016. #zanata
+# Alexander <ainikitenkov@gmail.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Artem <amikhalev90@gmail.com>, 2016. #zanata
+# Daisy <guoyingc@cn.ibm.com>, 2016. #zanata
+# Irina Kochetova <ikochetova@hystax.com>, 2016. #zanata
+# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
+# Nikita Burtsev <nikita.burtsev@gmail.com>, 2016. #zanata
+# Artem <amikhalev90@gmail.com>, 2017. #zanata
+# Fedor Tarasenko <feodor.tarasenko@gmail.com>, 2017. #zanata
+# Ilya Alekseyev <ilyaalekseyev@acm.org>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-09-16 08:03+0000\n"
+"Last-Translator: Ilya Alekseyev <ilyaalekseyev@acm.org>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+msgid "A local environment to upload."
+msgstr "Локальная среда для загрузки."
+
+msgid "A local template to upload."
+msgstr "Локальный шаблон для загрузки."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Принятие завершено"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Принятие не удалось"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Выполняется принятие"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Внешний (HTTP) URL для скачивания шаблона."
+
+msgid "Case sensitive"
+msgstr "Чувствительно к регистру"
+
+msgid "Case-sensitive"
+msgstr "Чувствительно к регистру"
+
+msgid "Change Stack Template"
+msgstr "Изменить шаблон стека"
+
+msgid "Change Template"
+msgstr "Изменить шаблон"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Проверка завершена"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Проверка не удалась"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Выполняется провека"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Проверить стек"
+msgstr[1] "Проверить стеки"
+msgstr[2] "Проверить стеки"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Стек проверен"
+msgstr[1] "Стеки проверены"
+msgstr[2] "Стеки проверены"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Создание завершено"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Создание не удалось"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Выполняется создание"
+
+msgid "Create Stack"
+msgstr "Создать стек"
+
+msgid "Created"
+msgstr "Создано"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Таймаут создания (в минутах)"
+
+msgid "Date Updated"
+msgstr "Дата обновления"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Удаление завершено"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Удаление не удалось"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Выполняется удаление"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Удалить стек"
+msgstr[1] "Удалить стеки"
+msgstr[2] "Удалить стеки"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Стек удален"
+msgstr[1] "Стеки удалены"
+msgstr[2] "Стеки удалены"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Direct Input"
+msgstr "Непосредственный ввод"
+
+msgid "Edit Template"
+msgstr "Редактировать шаблон"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Разрешить откат при сбое создания/обновления."
+
+msgid "Environment Data"
+msgstr "Данные среды"
+
+msgid "Environment File"
+msgstr "Файл среды"
+
+msgid "Environment Source"
+msgstr "Источник среды"
+
+msgid "Events"
+msgstr "События"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Function"
+msgstr "Функция"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Инициализация завершена"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Инициализация не удалась"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Выполняется инициализация"
+
+msgid "Launch"
+msgstr "Запустить"
+
+msgid "Launch Stack"
+msgstr "Запустить стек"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Название должно начинаться с буквы и может содержать лишь буквы, цифры, "
+"нижнее подчеркивание, точки и дефисы."
+
+msgid "Name of the stack to create."
+msgstr "Имя стека для создания."
+
+msgid "Next"
+msgstr "Далее"
+
+msgid "Orchestration"
+msgstr "Оркестрация"
+
+msgid "Overview"
+msgstr "Обзор"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Пароль для пользователя \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Пожалуйста укажите %s, используя только один метод источника."
+
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+msgid "Preview Stack"
+msgstr "Предварительный просмотр стека"
+
+msgid "Preview Stack Details"
+msgstr "Предварительный просмотр деталей стека"
+
+msgid "Preview Stack Parameters"
+msgstr "Предварительный просмотр параметров стека"
+
+msgid "Preview Template"
+msgstr "Предварительный просмотр шаблона"
+
+msgid "Resource"
+msgstr "Ресурс"
+
+msgid "Resource Types"
+msgstr "Типы ресурсов"
+
+msgid "Resources"
+msgstr "Ресурсы"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Возобновление завершено"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Возобновление не удалось"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Выполняется возобновление"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Возобновить стек"
+msgstr[1] "Возобновить стеки"
+msgstr[2] "Возобновить стеки"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Стек возобновлен"
+msgstr[1] "Стеки возобновлены"
+msgstr[2] "Стеки возобновлены"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Откат изменений завершен"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Откат изменений не удался"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Выполняется откат изменений"
+
+msgid "Rollback On Failure"
+msgstr "Откатиться при сбое"
+
+msgid "Select Template"
+msgstr "Выбрать шаблон"
+
+msgid "Select a new template to preview a stack."
+msgstr "Выберите новый шаблон для предварительного просмотра стека"
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Выбрать новый шаблон для перезапуска стека."
+
+msgid "Select a template to launch a stack."
+msgstr "Выбрать шаблон для запуска стека."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Снимок создан успешно"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Создание снимка не удалось"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Создается снимок"
+
+msgid "Stack Events"
+msgstr "События стека"
+
+msgid "Stack ID"
+msgstr "ID стека"
+
+msgid "Stack ID ="
+msgstr "ID стека ="
+
+msgid "Stack Name"
+msgstr "Имя стека"
+
+msgid "Stack Name ="
+msgstr "Имя стека ="
+
+msgid "Stack Resource"
+msgstr "Ресурсы стека"
+
+msgid "Stack Resource Type"
+msgstr "Тип ресурса стека"
+
+msgid "Stack Resources"
+msgstr "Ресурсы стека"
+
+msgid "Stack creation started."
+msgstr "Создание стека начато."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Таймаут создания стека в минутах."
+
+msgid "Stack update started."
+msgstr "Началось обновление стека."
+
+msgid "Stacks"
+msgstr "Стеки"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Status ="
+msgstr "Статус ="
+
+msgid "Status Reason"
+msgstr "Причина статуса"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Остановка завершена"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Остановка не удалась"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Выполняется остановка"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Остановить стек"
+msgstr[1] "Остановить стеки"
+msgstr[2] "Остановить стеки"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Стек остановлен"
+msgstr[1] "Стеки остановлены"
+msgstr[2] "Стеки остановлены"
+
+msgid "Template"
+msgstr "Шаблон"
+
+msgid "Template Data"
+msgstr "Данные шаблона"
+
+msgid "Template File"
+msgstr "Файл шаблона"
+
+msgid "Template Functions"
+msgstr "Функции шаблона"
+
+msgid "Template Source"
+msgstr "Источник шаблона"
+
+msgid "Template URL"
+msgstr "URL шаблона"
+
+msgid "Template Versions"
+msgstr "Версии шаблонов"
+
+msgid "The raw contents of the environment file."
+msgstr "raw содержание файла среды. "
+
+msgid "The raw contents of the template."
+msgstr "Содержимое шаблона."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Возникла проблема при разборе %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "Это необходимо для выполнения операций в жизненном цикле стека"
+
+msgid "Time Since Event"
+msgstr "Время после события"
+
+msgid "Topology"
+msgstr "Топология"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Type ="
+msgstr "Тип ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Не удалось получить события для стека \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Не удалось получить функции шаблона версии \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Не удалось получить ресурсы для стека \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Не удалось получить метаданные."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Не удалось получить детали типа ресурса"
+
+msgid "Unable to retrieve resource."
+msgstr "Не удалось получить ресурс."
+
+msgid "Unable to retrieve stack list."
+msgstr "Не удалось получить список стеков."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Не удалось получить типы ресурсов стека"
+
+msgid "Unable to retrieve stack template."
+msgstr "Не удалось получить шаблон стека."
+
+msgid "Unable to retrieve stack."
+msgstr "Не удалось получить стек."
+
+msgid "Unable to retrieve template functions."
+msgstr "Не удалось получить функции шаблона."
+
+msgid "Unable to retrieve template versions."
+msgstr "Не удалось получить версии шаблона."
+
+msgid "Update"
+msgstr "Обновить"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Изменение завершено"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Изменение не удалось"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Выполняется изменение"
+
+msgid "Update Stack"
+msgstr "Обновить стек"
+
+msgid "Update Stack Parameters"
+msgstr "Обновить параметры стека"
+
+msgid "Updated"
+msgstr "Обновлено"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Вы должны задать шаблон используя один из доступны способов."
+
+msgid "environment"
+msgstr "среда"
+
+msgid "template"
+msgstr "шаблон"

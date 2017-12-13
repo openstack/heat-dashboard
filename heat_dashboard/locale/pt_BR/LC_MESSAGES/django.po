@@ -1,0 +1,475 @@
+# Carlos Marques <marquesc@br.ibm.com>, 2016. #zanata
+# José Mello <jose.eduardo.jr@gmail.com>, 2016. #zanata
+# Fernando Pimenta <fernando.c.pimenta@gmail.com>, 2017. #zanata
+# José Mello <jose.eduardo.jr@gmail.com>, 2017. #zanata
+# Marcio <marciofoz@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-11-06 07:17+0000\n"
+"Last-Translator: Fernando Pimenta <fernando.c.pimenta@gmail.com>\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt-BR\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "A local environment to upload."
+msgstr "Um ambiente local para enviar."
+
+msgid "A local template to upload."
+msgstr "Um modelo local para enviar."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adoção Concluída"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "A Adoção Falhou"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adoção em Progresso"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Uma URL (HTTP) externa da qual carregar o modelo."
+
+msgid "Case sensitive"
+msgstr "Diferencia maiúsculas de minúsculas"
+
+msgid "Case-sensitive"
+msgstr "Diferencia maiúsculas de minúsculas"
+
+msgid "Change Stack Template"
+msgstr "Alterar Modelo de Pilha"
+
+msgid "Change Template"
+msgstr "Alterar Modelo"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Verificação completa"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Falha na verificaçao"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Verificação em Progresso"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Verificar Pilha"
+msgstr[1] "Verificar Pilhas"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Pilha Verificada"
+msgstr[1] "Pilhas Verificadas"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Criação Concluída"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "A Criação Falhou"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Criação em Andamento"
+
+msgid "Create Stack"
+msgstr "Criar Pilha"
+
+msgid "Created"
+msgstr "Criado"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Tempo Limite de Criação (minutos)"
+
+msgid "Date Updated"
+msgstr "Data Atualizada"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Exclusão Concluída"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "A Exclusão Falhou"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Exclusão em Andamento"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Excluir Pilha"
+msgstr[1] "Excluir Pilhas"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Pilha Excluída"
+msgstr[1] "Pilhas Excluídas"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Direct Input"
+msgstr "Entrada Direta"
+
+msgid "Edit Template"
+msgstr "Editar Modelo"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Habilita rollback em caso de falha de criação/atualização."
+
+msgid "Environment Data"
+msgstr "Dados de Ambiente"
+
+msgid "Environment File"
+msgstr "Arquivo de Ambiente"
+
+msgid "Environment Source"
+msgstr "Ambiente de Origem"
+
+msgid "Events"
+msgstr "Eventos"
+
+msgid "File"
+msgstr "Arquivo"
+
+msgid "Function"
+msgstr "Função"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Inicialização Concluída"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "A Inicialização Falhou"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Inicialização em Progresso"
+
+msgid "Launch"
+msgstr "Ativar"
+
+msgid "Launch Stack"
+msgstr "Disparar Pilha"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"O Nome deve começar com uma letra e conter apenas letras, números, "
+"underscore, ponto e hífen."
+
+msgid "Name of the stack to create."
+msgstr "Nome da pilha a ser criada."
+
+msgid "Next"
+msgstr "Avançar"
+
+msgid "Orchestration"
+msgstr "Orquestração"
+
+msgid "Overview"
+msgstr "Visão Geral"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Senha para o usuário \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Especifique um %s utilizando apenas um método de origem."
+
+msgid "Preview"
+msgstr "Pré-Visualização."
+
+msgid "Preview Stack"
+msgstr "Visualizar Pilha"
+
+msgid "Preview Stack Details"
+msgstr "Visualização de Detalhes da Pilha"
+
+msgid "Preview Stack Parameters"
+msgstr "Visualização de  Parâmetros de Pilha"
+
+msgid "Preview Template"
+msgstr "Visualização do Modelo"
+
+msgid "Resource"
+msgstr "Recurso"
+
+msgid "Resource Types"
+msgstr "Tipos de Recusos"
+
+msgid "Resources"
+msgstr "Recursos"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Retomada Concluída"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "A Retomada Falhou"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Retomada em Progresso"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Retomar Pilha"
+msgstr[1] "Retomar Pilhas"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Pilha Retomada"
+msgstr[1] "Pilhas Retomadas"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Rollback Concluído."
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "O Rollback Falhou"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Rollback em Progresso"
+
+msgid "Rollback On Failure"
+msgstr "Rollback em caso de falha"
+
+msgid "Select Template"
+msgstr "Escolha o Modelo"
+
+msgid "Select a new template to preview a stack."
+msgstr "Selecione um novo modelo para visualizar uma pilha."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Selecione um novo modelo para reativar uma pilha."
+
+msgid "Select a template to launch a stack."
+msgstr "Selecione um modelo para disparar uma pilha."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Captura Instantânea  Concluída"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Captura Instantânea Falhou"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Captura Instantânea em Progresso"
+
+msgid "Stack Events"
+msgstr "Eventos de Pilha"
+
+msgid "Stack ID"
+msgstr "ID da Pilha"
+
+msgid "Stack ID ="
+msgstr "ID da Pilha="
+
+msgid "Stack Name"
+msgstr "Nome da Pilha"
+
+msgid "Stack Name ="
+msgstr "Nome da Pilha="
+
+msgid "Stack Resource"
+msgstr "Recurso de Pilha"
+
+msgid "Stack Resource Type"
+msgstr "Tipo de Recurso de Pilha"
+
+msgid "Stack Resources"
+msgstr "Recursos de Pilha"
+
+msgid "Stack creation started."
+msgstr "Criação da pilha iniciada."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Tempo limite de criação da pilha em minutos."
+
+msgid "Stack update started."
+msgstr "Atualização de pilha iniciada."
+
+msgid "Stacks"
+msgstr "Pilhas"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Status ="
+
+msgid "Status Reason"
+msgstr "Razão do Status"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspensão Completa"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspensão Falhou"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspensão em Progresso"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Suspender Pilha"
+msgstr[1] "Suspender Pilhas"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Pilha Suspensa"
+msgstr[1] "Pilhas Suspensas"
+
+msgid "Template"
+msgstr "Modelo"
+
+msgid "Template Data"
+msgstr "Dados do Modelo"
+
+msgid "Template File"
+msgstr "Arquivo de Modelo"
+
+msgid "Template Functions"
+msgstr "Funções de Modelos"
+
+msgid "Template Source"
+msgstr "Origem do Modelo"
+
+msgid "Template URL"
+msgstr "URL de Modelo"
+
+msgid "Template Versions"
+msgstr "Versões de Modelos"
+
+msgid "The raw contents of the environment file."
+msgstr "O conteúdo bruto do arquivo de ambiente."
+
+msgid "The raw contents of the template."
+msgstr "O conteúdo bruto do modelo."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Houve um problema ao analisar o  %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Isto é necessário para operações a serem executadas em todo o ciclo de vida "
+"da pilha"
+
+msgid "Time Since Event"
+msgstr "Tempo Desde o Evento"
+
+msgid "Topology"
+msgstr "Topologia"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Type ="
+msgstr "Tipo ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Não é possível buscar eventos para a pilha \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Impossível obter funções para o modelo versão  \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Não é possível obter recursos para a pilha \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Não é possível recuperar metadados."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Não é possível recuperar detalhes de tipo de recurso."
+
+msgid "Unable to retrieve resource."
+msgstr "Não é possível recuperar recurso."
+
+msgid "Unable to retrieve stack list."
+msgstr "Não é possível recuperar lista de pilhas."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Não é possível recuperar os tipos de recursos da pilha."
+
+msgid "Unable to retrieve stack template."
+msgstr "Não foi possível recuperar o modelo de pilha."
+
+msgid "Unable to retrieve stack."
+msgstr "Não é possível recuperar pilha."
+
+msgid "Unable to retrieve template functions."
+msgstr "Incapaz de recuperar as funções de template."
+
+msgid "Unable to retrieve template versions."
+msgstr "Incapaz de recuperar as versões de template."
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Atualização Concluída"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "A Atualização Falhou"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Atualização em Andamento"
+
+msgid "Update Stack"
+msgstr "Atualizar Pilha"
+
+msgid "Update Stack Parameters"
+msgstr "Atualizar Parâmetros de Pilha"
+
+msgid "Updated"
+msgstr "Atualizado"
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Você deve especificar um modelo via uma das origens disponíveis."
+
+msgid "environment"
+msgstr "ambiente"
+
+msgid "template"
+msgstr "modelo"

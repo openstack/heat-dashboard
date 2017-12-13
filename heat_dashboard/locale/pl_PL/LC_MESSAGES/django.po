@@ -1,0 +1,447 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Łukasz Jernas <deejay1@srem.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-04-12 06:07+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Polish (Poland)\n"
+"Language: pl-PL\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+msgid "A local environment to upload."
+msgstr "Lokalne środowisko do przesłania."
+
+msgid "A local template to upload."
+msgstr "Lokalny plik z szablonem do wysłania."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Zakończono adoptowanie"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adoptowanie nieudane"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Trwa adoptowanie"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Zewnętrzny adres URL (HTTP), z którego należy pobrać szablon."
+
+msgid "Change Stack Template"
+msgstr "Zmień szablon stosu"
+
+msgid "Change Template"
+msgstr "Zmień szablon"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Zakończono sprawdzanie"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Sprawdzanie nieudane"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Trwa sprawdzanie"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Sprawdź stos"
+msgstr[1] "Sprawdź stosy"
+msgstr[2] "Sprawdź stosy"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Sprawdzono stos"
+msgstr[1] "Sprawdzono stosy"
+msgstr[2] "Sprawdzono stosy"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Zakończono tworzenie"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Tworzenie nieudane"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Trwa tworzenie"
+
+msgid "Create Stack"
+msgstr "Utwórz stos"
+
+msgid "Created"
+msgstr "Utworzono"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Limit czasu tworzenia (w minutach)"
+
+msgid "Date Updated"
+msgstr "Data aktualizacji"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Zakończono usuwanie"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Nieudane usunięcie"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Trwa usuwanie"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Usuń stos"
+msgstr[1] "Usuń stosy"
+msgstr[2] "Usuń stosy"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Usunięto stos"
+msgstr[1] "Usunięto stosy"
+msgstr[2] "Usunięto stosy"
+
+msgid "Description"
+msgstr "Opis"
+
+msgid "Direct Input"
+msgstr "Bezpośrednio"
+
+msgid "Edit Template"
+msgstr "Edycja szablonu"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Wycofuje zmiany, jeśli wystąpi błąd podczas tworzenia lub modyfikacji."
+
+msgid "Environment Data"
+msgstr "Dane środowiska"
+
+msgid "Environment File"
+msgstr "Plik środowiska"
+
+msgid "Environment Source"
+msgstr "Źródło środowiska"
+
+msgid "Events"
+msgstr "Zdarzenia"
+
+msgid "File"
+msgstr "Plik"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Zakończono inicjowanie"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Inicjowanie nieudane"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Trwa inicjowanie"
+
+msgid "Launch"
+msgstr "Uruchom"
+
+msgid "Launch Stack"
+msgstr "Uruchom stos"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Nazwa może zawierać wyłącznie litery, cyfry, kropki, myślniki i znaki "
+"podkreślenia."
+
+msgid "Name of the stack to create."
+msgstr "Nazwa stosu, który zostanie utworzony."
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Orchestration"
+msgstr "Orkiestracja"
+
+msgid "Overview"
+msgstr "Przegląd"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Hasło dla użytkownika „%s"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Należy podać %s wykorzystując tylko jedną metodę źródłową."
+
+msgid "Preview"
+msgstr "Podgląd"
+
+msgid "Preview Stack"
+msgstr "Pogląd stosu"
+
+msgid "Preview Stack Details"
+msgstr "Podgląd szczegółów stosu"
+
+msgid "Preview Stack Parameters"
+msgstr "Podejrzyj parametry stosu"
+
+msgid "Preview Template"
+msgstr "Podgląd szablonu"
+
+msgid "Resource"
+msgstr "Zasób"
+
+msgid "Resource Types"
+msgstr "Typy zasobów"
+
+msgid "Resources"
+msgstr "Zasoby"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Zakończono wznawianie"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Wznawianie nieudane"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Trwa wznawianie"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Wznów stos"
+msgstr[1] "Wznów stosy"
+msgstr[2] "Wznów stosy"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Wznowiono stos"
+msgstr[1] "Wznowiono stosy"
+msgstr[2] "Wznowiono stosy"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Zakończono przywracanie"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Przywracanie nieudane"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Trwa przywracanie"
+
+msgid "Rollback On Failure"
+msgstr "Wycofanie po wystąpieniu błędu"
+
+msgid "Select Template"
+msgstr "Wybór szablonu"
+
+msgid "Select a new template to preview a stack."
+msgstr "Należy wybrać nowy szablon, aby podejrzeć stos."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Należy wybrać szablon do ponownego uruchomienia stosu."
+
+msgid "Select a template to launch a stack."
+msgstr "Należy wybrać szablon do uruchomienia stosu."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Zakończono tworzenie migawki"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Tworzenie migawki nieudane"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Trwa tworzenie migawki"
+
+msgid "Stack Events"
+msgstr "Zdarzenia stosu"
+
+msgid "Stack ID"
+msgstr "ID stosu"
+
+msgid "Stack Name"
+msgstr "Nazwa stosu"
+
+msgid "Stack Resource"
+msgstr "Zasób stosu"
+
+msgid "Stack Resource Type"
+msgstr "Typ zasobu stosu"
+
+msgid "Stack Resources"
+msgstr "Zasoby stosu"
+
+msgid "Stack creation started."
+msgstr "Tworzenie stosu."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Limit czasu tworzenia stosu w minutach."
+
+msgid "Stack update started."
+msgstr "Aktualizacja stosu rozpoczęta."
+
+msgid "Stacks"
+msgstr "Stosy"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Stan ="
+
+msgid "Status Reason"
+msgstr "Powód stanu"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Zakończono usypianie"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Usypanie nieudane"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Trwa usypianie"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Wstrzymaj stos"
+msgstr[1] "Wstrzymaj stosy"
+msgstr[2] "Wstrzymaj stosy"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Wstrzymano stos"
+msgstr[1] "Wstrzymano stosy"
+msgstr[2] "Wstrzymano stosy"
+
+msgid "Template"
+msgstr "Szablon"
+
+msgid "Template Data"
+msgstr "Dane szablonu"
+
+msgid "Template File"
+msgstr "Plik szablonu"
+
+msgid "Template Source"
+msgstr "Źródło szablonu"
+
+msgid "Template URL"
+msgstr "URL szablonu"
+
+msgid "The raw contents of the environment file."
+msgstr "Zawartość pliku środowiska."
+
+msgid "The raw contents of the template."
+msgstr "Zawartość szablonu."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Wystąpił problem podczas przetwarzania %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Wymagane dla czynności przeprowadzanych podczas całego cyklu życia stosu"
+
+msgid "Time Since Event"
+msgstr "Czas od zdarzenia"
+
+msgid "Topology"
+msgstr "Topologia"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Nie można pobrać zdarzeń dla stosu „%s”."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Nie można pobrać zasobów dla stosu „%s”."
+
+msgid "Unable to retrieve metadata."
+msgstr "Nie można pobrać metadanych."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Nie można pobrać szczegółów typu zasobu."
+
+msgid "Unable to retrieve resource."
+msgstr "Nie można pobrać zasobu."
+
+msgid "Unable to retrieve stack list."
+msgstr "Nie można pobrać listy stosów."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Nie można pobrać typów zasobów stosu."
+
+msgid "Unable to retrieve stack template."
+msgstr "Nie można pobrać szablonu stosu."
+
+msgid "Unable to retrieve stack."
+msgstr "Nie można pobrać stosu."
+
+msgid "Update"
+msgstr "Aktualizuj"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Zakończono aktualizację"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Aktualizacja nieudana"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Trwa aktualizacja"
+
+msgid "Update Stack"
+msgstr "Zaktualizuj stos"
+
+msgid "Update Stack Parameters"
+msgstr "Aktualizacja parametrów stosu"
+
+msgid "Updated"
+msgstr "Zaktualizowano"
+
+msgid "Version"
+msgstr "Wersja"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Należy podać szablon wykorzystując jedno z dostępnych źródeł."
+
+msgid "environment"
+msgstr "środowisko"
+
+msgid "template"
+msgstr "szablon"

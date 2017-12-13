@@ -1,0 +1,484 @@
+# Eugen Block <eblock@nde.ag>, 2016. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2016. #zanata
+# Robert Simai <robert.simai@suse.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2017. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-12-09 11:30+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "A local environment to upload."
+msgstr "Eine lokale Umgebung zum Hochladen."
+
+msgid "A local template to upload."
+msgstr "Eine lokale Vorlage zum Hochladen."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Übernahme abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Übernahme fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Übernahme im Gang"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Eine externe (HTTP) URL, von der die Vorlage geladen wird."
+
+msgid "Case sensitive"
+msgstr "Groß- und Kleinschreibung beachten"
+
+msgid "Case-sensitive"
+msgstr "Groß- und Kleinschreibung beachten"
+
+msgid "Change Stack Template"
+msgstr "Ändern der Stack-Vorlage"
+
+msgid "Change Template"
+msgstr "Vorlage wechseln"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Überprüfung abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Überprüfung fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Überprüfung im Gang"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Stack überprüfen"
+msgstr[1] "Stacks überprüfen"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Geprüfter Stack"
+msgstr[1] "Geprüfte Stacks"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Erstellen abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Erstellen fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Erstellung im Gang"
+
+msgid "Create Stack"
+msgstr "Erzeuge Stack"
+
+msgid "Created"
+msgstr "Erstellt"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Zeitüberschreitung bei der Erzeugung (Minuten)"
+
+msgid "Date Updated"
+msgstr "Datum aktualisiert"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Löschen abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Löschvorgang fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Löschen im Gang"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Stack löschen"
+msgstr[1] "Stacks löschen"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Stack gelöscht"
+msgstr[1] "Stacks gelöscht"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Direct Input"
+msgstr "Direkteingabe"
+
+msgid "Edit Template"
+msgstr "Vorlage editieren"
+
+msgid "Enable rollback on create/update failure."
+msgstr ""
+"Ermögliche ein Zurückrollen nach einem Erzeugungs/Aktualisierungs-Fehler."
+
+msgid "Environment Data"
+msgstr "Umgebungsdaten"
+
+msgid "Environment File"
+msgstr "Umgebungsdatei"
+
+msgid "Environment Source"
+msgstr "Umgebungsquelle"
+
+msgid "Events"
+msgstr "Veranstaltungen"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "Function"
+msgstr "Funktion"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Initialisierung abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr " Initialisierung fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Initialisierung im Gang"
+
+msgid "Launch"
+msgstr "Starten"
+
+msgid "Launch Stack"
+msgstr "Stack starten"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Der Name muss mit einem Buchstaben beginnen und darf nur Buchstaben, "
+"Nummern, Unterstriche, Punkte und Bindestriche enthalten."
+
+msgid "Name of the stack to create."
+msgstr "Name des Stacks, der erzeugt werden soll."
+
+msgid "Next"
+msgstr "Weiter"
+
+msgid "Orchestration"
+msgstr "Orchestrierung"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Passwort für Benutzer \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr ""
+"Bitte spezifizieren Sie ein %s, indem Sie nur eine Quell-Methode benutzen."
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Preview Stack"
+msgstr "Stack Vorschau"
+
+msgid "Preview Stack Details"
+msgstr "Vorschau Stack Details"
+
+msgid "Preview Stack Parameters"
+msgstr "Stack Parameter Vorschau"
+
+msgid "Preview Template"
+msgstr "Vorschau Vorlage"
+
+msgid "Referenced Files"
+msgstr "Referenzierte Datei"
+
+msgid "Resource"
+msgstr "Resource"
+
+msgid "Resource Types"
+msgstr "Ressourcentypen"
+
+msgid "Resources"
+msgstr "Ressourcen"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Wiederaufnahme abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Wiederaufnahme fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Wiederaufnehmen im Gang"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Stack wiederaufnehmen"
+msgstr[1] "Stacks wiederaufnehmen"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Wiederaufgenommener Stack"
+msgstr[1] "Wiederaufgenommene Stacks"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Wiederholen abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Wiederholen fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Wiederholung im Gang"
+
+msgid "Rollback On Failure"
+msgstr "Zurückrollen nach einem Fehler"
+
+msgid "Select Template"
+msgstr "Vorlage auswählen"
+
+msgid "Select a new template to preview a stack."
+msgstr "Wählen Sie eine neue Vorlage für die Stackvorschau."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Eine neue Vorlage auswählen, um einen Stack erneut zu starten."
+
+msgid "Select a template to launch a stack."
+msgstr "Vorlage auswählen, um einen Stack zu starten."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Schattenkopie abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Schattenkopie fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Schattenkopie im Gang"
+
+msgid "Stack Events"
+msgstr "Stackereignisse"
+
+msgid "Stack ID"
+msgstr "Stack ID"
+
+msgid "Stack ID ="
+msgstr "Stack ID ="
+
+msgid "Stack Name"
+msgstr "Stack Name"
+
+msgid "Stack Name ="
+msgstr "Stack Name ="
+
+msgid "Stack Resource"
+msgstr "Stackressource"
+
+msgid "Stack Resource Type"
+msgstr "Stack-Ressourcentyp"
+
+msgid "Stack Resources"
+msgstr "Stackressourcen"
+
+msgid "Stack creation started."
+msgstr "Erzeugung des Stacks gestartet."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Zeitüberschreitung bei der Erzeugung in Minuten."
+
+msgid "Stack update started."
+msgstr "Stack-Aktualisierung gestartet."
+
+msgid "Stacks"
+msgstr "Stacks"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Status"
+
+msgid "Status Reason"
+msgstr "Status Grund"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Aussetzen abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Aussetzen fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Aussetzen läuft"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Stack aussetzen"
+msgstr[1] "Stacks aussetzen"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Ausgesetzter Stack"
+msgstr[1] "Ausgesetzte Stacks"
+
+msgid "Template"
+msgstr "Vorlage"
+
+msgid "Template Data"
+msgstr "Vorlage Daten"
+
+msgid "Template File"
+msgstr "Vorlagendatei"
+
+msgid "Template Functions"
+msgstr "Vorlagenfunktionen"
+
+msgid "Template Generator"
+msgstr "Vorlagengenerator"
+
+msgid "Template Source"
+msgstr "Vorlagenquelle"
+
+msgid "Template URL"
+msgstr "Vorlage URL"
+
+msgid "Template Versions"
+msgstr "Vorlagenversionen"
+
+msgid "The raw contents of the environment file."
+msgstr "Der rohe Inhalt der Umgebungsdatei."
+
+msgid "The raw contents of the template."
+msgstr "Der rohe Inhalt der Vorlage"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Es gab ein Problem beim Analysieren von %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Dies wird zur Ausführung von Operationen während des Lebenszykluses des "
+"Stacks benötigt."
+
+msgid "Time Since Event"
+msgstr "Zeit seit Ereignis"
+
+msgid "Topology"
+msgstr "Topologie"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type ="
+msgstr "Typ ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Außerstande Ereignisse für Stack \"%s\" zu bekommen."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr ""
+"Funktionen für die Vorlagenversion \"%s\" können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Außerstande Ressourcen für Stack \"%s\" zu bekommen."
+
+msgid "Unable to retrieve metadata."
+msgstr "Metadaten können nicht abgerufen werden."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Ressourcentyp-Details können nicht abgerufen werden."
+
+msgid "Unable to retrieve resource."
+msgstr "Ressource kann nicht abgerufen werden."
+
+msgid "Unable to retrieve stack list."
+msgstr "Stackliste kann nicht abgerufen werden."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Stack-Ressourcetypen können nicht abgerufen werden."
+
+msgid "Unable to retrieve stack template."
+msgstr "Stackvorlage kann nicht abgerufen werden."
+
+msgid "Unable to retrieve stack."
+msgstr "Stack kann nicht abgerufen werden."
+
+msgid "Unable to retrieve template functions."
+msgstr "Vorlagenfunktionen können nicht abgerufen werden."
+
+msgid "Unable to retrieve template versions."
+msgstr "Vorlagenversionen können nicht abgerufen werden."
+
+msgid "Update"
+msgstr "Aktualisieren"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Aktualisierung abgeschlossen"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Aktualisierung fehlgeschlagen"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Aktualisierung im Gang"
+
+msgid "Update Stack"
+msgstr "Stack aktualisieren"
+
+msgid "Update Stack Parameters"
+msgstr "Stack-Parameter aktualisieren"
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Sie müssen eine Vorlage aus den vorhandenen Quellen angeben."
+
+msgid "environment"
+msgstr "Umgebung"
+
+msgid "template"
+msgstr "Vorlage"

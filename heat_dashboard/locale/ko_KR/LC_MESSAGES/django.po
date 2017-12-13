@@ -1,0 +1,472 @@
+# Andrea Young Oak Li <youli@redhat.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Eunseop Shin <kairos9603@khu.ac.kr>, 2016. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
+# minwook-shin <minwook0106@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-12-06 12:28+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko-KR\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A local environment to upload."
+msgstr "로컬에서 environment 업로드."
+
+msgid "A local template to upload."
+msgstr "업로드할 로컬 템플릿."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adopt Complete"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adopt Failed"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adopt In Progress"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "템플릿을 외부 (HTTP) URL로 불러옵니다."
+
+msgid "Case sensitive"
+msgstr "대소문자 구별"
+
+msgid "Case-sensitive"
+msgstr "대소문자 구별"
+
+msgid "Change Stack Template"
+msgstr "스택 템플릿 변경"
+
+msgid "Change Template"
+msgstr "템플릿 변경"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Check Complete"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Check Failed"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Check In Progress"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "스택 확인"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "스택 확인됨"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Create Complete"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Create Failed"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Create In Progress"
+
+msgid "Create Stack"
+msgstr "스택 생성"
+
+msgid "Created"
+msgstr "생성됨"
+
+msgid "Creation Timeout (minutes)"
+msgstr "생성 Timeout (분)"
+
+msgid "Date Updated"
+msgstr "업데이트한 날짜"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Delete Complete"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Delete Failed"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Delete In Progress"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "스택 삭제"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "스택 삭제함"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Description"
+msgstr "설명"
+
+msgid "Direct Input"
+msgstr "직접 입력"
+
+msgid "Edit Template"
+msgstr "템플릿 편집"
+
+msgid "Enable rollback on create/update failure."
+msgstr "생성/업데이트 실패시 롤백 사용."
+
+msgid "Environment Data"
+msgstr "Environment 데이터"
+
+msgid "Environment File"
+msgstr "Environment 파일"
+
+msgid "Environment Source"
+msgstr "Environment 소스"
+
+msgid "Events"
+msgstr "이벤트"
+
+msgid "File"
+msgstr "파일"
+
+msgid "Function"
+msgstr "기능"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Init Complete"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Init Failed"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Init In Progress"
+
+msgid "Launch"
+msgstr "실행"
+
+msgid "Launch Stack"
+msgstr "스택 시작"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"이름은 반드시 문자로 시작되어야 하고, 오직 문자, 숫자, 언더스코어(_), 마침표"
+"(.) 및 하이픈(-)만 포함할 수 있습니다. "
+
+msgid "Name of the stack to create."
+msgstr "생성하는 스택의 이름입니다."
+
+msgid "Next"
+msgstr "다음"
+
+# auto translated by TM merge from project: openstack-manuals, version: stable-liberty, DocId: doc/install-guide/source/locale/install-guide
+msgid "Orchestration"
+msgstr "Orchestration"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Overview"
+msgstr "개요"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "사용자 \"%s\" 비밀번호"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "소스 메소드 하나만 사용하여 %s를 지정하십시오."
+
+msgid "Preview"
+msgstr "미리보기"
+
+msgid "Preview Stack"
+msgstr "미리보기 스택"
+
+msgid "Preview Stack Details"
+msgstr "스택 미리보기 상세정보"
+
+msgid "Preview Stack Parameters"
+msgstr "스택 매개 변수 미리보기"
+
+msgid "Preview Template"
+msgstr "템플릿 미리보기"
+
+msgid "Resource"
+msgstr "리소스"
+
+msgid "Resource Types"
+msgstr "리소스 타입"
+
+msgid "Resources"
+msgstr "리소스"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Resume Complete"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Resume Failed"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Resume In Progress"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "스택 재개"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "스택 재개됨"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Rollback Complete"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Rollback Failed"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Rollback In Progress"
+
+msgid "Rollback On Failure"
+msgstr "실패시 롤백"
+
+msgid "Select Template"
+msgstr "템플릿 선택"
+
+msgid "Select a new template to preview a stack."
+msgstr "스택 미리보기할 새로운 템플릿 선택합니다."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "스택을 다시 시작시 새 템플릿을 선택합니다."
+
+msgid "Select a template to launch a stack."
+msgstr "스택 시작시 템플릿을 선택합니다."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Snapshot Complete"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Snapshot Failed"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Snapshot In Progress"
+
+msgid "Stack Events"
+msgstr "스택 이벤트"
+
+msgid "Stack ID"
+msgstr "스택 ID"
+
+msgid "Stack ID ="
+msgstr "Stack ID ="
+
+msgid "Stack Name"
+msgstr "스택 이름"
+
+msgid "Stack Name ="
+msgstr "스택 이름 ="
+
+msgid "Stack Resource"
+msgstr "스택 리소스"
+
+msgid "Stack Resource Type"
+msgstr "스택 리소스 타입"
+
+msgid "Stack Resources"
+msgstr "스택 리소스"
+
+msgid "Stack creation started."
+msgstr "스택 생성 중입니다."
+
+msgid "Stack creation timeout in minutes."
+msgstr "스택을 몇분 동안 생성 timeout."
+
+msgid "Stack update started."
+msgstr "스택 업데이트를 시작하였습니다."
+
+msgid "Stacks"
+msgstr "스택"
+
+msgid "Status"
+msgstr "상태"
+
+msgid "Status ="
+msgstr "Status ="
+
+msgid "Status Reason"
+msgstr "상태 현황"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspend Complete"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspend Failed"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspend In Progress"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "스택 중지"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "스택 중지됨"
+
+msgid "Template"
+msgstr "템플릿"
+
+msgid "Template Data"
+msgstr "템플릿 데이터"
+
+msgid "Template File"
+msgstr "템플릿 파일"
+
+msgid "Template Functions"
+msgstr "템플릿 기능"
+
+msgid "Template Source"
+msgstr "템플릿 소스"
+
+msgid "Template URL"
+msgstr "템플릿 URL"
+
+msgid "Template Versions"
+msgstr "템플릿 버전"
+
+msgid "The raw contents of the environment file."
+msgstr "Environment 파일 raw 컨텐트."
+
+msgid "The raw contents of the template."
+msgstr "템플릿 raw 내용."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "%(prefix)s를 파싱하는동안 문제가 발생했습니다: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "스택의 라이프 사이클 동안 실행하는 작동에 필요로 합니다."
+
+msgid "Time Since Event"
+msgstr "이벤트 이후 시간"
+
+msgid "Topology"
+msgstr "토폴로지"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Type"
+msgstr "유형"
+
+msgid "Type ="
+msgstr "Type ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "스택 \"%s\"에 대한 이벤트를 가져올 수 없습니다."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "템플릿 버전 \"%s\"에 대한 기능을 찾지 못했습니다."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "스택 \"%s\"에 대한 리소스를 가져오지 못했습니다."
+
+msgid "Unable to retrieve metadata."
+msgstr "메타데이터를 찾지 못했습니다."
+
+msgid "Unable to retrieve resource type details."
+msgstr "리소스 유형 세부 정보를 찾지 못했습니다."
+
+msgid "Unable to retrieve resource."
+msgstr "리소스를 찾지 못했습니다."
+
+msgid "Unable to retrieve stack list."
+msgstr "스택 목록을 찾지 못했습니다."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "스택 리소스 유형을 찾지 못했습니다."
+
+msgid "Unable to retrieve stack template."
+msgstr "스택 템플릿을 가져올 수 없습니다."
+
+msgid "Unable to retrieve stack."
+msgstr "스택을 찾지 못했습니다."
+
+msgid "Unable to retrieve template functions."
+msgstr "템플릿 기능을 찾지 못했습니다."
+
+msgid "Unable to retrieve template versions."
+msgstr "템플릿 버전을 찾지 못했습니다."
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Update"
+msgstr "업데이트"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Update Complete"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Update Failed"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Update In Progress"
+
+msgid "Update Stack"
+msgstr "스택 업데이트"
+
+msgid "Update Stack Parameters"
+msgstr "스택 매개변수 업데이트"
+
+msgid "Updated"
+msgstr "업데이트됨"
+
+msgid "Version"
+msgstr "버전"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "사용 가능한 소스중 하나를 선택하여 템필릿을 지정해야 합니다."
+
+msgid "environment"
+msgstr "environment"
+
+msgid "template"
+msgstr "template"

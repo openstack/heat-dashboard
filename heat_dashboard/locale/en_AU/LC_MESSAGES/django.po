@@ -1,0 +1,475 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Tom Fifield <tom@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Tom Fifield <tom@openstack.org>, 2016. #zanata
+# Tom Fifield <tom@openstack.org>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-21 06:42+0000\n"
+"Last-Translator: Tom Fifield <tom@openstack.org>\n"
+"Language-Team: English (Australia)\n"
+"Language: en-AU\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "A local environment to upload."
+msgstr "A local environment to upload."
+
+msgid "A local template to upload."
+msgstr "A local template to upload."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adopt Complete"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adopt Failed"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adopt In Progress"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "An external (HTTP) URL to load the template from."
+
+msgid "Case sensitive"
+msgstr "Case sensitive"
+
+msgid "Case-sensitive"
+msgstr "Case-sensitive"
+
+msgid "Change Stack Template"
+msgstr "Change Stack Template"
+
+msgid "Change Template"
+msgstr "Change Template"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Check Complete"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Check Failed"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Check In Progress"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Check Stack"
+msgstr[1] "Check Stacks"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Checked Stack"
+msgstr[1] "Checked Stacks"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Create Complete"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Create Failed"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Create In Progress"
+
+msgid "Create Stack"
+msgstr "Create Stack"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Creation Timeout (minutes)"
+
+msgid "Date Updated"
+msgstr "Date Updated"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Delete Complete"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Delete Failed"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Delete In Progress"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Delete Stack"
+msgstr[1] "Delete Stacks"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Deleted Stack"
+msgstr[1] "Deleted Stacks"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Direct Input"
+msgstr "Direct Input"
+
+msgid "Edit Template"
+msgstr "Edit Template"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Enable rollback on create/update failure."
+
+msgid "Environment Data"
+msgstr "Environment Data"
+
+msgid "Environment File"
+msgstr "Environment File"
+
+msgid "Environment Source"
+msgstr "Environment Source"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "File"
+msgstr "File"
+
+msgid "Function"
+msgstr "Function"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Init Complete"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Init Failed"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Init In Progress"
+
+msgid "Launch"
+msgstr "Launch"
+
+msgid "Launch Stack"
+msgstr "Launch Stack"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, full stops and hyphens."
+
+msgid "Name of the stack to create."
+msgstr "Name of the stack to create."
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Orchestration"
+msgstr "Orchestration"
+
+msgid "Overview"
+msgstr "Overview"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Password for user \"%s\""
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Please specify a %s using only one source method."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Preview Stack"
+msgstr "Preview Stack"
+
+msgid "Preview Stack Details"
+msgstr "Preview Stack Details"
+
+msgid "Preview Stack Parameters"
+msgstr "Preview Stack Parameters"
+
+msgid "Preview Template"
+msgstr "Preview Template"
+
+msgid "Resource"
+msgstr "Resource"
+
+msgid "Resource Types"
+msgstr "Resource Types"
+
+msgid "Resources"
+msgstr "Resources"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Resume Complete"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Resume Failed"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Resume In Progress"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Resume Stack"
+msgstr[1] "Resume Stacks"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Resumed Stack"
+msgstr[1] "Resumed Stacks"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Rollback Complete"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Rollback Failed"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Rollback In Progress"
+
+msgid "Rollback On Failure"
+msgstr "Rollback On Failure"
+
+msgid "Select Template"
+msgstr "Select Template"
+
+msgid "Select a new template to preview a stack."
+msgstr "Select a new template to preview a stack."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Select a new template to re-launch a stack."
+
+msgid "Select a template to launch a stack."
+msgstr "Select a template to launch a stack."
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Snapshot Complete"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Snapshot Failed"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Snapshot In Progress"
+
+msgid "Stack Events"
+msgstr "Stack Events"
+
+msgid "Stack ID"
+msgstr "Stack ID"
+
+msgid "Stack ID ="
+msgstr "Stack ID ="
+
+msgid "Stack Name"
+msgstr "Stack Name"
+
+msgid "Stack Name ="
+msgstr "Stack Name ="
+
+msgid "Stack Resource"
+msgstr "Stack Resource"
+
+msgid "Stack Resource Type"
+msgstr "Stack Resource Type"
+
+msgid "Stack Resources"
+msgstr "Stack Resources"
+
+msgid "Stack creation started."
+msgstr "Stack creation started."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Stack creation timeout in minutes."
+
+msgid "Stack update started."
+msgstr "Stack update started."
+
+msgid "Stacks"
+msgstr "Stacks"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status ="
+msgstr "Status ="
+
+msgid "Status Reason"
+msgstr "Status Reason"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspend Complete"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspend Failed"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspend In Progress"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Suspend Stack"
+msgstr[1] "Suspend Stacks"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Suspended Stack"
+msgstr[1] "Suspended Stacks"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Template Data"
+msgstr "Template Data"
+
+msgid "Template File"
+msgstr "Template File"
+
+msgid "Template Functions"
+msgstr "Template Functions"
+
+msgid "Template Source"
+msgstr "Template Source"
+
+msgid "Template URL"
+msgstr "Template URL"
+
+msgid "Template Versions"
+msgstr "Template Versions"
+
+msgid "The raw contents of the environment file."
+msgstr "The raw contents of the environment file."
+
+msgid "The raw contents of the template."
+msgstr "The raw contents of the template."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "There was a problem parsing the %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+
+msgid "Time Since Event"
+msgstr "Time Since Event"
+
+msgid "Topology"
+msgstr "Topology"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Type ="
+msgstr "Type ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Unable to get events for stack \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Unable to get functions for template version \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Unable to get resources for stack \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Unable to retrieve metadata."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Unable to retrieve resource type details."
+
+msgid "Unable to retrieve resource."
+msgstr "Unable to retrieve resource."
+
+msgid "Unable to retrieve stack list."
+msgstr "Unable to retrieve stack list."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Unable to retrieve stack resource types."
+
+msgid "Unable to retrieve stack template."
+msgstr "Unable to retrieve stack template."
+
+msgid "Unable to retrieve stack."
+msgstr "Unable to retrieve stack."
+
+msgid "Unable to retrieve template functions."
+msgstr "Unable to retrieve template functions."
+
+msgid "Unable to retrieve template versions."
+msgstr "Unable to retrieve template versions."
+
+msgid "Update"
+msgstr "Update"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Update Complete"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Update Failed"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Update In Progress"
+
+msgid "Update Stack"
+msgstr "Update Stack"
+
+msgid "Update Stack Parameters"
+msgstr "Update Stack Parameters"
+
+msgid "Updated"
+msgstr "Updated"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "You must specify a template via one of the available sources."
+
+msgid "environment"
+msgstr "environment"
+
+msgid "template"
+msgstr "template"

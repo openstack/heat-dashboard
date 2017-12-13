@@ -1,0 +1,471 @@
+# BillXiang <m13250816269@163.com>, 2016. #zanata
+# Linda <duleish@cn.ibm.com>, 2016. #zanata
+# Tony <tfu@redhat.com>, 2016. #zanata
+# howard lee <howard@mail.ustc.edu.cn>, 2016. #zanata
+# liuyanfu <lyf219@163.com>, 2016. #zanata
+# maoshuai <fwsakura@163.com>, 2016. #zanata
+# sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
+# zzxwill <zzxwill@gmail.com>, 2016. #zanata
+# Bin <liubin@glab.cn>, 2017. #zanata
+# TigerFang <tigerfun@126.com>, 2017. #zanata
+# Tony <tfu@redhat.com>, 2017. #zanata
+# bkb <bakbad2015@gmail.com>, 2017. #zanata
+# zhonghuali <lizhonghua.li@huawei.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-18 01:41+0000\n"
+"Last-Translator: Tony <tfu@redhat.com>\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh-CN\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A local environment to upload."
+msgstr "上传一个本地环境文件"
+
+msgid "A local template to upload."
+msgstr "要上传的本地模板。"
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "配置完成"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "配置失败"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "正在启用配置"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "要通过其加载模板的外部 (HTTP) URL。"
+
+msgid "Case sensitive"
+msgstr "区分大小写"
+
+msgid "Case-sensitive"
+msgstr "区分大小写"
+
+msgid "Change Stack Template"
+msgstr "改变堆栈模板"
+
+msgid "Change Template"
+msgstr "更改模板"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "检查完成"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "检查失败"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "正在检查"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "检查栈"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "已经检查过的堆栈"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "创建完成"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "创建失败"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "正在创建"
+
+msgid "Create Stack"
+msgstr "创建堆栈"
+
+msgid "Created"
+msgstr "已创建"
+
+msgid "Creation Timeout (minutes)"
+msgstr "创建超时（分钟）"
+
+msgid "Date Updated"
+msgstr "日期已更新"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "删除完成"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "删除失败"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "正在删除"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "删除堆栈"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "已删除堆栈"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Direct Input"
+msgstr "直接输入"
+
+msgid "Edit Template"
+msgstr "编辑模板"
+
+msgid "Enable rollback on create/update failure."
+msgstr "在创建/更新失败时允许回滚。"
+
+msgid "Environment Data"
+msgstr "环境数据"
+
+msgid "Environment File"
+msgstr "环境文件"
+
+msgid "Environment Source"
+msgstr "环境源"
+
+msgid "Events"
+msgstr "事件"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Function"
+msgstr "功能"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "初始化完成"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "初始化失败"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "正在初始化"
+
+msgid "Launch"
+msgstr "启动"
+
+msgid "Launch Stack"
+msgstr "创建堆栈"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr "名字必须以字母开始，并且只能包含字母、数字、下划线、句点和连字符。"
+
+msgid "Name of the stack to create."
+msgstr "待创建堆栈的名称"
+
+msgid "Next"
+msgstr "下一项"
+
+msgid "Orchestration"
+msgstr "编排"
+
+msgid "Overview"
+msgstr "概览"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "用户 “%s” 的密码"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "请指定 %s（只用一种源方法）。"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Preview Stack"
+msgstr "堆栈预览"
+
+msgid "Preview Stack Details"
+msgstr "堆栈详情预览"
+
+msgid "Preview Stack Parameters"
+msgstr "预览堆栈参数"
+
+msgid "Preview Template"
+msgstr "预览模板"
+
+msgid "Resource"
+msgstr "资源"
+
+msgid "Resource Types"
+msgstr "资源类型"
+
+msgid "Resources"
+msgstr "资源"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "恢复完成"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "恢复失败"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "正在恢复中"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "恢复栈"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "已经恢复的堆栈"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "回滚完成"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "回滚失败"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "正在回滚"
+
+msgid "Rollback On Failure"
+msgstr "失败回滚"
+
+msgid "Select Template"
+msgstr "选择模板"
+
+msgid "Select a new template to preview a stack."
+msgstr "重新选择模板来预览堆栈"
+
+msgid "Select a new template to re-launch a stack."
+msgstr "重新选择模板来创建堆栈"
+
+msgid "Select a template to launch a stack."
+msgstr "选择模板以启动堆栈。"
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "快照完成"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "生成快照失败"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "正在生成快照"
+
+msgid "Stack Events"
+msgstr "堆栈事件"
+
+msgid "Stack ID"
+msgstr "堆栈标识"
+
+msgid "Stack ID ="
+msgstr "堆栈 ID ="
+
+msgid "Stack Name"
+msgstr "堆栈名称"
+
+msgid "Stack Name ="
+msgstr "堆栈名称="
+
+msgid "Stack Resource"
+msgstr "堆栈资源"
+
+msgid "Stack Resource Type"
+msgstr "堆栈资源类型"
+
+msgid "Stack Resources"
+msgstr "堆栈资源"
+
+msgid "Stack creation started."
+msgstr "堆栈创建开始。"
+
+msgid "Stack creation timeout in minutes."
+msgstr "堆栈创建超时，以分钟计。"
+
+msgid "Stack update started."
+msgstr "开始更新堆栈。"
+
+msgid "Stacks"
+msgstr "堆栈"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Status ="
+msgstr "状态 ="
+
+msgid "Status Reason"
+msgstr "状态原因"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "挂起完成"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "挂起失败"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "正在挂起"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "挂起栈"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "已经挂起的堆栈"
+
+msgid "Template"
+msgstr "模板"
+
+msgid "Template Data"
+msgstr "模板数据"
+
+msgid "Template File"
+msgstr "模板文件"
+
+msgid "Template Functions"
+msgstr "模板功能"
+
+msgid "Template Source"
+msgstr "模板源"
+
+msgid "Template URL"
+msgstr "模板 URL"
+
+msgid "Template Versions"
+msgstr "模板版本"
+
+msgid "The raw contents of the environment file."
+msgstr "环境变量文件的原始内容"
+
+msgid "The raw contents of the template."
+msgstr "模板的原始内容。"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "解析%(prefix)s 时遇到问题：%(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "这是堆栈生命周期中执行的操作所必需的。"
+
+msgid "Time Since Event"
+msgstr "发生事件后的时间"
+
+msgid "Topology"
+msgstr "拓扑"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Type ="
+msgstr "类型 ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "无法获取堆栈 “%s” 的事件。"
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "无法为模板版本 \"%s\" 获得功能。"
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "无法获取堆栈“%s”的资源。"
+
+msgid "Unable to retrieve metadata."
+msgstr "无法检索元数据。"
+
+msgid "Unable to retrieve resource type details."
+msgstr "无法检索资源类型详情。"
+
+msgid "Unable to retrieve resource."
+msgstr "无法检索资源。"
+
+msgid "Unable to retrieve stack list."
+msgstr "无法检索堆栈列表。"
+
+msgid "Unable to retrieve stack resource types."
+msgstr "无法检索堆栈资源类型。"
+
+msgid "Unable to retrieve stack template."
+msgstr "无法检索堆栈模板。"
+
+msgid "Unable to retrieve stack."
+msgstr "无法检索堆栈。"
+
+msgid "Unable to retrieve template functions."
+msgstr "无法获得模板功能。"
+
+msgid "Unable to retrieve template versions."
+msgstr "无法检索模板版本"
+
+msgid "Update"
+msgstr "更新"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "更新完成"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "更新失败"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "正在更新"
+
+msgid "Update Stack"
+msgstr "更新堆栈"
+
+msgid "Update Stack Parameters"
+msgstr "更新堆栈参数"
+
+msgid "Updated"
+msgstr "已更新"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "您必须通过可用源中的一个来指定模板。"
+
+msgid "environment"
+msgstr "环境"
+
+msgid "template"
+msgstr "模板"
