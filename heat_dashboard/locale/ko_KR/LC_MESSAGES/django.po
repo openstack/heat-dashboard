@@ -4,17 +4,18 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
+# johjuhyun <juhyun.joh@samsung.com>, 2017. #zanata
 # minwook-shin <minwook0106@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Project-Id-Version: heat-dashboard 1.0.1.dev1\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"POT-Creation-Date: 2017-12-13 07:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-06 12:28+0000\n"
-"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"PO-Revision-Date: 2017-12-15 06:31+0000\n"
+"Last-Translator: johjuhyun <juhyun.joh@samsung.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -55,15 +56,15 @@ msgstr "템플릿 변경"
 
 msgctxt "current status of stack"
 msgid "Check Complete"
-msgstr "Check Complete"
+msgstr "확인 완료"
 
 msgctxt "current status of stack"
 msgid "Check Failed"
-msgstr "Check Failed"
+msgstr "확인 실패"
 
 msgctxt "current status of stack"
 msgid "Check In Progress"
-msgstr "Check In Progress"
+msgstr "확인 진행 중"
 
 msgid "Check Stack"
 msgid_plural "Check Stacks"
@@ -75,15 +76,15 @@ msgstr[0] "스택 확인됨"
 
 msgctxt "current status of stack"
 msgid "Create Complete"
-msgstr "Create Complete"
+msgstr "생성 완료"
 
 msgctxt "current status of stack"
 msgid "Create Failed"
-msgstr "Create Failed"
+msgstr "생성 실패"
 
 msgctxt "current status of stack"
 msgid "Create In Progress"
-msgstr "Create In Progress"
+msgstr "생성 진행 중"
 
 msgid "Create Stack"
 msgstr "스택 생성"
@@ -99,15 +100,15 @@ msgstr "업데이트한 날짜"
 
 msgctxt "current status of stack"
 msgid "Delete Complete"
-msgstr "Delete Complete"
+msgstr "삭제 완료"
 
 msgctxt "current status of stack"
 msgid "Delete Failed"
-msgstr "Delete Failed"
+msgstr "삭제 실패"
 
 msgctxt "current status of stack"
 msgid "Delete In Progress"
-msgstr "Delete In Progress"
+msgstr "삭제 진행 중"
 
 msgid "Delete Stack"
 msgid_plural "Delete Stacks"
@@ -150,15 +151,15 @@ msgstr "기능"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
-msgstr "Init Complete"
+msgstr "초기화 완료"
 
 msgctxt "current status of stack"
 msgid "Init Failed"
-msgstr "Init Failed"
+msgstr "초기화 실패"
 
 msgctxt "current status of stack"
 msgid "Init In Progress"
-msgstr "Init In Progress"
+msgstr "초기화 진행 중"
 
 msgid "Launch"
 msgstr "실행"
@@ -210,6 +211,9 @@ msgstr "스택 매개 변수 미리보기"
 msgid "Preview Template"
 msgstr "템플릿 미리보기"
 
+msgid "Referenced Files"
+msgstr "참조된 파일들"
+
 msgid "Resource"
 msgstr "리소스"
 
@@ -241,15 +245,15 @@ msgstr[0] "스택 재개됨"
 
 msgctxt "current status of stack"
 msgid "Rollback Complete"
-msgstr "Rollback Complete"
+msgstr "원복 완료"
 
 msgctxt "current status of stack"
 msgid "Rollback Failed"
-msgstr "Rollback Failed"
+msgstr "원복 실패"
 
 msgctxt "current status of stack"
 msgid "Rollback In Progress"
-msgstr "Rollback In Progress"
+msgstr "원복진행 중"
 
 msgid "Rollback On Failure"
 msgstr "실패시 롤백"
@@ -268,15 +272,15 @@ msgstr "스택 시작시 템플릿을 선택합니다."
 
 msgctxt "current status of stack"
 msgid "Snapshot Complete"
-msgstr "Snapshot Complete"
+msgstr "스냅샷 완료"
 
 msgctxt "current status of stack"
 msgid "Snapshot Failed"
-msgstr "Snapshot Failed"
+msgstr "스냅샷 실패"
 
 msgctxt "current status of stack"
 msgid "Snapshot In Progress"
-msgstr "Snapshot In Progress"
+msgstr "스냅샷 진행 중"
 
 msgid "Stack Events"
 msgstr "스택 이벤트"
@@ -285,7 +289,7 @@ msgid "Stack ID"
 msgstr "스택 ID"
 
 msgid "Stack ID ="
-msgstr "Stack ID ="
+msgstr "스택 ID ="
 
 msgid "Stack Name"
 msgstr "스택 이름"
@@ -318,7 +322,7 @@ msgid "Status"
 msgstr "상태"
 
 msgid "Status ="
-msgstr "Status ="
+msgstr "상태 = "
 
 msgid "Status Reason"
 msgstr "상태 현황"
@@ -440,15 +444,15 @@ msgstr "업데이트"
 
 msgctxt "current status of stack"
 msgid "Update Complete"
-msgstr "Update Complete"
+msgstr "업데이트 완료"
 
 msgctxt "current status of stack"
 msgid "Update Failed"
-msgstr "Update Failed"
+msgstr "업데이트 실패"
 
 msgctxt "current status of stack"
 msgid "Update In Progress"
-msgstr "Update In Progress"
+msgstr "업데이트 진행 중"
 
 msgid "Update Stack"
 msgstr "스택 업데이트"

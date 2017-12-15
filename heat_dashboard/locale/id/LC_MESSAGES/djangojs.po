@@ -1,0 +1,44 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard 1.0.1.dev1\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2017-12-13 07:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-12-15 07:17+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Create Stack"
+msgstr "Buat stack "
+
+msgid "Delete Resource"
+msgstr "Delete Resource"
+
+msgid "Download"
+msgstr "Download (pengunduhan)"
+
+msgid "Heat Orchestration Template"
+msgstr "Heat Orchestration Template"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Saved Drafts"
+msgstr "Saved Drafts"
+
+msgid "Show More Properties"
+msgstr "Show More Properties"
