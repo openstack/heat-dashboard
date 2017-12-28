@@ -4,25 +4,26 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 # johjuhyun <juhyun.joh@samsung.com>, 2017. #zanata
 # minwook-shin <minwook0106@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 1.0.1.dev1\n"
+"Project-Id-Version: heat-dashboard 1.0.1.dev2\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-13 07:43+0000\n"
+"POT-Creation-Date: 2017-12-15 19:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-15 06:31+0000\n"
-"Last-Translator: johjuhyun <juhyun.joh@samsung.com>\n"
+"PO-Revision-Date: 2017-12-19 03:21+0000\n"
+"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 msgid "A local environment to upload."
-msgstr "로컬에서 environment 업로드."
+msgstr "업로드 할 로컬 환경."
 
 msgid "A local template to upload."
 msgstr "업로드할 로컬 템플릿."
@@ -49,7 +50,7 @@ msgid "Case-sensitive"
 msgstr "대소문자 구별"
 
 msgid "Change Stack Template"
-msgstr "스택 템플릿 변경"
+msgstr "Stack 템플릿 변경"
 
 msgid "Change Template"
 msgstr "템플릿 변경"
@@ -68,11 +69,11 @@ msgstr "확인 진행 중"
 
 msgid "Check Stack"
 msgid_plural "Check Stacks"
-msgstr[0] "스택 확인"
+msgstr[0] "Stack 확인"
 
 msgid "Checked Stack"
 msgid_plural "Checked Stacks"
-msgstr[0] "스택 확인됨"
+msgstr[0] "Stack 확인됨"
 
 msgctxt "current status of stack"
 msgid "Create Complete"
@@ -87,13 +88,13 @@ msgid "Create In Progress"
 msgstr "생성 진행 중"
 
 msgid "Create Stack"
-msgstr "스택 생성"
+msgstr "Stack 생성"
 
 msgid "Created"
 msgstr "생성됨"
 
 msgid "Creation Timeout (minutes)"
-msgstr "생성 Timeout (분)"
+msgstr "생성 제한 시간 (분)"
 
 msgid "Date Updated"
 msgstr "업데이트한 날짜"
@@ -112,11 +113,11 @@ msgstr "삭제 진행 중"
 
 msgid "Delete Stack"
 msgid_plural "Delete Stacks"
-msgstr[0] "스택 삭제"
+msgstr[0] "Stack 삭제"
 
 msgid "Deleted Stack"
 msgid_plural "Deleted Stacks"
-msgstr[0] "스택 삭제함"
+msgstr[0] "Stack 삭제함"
 
 # auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Description"
@@ -132,13 +133,13 @@ msgid "Enable rollback on create/update failure."
 msgstr "생성/업데이트 실패시 롤백 사용."
 
 msgid "Environment Data"
-msgstr "Environment 데이터"
+msgstr "환경 데이터"
 
 msgid "Environment File"
-msgstr "Environment 파일"
+msgstr "환경 파일"
 
 msgid "Environment Source"
-msgstr "Environment 소스"
+msgstr "환경 소스"
 
 msgid "Events"
 msgstr "이벤트"
@@ -165,7 +166,7 @@ msgid "Launch"
 msgstr "실행"
 
 msgid "Launch Stack"
-msgstr "스택 시작"
+msgstr "Stack 시작"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -175,7 +176,7 @@ msgstr ""
 "(.) 및 하이픈(-)만 포함할 수 있습니다. "
 
 msgid "Name of the stack to create."
-msgstr "생성하는 스택의 이름입니다."
+msgstr "생성하는 Stack 이름입니다."
 
 msgid "Next"
 msgstr "다음"
@@ -194,19 +195,19 @@ msgstr "사용자 \"%s\" 비밀번호"
 
 #, python-format
 msgid "Please specify a %s using only one source method."
-msgstr "소스 메소드 하나만 사용하여 %s를 지정하십시오."
+msgstr "소스 메소드 하나만 사용하여 %s 를 지정하십시오."
 
 msgid "Preview"
 msgstr "미리보기"
 
 msgid "Preview Stack"
-msgstr "미리보기 스택"
+msgstr "Stack 미리보기"
 
 msgid "Preview Stack Details"
-msgstr "스택 미리보기 상세정보"
+msgstr "Stack 미리보기 상세정보"
 
 msgid "Preview Stack Parameters"
-msgstr "스택 매개 변수 미리보기"
+msgstr "Stack 매개 변수 미리보기"
 
 msgid "Preview Template"
 msgstr "템플릿 미리보기"
@@ -237,11 +238,11 @@ msgstr "Resume In Progress"
 
 msgid "Resume Stack"
 msgid_plural "Resume Stacks"
-msgstr[0] "스택 재개"
+msgstr[0] "Stack 재개"
 
 msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
-msgstr[0] "스택 재개됨"
+msgstr[0] "Stack 재개됨"
 
 msgctxt "current status of stack"
 msgid "Rollback Complete"
@@ -262,13 +263,13 @@ msgid "Select Template"
 msgstr "템플릿 선택"
 
 msgid "Select a new template to preview a stack."
-msgstr "스택 미리보기할 새로운 템플릿 선택합니다."
+msgstr "Stack을 미리 보려면 새 템플릿을 선택하십시오."
 
 msgid "Select a new template to re-launch a stack."
-msgstr "스택을 다시 시작시 새 템플릿을 선택합니다."
+msgstr "Stack을 다시 시작시 새 템플릿을 선택합니다."
 
 msgid "Select a template to launch a stack."
-msgstr "스택 시작시 템플릿을 선택합니다."
+msgstr "Stack 시작시 템플릿을 선택합니다."
 
 msgctxt "current status of stack"
 msgid "Snapshot Complete"
@@ -283,40 +284,40 @@ msgid "Snapshot In Progress"
 msgstr "스냅샷 진행 중"
 
 msgid "Stack Events"
-msgstr "스택 이벤트"
+msgstr "Stack 이벤트"
 
 msgid "Stack ID"
-msgstr "스택 ID"
+msgstr "Stack ID"
 
 msgid "Stack ID ="
-msgstr "스택 ID ="
+msgstr "Stack ID ="
 
 msgid "Stack Name"
-msgstr "스택 이름"
+msgstr "Stack 이름"
 
 msgid "Stack Name ="
-msgstr "스택 이름 ="
+msgstr "Stack 이름 ="
 
 msgid "Stack Resource"
 msgstr "스택 리소스"
 
 msgid "Stack Resource Type"
-msgstr "스택 리소스 타입"
+msgstr "Stack 리소스 타입"
 
 msgid "Stack Resources"
-msgstr "스택 리소스"
+msgstr "Stack 리소스"
 
 msgid "Stack creation started."
-msgstr "스택 생성 중입니다."
+msgstr "Stack 생성 중입니다."
 
 msgid "Stack creation timeout in minutes."
-msgstr "스택을 몇분 동안 생성 timeout."
+msgstr "Stack 생성 제한 시간 (분)."
 
 msgid "Stack update started."
-msgstr "스택 업데이트를 시작하였습니다."
+msgstr "Stack 업데이트를 시작하였습니다."
 
 msgid "Stacks"
-msgstr "스택"
+msgstr "Stack"
 
 msgid "Status"
 msgstr "상태"
@@ -341,11 +342,11 @@ msgstr "Suspend In Progress"
 
 msgid "Suspend Stack"
 msgid_plural "Suspend Stacks"
-msgstr[0] "스택 중지"
+msgstr[0] "Stack 중지"
 
 msgid "Suspended Stack"
 msgid_plural "Suspended Stacks"
-msgstr[0] "스택 중지됨"
+msgstr[0] "Stack 중지됨"
 
 msgid "Template"
 msgstr "템플릿"
@@ -359,6 +360,9 @@ msgstr "템플릿 파일"
 msgid "Template Functions"
 msgstr "템플릿 기능"
 
+msgid "Template Generator"
+msgstr "템플릿 생성기"
+
 msgid "Template Source"
 msgstr "템플릿 소스"
 
@@ -369,19 +373,19 @@ msgid "Template Versions"
 msgstr "템플릿 버전"
 
 msgid "The raw contents of the environment file."
-msgstr "Environment 파일 raw 컨텐트."
+msgstr "환경 파일 raw 컨텐트."
 
 msgid "The raw contents of the template."
-msgstr "템플릿 raw 내용."
+msgstr "템플릿 raw 내용입니다."
 
 #, python-format
 msgid "There was a problem parsing the %(prefix)s: %(error)s"
-msgstr "%(prefix)s를 파싱하는동안 문제가 발생했습니다: %(error)s"
+msgstr "%(prefix)s 를 파싱하는동안 문제가 발생했습니다: %(error)s"
 
 msgid ""
 "This is required for operations to be performed throughout the lifecycle of "
 "the stack"
-msgstr "스택의 라이프 사이클 동안 실행하는 작동에 필요로 합니다."
+msgstr "이 작업은 Stack 생명주기 동안 수행해야 하는 작업에 필요합니다."
 
 msgid "Time Since Event"
 msgstr "이벤트 이후 시간"
@@ -401,7 +405,7 @@ msgstr "URL"
 
 #, python-format
 msgid "Unable to get events for stack \"%s\"."
-msgstr "스택 \"%s\"에 대한 이벤트를 가져올 수 없습니다."
+msgstr "Stack \"%s\" 에 대한 이벤트를 가져올 수 없습니다."
 
 #, python-format
 msgid "Unable to get functions for template version \"%s\"."
@@ -409,7 +413,7 @@ msgstr "템플릿 버전 \"%s\"에 대한 기능을 찾지 못했습니다."
 
 #, python-format
 msgid "Unable to get resources for stack \"%s\"."
-msgstr "스택 \"%s\"에 대한 리소스를 가져오지 못했습니다."
+msgstr "Stack \"%s\" 에 대한 리소스를 가져오지 못했습니다."
 
 msgid "Unable to retrieve metadata."
 msgstr "메타데이터를 찾지 못했습니다."
@@ -421,16 +425,16 @@ msgid "Unable to retrieve resource."
 msgstr "리소스를 찾지 못했습니다."
 
 msgid "Unable to retrieve stack list."
-msgstr "스택 목록을 찾지 못했습니다."
+msgstr "Stack 목록을 찾지 못했습니다."
 
 msgid "Unable to retrieve stack resource types."
-msgstr "스택 리소스 유형을 찾지 못했습니다."
+msgstr "Stack 리소스 유형을 찾지 못했습니다."
 
 msgid "Unable to retrieve stack template."
-msgstr "스택 템플릿을 가져올 수 없습니다."
+msgstr "Stack 템플릿을 가져올 수 없습니다."
 
 msgid "Unable to retrieve stack."
-msgstr "스택을 찾지 못했습니다."
+msgstr "Stack을 찾지 못했습니다."
 
 msgid "Unable to retrieve template functions."
 msgstr "템플릿 기능을 찾지 못했습니다."
@@ -455,10 +459,10 @@ msgid "Update In Progress"
 msgstr "업데이트 진행 중"
 
 msgid "Update Stack"
-msgstr "스택 업데이트"
+msgstr "Stack 업데이트"
 
 msgid "Update Stack Parameters"
-msgstr "스택 매개변수 업데이트"
+msgstr "Stack 매개변수 업데이트"
 
 msgid "Updated"
 msgstr "업데이트됨"
