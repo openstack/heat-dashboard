@@ -1,5 +1,4 @@
 - project:
-    name: openstack/heat-dashboard
     check:
       jobs:
         - horizon-openstack-tox-py27dj18:
