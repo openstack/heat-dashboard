@@ -47,7 +47,7 @@ Enable heat-dashboard plugin in your Horizon environment::
     cp heat-dashboard/heat_dashboard/enabled/* \
       horizon/openstack_dashboard/local/enabled
 
-    cp heat-dashboard/etc/* \
+    cp heat-dashboard/heat_dashboard/conf/* \
       horizon/openstack_dashboard/conf/
 
     cp heat-dashboard/heat_dashboard/local_settings.d/* \
