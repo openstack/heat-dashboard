@@ -14,6 +14,9 @@
         $scope.nodes = hotgenStates.get_nodes();
         $scope.selected = hotgenStates.get_selected();
         $scope.toggle = function (item, list) {
+            if (typeof item == 'undefined' || !(list instanceof Array)){
+                return;
+            }
             var idx = list.indexOf(item);
             if (idx > -1) {
                 list.splice(idx, 1);
@@ -24,7 +27,10 @@
         };
 
         $scope.exists = function (item, list) {
-          return list.indexOf(item) > -1;
+          if (typeof item != "undefined" && list instanceof Array){
+            return list.indexOf(item) > -1;
+          }
+          return false;
         };
 
     }
