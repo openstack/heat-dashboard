@@ -235,7 +235,7 @@ def get_resource_options(request):
         'networks': get_networks,
         'subnets': get_subnets,
         'ports': get_ports,
-        'security_group': get_security_groups,
+        'security_groups': get_security_groups,
         'routers': get_routers,
         'qos_policies': get_qos_policies,
         'availability_zones': get_availability_zones,
