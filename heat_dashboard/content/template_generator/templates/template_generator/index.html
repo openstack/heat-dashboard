@@ -4,8 +4,8 @@
 
 {% block page_header %}
     <div class="page-header" ng-cloak>
-        <h1>{$  'Template Generator' | translate $}</h1>
-        <p>{$  'Please drag and drop resource icons into center canvas to define resource for template.' | translate $}</p>
+        <h1>{% trans "Template Generator" %}</h1>
+        <p>{% trans "Please drag and drop resource icons into center canvas to define resource for template." %}</p>
     </div>
 {% endblock %}
 
@@ -21,7 +21,7 @@
             <div class="col-sm-11" style="height:80px;">
                 <div ng-controller="horizon.dashboard.project.heat_dashboard.template_generator.AgentController" style="display:inline-block">
                     <md-input-container class="md-block" flex-gt-xs>
-                        <label>Template Version</label>
+                        <label>{% trans "Template Version" %}</label>
                         <md-select ng-model="template_version" ng-change="update_template_version(template_version)">
                             <md-option ng-repeat="tmptversion in template_versions" ng-value="tmptversion.id">
                                 {$ tmptversion.name $}
@@ -30,13 +30,13 @@
                     </md-input-container>
                 </div>
                 <div ng-controller="horizon.dashboard.project.heat_dashboard.template_generator.TempModalController" style="display:inline-block">
-                    <md-tooltip style="font-size:12px !important;" md-direction="top">Template Generator</md-tooltip>
+                    <md-tooltip style="font-size:12px !important;" md-direction="top">{% trans "Template Generator" %}</md-tooltip>
                     <md-button class="md-fab md-mini md-primary" ng-click="open()" aria-label="Template Generator">
                         <md-icon md-svg-src="{$ basePath $}css/img/icons/file-text-o.svg"></md-icon>
                     </md-button>
                 </div>
                 <div class="md-menu" ng-controller="horizon.dashboard.project.heat_dashboard.template_generator.DraftMenuController" style="display:inline-block">
-                    <md-tooltip style="font-size:12px !important;" md-direction="top">Manage Drafts</md-tooltip>
+                    <md-tooltip style="font-size:12px !important;" md-direction="top">{% trans "Manage Drafts" %}</md-tooltip>
                     <md-menu>
                         <md-button class="md-fab md-mini" ng-click="openMenu($mdMenu, $event)" aria-label="Manage Drafts">
                             <md-icon md-svg-src="{$ basePath $}css/img/icons/floppy-o.svg"></md-icon>
@@ -44,30 +44,30 @@
                         <md-menu-content width="4" ng-mouseleave="closeMenu()">
                             <md-menu-item>
                               <md-button ng-click="save_draft()">
-                                Save Draft
+                                {% trans "Save Draft" %}
                               </md-button>
                             </md-menu-item>
                             <md-menu-item>
                               <md-button ng-click="load_draft()">
-                                Load Draft
+                                {% trans "Load Draft" %}
                               </md-button>
                             </md-menu-item>
                             <md-menu-divider></md-menu-divider>
                             <md-menu-item>
                               <md-button ng-click="import_draft()">
-                                Import Draft
+                                {% trans "Import Draft" %}
                               </md-button>
                             </md-menu-item>
                             <md-menu-item>
                               <md-button ng-click="export_draft()">
-                                Export Draft
+                                {% trans "Export Draft" %}
                               </md-button>
                             </md-menu-item>
                           </md-menu-content>
                     </md-menu>
                 </div>
                 <div ng-controller="horizon.dashboard.project.heat_dashboard.template_generator.ClearCanvasController" style="display:inline-block">
-                    <md-tooltip style="font-size:12px !important;" md-direction="top">Clear Canvas</md-tooltip>
+                    <md-tooltip style="font-size:12px !important;" md-direction="top">{% trans "Clear Canvas" %}</md-tooltip>
                     <md-button ng-click="clear_canvas()" class="md-fab md-mini md-warn"  aria-label="clear canvas">
                         <md-icon md-svg-src="{$ basePath $}css/img/icons/trash.svg"></md-icon>
                     </md-button>
