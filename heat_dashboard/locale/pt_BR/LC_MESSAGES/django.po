@@ -3,27 +3,43 @@
 # Fernando Pimenta <fernando.c.pimenta@gmail.com>, 2017. #zanata
 # José Mello <jose.eduardo.jr@gmail.com>, 2017. #zanata
 # Marcio <marciofoz@gmail.com>, 2017. #zanata
+# Fernando Pimenta <fernando.c.pimenta@gmail.com>, 2018. #zanata
 # Rodrigo Loures <rmoraesloures@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-23 06:37+0000\n"
+"POT-Creation-Date: 2018-02-07 05:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-01-19 06:13+0000\n"
-"Last-Translator: Rodrigo Loures <rmoraesloures@gmail.com>\n"
+"PO-Revision-Date: 2018-02-06 07:00+0000\n"
+"Last-Translator: Fernando Pimenta <fernando.c.pimenta@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt-BR\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "Um ambiente local para enviar."
 
 msgid "A local template to upload."
 msgstr "Um modelo local para enviar."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Um modelo é utilizado para automatizar a implantação de infraestrutura, "
+"serviços, e aplicações."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -39,6 +55,9 @@ msgstr "Adoção em Progresso"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "Uma URL (HTTP) externa da qual carregar o modelo."
+
+msgid "Attributes"
+msgstr "Atributos"
 
 msgid "Case sensitive"
 msgstr "Diferencia maiúsculas de minúsculas"
@@ -74,6 +93,9 @@ msgid_plural "Checked Stacks"
 msgstr[0] "Pilha Verificada"
 msgstr[1] "Pilhas Verificadas"
 
+msgid "Close"
+msgstr "Fechar"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "Criação Concluída"
@@ -88,6 +110,9 @@ msgstr "Criação em Andamento"
 
 msgid "Create Stack"
 msgstr "Criar Pilha"
+
+msgid "Create a new stack with the provided values."
+msgstr "Criar uma nova pilha com os valores fornecidos."
 
 msgid "Created"
 msgstr "Criado"
@@ -123,14 +148,23 @@ msgstr[1] "Pilhas Excluídas"
 msgid "Description"
 msgstr "Descrição"
 
+msgid "Description:"
+msgstr "Descrição:"
+
 msgid "Direct Input"
 msgstr "Entrada Direta"
+
+msgid "Disabled"
+msgstr "Desativado"
 
 msgid "Edit Template"
 msgstr "Editar Modelo"
 
 msgid "Enable rollback on create/update failure."
 msgstr "Habilita rollback em caso de falha de criação/atualização."
+
+msgid "Enabled"
+msgstr "Ativado"
 
 msgid "Environment Data"
 msgstr "Dados de Ambiente"
@@ -150,6 +184,9 @@ msgstr "Arquivo"
 msgid "Function"
 msgstr "Função"
 
+msgid "ID"
+msgstr "ID"
+
 msgctxt "current status of stack"
 msgid "Init Complete"
 msgstr "Inicialização Concluída"
@@ -162,11 +199,26 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "Inicialização em Progresso"
 
+msgid "Last Updated"
+msgstr "Última Atualização"
+
 msgid "Launch"
 msgstr "Ativar"
 
+msgid "Launch Parameters"
+msgstr "Parâmetros de Lançamento"
+
 msgid "Launch Stack"
 msgstr "Disparar Pilha"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Minutes"
+msgstr "Minutos"
+
+msgid "Name"
+msgstr "Nome"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -184,8 +236,14 @@ msgstr "Avançar"
 msgid "Orchestration"
 msgstr "Orquestração"
 
+msgid "Outputs"
+msgstr "Saídas"
+
 msgid "Overview"
 msgstr "Visão Geral"
+
+msgid "Parameters"
+msgstr "Parâmetros"
 
 #, python-format
 msgid "Password for user \"%s\""
@@ -210,11 +268,23 @@ msgstr "Visualização de  Parâmetros de Pilha"
 msgid "Preview Template"
 msgstr "Visualização do Modelo"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Pré-visualizar uma nova pilha com os valores fornecidos."
+
+msgid "Properties"
+msgstr "Propriedades"
+
 msgid "Referenced Files"
 msgstr "Arquivos referenciados"
 
 msgid "Resource"
 msgstr "Recurso"
+
+msgid "Resource ID"
+msgstr "ID do Recurso"
+
+msgid "Resource Metadata"
+msgstr "Metadado do Recurso"
 
 msgid "Resource Types"
 msgstr "Tipos de Recursos"
@@ -243,6 +313,9 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "Pilha Retomada"
 msgstr[1] "Pilhas Retomadas"
+
+msgid "Rollback"
+msgstr "Reverter"
 
 msgctxt "current status of stack"
 msgid "Rollback Complete"
@@ -298,8 +371,17 @@ msgstr "Nome da Pilha"
 msgid "Stack Name ="
 msgstr "Nome da Pilha="
 
+msgid "Stack Parameters"
+msgstr "Parâmetros da Pilha"
+
+msgid "Stack Preview"
+msgstr "Pré-visualização da Pilha"
+
 msgid "Stack Resource"
 msgstr "Recurso de Pilha"
+
+msgid "Stack Resource ID"
+msgstr "ID de Recurso da Pilha"
 
 msgid "Stack Resource Type"
 msgstr "Tipo de Recurso de Pilha"
@@ -394,6 +476,9 @@ msgstr ""
 msgid "Time Since Event"
 msgstr "Tempo Desde o Evento"
 
+msgid "Timeout"
+msgstr "Tempo de espera"
+
 msgid "Topology"
 msgstr "Topologia"
 
@@ -466,8 +551,31 @@ msgstr "Atualizar Pilha"
 msgid "Update Stack Parameters"
 msgstr "Atualizar Parâmetros de Pilha"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Atualizar uma pilha com os valores fornecidos. Por favor, observe que "
+"quaisquer parâmetros criptografados, tais como senhas, serão restabelecidos "
+"ao padrão se você não alterá-los aqui."
+
 msgid "Updated"
 msgstr "Atualizado"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Use uma das opções de fonte de modelo disponíveis para especificar o modelo "
+"a ser utilizado na criação dessa pilha."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Use uma das opções de fonte de modelo disponíveis para especificar o modelo "
+"a ser utilizado na pré-visualização dessa pilha."
 
 msgid "Version"
 msgstr "Versão"

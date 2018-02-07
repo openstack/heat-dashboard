@@ -3,16 +3,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-06 05:27+0000\n"
+"POT-Creation-Date: 2018-02-07 05:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-06 06:09+0000\n"
+"PO-Revision-Date: 2018-02-07 12:29+0000\n"
 "Last-Translator: Yuko Katabami <yukokatabami@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "アップロードする必要のあるローカルの環境設定データ"
@@ -77,6 +85,9 @@ msgid "Checked Stack"
 msgid_plural "Checked Stacks"
 msgstr[0] "チェック済みのスタック"
 
+msgid "Close"
+msgstr "閉じる"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "作成完了"
@@ -91,6 +102,9 @@ msgstr "作成中"
 
 msgid "Create Stack"
 msgstr "スタックの作成"
+
+msgid "Create a new stack with the provided values."
+msgstr "指定された値を用いて新しいスタックを作成します。"
 
 msgid "Created"
 msgstr "作成時刻"
@@ -130,11 +144,17 @@ msgstr "説明:"
 msgid "Direct Input"
 msgstr "直接入力"
 
+msgid "Disabled"
+msgstr "無効"
+
 msgid "Edit Template"
 msgstr "テンプレートの編集"
 
 msgid "Enable rollback on create/update failure."
 msgstr "作成/更新失敗時のロールバックを有効にします。"
+
+msgid "Enabled"
+msgstr "有効"
 
 msgid "Environment Data"
 msgstr "環境設定データ"
@@ -154,6 +174,9 @@ msgstr "ファイル"
 msgid "Function"
 msgstr "関数"
 
+msgid "ID"
+msgstr "ID"
+
 msgctxt "current status of stack"
 msgid "Init Complete"
 msgstr "init 完了"
@@ -166,11 +189,26 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "init 実行中"
 
+msgid "Last Updated"
+msgstr "最終更新"
+
 msgid "Launch"
 msgstr "起動"
 
+msgid "Launch Parameters"
+msgstr "起動パラメーター"
+
 msgid "Launch Stack"
 msgstr "スタックの起動"
+
+msgid "Links"
+msgstr "リンク"
+
+msgid "Minutes"
+msgstr "分"
+
+msgid "Name"
+msgstr "名前"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -188,8 +226,14 @@ msgstr "次へ"
 msgid "Orchestration"
 msgstr "オーケストレーション"
 
+msgid "Outputs"
+msgstr "出力"
+
 msgid "Overview"
 msgstr "概要"
+
+msgid "Parameters"
+msgstr "パラメーター"
 
 #, python-format
 msgid "Password for user \"%s\""
@@ -214,6 +258,9 @@ msgstr "プレビューするスタックのパラメーター"
 msgid "Preview Template"
 msgstr "テンプレートのプレビュー"
 
+msgid "Preview a new stack with the provided values."
+msgstr "指定された値を用いて新しいスタックをプレビューします。"
+
 msgid "Properties"
 msgstr "プロパティー"
 
@@ -222,6 +269,12 @@ msgstr "参照されたファイル"
 
 msgid "Resource"
 msgstr "リソース"
+
+msgid "Resource ID"
+msgstr "リソース ID"
+
+msgid "Resource Metadata"
+msgstr "リソースのメタデータ"
 
 msgid "Resource Types"
 msgstr "リソース種別"
@@ -248,6 +301,9 @@ msgstr[0] "スタックの再開"
 msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "スタックを再開しました。"
+
+msgid "Rollback"
+msgstr "ロールバック"
 
 msgctxt "current status of stack"
 msgid "Rollback Complete"
@@ -303,8 +359,17 @@ msgstr "スタック名"
 msgid "Stack Name ="
 msgstr "スタック名 ="
 
+msgid "Stack Parameters"
+msgstr "スタックのパラメーター"
+
+msgid "Stack Preview"
+msgstr "スタックのプレビュー"
+
 msgid "Stack Resource"
 msgstr "スタックリソース"
+
+msgid "Stack Resource ID"
+msgstr "スタックリソース ID"
 
 msgid "Stack Resource Type"
 msgstr "スタックリソース種別"
@@ -395,6 +460,9 @@ msgstr "スタックのライフサイクル全体を通して、各種操作の
 msgid "Time Since Event"
 msgstr "イベントからの経過時間"
 
+msgid "Timeout"
+msgstr "タイムアウト"
+
 msgid "Topology"
 msgstr "トポロジー"
 
@@ -467,8 +535,31 @@ msgstr "スタックの更新"
 msgid "Update Stack Parameters"
 msgstr "スタックのパラメーターの更新"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"スタックを指定した値で更新します。パスワードなどの、暗号化されるパラメーター"
+"は、ここで指定しなかった場合、デフォルト値にリセットされる点には注意してくだ"
+"さい。"
+
 msgid "Updated"
 msgstr "更新時刻"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"利用可能なテンプレートの指定方法のオプションから、このスタックの作成に使用す"
+"るテンプレートの指定方法を選択してください。"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"利用可能なテンプレートの指定方法のオプションから、このスタックのプレビューに"
+"使用するテンプレートの指定方法を選択してください。"
 
 msgid "Version"
 msgstr "バージョン"
