@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-07 05:07+0000\n"
+"POT-Creation-Date: 2018-02-07 07:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-06 07:00+0000\n"
+"PO-Revision-Date: 2018-02-07 07:13+0000\n"
 "Last-Translator: Fernando Pimenta <fernando.c.pimenta@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt-BR\n"
@@ -92,6 +92,9 @@ msgid "Checked Stack"
 msgid_plural "Checked Stacks"
 msgstr[0] "Pilha Verificada"
 msgstr[1] "Pilhas Verificadas"
+
+msgid "Clear Canvas"
+msgstr "Limpar Tela"
 
 msgid "Close"
 msgstr "Fechar"
@@ -178,6 +181,9 @@ msgstr "Ambiente de Origem"
 msgid "Events"
 msgstr "Eventos"
 
+msgid "Export Draft"
+msgstr "Exportar Rascunho"
+
 msgid "File"
 msgstr "Arquivo"
 
@@ -186,6 +192,9 @@ msgstr "Função"
 
 msgid "ID"
 msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Importar Rascunho"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -213,6 +222,12 @@ msgstr "Disparar Pilha"
 
 msgid "Links"
 msgstr "Links"
+
+msgid "Load Draft"
+msgstr "Carregar Rascunho"
+
+msgid "Manage Drafts"
+msgstr "Gerenciar Rascunhos"
 
 msgid "Minutes"
 msgstr "Minutos"
@@ -248,6 +263,13 @@ msgstr "Parâmetros"
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "Senha para o usuário \"%s\""
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"Por favor, arraste e solte ícones de recursos na tela central para definir o "
+"recurso para o modelo."
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -331,6 +353,9 @@ msgstr "Rollback em Progresso"
 
 msgid "Rollback On Failure"
 msgstr "Rollback em caso de falha"
+
+msgid "Save Draft"
+msgstr "Salvar Rascunho"
 
 msgid "Select Template"
 msgstr "Escolha o Modelo"
@@ -452,6 +477,9 @@ msgstr "Origem do Modelo"
 
 msgid "Template URL"
 msgstr "URL de Modelo"
+
+msgid "Template Version"
+msgstr "Versão do Modelo"
 
 msgid "Template Versions"
 msgstr "Versões de Modelos"

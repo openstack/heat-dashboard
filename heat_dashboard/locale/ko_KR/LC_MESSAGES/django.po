@@ -7,26 +7,44 @@
 # Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 # johjuhyun <juhyun.joh@samsung.com>, 2017. #zanata
 # minwook-shin <minwook0106@gmail.com>, 2017. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 1.0.1.dev2\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-15 19:14+0000\n"
+"POT-Creation-Date: 2018-02-07 07:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-19 03:21+0000\n"
-"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
+"PO-Revision-Date: 2018-02-07 02:12+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "업로드 할 로컬 환경."
 
 msgid "A local template to upload."
 msgstr "업로드할 로컬 템플릿."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"템플릿은 인프라, 서비스, 그리고 응용 프로그램 배포를 자동화하기 위해 사용됩니"
+"다."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -42,6 +60,10 @@ msgstr "Adopt In Progress"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "템플릿을 외부 (HTTP) URL로 불러옵니다."
+
+# auto translated by TM merge from project: ironic-ui, version: master, DocId: ironic_ui/locale/djangojs
+msgid "Attributes"
+msgstr "특성"
 
 msgid "Case sensitive"
 msgstr "대소문자 구별"
@@ -75,6 +97,13 @@ msgid "Checked Stack"
 msgid_plural "Checked Stacks"
 msgstr[0] "Stack 확인됨"
 
+msgid "Clear Canvas"
+msgstr "캔버스 삭제"
+
+# auto translated by TM merge from project: horizon, version: master, DocId: horizon/locale/djangojs
+msgid "Close"
+msgstr "닫기"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "생성 완료"
@@ -89,6 +118,10 @@ msgstr "생성 진행 중"
 
 msgid "Create Stack"
 msgstr "Stack 생성"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Create a new stack with the provided values."
+msgstr "작성한 값에 가진 새로운 스택을 만들 수 있습니다."
 
 msgid "Created"
 msgstr "생성됨"
@@ -123,14 +156,26 @@ msgstr[0] "Stack 삭제함"
 msgid "Description"
 msgstr "설명"
 
+# auto translated by TM merge from project: tripleo-ui, version: master, DocId: i18n/messages
+msgid "Description:"
+msgstr "설명:"
+
 msgid "Direct Input"
 msgstr "직접 입력"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/djangojs
+msgid "Disabled"
+msgstr "비활성화됨"
 
 msgid "Edit Template"
 msgstr "템플릿 편집"
 
 msgid "Enable rollback on create/update failure."
 msgstr "생성/업데이트 실패시 롤백 사용."
+
+# auto translated by TM merge from project: murano-dashboard, version: master, DocId: muranodashboard/locale/django
+msgid "Enabled"
+msgstr "활성화됨"
 
 msgid "Environment Data"
 msgstr "환경 데이터"
@@ -144,11 +189,21 @@ msgstr "환경 소스"
 msgid "Events"
 msgstr "이벤트"
 
+msgid "Export Draft"
+msgstr "초안 내보내기"
+
 msgid "File"
 msgstr "파일"
 
 msgid "Function"
 msgstr "기능"
+
+# auto translated by TM merge from project: designate-dashboard, version: master, DocId: designatedashboard/locale/django
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "초안 가져오기"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -162,11 +217,37 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "초기화 진행 중"
 
+# auto translated by TM merge from project: sahara-dashboard, version: master, DocId: sahara_dashboard/locale/django
+msgid "Last Updated"
+msgstr "마지막 업데이트 날짜"
+
 msgid "Launch"
 msgstr "실행"
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Launch Parameters"
+msgstr "실행 매개 변수"
+
 msgid "Launch Stack"
 msgstr "Stack 시작"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Links"
+msgstr "링크"
+
+msgid "Load Draft"
+msgstr "초안 불러오기"
+
+msgid "Manage Drafts"
+msgstr "초안 관리"
+
+# auto translated by TM merge from project: Freezer Horizon Web UI, version: master, DocId: disaster_recovery/locale/django
+msgid "Minutes"
+msgstr "분"
+
+# auto translated by TM merge from project: designate-dashboard, version: master, DocId: designatedashboard/locale/django
+msgid "Name"
+msgstr "이름"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -185,13 +266,28 @@ msgstr "다음"
 msgid "Orchestration"
 msgstr "Orchestration"
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Outputs"
+msgstr "출력"
+
 # auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Overview"
 msgstr "개요"
 
+# auto translated by TM merge from project: tripleo-ui, version: master, DocId: i18n/messages
+msgid "Parameters"
+msgstr "매개 변수"
+
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "사용자 \"%s\" 비밀번호"
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"자원 아이콘을 중앙 캔버스로 드래그 앤 드롭하여 템플릿을 위한 자원을 정의합니"
+"다."
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -212,11 +308,27 @@ msgstr "Stack 매개 변수 미리보기"
 msgid "Preview Template"
 msgstr "템플릿 미리보기"
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Preview a new stack with the provided values."
+msgstr "제공된 값을 가지는 새 스택을 미리 봅니다."
+
+# auto translated by TM merge from project: ironic-ui, version: master, DocId: ironic_ui/locale/djangojs
+msgid "Properties"
+msgstr "속성"
+
 msgid "Referenced Files"
 msgstr "참조된 파일들"
 
 msgid "Resource"
 msgstr "리소스"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Resource ID"
+msgstr "리소스 ID"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Resource Metadata"
+msgstr "리소스 메타데이터"
 
 msgid "Resource Types"
 msgstr "리소스 타입"
@@ -244,6 +356,10 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "Stack 재개됨"
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Rollback"
+msgstr "롤백"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "원복 완료"
@@ -258,6 +374,9 @@ msgstr "원복진행 중"
 
 msgid "Rollback On Failure"
 msgstr "실패시 롤백"
+
+msgid "Save Draft"
+msgstr "초안 저장"
 
 msgid "Select Template"
 msgstr "템플릿 선택"
@@ -298,8 +417,20 @@ msgstr "Stack 이름"
 msgid "Stack Name ="
 msgstr "Stack 이름 ="
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Stack Parameters"
+msgstr "스택 매개 변수"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Stack Preview"
+msgstr "스택 미리보기"
+
 msgid "Stack Resource"
 msgstr "스택 리소스"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid "Stack Resource ID"
+msgstr "스택 리소스 ID"
 
 msgid "Stack Resource Type"
 msgstr "Stack 리소스 타입"
@@ -369,6 +500,9 @@ msgstr "템플릿 소스"
 msgid "Template URL"
 msgstr "템플릿 URL"
 
+msgid "Template Version"
+msgstr "템플릿 버전"
+
 msgid "Template Versions"
 msgstr "템플릿 버전"
 
@@ -389,6 +523,10 @@ msgstr "이 작업은 Stack 생명주기 동안 수행해야 하는 작업에 �
 
 msgid "Time Since Event"
 msgstr "이벤트 이후 시간"
+
+# auto translated by TM merge from project: octavia-dashboard, version: master, DocId: octavia_dashboard/locale/djangojs
+msgid "Timeout"
+msgstr "제한시간"
 
 msgid "Topology"
 msgstr "토폴로지"
@@ -464,8 +602,33 @@ msgstr "Stack 업데이트"
 msgid "Update Stack Parameters"
 msgstr "Stack 매개변수 업데이트"
 
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"제공된 값으로 스택을 업데이트합니다. 암호와 같은 암호화된 매개변수를 변경하"
+"지 않는 경우, 기본값으로 초기화되니 유의하십시오."
+
 msgid "Updated"
 msgstr "업데이트됨"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"스택을 만드는데 필요한 템플릿을 지정하는데 사용할 수 있는 템플릿 소스 옵션 "
+"중 하나를 사용합니다."
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"스택 미리보기에서 사용되는 템플릿은 지정가능한 템플릿 소스중 하나를 사용합니"
+"다."
 
 msgid "Version"
 msgstr "버전"
