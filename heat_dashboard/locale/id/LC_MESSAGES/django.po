@@ -1,26 +1,42 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 1.0.1.dev1\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-13 07:43+0000\n"
+"POT-Creation-Date: 2018-02-09 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-15 07:15+0000\n"
+"PO-Revision-Date: 2018-02-08 04:01+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
+
 msgid "A local environment to upload."
 msgstr "Sebuah lingkungan lokal untuk meng-upload."
 
 msgid "A local template to upload."
 msgstr "Sebuah template lokal untuk meng-upload."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Template digunakan untuk mengotomatisasi penyebaran infrastruktur, layanan, "
+"dan aplikasi."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -36,6 +52,9 @@ msgstr "Adopt In Progress"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "URL (HTTP) Eksternal untuk memuat template"
+
+msgid "Attributes"
+msgstr "Attributes"
 
 msgid "Case sensitive"
 msgstr "Case sensitive (case sensitive)"
@@ -69,6 +88,12 @@ msgid "Checked Stack"
 msgid_plural "Checked Stacks"
 msgstr[0] "Checked Stack"
 
+msgid "Clear Canvas"
+msgstr "Clear Canvas"
+
+msgid "Close"
+msgstr "Close"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "Create Complete"
@@ -83,6 +108,9 @@ msgstr "Create In Progress"
 
 msgid "Create Stack"
 msgstr "Buat stack "
+
+msgid "Create a new stack with the provided values."
+msgstr "Buat tumpukan (stack) baru dengan nilai yang diberikan."
 
 msgid "Created"
 msgstr "Created"
@@ -116,14 +144,23 @@ msgstr[0] "Deleted Stack"
 msgid "Description"
 msgstr "Deskripsi"
 
+msgid "Description:"
+msgstr "Description:"
+
 msgid "Direct Input"
 msgstr "Direct Input (masukan langsung)"
+
+msgid "Disabled"
+msgstr "Disabled"
 
 msgid "Edit Template"
 msgstr "Edit Template (edit template)"
 
 msgid "Enable rollback on create/update failure."
 msgstr "Aktifkan rollback pada kegagalan create/update."
+
+msgid "Enabled"
+msgstr "Enabled"
 
 msgid "Environment Data"
 msgstr "Environment Data"
@@ -137,11 +174,20 @@ msgstr "Environment Source"
 msgid "Events"
 msgstr "Acara"
 
+msgid "Export Draft"
+msgstr "Export Draft"
+
 msgid "File"
 msgstr "File"
 
 msgid "Function"
 msgstr "Function"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Import Draft"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -155,11 +201,32 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "Init In Progress"
 
+msgid "Last Updated"
+msgstr "Last Updated"
+
 msgid "Launch"
 msgstr "Launch (luncurkan)"
 
+msgid "Launch Parameters"
+msgstr "Launch Parameters"
+
 msgid "Launch Stack"
 msgstr "Launch Stack"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Load Draft"
+msgstr "Load Draft"
+
+msgid "Manage Drafts"
+msgstr "Manage Drafts"
+
+msgid "Minutes"
+msgstr "Minutes"
+
+msgid "Name"
+msgstr "Name"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -177,12 +244,25 @@ msgstr "Next (berikutnya)"
 msgid "Orchestration"
 msgstr "Orchestration"
 
+msgid "Outputs"
+msgstr "Outputs"
+
 msgid "Overview"
 msgstr "Ikhtisar"
+
+msgid "Parameters"
+msgstr "Parameters"
 
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "Password untuk pengguna \"%s\""
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"Silahkan seret dan lepas ikon sumber daya ke kanvas tengah untuk menentukan "
+"sumber daya untuk template."
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -203,11 +283,23 @@ msgstr "Preview Stack Parameters"
 msgid "Preview Template"
 msgstr "Preview Template (lihat template)"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Pratinjau stack baru dengan nilai yang diberikan."
+
+msgid "Properties"
+msgstr "Properties"
+
 msgid "Referenced Files"
 msgstr "Referenced Files"
 
 msgid "Resource"
 msgstr "Resource"
+
+msgid "Resource ID"
+msgstr "Resource ID"
+
+msgid "Resource Metadata"
+msgstr "Resource Metadata"
 
 msgid "Resource Types"
 msgstr "Resource Types (tipe sumber daya)"
@@ -235,6 +327,9 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "Resumed Stack"
 
+msgid "Rollback"
+msgstr "Rollback"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "Rollback Complete"
@@ -249,6 +344,9 @@ msgstr "Rollback In Progress"
 
 msgid "Rollback On Failure"
 msgstr "Rollback On Failure"
+
+msgid "Save Draft"
+msgstr "Save Draft"
 
 msgid "Select Template"
 msgstr "Pilih template"
@@ -289,8 +387,17 @@ msgstr "Stack Name (nama stack)"
 msgid "Stack Name ="
 msgstr "Stack Name ="
 
+msgid "Stack Parameters"
+msgstr "Stack Parameters"
+
+msgid "Stack Preview"
+msgstr "Stack Preview"
+
 msgid "Stack Resource"
 msgstr "Stack Resource"
+
+msgid "Stack Resource ID"
+msgstr "Stack Resource ID"
 
 msgid "Stack Resource Type"
 msgstr "Stack Resource Type"
@@ -360,6 +467,9 @@ msgstr "Template Source"
 msgid "Template URL"
 msgstr "URL template"
 
+msgid "Template Version"
+msgstr "Template Version"
+
 msgid "Template Versions"
 msgstr "Template Versions"
 
@@ -382,6 +492,9 @@ msgstr ""
 
 msgid "Time Since Event"
 msgstr "Time Since Event"
+
+msgid "Timeout"
+msgstr "Timeout"
 
 msgid "Topology"
 msgstr "Topology (topologi)"
@@ -455,8 +568,31 @@ msgstr "Update Stack"
 msgid "Update Stack Parameters"
 msgstr "Update Stack Parameters"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Perbarui stack dengan nilai yang diberikan. Harap dicatat bahwa setiap "
+"parameter terenkripsi, seperti kata sandi, akan disetel ulang menjadi "
+"default jika Anda tidak mengubahnya di sini."
+
 msgid "Updated"
 msgstr "Updated"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Gunakan salah satu pilihan sumber template yang tersedia untuk menentukan "
+"template yang akan digunakan dalam membuat tumpukan (stack) ini."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Gunakan salah satu pilihan sumber template yang tersedia untuk menentukan "
+"template yang akan digunakan dalam melihat pratinjau stack ini."
 
 msgid "Version"
 msgstr "Version"
