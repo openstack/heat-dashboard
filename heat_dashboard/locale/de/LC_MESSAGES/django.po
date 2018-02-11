@@ -3,26 +3,43 @@
 # Robert Simai <robert.simai@suse.com>, 2016. #zanata
 # Andreas Jaeger <jaegerandi@gmail.com>, 2017. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2017. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"POT-Creation-Date: 2018-02-11 01:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-09 11:30+0000\n"
-"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"PO-Revision-Date: 2018-02-10 09:34+0000\n"
+"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "Eine lokale Umgebung zum Hochladen."
 
 msgid "A local template to upload."
 msgstr "Eine lokale Vorlage zum Hochladen."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Eine Vorlage wird benutzt, um die Bereitstellung von Infrastruktur, Dienste "
+"und Anwendungen zu automatisieren."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -38,6 +55,9 @@ msgstr "Übernahme im Gang"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "Eine externe (HTTP) URL, von der die Vorlage geladen wird."
+
+msgid "Attributes"
+msgstr "Attribute"
 
 msgid "Case sensitive"
 msgstr "Groß- und Kleinschreibung beachten"
@@ -73,6 +93,12 @@ msgid_plural "Checked Stacks"
 msgstr[0] "Geprüfter Stack"
 msgstr[1] "Geprüfte Stacks"
 
+msgid "Clear Canvas"
+msgstr "Canvas leeren"
+
+msgid "Close"
+msgstr "Schliessen"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "Erstellen abgeschlossen"
@@ -87,6 +113,9 @@ msgstr "Erstellung im Gang"
 
 msgid "Create Stack"
 msgstr "Erzeuge Stack"
+
+msgid "Create a new stack with the provided values."
+msgstr "Erzeuge einen neuen Stack mit den eingegebenen Werten."
 
 msgid "Created"
 msgstr "Erstellt"
@@ -122,8 +151,14 @@ msgstr[1] "Stacks gelöscht"
 msgid "Description"
 msgstr "Beschreibung"
 
+msgid "Description:"
+msgstr "Beschreibung:"
+
 msgid "Direct Input"
 msgstr "Direkteingabe"
+
+msgid "Disabled"
+msgstr "Inaktiviert"
 
 msgid "Edit Template"
 msgstr "Vorlage editieren"
@@ -131,6 +166,9 @@ msgstr "Vorlage editieren"
 msgid "Enable rollback on create/update failure."
 msgstr ""
 "Ermögliche ein Zurückrollen nach einem Erzeugungs/Aktualisierungs-Fehler."
+
+msgid "Enabled"
+msgstr "Aktiviert"
 
 msgid "Environment Data"
 msgstr "Umgebungsdaten"
@@ -144,11 +182,20 @@ msgstr "Umgebungsquelle"
 msgid "Events"
 msgstr "Veranstaltungen"
 
+msgid "Export Draft"
+msgstr "Entwurf exportieren"
+
 msgid "File"
 msgstr "Datei"
 
 msgid "Function"
 msgstr "Funktion"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Entwurf importieren"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -162,11 +209,32 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "Initialisierung im Gang"
 
+msgid "Last Updated"
+msgstr "Letzte Aktualisierung"
+
 msgid "Launch"
 msgstr "Starten"
 
+msgid "Launch Parameters"
+msgstr "Startparameter"
+
 msgid "Launch Stack"
 msgstr "Stack starten"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Load Draft"
+msgstr "Entwurf laden"
+
+msgid "Manage Drafts"
+msgstr "Entwürfe verwalten"
+
+msgid "Minutes"
+msgstr "Minuten"
+
+msgid "Name"
+msgstr "Name"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -184,12 +252,24 @@ msgstr "Weiter"
 msgid "Orchestration"
 msgstr "Orchestrierung"
 
+msgid "Outputs"
+msgstr "Ausgaben"
+
 msgid "Overview"
 msgstr "Übersicht"
+
+msgid "Parameters"
+msgstr "Parameter"
 
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "Passwort für Benutzer \"%s\""
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"Bitte ziehen Sie Icons in das Bildfenster, um Vorlageresourcen zu definieren."
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -211,11 +291,23 @@ msgstr "Stack Parameter Vorschau"
 msgid "Preview Template"
 msgstr "Vorschau Vorlage"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Vorschau eines neuen Stacks mit den angegebenen Werten."
+
+msgid "Properties"
+msgstr "Eigenschaften"
+
 msgid "Referenced Files"
 msgstr "Referenzierte Datei"
 
 msgid "Resource"
 msgstr "Resource"
+
+msgid "Resource ID"
+msgstr "Ressource ID"
+
+msgid "Resource Metadata"
+msgstr "Ressource Metadaten"
 
 msgid "Resource Types"
 msgstr "Ressourcentypen"
@@ -245,6 +337,9 @@ msgid_plural "Resumed Stacks"
 msgstr[0] "Wiederaufgenommener Stack"
 msgstr[1] "Wiederaufgenommene Stacks"
 
+msgid "Rollback"
+msgstr "Rollback"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "Wiederholen abgeschlossen"
@@ -259,6 +354,9 @@ msgstr "Wiederholung im Gang"
 
 msgid "Rollback On Failure"
 msgstr "Zurückrollen nach einem Fehler"
+
+msgid "Save Draft"
+msgstr "Entwurf speichern"
 
 msgid "Select Template"
 msgstr "Vorlage auswählen"
@@ -299,8 +397,17 @@ msgstr "Stack Name"
 msgid "Stack Name ="
 msgstr "Stack Name ="
 
+msgid "Stack Parameters"
+msgstr "Stack Parameter"
+
+msgid "Stack Preview"
+msgstr "Stack Vorschau"
+
 msgid "Stack Resource"
 msgstr "Stackressource"
+
+msgid "Stack Resource ID"
+msgstr "Stack Resource ID"
 
 msgid "Stack Resource Type"
 msgstr "Stack-Ressourcentyp"
@@ -372,6 +479,9 @@ msgstr "Vorlagenquelle"
 msgid "Template URL"
 msgstr "Vorlage URL"
 
+msgid "Template Version"
+msgstr "Vorlagenversion"
+
 msgid "Template Versions"
 msgstr "Vorlagenversionen"
 
@@ -394,6 +504,9 @@ msgstr ""
 
 msgid "Time Since Event"
 msgstr "Zeit seit Ereignis"
+
+msgid "Timeout"
+msgstr "Zeitlimit"
 
 msgid "Topology"
 msgstr "Topologie"
@@ -468,8 +581,31 @@ msgstr "Stack aktualisieren"
 msgid "Update Stack Parameters"
 msgstr "Stack-Parameter aktualisieren"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Stack mit den angegebenen Werten aktualisieren. Bitte beachten Sie, dass "
+"sämtliche verschlüsselten Parameter, wie z.B. Passwörter, auf ihre "
+"Standardwerte zurückgesetzt werden, wenn Sie sie hier nicht ändern."
+
 msgid "Updated"
 msgstr "Aktualisiert"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Nutzen Sie eine der verfügbaren Vorlagenquellenoptionen, um die Vorlage zur "
+"Erzeugung dieses Stacks anzugeben."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Verwenden Sie eine der verfügbaren Vorlagenquellenoptionen, um die Vorlage "
+"zur Vorschau des Stacks anzugeben,"
 
 msgid "Version"
 msgstr "Version"
