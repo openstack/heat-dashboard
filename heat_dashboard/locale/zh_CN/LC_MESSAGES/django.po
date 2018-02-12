@@ -16,22 +16,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-06 05:27+0000\n"
+"POT-Creation-Date: 2018-02-12 01:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-06 01:52+0000\n"
+"PO-Revision-Date: 2018-02-12 12:09+0000\n"
 "Last-Translator: Tony <tfu@redhat.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
+
 msgid "A local environment to upload."
 msgstr "上传一个本地环境文件"
 
 msgid "A local template to upload."
 msgstr "要上传的本地模板。"
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr "一个用于对基础架构、服务和应用部署进行自动化的模板。"
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -47,6 +60,9 @@ msgstr "正在启用配置"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "要通过其加载模板的外部 (HTTP) URL。"
+
+msgid "Attributes"
+msgstr "属性"
 
 msgid "Case sensitive"
 msgstr "区分大小写"
@@ -80,6 +96,12 @@ msgid "Checked Stack"
 msgid_plural "Checked Stacks"
 msgstr[0] "已经检查过的堆栈"
 
+msgid "Clear Canvas"
+msgstr "清除画板"
+
+msgid "Close"
+msgstr "关闭"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "创建完成"
@@ -94,6 +116,9 @@ msgstr "正在创建"
 
 msgid "Create Stack"
 msgstr "创建堆栈"
+
+msgid "Create a new stack with the provided values."
+msgstr "使用提供的值创建一个新堆栈。"
 
 msgid "Created"
 msgstr "已创建"
@@ -127,14 +152,23 @@ msgstr[0] "已删除堆栈"
 msgid "Description"
 msgstr "描述"
 
+msgid "Description:"
+msgstr "描述："
+
 msgid "Direct Input"
 msgstr "直接输入"
+
+msgid "Disabled"
+msgstr "已禁用"
 
 msgid "Edit Template"
 msgstr "编辑模板"
 
 msgid "Enable rollback on create/update failure."
 msgstr "在创建/更新失败时允许回滚。"
+
+msgid "Enabled"
+msgstr "已启用"
 
 msgid "Environment Data"
 msgstr "环境数据"
@@ -148,11 +182,20 @@ msgstr "环境源"
 msgid "Events"
 msgstr "事件"
 
+msgid "Export Draft"
+msgstr "导出草稿"
+
 msgid "File"
 msgstr "文件"
 
 msgid "Function"
 msgstr "功能"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "导入草稿"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -166,11 +209,32 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "正在初始化"
 
+msgid "Last Updated"
+msgstr "最近更新"
+
 msgid "Launch"
 msgstr "启动"
 
+msgid "Launch Parameters"
+msgstr "启动参数"
+
 msgid "Launch Stack"
 msgstr "创建堆栈"
+
+msgid "Links"
+msgstr "链接"
+
+msgid "Load Draft"
+msgstr "加载草稿"
+
+msgid "Manage Drafts"
+msgstr "管理草稿"
+
+msgid "Minutes"
+msgstr "分钟"
+
+msgid "Name"
+msgstr "名称"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -186,12 +250,23 @@ msgstr "下一项"
 msgid "Orchestration"
 msgstr "编排"
 
+msgid "Outputs"
+msgstr "输出"
+
 msgid "Overview"
 msgstr "概览"
+
+msgid "Parameters"
+msgstr "参数"
 
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "用户 “%s” 的密码"
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr "请把资源图标拖到中部的画板中来定义模板。"
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -212,11 +287,23 @@ msgstr "预览堆栈参数"
 msgid "Preview Template"
 msgstr "预览模板"
 
+msgid "Preview a new stack with the provided values."
+msgstr "预览带有所提供值的新堆栈。"
+
+msgid "Properties"
+msgstr "属性"
+
 msgid "Referenced Files"
 msgstr "参考的文件"
 
 msgid "Resource"
 msgstr "资源"
+
+msgid "Resource ID"
+msgstr "资源 ID"
+
+msgid "Resource Metadata"
+msgstr "资源元数据"
 
 msgid "Resource Types"
 msgstr "资源类型"
@@ -244,6 +331,9 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "已经恢复的堆栈"
 
+msgid "Rollback"
+msgstr "回滚"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "回滚完成"
@@ -258,6 +348,9 @@ msgstr "正在回滚"
 
 msgid "Rollback On Failure"
 msgstr "失败回滚"
+
+msgid "Save Draft"
+msgstr "保存草稿"
 
 msgid "Select Template"
 msgstr "选择模板"
@@ -298,8 +391,17 @@ msgstr "堆栈名称"
 msgid "Stack Name ="
 msgstr "堆栈名称="
 
+msgid "Stack Parameters"
+msgstr "堆栈参数"
+
+msgid "Stack Preview"
+msgstr "堆栈预览"
+
 msgid "Stack Resource"
 msgstr "堆栈资源"
+
+msgid "Stack Resource ID"
+msgstr "堆栈资源 ID"
 
 msgid "Stack Resource Type"
 msgstr "堆栈资源类型"
@@ -369,6 +471,9 @@ msgstr "模板源"
 msgid "Template URL"
 msgstr "模板 URL"
 
+msgid "Template Version"
+msgstr "模板版本"
+
 msgid "Template Versions"
 msgstr "模板版本"
 
@@ -389,6 +494,9 @@ msgstr "这是堆栈生命周期中执行的操作所必需的。"
 
 msgid "Time Since Event"
 msgstr "发生事件后的时间"
+
+msgid "Timeout"
+msgstr "超时"
 
 msgid "Topology"
 msgstr "拓扑"
@@ -462,8 +570,26 @@ msgstr "更新堆栈"
 msgid "Update Stack Parameters"
 msgstr "更新堆栈参数"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"使用提供的值来更新堆栈。请注意任何加密参数（例如，密码）将被重置为缺省值，如"
+"果您在此处不进行更改。"
+
 msgid "Updated"
 msgstr "已更新"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr "使用某个可用模板源选项来指定要在创建此堆栈时使用的模板。"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr "使用可用模板源选项中的一个来指定用来预览堆栈的模板。"
 
 msgid "Version"
 msgstr "版本"
