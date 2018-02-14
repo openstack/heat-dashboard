@@ -1,0 +1,65 @@
+# Andreas Jaeger <jaegerandi@gmail.com>, 2017. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2017. #zanata
+# Robert Simai <robert.simai@suse.com>, 2017. #zanata
+# Reik Keutterling <spielkind@gmail.com>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Heat Dashboard Release Notes\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-14 01:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-02-13 01:27+0000\n"
+"Last-Translator: Reik Keutterling <spielkind@gmail.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "1.0.0"
+msgstr "1.0.0"
+
+msgid ""
+"A panel for ``Template Generator`` is newly added.  There is not specific "
+"installation process.  After installing heat-dashboard, this panel will be "
+"displayed along with ``Stacks``, ``Resource Types`` and ``Template "
+"Versions``."
+msgstr ""
+"Ein Panel für `` Vorlagengenerator`` wurde neu hinzugefügt. Es gibt keinen "
+"spezifischen Installationsvorgang. Nach der Installation von heat-dashboard "
+"wird dieses Panel zusammen mit `` Stacks``, `` Ressourcentypen`` und `` "
+"Vorlagenversionen`` angezeigt."
+
+msgid "Current Series Release Notes"
+msgstr "Aktuelle Serie Releasenotes"
+
+msgid "Heat Dashboard Release Notes"
+msgstr "Heat Dashboard Releasenotes"
+
+msgid ""
+"Heat support in OpenStack Dashboard is now split into a separated python "
+"package."
+msgstr ""
+"Die Heat-Unterstützung im OpenStack Dashboard ist jetzt in ein separates "
+"Python-Paket aufgeteilt."
+
+msgid ""
+"Heat support in OpenStack Dashboard is now split into a separete package "
+"``heat-dashboard``. You need to install ``heat-dashboard`` after upgrading "
+"OpenStack Dashboard to Queens release and add ``enabled`` file for Heat "
+"Dashboard. For detail information, see https://docs.openstack.org/heat-"
+"dashboard/latest/."
+msgstr ""
+"Die Heat-Unterstützung im OpenStack Dashboard ist jetzt in ein separates "
+"Python-Paket aufgeteilt. ``heat-dashboard``. Sie müssen `` heat-dashboard`` "
+"installieren, nachdem Sie das OpenStack Dashboard auf Queens aktualisiert "
+"haben  und die ``enabled`` Datei für das Heat Dashboard hinzufügen. Weitere "
+"Informationen finden Sie unter https://docs.openstack.org/heat-dashboard/"
+"latest/."
+
+msgid "New Features"
+msgstr "Neue Funktionen"
+
+msgid "Prelude"
+msgstr "Einleitung"
