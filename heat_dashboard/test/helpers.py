@@ -165,6 +165,10 @@ class TestCase(horizon_helpers.TestCase):
     # boolean variable to store failures
     missing_mocks = False
 
+    # heat-dashboard depends on mox and we need to declare it.
+    # horizon UT disables mox by default now.
+    use_mox = True
+
     def fake_conn_request(self):
         # print a stacktrace to illustrate where the unmocked API call
         # is being made from
