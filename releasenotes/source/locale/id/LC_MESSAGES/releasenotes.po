@@ -1,13 +1,14 @@
 # suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: Heat Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-13 07:43+0000\n"
+"POT-Creation-Date: 2018-02-20 00:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-15 07:30+0000\n"
+"PO-Revision-Date: 2018-02-21 03:09+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
@@ -59,3 +60,6 @@ msgstr "Fitur baru"
 
 msgid "Prelude"
 msgstr "Prelude"
+
+msgid "Queens Series Release Notes"
+msgstr "Catatan Rilis Seri Queens"
