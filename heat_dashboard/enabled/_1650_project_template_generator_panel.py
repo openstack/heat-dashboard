@@ -12,6 +12,8 @@
 
 import os
 
+from importlib import import_module
+
 import heat_dashboard
 
 from horizon.utils.file_discovery import discover_files
@@ -39,13 +41,30 @@ JS_BASE = '%s/js' % TEMPLATE_GENERATOR_BASE
 
 ADD_SCSS_FILES = [
     '%s/hotgen-main.scss' % CSS_BASE,
+    'horizon/lib/bootstrap_scss/scss/_bootstrap.scss',
     'horizon/lib/font_awesome/scss/font-awesome.scss']
 
+XSTATIC_MODULES = [
+    ('xstatic.pkg.angular', [
+        'angular-animate.js',
+        'angular-aria.js',
+        'angular-messages.js',
+    ]),
+    ('xstatic.pkg.angular_bootstrap', ['angular-bootstrap.js']),
+]
 HEAT_DASHBOARD_ROOT = heat_dashboard.__path__[0]
 
 ADD_JS_FILES = discover_files(os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
-                              sub_path='%s/vendors' % JS_BASE,
+                              sub_path='%s/libs' % JS_BASE,
                               ext='.js', trim_base_path=True)
+
+for module_name, js_files in XSTATIC_MODULES:
+    module = import_module(module_name)
+    for js_file in js_files:
+        ADD_JS_FILES.append(
+            os.path.join('horizon/lib/', module.NAME, js_file)
+        )
+
 ADD_JS_FILES.extend([
     '%s/components/template-generator.module.js' % JS_BASE,
     '%s/components/utils.module.js' % JS_BASE,
@@ -61,6 +80,7 @@ ADD_JS_FILES.extend(
         trim_base_path=True)
         if file not in ADD_JS_FILES and 'spec.js' not in file
      ])
+
 ADD_JS_FILES.extend(
     [file for file in discover_files(
         os.path.join(HEAT_DASHBOARD_ROOT, 'static'),

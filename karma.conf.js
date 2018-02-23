@@ -15,10 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'node_modules/angular/angular.min.js',
-        'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+        'node_modules/angular/angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
-        'heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/vendors/*.js',
+        'node_modules/angular-aria/angular-aria.js',
+        'node_modules/angular-messages/angular-messages.js',
+        'node_modules/angular-animate/angular-animate.js',
+        'node_modules/angular-sanitize/angular-sanitize.js',
+        'node_modules/angular-ui-router/release/angular-ui-router.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+        'heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/libs/*.js',
         'heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/components/*.module.js',
         'heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/components/!(*.spec|*.module).js',
         'heat_dashboard/static/dashboard/project/heat_dashboard/template_generator/js/components/*.spec.js',
