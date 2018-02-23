@@ -22,12 +22,12 @@ from heat_dashboard import api as heat_api
 
 
 try:
-    API_TIMEOUT = settings.API_TIMEOUT
+    API_TIMEOUT = settings.HEAT_TEMPLATE_GENERATOR_API_TIMEOUT
 except AttributeError:
     API_TIMEOUT = 60
 
 try:
-    API_PARALLEL = settings.API_PARALLEL
+    API_PARALLEL = settings.HEAT_TEMPLATE_GENERATOR_API_PARALLEL
 except AttributeError:
     API_PARALLEL = 2
 

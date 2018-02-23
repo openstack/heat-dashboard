@@ -34,7 +34,7 @@ settings.POLICY_FILES.update({
 # })
 
 # Template Generator retrieve options API TIMEOUT
-API_TIMEOUT = 60
+HEAT_TEMPLATE_GENERATOR_API_TIMEOUT = 60
 
 # Template Generator retrieve options API PARALLEL LEVEL
-API_PARALLEL = 2
+HEAT_TEMPLATE_GENERATOR_API_PARALLEL = 2
