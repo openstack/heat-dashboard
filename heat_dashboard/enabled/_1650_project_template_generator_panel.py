@@ -15,7 +15,6 @@ import os
 import heat_dashboard
 
 from horizon.utils.file_discovery import discover_files
-from openstack_dashboard.settings import STATIC_URL
 
 # The slug of the panel to be added to HORIZON_CONFIG. Required.
 PANEL = 'template_generator'
@@ -38,14 +37,9 @@ TEMPLATE_GENERATOR_BASE = 'dashboard/project/heat_dashboard/template_generator'
 CSS_BASE = '%s/css' % TEMPLATE_GENERATOR_BASE
 JS_BASE = '%s/js' % TEMPLATE_GENERATOR_BASE
 
-PREFIX_URL = '%s/' % STATIC_URL.strip('/')
 ADD_SCSS_FILES = [
-    PREFIX_URL + '%s/angular-notify.min.css' % CSS_BASE,
-    PREFIX_URL + '%s/bootstrap.min.css' % CSS_BASE,
-    PREFIX_URL + '%s/vis.css' % CSS_BASE,
-    PREFIX_URL + '%s/angular-material.min.css' % CSS_BASE,
-    PREFIX_URL + '%s/font-awesome-4.7.0/css/font-awesome.min.css' % CSS_BASE,
-    PREFIX_URL + '%s/hotgen.css' % CSS_BASE]
+    '%s/hotgen-hotgen-main.scss' % CSS_BASE,
+    'horizon/lib/font_awesome/scss/font-awesome.scss']
 
 HEAT_DASHBOARD_ROOT = heat_dashboard.__path__[0]
 
