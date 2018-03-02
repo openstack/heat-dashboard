@@ -38,7 +38,7 @@ CSS_BASE = '%s/css' % TEMPLATE_GENERATOR_BASE
 JS_BASE = '%s/js' % TEMPLATE_GENERATOR_BASE
 
 ADD_SCSS_FILES = [
-    '%s/hotgen-hotgen-main.scss' % CSS_BASE,
+    '%s/hotgen-main.scss' % CSS_BASE,
     'horizon/lib/font_awesome/scss/font-awesome.scss']
 
 HEAT_DASHBOARD_ROOT = heat_dashboard.__path__[0]
