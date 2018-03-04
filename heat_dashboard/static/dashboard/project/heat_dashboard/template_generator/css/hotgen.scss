@@ -50,9 +50,11 @@ div.vis-label, div.vis-network
 div.vis-edit-mode div.vis-label{
     margin: -5px 15px 10px 25px;
 }
+div.vis-network div.vis-manipulation div.vis-button.vis-none {
+    margin-top: -15px;
+}
 div.vis-network div.vis-manipulation div.vis-separator-line {
-    height: 80%;
-    margin: 0px 1px 5px 15px;
+    width: 0px
 }
 .mat-tab-links {
     display: table;

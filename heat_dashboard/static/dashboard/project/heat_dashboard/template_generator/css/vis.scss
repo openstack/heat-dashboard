@@ -264,7 +264,7 @@
 }
 
 .vis-item .vis-delete {
-  background: url('img/timeline/delete.png') no-repeat center;
+  background: none; 
   position: absolute;
   width: 24px;
   height: 24px;
@@ -615,7 +615,7 @@ div.vis-network div.vis-manipulation {
 
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1%;
   width: 100%;
   height: 30px;
 }
@@ -638,7 +638,7 @@ div.vis-network div.vis-close {
 
   background-position: 20px 3px;
   background-repeat: no-repeat;
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/cross.png");
+  background-image: none;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -685,7 +685,7 @@ div.vis-network div.vis-manipulation div.vis-button:active {
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-back {
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/backIcon.png");
+  background-image: none;
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-none:hover {
@@ -704,12 +704,12 @@ div.vis-network div.vis-manipulation div.notification {
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-add {
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/addNodeIcon.png");
+  background-image: none;
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-edit,
 div.vis-network div.vis-edit-mode div.vis-button.vis-edit {
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/editIcon.png");
+  background-image: none;
 }
 
 div.vis-network div.vis-edit-mode div.vis-button.vis-edit.vis-edit-mode {
@@ -718,22 +718,22 @@ div.vis-network div.vis-edit-mode div.vis-button.vis-edit.vis-edit-mode {
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-connect {
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/connectIcon.png");
+  background-image: none;
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-delete {
-  background-image: url("../project/heat_dashboard/template_generator/css/img/network/deleteIcon.png");
+  background-image: none;
 }
 /* top right bottom left */
 div.vis-network div.vis-manipulation div.vis-label,
 div.vis-network div.vis-edit-mode div.vis-label {
-  margin: 0 0 0 23px;
+  margin: 0 5px;
   line-height: 25px;
 }
 div.vis-network div.vis-manipulation div.vis-separator-line {
-  display:inline-block;
-  width:1px;
-  height:20px;
+  display: inline-block;
+  width: 0px;
+  height: 20px;
   background-color: #bdbdbd;
   margin: 5px 7px 0 15px;
 }
@@ -774,37 +774,37 @@ div.vis-network div.vis-navigation div.vis-button:active {
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-up {
-    background-image: url("img/network/upArrow.png");
+    background-image: none;
     bottom:50px;
     left:55px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-down {
-    background-image: url("img/network/downArrow.png");
+    background-image: none;
     bottom:10px;
     left:55px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-left {
-    background-image: url("img/network/leftArrow.png");
+    background-image: none;
     bottom:10px;
     left:15px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-right {
-    background-image: url("img/network/rightArrow.png");
+    background-image: none;
     bottom:10px;
     left:95px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
-    background-image: url("img/network/plus.png");
+    background-image: none;
     bottom:10px;
     right:15px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
-    background-image: url("img/network/minus.png");
+    background-image: none;
     bottom:10px;
     right:55px;
 }
 div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
-    background-image: url("img/network/zoomExtends.png");
+    background-image: none;
     bottom:50px;
     right:15px;
 }

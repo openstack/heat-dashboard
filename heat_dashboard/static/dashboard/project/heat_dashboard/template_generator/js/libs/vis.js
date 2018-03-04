@@ -38663,6 +38663,7 @@ return /******/ (function(modules) { // webpackBootstrap
           } else {
             this.editModeDiv.style.display = 'block';
           }
+          this.editModeDiv.appendChild(this._createIcon('fa-pencil'))
           this.canvas.frame.appendChild(this.editModeDiv);
         }
 
@@ -38671,6 +38672,7 @@ return /******/ (function(modules) { // webpackBootstrap
           this.closeDiv = document.createElement('div');
           this.closeDiv.className = 'vis-close';
           this.closeDiv.style.display = this.manipulationDiv.style.display;
+          this.closeDiv.appendChild(this._createIcon('fa-times'))
           this.canvas.frame.appendChild(this.closeDiv);
         }
       }
@@ -38713,7 +38715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
         // create the contents for the editMode button
         var locale = this.options.locales[this.options.locale];
-        var button = this._createButton('editMode', 'vis-button vis-edit vis-edit-mode', locale['edit'] || this.options.locales['en']['edit']);
+        var button = this._createButton('editMode', 'vis-button vis-edit vis-edit-mode', locale['edit'] || this.options.locales['en']['edit'], 'fa-pencil');
         this.editModeDiv.appendChild(button);
 
         // bind a hammer listener to the button, calling the function toggleEditMode.
@@ -38820,62 +38822,82 @@ return /******/ (function(modules) { // webpackBootstrap
       // ----------------------    DOM functions for buttons    --------------------------//
 
       value: function _createAddNodeButton(locale) {
-        var button = this._createButton('addNode', 'vis-button vis-add', locale['addNode'] || this.options.locales['en']['addNode']);
+        var button = this._createButton('addNode', 'vis-button vis-add', locale['addNode'] || this.options.locales['en']['addNode'], 'fa-plus');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.addNodeMode.bind(this));
       }
     }, {
       key: '_createAddEdgeButton',
       value: function _createAddEdgeButton(locale) {
-        var button = this._createButton('addEdge', 'vis-button vis-connect', locale['addEdge'] || this.options.locales['en']['addEdge']);
+        var button = this._createButton('addEdge', 'vis-button vis-connect', locale['addEdge'] || this.options.locales['en']['addEdge'], 'fa-plus');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.addEdgeMode.bind(this));
       }
     }, {
       key: '_createEditNodeButton',
       value: function _createEditNodeButton(locale) {
-        var button = this._createButton('editNode', 'vis-button vis-edit', locale['editNode'] || this.options.locales['en']['editNode']);
+        var button = this._createButton('editNode', 'vis-button vis-edit', locale['editNode'] || this.options.locales['en']['editNode'], 'fa-pencil');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.editNode.bind(this));
       }
     }, {
       key: '_createEditEdgeButton',
       value: function _createEditEdgeButton(locale) {
-        var button = this._createButton('editEdge', 'vis-button vis-edit', locale['editEdge'] || this.options.locales['en']['editEdge']);
+        var button = this._createButton('editEdge', 'vis-button vis-edit', locale['editEdge'] || this.options.locales['en']['editEdge'], 'fa-pencil');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.editEdgeMode.bind(this));
       }
     }, {
       key: '_createDeleteButton',
       value: function _createDeleteButton(locale) {
-        var button = this._createButton('delete', 'vis-button vis-delete', locale['del'] || this.options.locales['en']['del']);
+        var button = this._createButton('delete', 'vis-button vis-delete', locale['del'] || this.options.locales['en']['del'], 'fa-minus');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.deleteSelected.bind(this));
       }
     }, {
       key: '_createBackButton',
       value: function _createBackButton(locale) {
-        var button = this._createButton('back', 'vis-button vis-back', locale['back'] || this.options.locales['en']['back']);
+        var button = this._createButton('back', 'vis-button vis-back', locale['back'] || this.options.locales['en']['back'], 'fa-arrow-left');
         this.manipulationDiv.appendChild(button);
         this._bindHammerToDiv(button, this.showManipulatorToolbar.bind(this));
       }
     }, {
       key: '_createButton',
-      value: function _createButton(id, className, label) {
-        var labelClassName = arguments[3] === undefined ? 'vis-label' : arguments[3];
+      value: function _createButton(id, className, label, iconClass) {
+        var labelClassName = arguments[4] === undefined ? 'vis-label' : arguments[4];
 
         this.manipulationDOM[id + 'Div'] = document.createElement('div');
         this.manipulationDOM[id + 'Div'].className = className;
         this.manipulationDOM[id + 'Label'] = document.createElement('div');
         this.manipulationDOM[id + 'Label'].className = labelClassName;
-        this.manipulationDOM[id + 'Label'].innerHTML = label;
+//        this.manipulationDOM[id + 'Label'].innerHTML = label;
+
+        var labelElement = document.createElement('span')
+        if (typeof iconClass != 'undefined' && iconClass != ''){
+          var iconElement = this._createIcon(iconClass);
+          this.manipulationDOM[id + 'Label'].appendChild(iconElement);
+          labelElement.style.fontFamily = 'inherit';
+          labelElement.style.fontSize = '0.9em';
+          labelElement.style.marginLeft = '5px';
+        }
+        labelElement.innerHTML = label;
+        this.manipulationDOM[id + 'Label'].appendChild(labelElement);
+
         this.manipulationDOM[id + 'Div'].appendChild(this.manipulationDOM[id + 'Label']);
         return this.manipulationDOM[id + 'Div'];
       }
     }, {
       key: '_createDescription',
       value: function _createDescription(label) {
-        this.manipulationDiv.appendChild(this._createButton('description', 'vis-button vis-none', label));
+        this.manipulationDiv.appendChild(this._createButton('description', 'vis-button vis-none', label, ''));
+      }
+    }, {
+      key: '_createIcon',
+      value: function _createIcon(iconClass){
+        var newIcon = document.createElement('i');
+        newIcon.classList.add('fa');
+        newIcon.classList.add(iconClass);
+        return newIcon
       }
     }, {
       key: '_temporaryBindEvent',
