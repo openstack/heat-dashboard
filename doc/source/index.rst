@@ -3,24 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-==============================================
-Welcome to the documentation of Heat Dashboard
-==============================================
+.. the main title comes from README.rst
 
-Contents:
+.. include:: ../../README.rst
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
 
-   readme
-   install/index
+   Installation Guide <install/index>
+   Configuration Guide <configuration/index>
+   User Documentation <user/index>
    contributor/index
-   configuration/index
-   user/index
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
