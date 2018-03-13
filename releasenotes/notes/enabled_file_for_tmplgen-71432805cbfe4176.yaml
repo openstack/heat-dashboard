@@ -1,0 +1,13 @@
+---
+upgrade:
+  - |
+    If you need to update your queens heat-dashboard to rocky,
+    you must copy the latest enabled file (_1650_project_template_generator_panel.py)
+    to horizon/openstack_dashboard/enabled directory again.
+    The enabled file for template generator has been changed a lot in rocky and it does not have
+    compatibility with queens heat-dashboard.
+    The background of this change is that SCSS and xstatic modules are started to be used
+    rather than CSS and embedded JavaScript copies to follow Horizon’s contribution rule.
+    [`bug 1753919 <https://bugs.launchpad.net/heat-dashboard/+bug/1753919>`__]
+    [`bug 1755140 <https://bugs.launchpad.net/heat-dashboard/+bug/1755140>`__]
+    [`bug 1755308 <https://bugs.launchpad.net/heat-dashboard/+bug/1755308>`__]
