@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Heat Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 09:06+0000\n"
+"POT-Creation-Date: 2018-03-19 05:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,9 +17,6 @@ msgstr ""
 
 msgid "1.0.0"
 msgstr "1.0.0"
-
-msgid "1.0.2-20"
-msgstr "1.0.2-20"
 
 msgid ""
 "A panel for ``Template Generator`` is newly added.  There is not specific "
