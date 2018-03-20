@@ -5,8 +5,9 @@ Welcome to Heat Dashboard!
 Heat dashboard is a horizon plugin for Heat.
 
 * License: Apache license
-* Source: http://git.openstack.org/cgit/openstack/heat-dashboard
-* Bugs: http://bugs.launchpad.net/heat-dashboard
+* Documentation: https://docs.openstack.org/heat-dashboard/latest/
+* Source: https://git.openstack.org/cgit/openstack/heat-dashboard
+* Bugs: https://bugs.launchpad.net/heat-dashboard
 
 Team and repository tags
 ------------------------
