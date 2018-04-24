@@ -11,38 +11,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django import http
 from django.urls import reverse
-
-from mox3.mox import IsA
 
 from heat_dashboard import api
 from heat_dashboard.test import helpers as test
+from heat_dashboard.test.helpers import IsHttpRequest
 
 
 class ResourceTypesTests(test.TestCase):
 
-    @test.create_stubs({api.heat: ('resource_types_list',)})
+    use_mox = False
+
+    @test.create_mocks({api.heat: ('resource_types_list',)})
     def test_index(self):
-        filters = {}
-        api.heat.resource_types_list(
-            IsA(http.HttpRequest), filters=filters).AndReturn(
-            self.resource_types.list())
-        self.mox.ReplayAll()
+        self.mock_resource_types_list.return_value = \
+                self.resource_types.list()
 
         res = self.client.get(
             reverse('horizon:project:resource_types:index'))
         self.assertTemplateUsed(
             res, 'horizon/common/_data_table_view.html')
         self.assertContains(res, 'AWS::CloudFormation::Stack')
+        self.mock_resource_types_list.assert_called_once_with(
+            IsHttpRequest(), filters={})
 
-    @test.create_stubs({api.heat: ('resource_type_get',)})
+    @test.create_mocks({api.heat: ('resource_type_get',)})
     def test_detail_view(self):
         rt = self.api_resource_types.first()
 
-        api.heat.resource_type_get(
-            IsA(http.HttpRequest), rt['resource_type']).AndReturn(rt)
-        self.mox.ReplayAll()
+        self.mock_resource_type_get.return_value = rt
 
         url = reverse('horizon:project:resource_types:details',
                       args=[rt['resource_type']])
@@ -50,3 +47,5 @@ class ResourceTypesTests(test.TestCase):
 
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertNoMessages()
+        self.mock_resource_type_get.assert_called_once_with(
+            IsHttpRequest(), rt['resource_type'])
