@@ -12,70 +12,70 @@
 # limitations under the License.
 
 from django.core.urlresolvers import reverse
-from django import http
-
-from mox3.mox import IsA
 
 from heat_dashboard import api
 from heat_dashboard.test import helpers as test
+from heat_dashboard.test.helpers import IsHttpRequest
 
 
 class TemplateVersionsTests(test.TestCase):
 
     INDEX_URL = reverse('horizon:project:template_versions:index')
 
-    @test.create_stubs({api.heat: ('template_version_list',)})
+    @test.create_mocks({api.heat: ('template_version_list',)})
     def test_index(self):
-        api.heat.template_version_list(
-            IsA(http.HttpRequest)).AndReturn(self.template_versions.list())
-        self.mox.ReplayAll()
+        self.mock_template_version_list.return_value = \
+            self.template_versions.list()
 
         res = self.client.get(self.INDEX_URL)
+        self.mock_template_version_list.assert_called_once_with(
+            IsHttpRequest())
         self.assertTemplateUsed(
             res, 'project/template_versions/index.html')
         self.assertContains(res, 'HeatTemplateFormatVersion.2012-12-12')
 
-    @test.create_stubs({api.heat: ('template_version_list',)})
+    @test.create_mocks({api.heat: ('template_version_list',)})
     def test_index_exception(self):
-        api.heat.template_version_list(
-            IsA(http.HttpRequest)).AndRaise(self.exceptions.heat)
-        self.mox.ReplayAll()
+        self.mock_template_version_list.side_effect = \
+            self.exceptions.heat
 
         res = self.client.get(self.INDEX_URL)
+        self.mock_template_version_list.assert_called_once_with(
+            IsHttpRequest())
         self.assertTemplateUsed(
             res, 'project/template_versions/index.html')
         self.assertEqual(len(res.context['table'].data), 0)
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({api.heat: ('template_function_list',)})
+    @test.create_mocks({api.heat: ('template_function_list',)})
     def test_detail_view(self):
         t_version = self.template_versions.first().version
         t_functions = self.template_functions.list()
 
-        api.heat.template_function_list(
-            IsA(http.HttpRequest), t_version).AndReturn(t_functions)
-        self.mox.ReplayAll()
+        self.mock_template_function_list.return_value = t_functions
 
         url = reverse('horizon:project:template_versions:details',
                       args=[t_version])
         res = self.client.get(url)
 
+        self.mock_template_function_list.assert_called_once_with(
+            IsHttpRequest(), t_version)
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertNoMessages()
 
-    @test.create_stubs({api.heat: ('template_function_list',)})
+    @test.create_mocks({api.heat: ('template_function_list',)})
     def test_detail_view_with_exception(self):
         t_version = self.template_versions.first().version
 
-        api.heat.template_function_list(
-            IsA(http.HttpRequest), t_version).\
-            AndRaise(self.exceptions.heat)
-        self.mox.ReplayAll()
+        self.mock_template_function_list.side_effect = \
+            self.exceptions.heat
 
         url = reverse('horizon:project:template_versions:details',
                       args=[t_version])
         res = self.client.get(url)
 
+        self.mock_template_function_list.assert_called_once_with(
+            IsHttpRequest(), t_version)
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertEqual(len(res.context['table'].data), 0)
         self.assertMessageCount(res, error=1)

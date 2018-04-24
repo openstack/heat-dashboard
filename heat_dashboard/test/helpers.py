@@ -44,12 +44,19 @@ from horizon.test import helpers as horizon_helpers
 
 from openstack_dashboard import api as project_api
 from openstack_dashboard import context_processors
+from openstack_dashboard.test import helpers
 
 from heat_dashboard import api
 from heat_dashboard.test.test_data import utils as test_utils
 
 # Makes output of failing mox tests much easier to read.
 wsgi.WSGIRequest.__repr__ = lambda self: "<class 'django.http.HttpRequest'>"
+
+# Shortcuts to avoid importing openstack_dashboard.test.helper and
+# for backwards compatibility.
+create_mocks = helpers.create_mocks
+IsA = helpers.IsA
+IsHttpRequest = helpers.IsHttpRequest
 
 
 def create_stubs(stubs_to_create=None):
