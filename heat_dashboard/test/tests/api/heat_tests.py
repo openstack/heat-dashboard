@@ -21,6 +21,7 @@ from horizon import exceptions
 
 
 class HeatApiTests(test.APITestCase):
+
     use_mox = True
 
     def test_stack_list(self):
