@@ -21,7 +21,7 @@ function configure_heat_dashboard {
     # NOTE: If locale directory does not exist, compilemessages will fail,
     # so check for an existence of locale directory is required.
     if [ -d ${HEAT_DASHBOARD_DIR}/heat_dashboard/locale ]; then
-        (cd ${HEAT_DASHBOARD_DIR}/heat_dashboard; DJANGO_SETTINGS_MODULE=openstack_dashboard.settings ../manage.py compilemessages)
+        (cd ${HEAT_DASHBOARD_DIR}/heat_dashboard; DJANGO_SETTINGS_MODULE=openstack_dashboard.settings $PYTHON ../manage.py compilemessages)
     fi
 }
 
