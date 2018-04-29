@@ -21,6 +21,8 @@ from horizon import exceptions
 
 
 class HeatApiTests(test.APITestCase):
+    use_mox = True
+
     def test_stack_list(self):
         api_stacks = self.stacks.list()
         limit = getattr(settings, 'API_RESULT_LIMIT', 1000)

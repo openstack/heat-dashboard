@@ -13,6 +13,7 @@
 
 # Default to Horizons test settings to avoid any missing keys
 import heat_dashboard.enabled
+import openstack_dashboard.enabled
 
 from openstack_dashboard.test.settings import *  # noqa: F403,H303
 
