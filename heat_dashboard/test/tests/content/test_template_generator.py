@@ -13,9 +13,6 @@
 
 import json
 
-from mox3.mox import IsA
-
-from django import http
 from django.urls import reverse
 from openstack_dashboard import api as dashboard_api
 
@@ -25,12 +22,14 @@ from heat_dashboard.test import helpers as test
 
 class TemplateGeneratorTests(test.TestCase):
 
+    use_mox = False
+
     def test_index(self):
         self.client.get(reverse('horizon:project:template_generator:index'))
         self.assertTemplateUsed(
             template_name='project/template_generator/index.html')
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.heat: ('template_version_list', ),
         dashboard_api.neutron: (
             'network_list', 'subnet_list', 'tenant_floating_ip_list',
@@ -60,41 +59,23 @@ class TemplateGeneratorTests(test.TestCase):
         keypairs = self.keypairs.list()
         template_versions = self.template_versions.list()
 
-        dashboard_api.cinder.volume_list(
-            IsA(http.HttpRequest)).AndReturn(volumes)
-        dashboard_api.cinder.volume_snapshot_list(
-            IsA(http.HttpRequest)).AndReturn(volume_snapshots)
-        dashboard_api.cinder.volume_type_list(
-            IsA(http.HttpRequest)).AndReturn(volume_types)
-        dashboard_api.cinder.volume_backup_list(
-            IsA(http.HttpRequest)).AndReturn(volume_backups)
-        dashboard_api.glance.image_list_detailed(
-            IsA(http.HttpRequest)).AndReturn(images)
-        dashboard_api.neutron.network_list(
-            IsA(http.HttpRequest)).AndReturn(networks)
-        dashboard_api.neutron.subnet_list(
-            IsA(http.HttpRequest)).AndReturn(subnets)
-        dashboard_api.neutron.tenant_floating_ip_list(
-            IsA(http.HttpRequest), True).AndReturn(floating_ips)
-        dashboard_api.neutron.port_list(
-            IsA(http.HttpRequest)).AndReturn(ports)
-        dashboard_api.neutron.security_group_list(
-            IsA(http.HttpRequest)).AndReturn(security_groups)
-        dashboard_api.neutron.router_list(
-            IsA(http.HttpRequest)).AndReturn(routers)
-        dashboard_api.neutron.policy_list(
-            IsA(http.HttpRequest)).AndReturn(qos_policies)
-        dashboard_api.nova.availability_zone_list(
-            IsA(http.HttpRequest)).AndReturn(availability_zones)
-        dashboard_api.nova.flavor_list(
-            IsA(http.HttpRequest)).AndReturn(flavors)
-        dashboard_api.nova.server_list(
-            IsA(http.HttpRequest)).AndReturn(instances)
-        dashboard_api.nova.keypair_list(
-            IsA(http.HttpRequest)).AndReturn(keypairs)
-        api.heat.template_version_list(
-            IsA(http.HttpRequest)).AndReturn(template_versions)
-        self.mox.ReplayAll()
+        self.mock_volume_list.return_value = volumes
+        self.mock_volume_snapshot_list.return_value = volume_snapshots
+        self.mock_volume_type_list.return_vlue = volume_types
+        self.mock_volume_backup_list.return_value = volume_backups
+        self.mock_image_list_detailed.return_value = images
+        self.mock_network_list.return_value = networks
+        self.mock_subnet_list.return_value = subnets
+        self.mock_tenant_floating_ip_list.return_value = floating_ips
+        self.mock_port_list.return_value = ports
+        self.mock_security_group_list.return_value = security_groups
+        self.mock_router_list.return_value = routers
+        self.mock_policy_list.return_value = qos_policies
+        self.mock_availability_zone_list.return_value = availability_zones
+        self.mock_flavor_list.return_value = flavors
+        self.mock_server_list.return_value = instances
+        self.mock_keypair_list.return_value = keypairs
+        self.mock_template_version_list.return_value = template_versions
 
         resp = self.client.get(reverse(
             'horizon:project:template_generator:apis'))
@@ -103,3 +84,38 @@ class TemplateGeneratorTests(test.TestCase):
             data = data.decode('utf-8')
         json_data = json.loads(data)
         self.assertEqual(len(json_data.keys()), 20)
+
+        self.mock_volume_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_volume_snapshot_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_volume_type_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_volume_backup_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_image_list_detailed.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_network_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_subnet_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_tenant_floating_ip_list.assert_called_once_with(
+            test.IsHttpRequest(), True)
+        self.mock_port_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_security_group_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_router_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_policy_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_availability_zone_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_flavor_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_server_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_keypair_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_template_version_list.assert_called_once_with(
+            test.IsHttpRequest())
