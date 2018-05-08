@@ -15,9 +15,9 @@ from operator import attrgetter
 
 import yaml
 
-from django.core.urlresolvers import reverse
-from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
+from django.urls import reverse
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 import django.views.generic

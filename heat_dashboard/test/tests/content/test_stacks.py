@@ -14,26 +14,25 @@ import json
 import re
 
 import django
-from django.conf import settings
-from django.core import exceptions
-from django.core.urlresolvers import reverse
-from django import http
-from django.test.utils import override_settings
-from django.utils import html
-
-from mox3.mox import IsA
 import six
 
-from heatclient.common import template_format as hc_format
+from django import http
 
-from heat_dashboard import api
-from heat_dashboard.test import helpers as test
+from django.conf import settings
+from django.core import exceptions
+from django.test.utils import override_settings
+from django.urls import reverse
+from django.utils import html
+
+from heatclient.common import template_format as hc_format
+from mox3.mox import IsA
 from openstack_dashboard import api as dashboard_api
 
+from heat_dashboard import api
 from heat_dashboard.content.stacks import forms
 from heat_dashboard.content.stacks import mappings
 from heat_dashboard.content.stacks import tables
-
+from heat_dashboard.test import helpers as test
 
 INDEX_TEMPLATE = 'project/stacks/index.html'
 INDEX_URL = reverse('horizon:project:stacks:index')
@@ -407,7 +406,7 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if (1, 10) <= django.VERSION < (2, 0):
+        if (1, 10) <= django.VERSION < (2, 1):
             pattern = ('<input class="form-control" '
                        'id="id___param_public_string" '
                        'name="__param_public_string" type="text" required/>')
@@ -584,7 +583,7 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if (1, 10) <= django.VERSION < (2, 0):
+        if (1, 10) <= django.VERSION < (2, 1):
             input_str = ('<input class="form-control" '
                          'id="id___param_param{0}" '
                          'name="__param_param{0}" type="{1}" required/>')
@@ -592,11 +591,10 @@ class StackTests(test.TestCase):
             input_str = ('<input class="form-control" '
                          'id="id___param_param{0}" '
                          'name="__param_param{0}" type="{1}"/>')
-
         self.assertContains(res, input_str.format(3, 'text'), html=True)
         self.assertContains(res, input_str.format(4, 'text'), html=True)
 
-        if (1, 11) <= django.VERSION < (2, 0):
+        if (1, 11) <= django.VERSION < (2, 1):
             input_str_param2 = ('<input type="number" name="__param_param2" '
                                 'autocomplete="off" '
                                 'required class="form-control" '

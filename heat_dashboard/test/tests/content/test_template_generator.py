@@ -15,8 +15,8 @@ import json
 
 from mox3.mox import IsA
 
-from django.core.urlresolvers import reverse
 from django import http
+from django.urls import reverse
 from openstack_dashboard import api as dashboard_api
 
 from heat_dashboard import api

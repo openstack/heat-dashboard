@@ -14,10 +14,11 @@ import json
 import logging
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
 from django.template.defaultfilters import register
+from django.urls import reverse
 from django.utils import html
 from django.utils import safestring
+
 import six
 import six.moves.urllib.parse as urlparse
 

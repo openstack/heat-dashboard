@@ -10,18 +10,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from django.core import urlresolvers
+from django import urls
+
 from django.http import Http404
 from django.template.defaultfilters import title
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
+from heatclient import exc
 from horizon import messages
 from horizon import tables
 from horizon.utils import filters
-
-from heatclient import exc
 
 from heat_dashboard import api
 from heat_dashboard.content.stacks import mappings
@@ -135,7 +135,7 @@ class ChangeStackTemplate(tables.LinkAction):
     icon = "pencil"
 
     def get_link_url(self, stack):
-        return urlresolvers.reverse(self.url, args=[stack.id])
+        return urls.reverse(self.url, args=[stack.id])
 
 
 class DeleteStack(tables.DeleteAction):
@@ -308,8 +308,8 @@ class StacksTable(tables.DataTable):
 def get_resource_url(obj):
     if obj.physical_resource_id == obj.stack_id:
         return None
-    return urlresolvers.reverse('horizon:project:stacks:resource',
-                                args=(obj.stack_id, obj.resource_name))
+    return urls.reverse('horizon:project:stacks:resource',
+                        args=(obj.stack_id, obj.resource_name))
 
 
 class EventsTable(tables.DataTable):
