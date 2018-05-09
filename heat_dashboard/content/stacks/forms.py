@@ -434,6 +434,10 @@ class EditStackForm(CreateStackForm):
     stack_name = forms.CharField(
         label=_('Stack Name'),
         widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    timeout_mins = forms.IntegerField(
+        initial=60,
+        label=_('Updating Timeout (minutes)'),
+        help_text=_('Stack updating timeout in minutes.'))
 
     @sensitive_variables('password')
     def handle(self, request, data):
