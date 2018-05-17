@@ -445,7 +445,7 @@ class StackTests(test.TestCase):
         # ensure the fields were rendered in the correct order
         regex = re.compile('^.*>first_param<.*>middle_param<.*>last_param<.*$',
                            flags=re.DOTALL)
-        self.assertRegexpMatches(res.content.decode('utf-8'), regex)
+        self.assertRegex(res.content.decode('utf-8'), regex)
 
     @test.create_mocks({api.heat: ('stack_create', 'template_validate')})
     def test_launch_stack_parameter_types(self):
