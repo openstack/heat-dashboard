@@ -42,7 +42,7 @@ copyright = u'2017, OpenStack Developers'
 
 # openstackdocstheme options
 repository_name = 'openstack/heat-dashboard'
-bug_project = 'heat-dashboard'
+bug_project = '992'
 bug_tag = 'doc'
 html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
