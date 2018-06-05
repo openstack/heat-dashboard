@@ -372,6 +372,8 @@ class BaseAdminViewTests(TestCase):
 
     For testing admin-only views and functionality.
     """
+    use_mox = True
+
     def setActiveUser(self, *args, **kwargs):
         if "roles" not in kwargs:
             kwargs['roles'] = [self.roles.admin._info]
@@ -395,6 +397,8 @@ class APITestCase(TestCase):
     For use with tests which deal with the underlying clients rather than
     stubbing out the openstack_dashboard.api.* methods.
     """
+    use_mox = True
+
     def setUp(self):
         super(APITestCase, self).setUp()
         utils.patch_middleware_get_user()
@@ -449,6 +453,8 @@ class APITestCase(TestCase):
 
 # Need this to test both Glance API V1 and V2 versions
 class ResetImageAPIVersionMixin(object):
+    use_mox = True
+
     def setUp(self):
         super(ResetImageAPIVersionMixin, self).setUp()
         project_api.glance.VERSIONS.clear_active_cache()
