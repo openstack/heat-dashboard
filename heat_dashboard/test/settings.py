@@ -15,6 +15,7 @@
 import heat_dashboard.enabled
 import openstack_dashboard.enabled
 
+import openstack_dashboard.enabled  # noqa: F811
 from openstack_dashboard.test.settings import *  # noqa: F403,H303
 
 from openstack_dashboard.utils import settings
