@@ -47,6 +47,8 @@
                                 func =  hotgenUtils.escape_characters;
                                 break;
                             case 'metadata':
+                            case 'X-Account-Meta':
+                            case 'X-Container-Meta':
                             case 'scheduler_hints':
                             case 'value_specs':
                                 func =  hotgenUtils.extract_keyvalue;
