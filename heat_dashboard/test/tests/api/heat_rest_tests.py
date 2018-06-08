@@ -38,32 +38,33 @@ class HeatRestTestCase(test.TestCase):
     # Services
     #
 
-    @test.create_stubs({api.base: ('is_service_enabled',)})
+    @test.create_mocks({api.base: ('is_service_enabled',)})
     @mock.patch.object(heat.api, 'heat')
     def test_services_get(self, hc):
         request = self.mock_rest_request(GET={})
 
-        api.base.is_service_enabled(request, 'orchestration').AndReturn(True)
+        self.mock_is_service_enabled.return_value = True
 
         hc.service_list.return_value = [
             mock.Mock(**{'to_dict.return_value': {'id': '1'}}),
             mock.Mock(**{'to_dict.return_value': {'id': '2'}})
         ]
-        self.mox.ReplayAll()
 
         response = heat.Services().get(request)
         self.assertStatusCode(response, 200)
         self.assertEqual(response.content.decode('utf-8'),
                          '{"items": [{"id": "1"}, {"id": "2"}]}')
         hc.service_list.assert_called_once_with(request)
+        self.mock_is_service_enabled.assert_called_once_with(
+                request, 'orchestration')
 
-    @test.create_stubs({api.base: ('is_service_enabled',)})
+    @test.create_mocks({api.base: ('is_service_enabled',)})
     def test_services_get_disabled(self):
         request = self.mock_rest_request(GET={})
 
-        api.base.is_service_enabled(request, 'orchestration').AndReturn(False)
-
-        self.mox.ReplayAll()
+        self.mock_is_service_enabled.return_value = False
 
         response = heat.Services().get(request)
         self.assertStatusCode(response, 501)
+        self.mock_is_service_enabled.assert_called_once_with(
+                request, 'orchestration')
