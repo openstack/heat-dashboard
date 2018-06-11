@@ -1,0 +1,71 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+            <md-input-container class="md-block">
+                <label>Name</label>
+                <input ng-model="$ctrl.zone.name" name="name" type="text" required ng-pattern="validate_zone" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a name.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid name.
+                    </div>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long name.
+                    </div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="$ctrl.zone.email" name="email" type="text" required>
+                <div ng-messages="$ctrl.formReference.email.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply an email.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>TTL</label>
+                <input ng-model="$ctrl.zone.ttl" name="ttl" type="number">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <input ng-model="$ctrl.zone.description" name="description" type="text" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.description.$error" role="alert" multiple>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long description.
+                    </div>
+                </div>
+            </md-input-container>
+        </md-content>
+
+        <md-switch class="md-primary" name="show_more" ng-model="show_more">
+          {$ 'Show More Properties' | translate $}
+        </md-switch>
+    </md-tab>
+
+    <md-tab label="More Properties" ng-if="show_more">
+        <md-content layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Type</label>
+                <md-select ng-model="$ctrl.zone.type">
+                    <md-option ng-repeat="type in options.types" ng-value="type.id">
+                        {$ type.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Masters</label>
+                <md-chips ng-model="$ctrl.zone.masters"
+                          placeholder="+ master"
+                          readonly="false"
+                          md-removeable="true"
+                          md-transform-chip="validate_master($chip)">
+                </md-chips>
+            </md-input-container>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>
