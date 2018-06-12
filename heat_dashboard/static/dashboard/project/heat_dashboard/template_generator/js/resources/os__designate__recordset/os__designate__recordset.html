@@ -1,0 +1,76 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+            <md-input-container class="md-block">
+                <label>Name</label>
+                <input ng-model="$ctrl.recordset.name" name="name" type="text" required ng-pattern="validate_name" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.name.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a name.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid name.
+                    </div>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long name.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Zone</label>
+                <input ng-model="$ctrl.recordset.zone" name="zone" type="text" ng-disabled="$ctrl.disable.zone" required>
+                <div ng-messages="$ctrl.formReference.zone.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a zone.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid id of zone.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Type</label>
+                <md-select ng-model="$ctrl.recordset.type" required>
+                    <md-option ng-repeat="type in options.types" ng-value="type.id">
+                        {$ type.name $}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Records</label>
+                <md-chips ng-model="$ctrl.recordset.records" ng-required="true" placeholder="+ record"></md-chips>
+                <div class="md-chips-messages" ng-messages="$ctrl.formReference.records.$error">
+                    <div ng-message="required">At least one record is required.</div>
+                </div>
+            </md-input-container>
+        </md-content>
+
+        <md-switch class="md-primary" name="show_more" ng-model="show_more">
+          {$ 'Show More Properties' | translate $}
+        </md-switch>
+    </md-tab>
+
+    <md-tab label="Optional Properties" ng-if="show_more">
+        <md-content layout-padding>
+
+            <md-input-container class="md-block">
+                <label>TTL</label>
+                <input ng-model="$ctrl.recordset.ttl" name="ttl" type="number" step="1" min="1" max="2147483647">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <input ng-model="$ctrl.recordset.description" name="description" type="text" md-maxlength="255">
+                <div ng-messages="$ctrl.formReference.description.$error" role="alert" multiple>
+                    <div ng-message="md-maxlength" class="my-message">
+                      Too long description.
+                    </div>
+                </div>
+            </md-input-container>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+</md-tabs>
