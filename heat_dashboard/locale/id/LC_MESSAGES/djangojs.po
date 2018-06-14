@@ -1,29 +1,56 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 1.0.1.dev1\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-13 07:43+0000\n"
+"POT-Creation-Date: 2018-06-14 03:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-15 07:17+0000\n"
+"PO-Revision-Date: 2018-06-13 07:54+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 msgid "Cancel"
 msgstr "Cancel"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Check Stack"
+
+#, python-format
+msgid "Checked Stack: %s."
+msgid_plural "Checked Stacks: %s."
+msgstr[0] "Checked Stack: %s."
+
+msgid "Confirm Check Stack"
+msgid_plural "Confirm Check Stacks"
+msgstr[0] "Confirm Check Stack"
+
+msgid "Confirm Delete Stack"
+msgid_plural "Confirm Delete Stacks"
+msgstr[0] "Confirm Delete Stack"
 
 msgid "Create Stack"
 msgstr "Buat stack "
 
 msgid "Delete Resource"
 msgstr "Delete Resource"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Delete Stack"
+
+#, python-format
+msgid "Deleted Stack: %s."
+msgid_plural "Deleted Stacks: %s."
+msgstr[0] "Deleted Stack: %s."
 
 msgid "Download"
 msgstr "Download (pengunduhan)"
@@ -42,3 +69,35 @@ msgstr "Saved Drafts"
 
 msgid "Show More Properties"
 msgstr "Show More Properties"
+
+#, python-format
+msgid "Stack %s was successfully created."
+msgstr "Stack %s berhasil dibuat."
+
+#, python-format
+msgid "Unable to check Stack: %s."
+msgid_plural "Unable to check Stacks: %s."
+msgstr[0] "Unable to check Stack: %s."
+
+#, python-format
+msgid "Unable to delete Stack: %s."
+msgid_plural "Unable to delete Stacks: %s."
+msgstr[0] "Unable to delete Stack: %s."
+
+#, python-format
+msgid "You are not allowed to check stacks: %s"
+msgstr "Anda tidak diizinkan untuk memeriksa stack: %s"
+
+#, python-format
+msgid "You are not allowed to delete stacks: %s"
+msgstr "Anda tidak diizinkan untuk menghapus stacks: %s"
+
+#, python-format
+msgid "You have selected \"%s\"."
+msgid_plural "You have selected \"%s\"."
+msgstr[0] "You have selected \"%s\"."
+
+#, python-format
+msgid "You have selected \"%s\". Deleted stack is not recoverable."
+msgid_plural "You have selected \"%s\". Deleted stacks are not recoverable."
+msgstr[0] "You have selected \"%s\". Deleted stack is not recoverable."
