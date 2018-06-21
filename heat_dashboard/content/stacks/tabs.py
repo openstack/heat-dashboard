@@ -11,6 +11,7 @@
 # under the License.
 
 import logging
+from operator import attrgetter
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -81,9 +82,10 @@ class ResourceOverviewTab(tabs.Tab):
             "metadata": self.tab_group.kwargs['metadata']}
 
 
-class StackEventsTab(tabs.Tab):
+class StackEventsTab(tabs.TableTab):
     name = _("Events")
     slug = "events"
+    table_classes = (project_tables.EventsTable, )
     template_name = "project/stacks/_detail_events.html"
     preload = False
 
@@ -95,21 +97,46 @@ class StackEventsTab(tabs.Tab):
              ("orchestration", "events:index"),),
             request)
 
-    def get_context_data(self, request):
+    def get_events_data(self):
         stack = self.tab_group.kwargs['stack']
+        stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
+        prev_marker = self.request.GET.get(
+            project_tables.EventsTable._meta.prev_pagination_param)
+        if prev_marker is not None:
+            sort_dir = 'asc'
+            marker = prev_marker
+        else:
+            sort_dir = 'desc'
+            marker = self.request.GET.get(
+                project_tables.EventsTable._meta.pagination_param, None)
+
         try:
-            stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
-            events = api.heat.events_list(self.request, stack_identifier)
+            events, self._more, self._prev = api.heat.events_list(
+                self.request,
+                stack_identifier,
+                marker=marker,
+                paginate=True,
+                sort_dir=sort_dir)
+            if prev_marker is not None:
+                events = sorted(events, key=attrgetter('event_time'),
+                                reverse=True)
             LOG.debug('got events %s', events)
             # The stack id is needed to generate the resource URL.
             for event in events:
                 event.stack_id = stack.id
         except Exception:
             events = []
-            messages.error(request, _(
+            self._prev = False
+            self._more = False
+            messages.error(self.request, _(
                 'Unable to get events for stack "%s".') % stack.stack_name)
-        return {"stack": stack,
-                "table": project_tables.EventsTable(request, data=events), }
+        return events
+
+    def has_prev_data(self, table):
+        return self._prev
+
+    def has_more_data(self, table):
+        return self._more
 
 
 class StackResourcesTab(tabs.Tab):
