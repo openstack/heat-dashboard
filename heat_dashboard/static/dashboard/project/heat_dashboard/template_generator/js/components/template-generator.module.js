@@ -24,6 +24,7 @@
         .constant('horizon.dashboard.project.heat_dashboard.template_generator.validationRules', {
             'name': /^[A-Za-z0-9_.-]+$/,
             'path': /^\/[a-z0-9/-]+$/,
+            'integer': /^\d*$/,
             'keypair': /^([A-Za-z0-9_.-]{1,255})=([A-Za-z0-9_.-]{1,255})$/,
             'ip_address': /^([0-9.]{1,15})|([A-Fa-f0-9:]{1,39})$/,
             'domain': /^[A-Za-z0-9_.-]+$/,

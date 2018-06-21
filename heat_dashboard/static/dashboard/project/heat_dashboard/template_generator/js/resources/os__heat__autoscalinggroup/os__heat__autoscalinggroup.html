@@ -1,0 +1,144 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Max Size</label>
+                <input ng-model="$ctrl.autoscalinggroup.max_size" name="max_size" type="number" min="0" ng-pattern="validate_integer" required/>
+                <div ng-messages="$ctrl.formReference.max_size.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                    <div ng-message="required">You must supply a maximum size.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Min Size</label>
+                <input ng-model="$ctrl.autoscalinggroup.min_size" name="min_size" type="number" min="0" ng-pattern="validate_integer" required/>
+                <div ng-messages="$ctrl.formReference.min_size.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                    <div ng-message="required">You must supply a minimum size.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+            <label>Select Resource Type by: </label>
+                <md-select ng-model="is_upload" aria-label="" required name="is_upload">
+                    <md-option value="false">existing items</md-option>
+                    <md-option value="true">uploading a template file</md-option>
+                </md-select>
+                <div ng-messages="$ctrl.formReference.is_upload.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You did not specify Resource Type.</div>
+                </div>
+            </md-input-container>
+
+            <div ng-if="is_upload == 'false'">
+                <label>Resource Type</label>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-select ng-model="controller.autoscalinggroup.resource.type" aria-label="Resource Type">
+                        <md-option ng-repeat="resource_type in resource_types" ng-value="resource_type">{$ resource_type $}</md-option>
+                    </md-select>
+                </md-input-container>
+
+            </div>
+
+            <div ng-if="is_upload == 'true'">
+                <div layout-gt-sm="row" style="padding:0">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Resource Type</label>
+                        <input ng-model="controller.autoscalinggroup.resource.type" name="filename" type="text" readonly/>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="clickUpload()" style="font-size:11px; top:-15px;">
+                            <span class="ng-scope">choose a file</span>
+                        </md-button>
+                    </md-input-container>
+                </div>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                <label>Resource Type Content</label>
+                    <textarea ng-model="filecontent" readonly rows="10" maxlength="65536" name="filecontent"></textarea>
+                </md-input-container>
+
+                <input ng-show="false" multiple="" ng-model="file" id="resourcetype-file" name="file" type="file" onchange="angular.element(this).scope().file_upload(this)" accept=".yaml"/>
+            </div>
+
+            <label>Resource Properties</label>
+            <md-button ng-click="$ctrl.add_property()" aria-label="Add" class="md-icon-button">
+                <i class="fa fa-fw fa-plus"></i>
+            </md-button>
+            <div ng-repeat="record in $ctrl.autoscalinggroup.resource.properties" ng-class-odd="'odd'" ng-class-even="'even'">
+                <div layout-gt-xs="row" >
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Property</label>
+                        <input ng-model="record.key" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Value</label>
+                        <input ng-model="record.value" type="text">
+                    </md-input-container>
+                    <md-button ng-click="$ctrl.delete_property($index)" aria-label="Delete" class="md-icon-button"><i class="fa fa-fw fa-times"></i></md-button>
+                </div>
+            </div>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Cooldown</label>
+                <input ng-model="$ctrl.autoscalinggroup.cooldown" name="cooldown" type="number" ng-pattern="validate_integer" min="0"/>
+                <div ng-messages="$ctrl.formReference.cooldown.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Desired Capacity</label>
+                <input ng-model="$ctrl.autoscalinggroup.desired_capacity" name="desired_capacity" type="number" ng-pattern="validate_integer" min="0"/>
+                <div ng-messages="$ctrl.formReference.desired_capacity.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+
+            <label>Rolling Updates</label>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Min In Service</label>
+                <input ng-model="$ctrl.autoscalinggroup.rolling_updates.min_in_service" name="min_in_service" type="number" ng-pattern="validate_integer" min="0"/>
+                <div ng-messages="$ctrl.formReference.min_in_service.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Pause Time</label>
+                <input ng-model="$ctrl.autoscalinggroup.rolling_updates.pause_time" name="pause_time" type="number" min="0"/>
+                <div ng-messages="$ctrl.formReference.pause_time.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid number.</div>
+                    <div ng-message="min">You did not enter a non-negative number.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Max Batch Size</label>
+                <input ng-model="$ctrl.autoscalinggroup.rolling_updates.max_batch_size" name="max_batch_size" type="number" ng-pattern="validate_integer" min="1"/>
+                <div ng-messages="$ctrl.formReference.max_batch_size.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a positive number.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>
