@@ -169,3 +169,14 @@ md-icon.spinner{
     overflow: auto;
     max-height: 500px;
 }
+.md-nav-bar {
+    border-style: none;
+    border-width: 0 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navbar-content{
+    margin-top: 3%;
+    text-align: center;
+}
