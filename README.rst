@@ -13,4 +13,4 @@ Team and repository tags
 ------------------------
 
 .. image:: https://governance.openstack.org/tc/badges/heat-dashboard.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
+    :target: https://governance.openstack.org/tc/reference/tags/index.html

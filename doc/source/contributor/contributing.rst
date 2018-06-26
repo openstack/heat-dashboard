@@ -13,29 +13,18 @@ signed OpenStack's contributor's agreement.
 
 .. seealso::
 
-   * http://docs.openstack.org/infra/manual/developers.html
-   * http://wiki.openstack.org/CLA
+   * https://docs.openstack.org/infra/manual/developers.html
+   * https://wiki.openstack.org/CLA
 
-LaunchPad Project
------------------
-
-Most of the tools used for OpenStack depend on a launchpad.net ID for
-authentication.
-
-.. seealso::
-
-   * https://launchpad.net
-   * https://launchpad.net/heat-dashboard
 
 Project Hosting Details
 -------------------------
 
 Bug tracker
-    http://launchpad.net/heat-dashboard
+    https://storyboard.openstack.org/#!/project/992
 
 Code Hosting
     https://git.openstack.org/cgit/openstack/heat-dashboard
 
 Code Review
     https://review.openstack.org/#/q/status:open+project:openstack/heat-dashboard,n,z
-
