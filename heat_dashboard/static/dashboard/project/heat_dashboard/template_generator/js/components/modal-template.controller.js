@@ -69,6 +69,7 @@
                                 func = hotgenUtils.extract_list;
                                 break;
                             case 'resource_def':
+                            case 'resource':
                                 func = hotgenUtils.extract_resource_def;
                                 break;
                             default:
