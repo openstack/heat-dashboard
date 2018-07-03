@@ -1,0 +1,58 @@
+<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+    <md-tab label="Properties" >
+        <md-content layout-padding>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Adjustment Type</label>
+                <md-select ng-model="$ctrl.scalingpolicy.adjustment_type" name="adjustment_type" aria-label="Adjustment Type" required>
+                    <md-option ng-repeat="at in adjustment_types" ng-value="at.value">{$ at.name $}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Scaling Adjustment</label>
+                <input ng-model="$ctrl.scalingpolicy.scaling_adjustment" name="scaling_adjustment" type="number" required/>
+                <div ng-messages="$ctrl.formReference.scaling_adjustment.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid number.</div>
+                    <div ng-message="required">You must supply a scaling adjustment size.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Auto Scaling Group</label>
+                <input ng-model="$ctrl.scalingpolicy.auto_scaling_group_id" name="auto_scaling_group_id" type="text" ng-pattern="auto_scaling_group_id_pattern" ng-disabled="auto_scaling_group_id_disabled" required/>
+                <div ng-messages="$ctrl.formReference.auto_scaling_group_id.$error" role="alert" multiple>
+                    <div ng-message="pattern">You must supply a valid ID.</div>
+                    <div ng-message="required">You must supply a auto scaling group ID.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Cooldown</label>
+                <input ng-model="$ctrl.scalingpolicy.cooldown" name="cooldown" type="number" min="0"/>
+                <div ng-messages="$ctrl.formReference.cooldown.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid number.</div>
+                    <div ng-message="min">You did not enter a positive number.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Min Adjustment Step</label>
+                <input ng-model="$ctrl.scalingpolicy.min_adjustment_step" name="min_adjustment_step" type="number" ng-pattern="validate_integer" min="0" ng-disabled="min_adj_step_disabled"/>
+                <div ng-messages="$ctrl.formReference.min_adjustment_step.$error" role="alert" multiple>
+                    <div ng-message="number">You did not enter a valid integer.</div>
+                    <div ng-message="min">You did not enter a positive number.</div>
+                    <div ng-message="pattern">You must supply an integer.</div>
+                </div>
+            </md-input-container>
+
+        </md-content>
+    </md-tab>
+
+    <md-tab label="Depends on">
+        <md-content layout-padding>
+            <depends-on dependson='dependson'></depends-on>
+        </md-content>
+    </md-tab>
+
+</md-tabs>
