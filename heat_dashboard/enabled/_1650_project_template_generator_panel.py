@@ -12,11 +12,9 @@
 
 import os
 
-from importlib import import_module
+from horizon.utils.file_discovery import discover_files
 
 import heat_dashboard
-
-from horizon.utils.file_discovery import discover_files
 
 # The slug of the panel to be added to HORIZON_CONFIG. Required.
 PANEL = 'template_generator'
@@ -39,31 +37,33 @@ TEMPLATE_GENERATOR_BASE = 'dashboard/project/heat_dashboard/template_generator'
 CSS_BASE = '%s/css' % TEMPLATE_GENERATOR_BASE
 JS_BASE = '%s/js' % TEMPLATE_GENERATOR_BASE
 
-ADD_SCSS_FILES = [
-    '%s/hotgen-main.scss' % CSS_BASE,
-    'horizon/lib/bootstrap_scss/scss/_bootstrap.scss',
-    'horizon/lib/font_awesome/scss/font-awesome.scss']
-
-XSTATIC_MODULES = [
+ADD_XSTATIC_MODULES = [
     ('xstatic.pkg.angular', [
         'angular-animate.js',
         'angular-aria.js',
         'angular-messages.js',
     ]),
     ('xstatic.pkg.angular_bootstrap', ['angular-bootstrap.js']),
+    # ('xstatic.pkg.angular_material', ['angular-material.js']),
+    ('xstatic.pkg.angular_uuid', ['angular-uuid.js']),
+    ('xstatic.pkg.angular_vis', ['angular-vis.js']),
+    ('xstatic.pkg.filesaver', ['FileSaver.js']),
+    ('xstatic.pkg.js_yaml', ['js-yaml.js']),
+    ('xstatic.pkg.json2yaml', ['json2yaml.js']),
 ]
+
+ADD_SCSS_FILES = [
+    'horizon/lib/bootstrap_scss/scss/_bootstrap.scss',
+    'horizon/lib/font_awesome/scss/font-awesome.scss',
+    '%s/hotgen-main.scss' % CSS_BASE
+    ]
+
 HEAT_DASHBOARD_ROOT = heat_dashboard.__path__[0]
+
 
 ADD_JS_FILES = discover_files(os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
                               sub_path='%s/libs' % JS_BASE,
                               ext='.js', trim_base_path=True)
-
-for module_name, js_files in XSTATIC_MODULES:
-    module = import_module(module_name)
-    for js_file in js_files:
-        ADD_JS_FILES.append(
-            os.path.join('horizon/lib/', module.NAME, js_file)
-        )
 
 ADD_JS_FILES.extend([
     '%s/components/template-generator.module.js' % JS_BASE,
@@ -72,18 +72,32 @@ ADD_JS_FILES.extend([
 ])
 
 ADD_JS_FILES.extend(
-    [file for file in discover_files(
+    [js_file for js_file in discover_files(
         os.path.join(HEAT_DASHBOARD_ROOT,
                      'static'),
         sub_path='%s/components' % JS_BASE,
         ext='.js',
         trim_base_path=True)
-        if file not in ADD_JS_FILES and 'spec.js' not in file
+        if js_file not in ADD_JS_FILES and not js_file.endswith('spec.js')
      ])
 
 ADD_JS_FILES.extend(
-    [file for file in discover_files(
+    [js_file for js_file in discover_files(
         os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
         sub_path='%s/resources' % JS_BASE,
-        ext='.js', trim_base_path=True) if 'spec.js' not in file
+        ext='.js', trim_base_path=True) if not js_file.endswith('spec.js')
+     ])
+
+ADD_JS_SPEC_FILES = [
+    js_file for js_file in discover_files(
+        os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
+        sub_path='%s/components' % JS_BASE,
+        ext='.js',
+        trim_base_path=True) if js_file.endswith('spec.js')]
+
+ADD_JS_SPEC_FILES.extend(
+    [js_file for js_file in discover_files(
+        os.path.join(HEAT_DASHBOARD_ROOT, 'static'),
+        sub_path='%s/resources' % JS_BASE,
+        ext='.js', trim_base_path=True) if js_file.endswith('spec.js')
      ])
