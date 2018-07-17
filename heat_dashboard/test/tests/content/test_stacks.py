@@ -44,8 +44,6 @@ class MockResource(object):
 
 class MappingsTests(test.TestCase):
 
-    use_mox = False
-
     def test_mappings(self):
 
         def assertMappingUrl(url, resource_type, physical_resource_id):
@@ -116,8 +114,6 @@ class MappingsTests(test.TestCase):
 
 
 class StackTests(test.TestCase):
-
-    use_mox = False
 
     @override_settings(API_RESULT_PAGE_SIZE=2)
     @test.create_mocks({api.heat: ('stacks_list',)})
@@ -875,8 +871,6 @@ class StackTests(test.TestCase):
 
 
 class TemplateFormTests(test.TestCase):
-
-    use_mox = False
 
     class SimpleFile(object):
         def __init__(self, name, data):

@@ -9,6 +9,7 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+import mock
 import six
 
 from django.conf import settings
@@ -22,20 +23,18 @@ from horizon import exceptions
 
 class HeatApiTests(test.APITestCase):
 
-    use_mox = True
-
     def test_stack_list(self):
         api_stacks = self.stacks.list()
         limit = getattr(settings, 'API_RESULT_LIMIT', 1000)
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=limit,
-                               sort_dir='desc',
-                               sort_key='created_at',) \
-            .AndReturn(iter(api_stacks))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks)
         stacks, has_more, has_prev = api.heat.stacks_list(self.request)
+        heatclient.stacks.list.assert_called_once_with(limit=limit,
+                                                       sort_dir='desc',
+                                                       sort_key='created_at',
+                                                       )
         self.assertItemsEqual(stacks, api_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
@@ -49,12 +48,8 @@ class HeatApiTests(test.APITestCase):
         sort_key = 'size'
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=limit,
-                               sort_dir=sort_dir,
-                               sort_key=sort_key,) \
-            .AndReturn(iter(api_stacks))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks)
 
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           sort_dir=sort_dir,
@@ -62,6 +57,8 @@ class HeatApiTests(test.APITestCase):
         self.assertItemsEqual(stacks, api_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
+        heatclient.stacks.list.assert_called_once_with(
+            limit=limit, sort_dir=sort_dir, sort_key=sort_key,)
 
     @override_settings(API_RESULT_PAGE_SIZE=20)
     def test_stack_list_pagination_less_page_size(self):
@@ -71,12 +68,8 @@ class HeatApiTests(test.APITestCase):
         sort_key = 'created_at'
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=page_size + 1,
-                               sort_dir=sort_dir,
-                               sort_key=sort_key,) \
-            .AndReturn(iter(api_stacks))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks)
 
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           sort_dir=sort_dir,
@@ -86,6 +79,10 @@ class HeatApiTests(test.APITestCase):
         self.assertItemsEqual(stacks, expected_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
+        heatclient.stacks.list.assert_called_once_with(
+            limit=page_size + 1,
+            sort_dir=sort_dir,
+            sort_key=sort_key)
 
     @override_settings(API_RESULT_PAGE_SIZE=10)
     def test_stack_list_pagination_equal_page_size(self):
@@ -95,12 +92,8 @@ class HeatApiTests(test.APITestCase):
         sort_key = 'created_at'
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=page_size + 1,
-                               sort_dir=sort_dir,
-                               sort_key=sort_key,) \
-            .AndReturn(iter(api_stacks))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks)
 
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           sort_dir=sort_dir,
@@ -110,6 +103,9 @@ class HeatApiTests(test.APITestCase):
         self.assertItemsEqual(stacks, expected_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
+        heatclient.stacks.list.assert_called_once_with(
+            limit=page_size + 1, sort_dir=sort_dir,
+            sort_key=sort_key,)
 
     @override_settings(API_RESULT_PAGE_SIZE=2)
     def test_stack_list_pagination_marker(self):
@@ -121,13 +117,8 @@ class HeatApiTests(test.APITestCase):
         api_stacks = self.stacks.list()
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=page_size + 1,
-                               marker=marker,
-                               sort_dir=sort_dir,
-                               sort_key=sort_key,) \
-            .AndReturn(iter(api_stacks[:page_size + 1]))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks[:page_size + 1])
 
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           marker=marker,
@@ -139,6 +130,9 @@ class HeatApiTests(test.APITestCase):
         self.assertItemsEqual(stacks, api_stacks[:page_size])
         self.assertTrue(has_more)
         self.assertTrue(has_prev)
+        heatclient.stacks.list.assert_called_once_with(
+            limit=page_size + 1, marker=marker,
+            sort_dir=sort_dir, sort_key=sort_key,)
 
     @override_settings(API_RESULT_PAGE_SIZE=2)
     def test_stack_list_pagination_marker_prev(self):
@@ -150,13 +144,8 @@ class HeatApiTests(test.APITestCase):
         api_stacks = self.stacks.list()
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.list(limit=page_size + 1,
-                               marker=marker,
-                               sort_dir=sort_dir,
-                               sort_key=sort_key,) \
-            .AndReturn(iter(api_stacks[:page_size + 1]))
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.list.return_value = iter(api_stacks[:page_size + 1])
 
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           marker=marker,
@@ -168,6 +157,9 @@ class HeatApiTests(test.APITestCase):
         self.assertItemsEqual(stacks, api_stacks[:page_size])
         self.assertTrue(has_more)
         self.assertTrue(has_prev)
+        heatclient.stacks.list.assert_called_once_with(
+            limit=page_size + 1, marker=marker,
+            sort_dir=sort_dir, sort_key=sort_key,)
 
     def test_template_get(self):
         api_stacks = self.stacks.list()
@@ -175,29 +167,29 @@ class HeatApiTests(test.APITestCase):
         mock_data_template = self.stack_templates.list()[0]
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.template(stack_id).AndReturn(mock_data_template)
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.template.return_value = mock_data_template
 
         template = api.heat.template_get(self.request, stack_id)
         self.assertEqual(mock_data_template.data, template.data)
+        heatclient.stacks.template.assert_called_once_with(stack_id)
 
     def test_stack_create(self):
         api_stacks = self.stacks.list()
         stack = api_stacks[0]
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
+        heatclient.stacks = mock.Mock()
         form_data = {'timeout_mins': 600}
         password = 'secret'
-        heatclient.stacks.create(**form_data).AndReturn(stack)
-        self.mox.ReplayAll()
+        heatclient.stacks.create.return_value = stack
 
         returned_stack = api.heat.stack_create(self.request,
                                                password,
                                                **form_data)
         from heatclient.v1 import stacks
         self.assertIsInstance(returned_stack, stacks.Stack)
+        heatclient.stack.create_assert_called_once_with(**form_data)
 
     def test_stack_update(self):
         api_stacks = self.stacks.list()
@@ -205,11 +197,10 @@ class HeatApiTests(test.APITestCase):
         stack_id = stack.id
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
+        heatclient.stacks = mock.Mock()
         form_data = {'timeout_mins': 600}
         password = 'secret'
-        heatclient.stacks.update(stack_id, **form_data).AndReturn(stack)
-        self.mox.ReplayAll()
+        heatclient.stacks.update.return_value = stack
 
         returned_stack = api.heat.stack_update(self.request,
                                                stack_id,
@@ -217,33 +208,35 @@ class HeatApiTests(test.APITestCase):
                                                **form_data)
         from heatclient.v1 import stacks
         self.assertIsInstance(returned_stack, stacks.Stack)
+        heatclient.stacks.update.assert_called_once_with(
+            stack_id, **form_data)
 
     def test_snapshot_create(self):
         stack_id = self.stacks.first().id
         snapshot_create = self.stack_snapshot_create.list()[0]
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.snapshot(stack_id).AndReturn(snapshot_create)
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.snapshot.return_value = snapshot_create
 
         returned_snapshot_create_info = api.heat.snapshot_create(self.request,
                                                                  stack_id)
 
         self.assertEqual(returned_snapshot_create_info, snapshot_create)
+        heatclient.stacks.snapshot.assert_called_once_with(stack_id)
 
     def test_snapshot_list(self):
         stack_id = self.stacks.first().id
         snapshot_list = self.stack_snapshot.list()
 
         heatclient = self.stub_heatclient()
-        heatclient.stacks = self.mox.CreateMockAnything()
-        heatclient.stacks.snapshot_list(stack_id).AndReturn(snapshot_list)
-        self.mox.ReplayAll()
+        heatclient.stacks = mock.Mock()
+        heatclient.stacks.snapshot_list.return_value = snapshot_list
 
         returned_snapshots = api.heat.snapshot_list(self.request, stack_id)
 
         self.assertItemsEqual(returned_snapshots, snapshot_list)
+        heatclient.stacks.snapshot_list.assert_called_once_with(stack_id)
 
     def test_get_template_files_with_template_data(self):
         tmpl = '''
@@ -261,7 +254,8 @@ class HeatApiTests(test.APITestCase):
         files = api.heat.get_template_files(template_data=tmpl)[0]
         self.assertEqual(files, expected_files)
 
-    def test_get_template_files(self):
+    @mock.patch.object(six.moves.urllib.request, 'urlopen')
+    def test_get_template_files(self, mock_request):
         tmpl = '''
     # comment
 
@@ -279,14 +273,14 @@ class HeatApiTests(test.APITestCase):
         expected_files = {u'http://test.example/example': b'echo "test"'}
         url = 'http://test.example/example'
         data = b'echo "test"'
-        self.mox.StubOutWithMock(six.moves.urllib.request, 'urlopen')
-        six.moves.urllib.request.urlopen(url).AndReturn(
-            six.BytesIO(data))
-        self.mox.ReplayAll()
+        mock_request.return_value = six.BytesIO(data)
+
         files = api.heat.get_template_files(template_data=tmpl)[0]
         self.assertEqual(files, expected_files)
+        mock_request.assert_called_once_with(url)
 
-    def test_get_template_files_with_template_url(self):
+    @mock.patch.object(six.moves.urllib.request, 'urlopen')
+    def test_get_template_files_with_template_url(self, mock_request):
         url = 'https://test.example/example.yaml'
         data = b'''
     # comment
@@ -302,15 +296,11 @@ class HeatApiTests(test.APITestCase):
             user_data:
               get_file: http://test.example/example
     '''
-        url2 = 'http://test.example/example'
         data2 = b'echo "test"'
         expected_files = {'http://test.example/example': b'echo "test"'}
-        self.mox.StubOutWithMock(six.moves.urllib.request, 'urlopen')
-        six.moves.urllib.request.urlopen(url).AndReturn(
-            six.BytesIO(data))
-        six.moves.urllib.request.urlopen(url2).AndReturn(
-            six.BytesIO(data2))
-        self.mox.ReplayAll()
+        mock_request.side_effect = \
+            [six.BytesIO(data), six.BytesIO(data2)]
+
         files = api.heat.get_template_files(template_url=url)[0]
         self.assertEqual(files, expected_files)
 
@@ -338,25 +328,25 @@ class HeatApiTests(test.APITestCase):
         api_template_versions = self.template_versions.list()
 
         heatclient = self.stub_heatclient()
-        heatclient.template_versions = self.mox.CreateMockAnything()
-        heatclient.template_versions.list().AndReturn(api_template_versions)
-        self.mox.ReplayAll()
+        heatclient.template_versions = mock.Mock()
+        heatclient.template_versions.list.return_value = api_template_versions
 
         template_versions = api.heat.template_version_list(self.request)
 
         self.assertItemsEqual(template_versions, api_template_versions)
+        heatclient.template_versions.list.assert_called_once_with()
 
     def test_template_function_list(self):
         template_version = self.template_versions.first().version
         api_template_functions = self.template_functions.list()
 
         heatclient = self.stub_heatclient()
-        heatclient.template_versions = self.mox.CreateMockAnything()
-        heatclient.template_versions.get(
-            template_version).AndReturn(api_template_functions)
-        self.mox.ReplayAll()
+        heatclient.template_versions = mock.Mock()
+        heatclient.template_versions.get.return_value = api_template_functions
 
         template_functions = api.heat.template_function_list(
             self.request, template_version)
 
         self.assertItemsEqual(template_functions, api_template_functions)
+        heatclient.template_versions.get.assert_called_once_with(
+            template_version)

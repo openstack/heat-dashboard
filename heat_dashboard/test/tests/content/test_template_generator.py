@@ -22,8 +22,6 @@ from heat_dashboard.test import helpers as test
 
 class TemplateGeneratorTests(test.TestCase):
 
-    use_mox = False
-
     def test_index(self):
         self.client.get(reverse('horizon:project:template_generator:index'))
         self.assertTemplateUsed(

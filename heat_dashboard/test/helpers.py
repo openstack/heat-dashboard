@@ -16,7 +16,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from functools import wraps
 from importlib import import_module
 import os
 import traceback
@@ -57,61 +56,6 @@ wsgi.WSGIRequest.__repr__ = lambda self: "<class 'django.http.HttpRequest'>"
 create_mocks = helpers.create_mocks
 IsA = helpers.IsA
 IsHttpRequest = helpers.IsHttpRequest
-
-
-def create_stubs(stubs_to_create=None):
-    """decorator to simplify setting up multiple stubs at once via mox
-
-    :param stubs_to_create: methods to stub in one or more modules
-    :type stubs_to_create: dict
-
-    The keys are python paths to the module containing the methods to mock.
-
-    To mock a method in openstack_dashboard/api/nova.py, the key is::
-
-        api.nova
-
-    The values are either a tuple or list of methods to mock in the module
-    indicated by the key.
-
-    For example::
-
-        ('server_list',)
-            -or-
-        ('flavor_list', 'server_list',)
-            -or-
-        ['flavor_list', 'server_list']
-
-    Additionally, multiple modules can be mocked at once::
-
-        {
-            api.nova: ('flavor_list', 'server_list'),
-            api.glance: ('image_list_detailed',),
-        }
-
-    """
-    if stubs_to_create is None:
-        stubs_to_create = {}
-    if not isinstance(stubs_to_create, dict):
-        raise TypeError("create_stub must be passed a dict, but a %s was "
-                        "given." % type(stubs_to_create).__name__)
-
-    def inner_stub_out(fn):
-        @wraps(fn)
-        def instance_stub_out(self, *args, **kwargs):
-            for key in stubs_to_create:
-                if not (isinstance(stubs_to_create[key], tuple) or
-                        isinstance(stubs_to_create[key], list)):
-                    raise TypeError("The values of the create_stub "
-                                    "dict must be lists or tuples, but "
-                                    "is a %s."
-                                    % type(stubs_to_create[key]).__name__)
-
-                for value in stubs_to_create[key]:
-                    self.mox.StubOutWithMock(key, value)
-            return fn(self, *args, **kwargs)
-        return instance_stub_out
-    return inner_stub_out
 
 
 def _apply_panel_mocks(patchers=None):
@@ -171,10 +115,6 @@ class TestCase(horizon_helpers.TestCase):
     # To force test failures when unmocked API calls are attempted, provide
     # boolean variable to store failures
     missing_mocks = False
-
-    # heat-dashboard depends on mox and we need to declare it.
-    # horizon UT disables mox by default now.
-    use_mox = True
 
     def fake_conn_request(self):
         # print a stacktrace to illustrate where the unmocked API call
@@ -379,7 +319,6 @@ class BaseAdminViewTests(TestCase):
 
     For testing admin-only views and functionality.
     """
-    use_mox = True
 
     def setActiveUser(self, *args, **kwargs):
         if "roles" not in kwargs:
@@ -404,7 +343,6 @@ class APITestCase(TestCase):
     For use with tests which deal with the underlying clients rather than
     stubbing out the openstack_dashboard.api.* methods.
     """
-    use_mox = True
 
     def setUp(self):
         super(APITestCase, self).setUp()
@@ -434,7 +372,7 @@ class APITestCase(TestCase):
 
     def stub_keystoneclient(self):
         if not hasattr(self, "keystoneclient"):
-            self.mox.StubOutWithMock(keystone_client, 'Client')
+            keystone_client.Client = mock.Mock()
             # NOTE(saschpe): Mock properties, MockObject.__init__ ignores them:
             keystone_client.Client.auth_token = 'foo'
             keystone_client.Client.service_catalog = None
@@ -442,25 +380,24 @@ class APITestCase(TestCase):
             keystone_client.Client.tenant_name = 'tenant_1'
             keystone_client.Client.management_url = ""
             keystone_client.Client.__dir__ = lambda: []
-            self.keystoneclient = self.mox.CreateMock(keystone_client.Client)
+            self.keystoneclient = keystone_client.Client
         return self.keystoneclient
 
     def stub_neutronclient(self):
         if not hasattr(self, "neutronclient"):
-            self.mox.StubOutWithMock(neutron_client, 'Client')
-            self.neutronclient = self.mox.CreateMock(neutron_client.Client)
+            neutron_client.Client = mock.Mock()
+            self.neutronclient = neutron_client.Client
         return self.neutronclient
 
     def stub_heatclient(self):
         if not hasattr(self, "heatclient"):
-            self.mox.StubOutWithMock(heat_client, 'Client')
-            self.heatclient = self.mox.CreateMock(heat_client.Client)
+            heat_client.Client = mock.Mock()
+            self.heatclient = heat_client.Client
         return self.heatclient
 
 
 # Need this to test both Glance API V1 and V2 versions
 class ResetImageAPIVersionMixin(object):
-    use_mox = True
 
     def setUp(self):
         super(ResetImageAPIVersionMixin, self).setUp()

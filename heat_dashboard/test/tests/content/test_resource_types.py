@@ -20,8 +20,6 @@ from heat_dashboard.test.helpers import IsHttpRequest
 
 class ResourceTypesTests(test.TestCase):
 
-    use_mox = False
-
     @test.create_mocks({api.heat: ('resource_types_list',)})
     def test_index(self):
         self.mock_resource_types_list.return_value = \
