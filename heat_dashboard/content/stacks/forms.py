@@ -203,16 +203,16 @@ class TemplateForm(forms.SelfHandlingForm):
             log_template_name = files[upload_str].name
             LOG.info('got upload %s', log_template_name)
 
-            tpl = files[upload_str].read()
-            if tpl.startswith('{'):
-                try:
+            try:
+                tpl = files[upload_str].read().decode('utf-8')
+                if tpl.startswith('{'):
                     json.loads(tpl)
-                except Exception as e:
-                    msg = _('There was a problem parsing the'
-                            ' %(prefix)s: %(error)s')
-                    msg = msg % {'prefix': prefix, 'error': six.text_type(e)}
-                    raise forms.ValidationError(msg)
-            cleaned[data_str] = tpl
+                cleaned[data_str] = tpl
+            except Exception as e:
+                msg = _('There was a problem parsing the'
+                        ' %(prefix)s: %(error)s')
+                msg = msg % {'prefix': prefix, 'error': six.text_type(e)}
+                raise forms.ValidationError(msg)
 
         # URL handler
         elif url and (has_upload or data):
