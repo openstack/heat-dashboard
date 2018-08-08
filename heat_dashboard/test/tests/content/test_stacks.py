@@ -918,7 +918,7 @@ class TemplateFormTests(test.TestCase):
         }
         json_str = '{notvalidjson::::::json/////json'
         files = {'template_upload':
-                 self.SimpleFile('template_name', json_str)}
+                 self.SimpleFile('template_name', json_str.encode('utf-8'))}
 
         self.assertRaises(
             exceptions.ValidationError,
@@ -937,7 +937,7 @@ class TemplateFormTests(test.TestCase):
 
         json_str = '{"isvalid":"json"}'
         files = {'template_upload':
-                 self.SimpleFile('template_name', json_str)}
+                 self.SimpleFile('template_name', json_str.encode('utf-8'))}
 
         t.clean_uploaded_files('template', 'template', precleaned, files)
         self.assertEqual(
