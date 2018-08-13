@@ -9,6 +9,8 @@
 
         beforeEach(inject(function($injector){
             hotgenGlobals = $injector.get('hotgenGlobals');
+            hotgenGlobals.update_resource_icons('OS__Project__Resource', '');
+            hotgenGlobals.update_resource_icons('OS__Key', '');
         }));
 
         beforeEach(inject(function(_$controller_, $rootScope) {
@@ -33,6 +35,7 @@
             expect($scope.basePath).toBe($window.STATIC_URL + 'dashboard/project/heat_dashboard/template_generator/');
 
         }]));
+
     });
 
 })();
