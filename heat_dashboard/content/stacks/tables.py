@@ -333,6 +333,7 @@ class EventsTable(tables.DataTable):
     class Meta(object):
         name = "events"
         verbose_name = _("Stack Events")
+        pagination_param = 'event_marker'
 
 
 class ResourcesUpdateRow(tables.Row):

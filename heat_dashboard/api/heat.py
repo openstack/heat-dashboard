@@ -206,8 +206,40 @@ def snapshot_delete(request, stack_id, snapshot_id):
 
 
 @profiler.trace
-def events_list(request, stack_name):
-    return heatclient(request).events.list(stack_name)
+def events_list(request, stack_name, marker=None, sort_dir='desc',
+                sort_key='event_time', paginate=False, filters=None):
+    limit = getattr(settings, 'API_RESULT_LIMIT', 1000)
+    page_size = utils.get_page_size(request)
+
+    if paginate:
+        request_size = page_size + 1
+    else:
+        request_size = limit
+    kwargs = {'sort_dir': sort_dir, 'sort_key': sort_key}
+    if marker:
+        kwargs['marker'] = marker
+
+    if filters:
+        kwargs.update(filters)
+
+    events_iter = heatclient(request).events.list(stack_name,
+                                                  limit=request_size,
+                                                  **kwargs)
+
+    has_prev_data = False
+    has_more_data = False
+    events = list(events_iter)
+    if paginate:
+        if len(events) > page_size:
+            events.pop()
+            has_more_data = True
+            if marker is not None:
+                has_prev_data = True
+        elif sort_dir == 'asc' and marker is not None:
+            has_more_data = True
+        elif marker is not None:
+            has_prev_data = True
+    return events, has_more_data, has_prev_data
 
 
 @profiler.trace
