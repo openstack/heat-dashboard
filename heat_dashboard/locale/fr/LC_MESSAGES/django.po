@@ -12,22 +12,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-07-10 09:22+0000\n"
+"POT-Creation-Date: 2018-08-14 00:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-07-13 02:42+0000\n"
+"PO-Revision-Date: 2018-08-10 03:31+0000\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s : %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s : %(stack_status_reason)s"
+
 msgid "A local environment to upload."
 msgstr "Environnement local à charger."
 
 msgid "A local template to upload."
 msgstr "Modèle local à charger."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Un modèle permet d'automatiser le déploiement d'infrastructure, de services "
+"et d'applications."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -81,6 +96,9 @@ msgid_plural "Checked Stacks"
 msgstr[0] "Pile vérifiée"
 msgstr[1] "Piles vérifiées"
 
+msgid "Close"
+msgstr "Fermer"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "Création terminée"
@@ -95,6 +113,9 @@ msgstr "Création en cours"
 
 msgid "Create Stack"
 msgstr "Créer une pile"
+
+msgid "Create a new stack with the provided values."
+msgstr "Créer une nouvelle pile avec les valeurs fournies."
 
 msgid "Created"
 msgstr "Créé"
@@ -136,11 +157,19 @@ msgstr "Description :"
 msgid "Direct Input"
 msgstr "Entrée directe"
 
+#, fuzzy
+msgid "Disabled"
+msgstr "Désactivée"
+
 msgid "Edit Template"
 msgstr "Éditer le modèle"
 
 msgid "Enable rollback on create/update failure."
 msgstr "Permettre l'annulation en cas d'échec de création/mise à jour."
+
+#, fuzzy
+msgid "Enabled"
+msgstr "Activée"
 
 msgid "Environment Data"
 msgstr "Données d'environnement"
@@ -181,8 +210,17 @@ msgstr "Dernière mise à jour"
 msgid "Launch"
 msgstr "Démarrer"
 
+msgid "Launch Parameters"
+msgstr "Paramètres de lancement"
+
 msgid "Launch Stack"
 msgstr "Lancer la pile"
+
+msgid "Links"
+msgstr "Liens"
+
+msgid "Minutes"
+msgstr "Minutes"
 
 msgid "Name"
 msgstr "Nom"
@@ -209,6 +247,9 @@ msgstr "Sorties"
 msgid "Overview"
 msgstr "Vue d'ensemble"
 
+msgid "Parameters"
+msgstr "Paramètres"
+
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "Mot de passe pour l'utilisateur \"%s\""
@@ -232,11 +273,24 @@ msgstr "Prévisualiser les paramètres de pile"
 msgid "Preview Template"
 msgstr "Prévisualiser le modèle"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Prévisualisez une nouvelle Stack avec ces nouvelles valeurs"
+
 msgid "Properties"
 msgstr "Propriétés"
 
+#, fuzzy
+msgid "Referenced Files"
+msgstr "Fichiers de référence"
+
 msgid "Resource"
 msgstr "Ressource"
+
+msgid "Resource ID"
+msgstr "ID de la ressource"
+
+msgid "Resource Metadata"
+msgstr "Métadonnées de la ressource"
 
 msgid "Resource Types"
 msgstr "Types de ressource"
@@ -265,6 +319,9 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "Pile reprise"
 msgstr[1] "Piles reprises"
+
+msgid "Rollback"
+msgstr "Retour arrière"
 
 msgctxt "current status of stack"
 msgid "Rollback Complete"
@@ -323,8 +380,14 @@ msgstr "Nom de la stack ="
 msgid "Stack Parameters"
 msgstr "Paramètres de la pile"
 
+msgid "Stack Preview"
+msgstr "Prévisualisation de la pile"
+
 msgid "Stack Resource"
 msgstr "Ressource de la pile"
+
+msgid "Stack Resource ID"
+msgstr "ID de la ressource de Stack"
 
 msgid "Stack Resource Type"
 msgstr "Type de ressource de pile"
@@ -340,6 +403,9 @@ msgstr "Délai d'expiration (en minutes) de création de pile."
 
 msgid "Stack update started."
 msgstr "Mise à jour de pile commencée."
+
+msgid "Stack updating timeout in minutes."
+msgstr "Mise à jour du délai d'expiration dans quelques minutes par la Stack."
 
 msgid "Stacks"
 msgstr "Piles"
@@ -387,11 +453,17 @@ msgstr "Fichier du modèle"
 msgid "Template Functions"
 msgstr "Fonctions du modèle"
 
+msgid "Template Generator"
+msgstr "Générateur de modèle"
+
 msgid "Template Source"
 msgstr "Source du modèle"
 
 msgid "Template URL"
 msgstr "URL du modèle"
+
+msgid "Template Version"
+msgstr "Version du modèle"
 
 msgid "Template Versions"
 msgstr "Versions du modèle"
@@ -491,13 +563,27 @@ msgid "Update Stack"
 msgstr "Mise à jour de la pile"
 
 msgid "Update Stack Parameters"
-msgstr "Mise à jour des paramètres de pile."
+msgstr "Mettre à jour les paramètres de la Stack."
 
 msgid "Updated"
 msgstr "Mis à jour"
 
 msgid "Updating Timeout (minutes)"
 msgstr "Mise à jour du délai d'attente (en minutes) en cours"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in changing this stack."
+msgstr ""
+"Utiliser une des options de modèle source disponibles pour préciser le "
+"modèle à utiliser lors du changement de cette Stack."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Utiliser une des options de modèle source disponibles pour préciser le "
+"modèle à utiliser lors de la prévisualition de cette Stack."
 
 msgid "Version"
 msgstr "Version"
