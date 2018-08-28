@@ -60,6 +60,10 @@ install_cmd="pip install -c$1"
 shift
 
 install_project horizon
+if [ -z "$@" ]; then
+    echo "No packages to be installed."
+    exit 0
+fi
 
 $install_cmd -U $*
 exit $?
