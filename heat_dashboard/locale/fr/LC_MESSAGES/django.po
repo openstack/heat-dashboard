@@ -12,11 +12,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-08-14 00:21+0000\n"
+"POT-Creation-Date: 2018-09-06 02:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-10 03:31+0000\n"
+"PO-Revision-Date: 2018-07-28 03:17+0000\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -36,13 +36,6 @@ msgstr "Environnement local à charger."
 
 msgid "A local template to upload."
 msgstr "Modèle local à charger."
-
-msgid ""
-"A template is used to automate the deployment of infrastructure, services, "
-"and applications."
-msgstr ""
-"Un modèle permet d'automatiser le déploiement d'infrastructure, de services "
-"et d'applications."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -210,9 +203,6 @@ msgstr "Dernière mise à jour"
 msgid "Launch"
 msgstr "Démarrer"
 
-msgid "Launch Parameters"
-msgstr "Paramètres de lancement"
-
 msgid "Launch Stack"
 msgstr "Lancer la pile"
 
@@ -273,9 +263,6 @@ msgstr "Prévisualiser les paramètres de pile"
 msgid "Preview Template"
 msgstr "Prévisualiser le modèle"
 
-msgid "Preview a new stack with the provided values."
-msgstr "Prévisualisez une nouvelle Stack avec ces nouvelles valeurs"
-
 msgid "Properties"
 msgstr "Propriétés"
 
@@ -285,9 +272,6 @@ msgstr "Fichiers de référence"
 
 msgid "Resource"
 msgstr "Ressource"
-
-msgid "Resource ID"
-msgstr "ID de la ressource"
 
 msgid "Resource Metadata"
 msgstr "Métadonnées de la ressource"
@@ -386,9 +370,6 @@ msgstr "Prévisualisation de la pile"
 msgid "Stack Resource"
 msgstr "Ressource de la pile"
 
-msgid "Stack Resource ID"
-msgstr "ID de la ressource de Stack"
-
 msgid "Stack Resource Type"
 msgstr "Type de ressource de pile"
 
@@ -403,9 +384,6 @@ msgstr "Délai d'expiration (en minutes) de création de pile."
 
 msgid "Stack update started."
 msgstr "Mise à jour de pile commencée."
-
-msgid "Stack updating timeout in minutes."
-msgstr "Mise à jour du délai d'expiration dans quelques minutes par la Stack."
 
 msgid "Stacks"
 msgstr "Piles"
@@ -452,9 +430,6 @@ msgstr "Fichier du modèle"
 
 msgid "Template Functions"
 msgstr "Fonctions du modèle"
-
-msgid "Template Generator"
-msgstr "Générateur de modèle"
 
 msgid "Template Source"
 msgstr "Source du modèle"
@@ -563,27 +538,13 @@ msgid "Update Stack"
 msgstr "Mise à jour de la pile"
 
 msgid "Update Stack Parameters"
-msgstr "Mettre à jour les paramètres de la Stack."
+msgstr "Mise à jour des paramètres de pile."
 
 msgid "Updated"
 msgstr "Mis à jour"
 
 msgid "Updating Timeout (minutes)"
 msgstr "Mise à jour du délai d'attente (en minutes) en cours"
-
-msgid ""
-"Use one of the available template source options to specify the template to "
-"be used in changing this stack."
-msgstr ""
-"Utiliser une des options de modèle source disponibles pour préciser le "
-"modèle à utiliser lors du changement de cette Stack."
-
-msgid ""
-"Use one of the available template source options to specify the template to "
-"be used in previewing this stack."
-msgstr ""
-"Utiliser une des options de modèle source disponibles pour préciser le "
-"modèle à utiliser lors de la prévisualition de cette Stack."
 
 msgid "Version"
 msgstr "Version"
