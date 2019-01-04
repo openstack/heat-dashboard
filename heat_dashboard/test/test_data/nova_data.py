@@ -181,7 +181,7 @@ def data(TEST):
                  "server_id": "4"})
     server_4 = servers.Server(servers.ServerManager(None),
                               json.loads(SERVER_DATA % vals)['server'])
-    TEST.servers.add(server_1, server_2,  server_4)
+    TEST.servers.add(server_1, server_2, server_4)
 
     # Availability Zones
     TEST.availability_zones.add(availability_zones.AvailabilityZone(

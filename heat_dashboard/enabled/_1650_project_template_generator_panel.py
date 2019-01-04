@@ -56,7 +56,7 @@ ADD_SCSS_FILES = [
     'horizon/lib/bootstrap_scss/scss/_bootstrap.scss',
     'horizon/lib/font_awesome/scss/font-awesome.scss',
     '%s/hotgen-main.scss' % CSS_BASE
-    ]
+]
 
 HEAT_DASHBOARD_ROOT = heat_dashboard.__path__[0]
 
