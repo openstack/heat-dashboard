@@ -14,9 +14,9 @@ cryptography==2.1
 debtcollector==1.2.0
 decorator==3.4.0
 deprecation==1.0
-Django==1.8
+Django==1.11
 django-appconf==1.0.2
-django-babel==0.5.1
+django-babel==0.6.2
 django-compressor==2.0
 django-pyscss==2.0.2
 doc8==0.6.0
@@ -56,7 +56,7 @@ openstacksdk==0.11.2
 os-client-config==1.28.0
 os-service-types==1.2.0
 osc-lib==1.8.0
-oslo.concurrency==3.25.0
+oslo.concurrency==3.26.0
 oslo.config==5.2.0
 oslo.context==2.19.2
 oslo.i18n==3.15.3
@@ -67,7 +67,7 @@ oslo.policy==1.30.0
 oslo.serialization==2.18.0
 oslo.service==1.24.0
 oslo.utils==3.33.0
-osprofiler==1.4.0
+osprofiler==2.3.0
 Paste==2.0.2
 PasteDeploy==1.5.0
 pbr==2.0.0
@@ -90,7 +90,7 @@ python-cinderclient==3.3.0
 python-dateutil==2.5.3
 python-glanceclient==2.8.0
 python-heatclient==1.10.0
-python-keystoneclient==3.8.0
+python-keystoneclient==3.15.0
 python-mimeparse==1.6.0
 python-neutronclient==6.7.0
 python-novaclient==9.1.0
