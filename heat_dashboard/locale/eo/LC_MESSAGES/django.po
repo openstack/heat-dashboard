@@ -1,0 +1,625 @@
+# Georg Hennemann <georg.hennemann@t-systems.com>, 2017. #zanata
+# Georg Hennemann <georg.hennemann@t-systems.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-01-29 08:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-13 05:21+0000\n"
+"Last-Translator: Georg Hennemann <georg.hennemann@t-systems.com>\n"
+"Language-Team: Esperanto\n"
+"Language: eo\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
+
+msgid "A local environment to upload."
+msgstr "Lokala medio por alŝuti."
+
+msgid "A local template to upload."
+msgstr "Lokala shablono por alŝuti."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Ŝablono estas uzita por automatigi disponigon de infrastrukturo, servicoj, "
+"kaj aplikoj."
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Alpropigo Kompleta"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Alpropigo Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Alpropigo en Progreso "
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "Ekstera (HTTP) URL de kie elŝuti la ŝablonon."
+
+msgid "Attributes"
+msgstr "Atributoj"
+
+msgid "Case sensitive"
+msgstr "Uskleciva"
+
+msgid "Case-sensitive"
+msgstr "Usklecodistinga"
+
+msgid "Change Stack Template"
+msgstr "Ŝanĝu Stako  ŝablonon "
+
+msgid "Change Template"
+msgstr "Ŝanĝu Ŝablonon "
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Kontrolo Kompleta"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Kontrolo Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Kontrolo en Progreso"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Kontrolu Stakon"
+msgstr[1] "Kontrolu Stakojn"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "Kontrolita Stako"
+msgstr[1] "Kontrolitaj Stakoj"
+
+msgid "Clear Canvas"
+msgstr "Vakigu Areaĵon "
+
+msgid "Close"
+msgstr "Fermo"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "Kreado kompleta"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "Kreado malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "Kreado en progreso"
+
+msgid "Create Stack"
+msgstr "Kreu ŝablonon"
+
+msgid "Create a new stack with the provided values."
+msgstr "Kreu novanstakon kun la provizitaj valoroj."
+
+msgid "Created"
+msgstr "Kreita"
+
+msgid "Creation Timeout (minutes)"
+msgstr "Kreado tempolimo (minutoj)"
+
+msgid "Date Updated"
+msgstr "Dato Ĝisdatigita"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "Forigu Kompleta"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "Forigu Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "Forigu en Progreso"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Forigu Stakon"
+msgstr[1] "Forigu Stakojn"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "Forigita Stako"
+msgstr[1] "Forigitaj Stakoj"
+
+msgid "Description"
+msgstr "Priskribo"
+
+msgid "Description:"
+msgstr "Priskripo:"
+
+msgid "Direct Input"
+msgstr "Rekta Enigo "
+
+msgid "Disabled"
+msgstr "Malebligita"
+
+msgid "Edit Template"
+msgstr "Redaktu ŝablonon"
+
+msgid "Enable rollback on create/update failure."
+msgstr "Ebligu ŝanĝomalfaro  je kreado/ĝisdatigo eraro."
+
+msgid "Enabled"
+msgstr "Ebligita"
+
+msgid "Environment Data"
+msgstr "Mediaj Datumoj"
+
+msgid "Environment File"
+msgstr "Medio Dosiero"
+
+msgid "Environment Source"
+msgstr "Medio Fonto"
+
+msgid "Events"
+msgstr "Eventoj"
+
+msgid "Export Draft"
+msgstr "Eksportu Malneton"
+
+msgid "File"
+msgstr "Dosiero"
+
+msgid "Function"
+msgstr "Funkcio"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Importu Malneton"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Inito kompleta"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Inito malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Inito en progreso"
+
+msgid "Last Updated"
+msgstr "Lastfoje ĝisdatigita "
+
+msgid "Launch"
+msgstr "Starto"
+
+msgid "Launch Parameters"
+msgstr "Lanĉu Parametroj"
+
+msgid "Launch Stack"
+msgstr "Lanĉi Stakon"
+
+msgid "Links"
+msgstr "Ligiloj"
+
+msgid "Load Draft"
+msgstr "Ŝarĝu Malneto"
+
+msgid "Manage Drafts"
+msgstr "Mastrumu Malnetoj   "
+
+msgid "Minutes"
+msgstr "Minutoj"
+
+msgid "Name"
+msgstr "Nomo"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"Nomo devas komenci kun litero kaj devas enhavi nur literojn, numerojn, "
+"substrekojn, punktojn kaj dividstrekojn."
+
+msgid "Name of the stack to create."
+msgstr "La nomo de la stako kreanta."
+
+msgid "Next"
+msgstr "Sekva"
+
+msgid "Orchestration"
+msgstr "Orkestro"
+
+msgid "Outputs"
+msgstr "Eligoj"
+
+msgid "Overview"
+msgstr "Superrigardo"
+
+msgid "Parameters"
+msgstr "Parametroj"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "Pasvorto por la uzanto \"%s\""
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"Bonvolu ŝovmeti  resurso piktogramon en centra areaĵo por difini resurso por "
+"ŝablono."
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "Bonvolu entajpu %s uzante nur fonta metodo."
+
+msgid "Preview"
+msgstr "Antaŭrigardo "
+
+msgid "Preview Stack"
+msgstr "Antaŭrigardi  Stakon"
+
+msgid "Preview Stack Details"
+msgstr "Antaŭrigardi  Stako Detajloj"
+
+msgid "Preview Stack Parameters"
+msgstr "Antaŭrigardi  Stako Parametrojn"
+
+msgid "Preview Template"
+msgstr "Antaŭrigardi  ŝablonon"
+
+msgid "Preview a new stack with the provided values."
+msgstr "Antaŭrigardi  novan stakon kun provizitaj valoroj."
+
+msgid "Properties"
+msgstr "Ecoj"
+
+msgid "Referenced Files"
+msgstr "Referencita Dosiero"
+
+msgid "Resource"
+msgstr "Resurso"
+
+msgid "Resource ID"
+msgstr "Resurso ID"
+
+msgid "Resource Metadata"
+msgstr "Resurso Metadatumo"
+
+msgid "Resource Types"
+msgstr "Risursaj Tipoj"
+
+msgid "Resources"
+msgstr "Resursoj"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Daŭrigo Kompleta"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Daŭrigo Malsikcesis"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Daŭrigo en Progreso"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "Daŭrigi Stakon"
+msgstr[1] "Daŭrigi Stakojn"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "Daŭrigita Stako"
+msgstr[1] "Daŭrigitaj Stakoj"
+
+msgid "Rollback"
+msgstr "Ŝanĝomalfaro"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "ŝanĝomalfaro   kompleta"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "ŝanĝomalfaro  malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "ŝanĝomalfaro   en Progeso"
+
+msgid "Rollback On Failure"
+msgstr "ŝanĝomalfaro   je eraro"
+
+msgid "Save Draft"
+msgstr "Savu Malneto"
+
+msgid "Select Template"
+msgstr "Elektu ŝablonon"
+
+msgid "Select a new template to preview a stack."
+msgstr "Elektu novan ŝablonon por antaŭrigardi stakon."
+
+msgid "Select a new template to re-launch a stack."
+msgstr "Elektu novan ŝablonon por restarti stakon."
+
+msgid "Select a template to launch a stack."
+msgstr "Elektu ŝablonon por starti stakon"
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Savkopio Kompleta"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Savkopio Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Savkopio en Progreso"
+
+msgid "Stack Events"
+msgstr "Stakaj Eventoj"
+
+msgid "Stack ID"
+msgstr "Stako ID"
+
+msgid "Stack ID ="
+msgstr "Stako ID ="
+
+msgid "Stack Name"
+msgstr "Stako Nomo"
+
+msgid "Stack Name ="
+msgstr "Stako Nomo ="
+
+msgid "Stack Parameters"
+msgstr "Stako Parametroj"
+
+msgid "Stack Preview"
+msgstr "Stako Antaŭrigardo "
+
+msgid "Stack Resource"
+msgstr "Stako Resurso"
+
+msgid "Stack Resource ID"
+msgstr "Stako Resurso ID"
+
+msgid "Stack Resource Type"
+msgstr "Stako Resurso Tipo"
+
+msgid "Stack Resources"
+msgstr "Stako Resurso"
+
+msgid "Stack creation started."
+msgstr "Stako kreado lancigita."
+
+msgid "Stack creation timeout in minutes."
+msgstr "Stako kreado tempolimo  en minutoj."
+
+msgid "Stack update started."
+msgstr "Stako Ĝisdatigo komencis."
+
+msgid "Stack updating timeout in minutes."
+msgstr "Stako Ĝisdatigi tempolimo  en minutoj."
+
+msgid "Stacks"
+msgstr "Stakoj"
+
+msgid "Status"
+msgstr "Statuso"
+
+msgid "Status ="
+msgstr "Statuso ="
+
+msgid "Status Reason"
+msgstr "Statuso Kialo"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Prokrastu Kompleta"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Prokrastu Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Prokrastu en Progreso"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "Prokrastu Stakon"
+msgstr[1] "Prokrastu Stakojn"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "Prokrastita Stako"
+msgstr[1] "Prokrastitaj Stakoj"
+
+msgid "Template"
+msgstr "Ŝablono"
+
+msgid "Template Data"
+msgstr "Shablono Datumo"
+
+msgid "Template File"
+msgstr "Shablono Dosiero"
+
+msgid "Template Functions"
+msgstr "Ŝablono Funkcioj"
+
+msgid "Template Generator"
+msgstr "Ŝablono Generatoro"
+
+msgid "Template Source"
+msgstr "Shablono Fonto"
+
+msgid "Template URL"
+msgstr "Shablono URL"
+
+msgid "Template Version"
+msgstr "Ŝablono Versio"
+
+msgid "Template Versions"
+msgstr "Ŝablono Versioj"
+
+msgid "The raw contents of the environment file."
+msgstr "La kruda enhavo de la media dosiero."
+
+msgid "The raw contents of the template."
+msgstr "La kruda enhavo de la ŝablono."
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "Estis problemo sintakse analizi la %(prefix)s: %(error)s"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr ""
+"Tio estas bezonata por la operaciumoj realigitaj dum la vivciklo de la stako"
+
+msgid "Time Since Event"
+msgstr "Tempo ekde Evento"
+
+msgid "Timeout"
+msgstr "Tempolimo"
+
+msgid "Topology"
+msgstr "Topologio"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Type ="
+msgstr "Tipo ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "Neeblas ricevi eventoj por stako \"%s\"."
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "Neeblas ricevi funkcioj por ŝablono versio \"%s\"."
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "Neeblas ricevi resursok por stako \"%s\"."
+
+msgid "Unable to retrieve metadata."
+msgstr "Neeblas ricevi metadatumon."
+
+msgid "Unable to retrieve resource type details."
+msgstr "Neeblas ricevi risurso tipo detajlojn."
+
+msgid "Unable to retrieve resource."
+msgstr "Ne eblas ricevi resurson."
+
+msgid "Unable to retrieve stack list."
+msgstr "Neeblas ricevi stako liston."
+
+msgid "Unable to retrieve stack resource types."
+msgstr "Neeblas ricevi stako risurso tipojn."
+
+msgid "Unable to retrieve stack template."
+msgstr "Neeblas ricevi stako Ŝablonon ."
+
+msgid "Unable to retrieve stack."
+msgstr "Neeblas ricevi stakon."
+
+msgid "Unable to retrieve template functions."
+msgstr "Ne eblas ricevi ŝablono funkciojn."
+
+msgid "Unable to retrieve template versions."
+msgstr "Ne eblas ricevi ŝablono versiojn."
+
+msgid "Update"
+msgstr "Ĝisdatigo"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "Ĝisdatigo Kompleta"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "Ĝisdatigo Malsukcesis"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "Ĝisdatigo en Progreso"
+
+msgid "Update Stack"
+msgstr "Ĝisdatigu Stakon"
+
+msgid "Update Stack Parameters"
+msgstr "Ĝisdatigu Stako Parametroj"
+
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Ĝisdatigu stakon kun provizitaj valoroj. Bonvolu notu ke iuj ajn ĉifritaj "
+"parametroj, kiel pasvortoj, estos restarigita al defaŭlto se vi ne ŝanĝas "
+"ilin ĉi tie."
+
+msgid "Updated"
+msgstr "Ĝisdatigita"
+
+msgid "Updating Timeout (minutes)"
+msgstr "Ĝisdatigi tempolimo (minutoj)"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in changing this stack."
+msgstr ""
+"Uzu unu de la haveblaj  ŝablonaj fonto opcioj por difini la  ŝablonon uzotaj "
+"en ŝanĝo de tiu stako."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Uzu unu de la haveblaj  ŝablonaj fonto opcioj por difini la  ŝablonon uzotaj "
+"kreante tiun stakon."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Uzu unu de la haveblaj  ŝablonaj fonto opcioj por difini la  ŝablonon uzotaj "
+"en antaŭrigardi tiun stakon."
+
+msgid "Version"
+msgstr "Versio"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "Vi devas difini ŝablonon per unu de la haveblaj fontoj."
+
+msgid "environment"
+msgstr "medio"
+
+msgid "template"
+msgstr "ŝablono"
