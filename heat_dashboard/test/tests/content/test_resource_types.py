@@ -23,7 +23,7 @@ class ResourceTypesTests(test.TestCase):
     @test.create_mocks({api.heat: ('resource_types_list',)})
     def test_index(self):
         self.mock_resource_types_list.return_value = \
-                self.resource_types.list()
+            self.resource_types.list()
 
         res = self.client.get(
             reverse('horizon:project:resource_types:index'))

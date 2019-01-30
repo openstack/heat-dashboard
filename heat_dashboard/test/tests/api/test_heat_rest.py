@@ -56,7 +56,7 @@ class HeatRestTestCase(test.TestCase):
                          '{"items": [{"id": "1"}, {"id": "2"}]}')
         hc.service_list.assert_called_once_with(request)
         self.mock_is_service_enabled.assert_called_once_with(
-                request, 'orchestration')
+            request, 'orchestration')
 
     @test.create_mocks({api.base: ('is_service_enabled',)})
     def test_services_get_disabled(self):
@@ -67,4 +67,4 @@ class HeatRestTestCase(test.TestCase):
         response = heat.Services().get(request)
         self.assertStatusCode(response, 501)
         self.mock_is_service_enabled.assert_called_once_with(
-                request, 'orchestration')
+            request, 'orchestration')
