@@ -1,0 +1,111 @@
+# Georg Hennemann <georg.hennemann@t-systems.com>, 2017. #zanata
+# Georg Hennemann <georg.hennemann@t-systems.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-01-29 08:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-13 05:28+0000\n"
+"Last-Translator: Georg Hennemann <georg.hennemann@t-systems.com>\n"
+"Language-Team: Esperanto\n"
+"Language: eo\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Cancel"
+msgstr "Malfaru"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Kontrolu Stakon"
+msgstr[1] "Kontrolu Stakojn"
+
+#, python-format
+msgid "Checked Stack: %s."
+msgid_plural "Checked Stacks: %s."
+msgstr[0] "Kontrolita Stako: %s."
+msgstr[1] "Kontrolitaj Stakoj: %s."
+
+msgid "Confirm Check Stack"
+msgid_plural "Confirm Check Stacks"
+msgstr[0] "Konfirmu Kontroli Stakon"
+msgstr[1] "Konfirmu Kontroli Stakojn"
+
+msgid "Confirm Delete Stack"
+msgid_plural "Confirm Delete Stacks"
+msgstr[0] "Konfirmu Forigu Stakon"
+msgstr[1] "Konfirmu Forigu Stakojn"
+
+msgid "Create Stack"
+msgstr "Kreu Stakon"
+
+msgid "Delete Resource"
+msgstr "Forigu Resurso"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Forigu Stakon"
+msgstr[1] "Forigu Stakojn"
+
+#, python-format
+msgid "Deleted Stack: %s."
+msgid_plural "Deleted Stacks: %s."
+msgstr[0] "Forigita Stako: %s."
+msgstr[1] "Forigitaj Stakoj: %s."
+
+msgid "Download"
+msgstr "Elŝuto"
+
+msgid "Heat Orchestration Template"
+msgstr "HEAT Orkestro Ŝablono"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Save"
+msgstr "Savu"
+
+msgid "Saved Drafts"
+msgstr "Konservitaj Malnetoj"
+
+msgid "Show More Properties"
+msgstr "Montru pli da Ecoj"
+
+#, python-format
+msgid "Stack %s was successfully created."
+msgstr "Stako %s estis sukcese kreita."
+
+#, python-format
+msgid "Unable to check Stack: %s."
+msgid_plural "Unable to check Stacks: %s."
+msgstr[0] "Neeblas kontroli Stakon: %s."
+msgstr[1] "Neeblas kontroli Stakojn: %s."
+
+#, python-format
+msgid "Unable to delete Stack: %s."
+msgid_plural "Unable to delete Stacks: %s."
+msgstr[0] "Neeblas forigi Stakon: %s."
+msgstr[1] "Neeblas forigi Stakojn: %s."
+
+#, python-format
+msgid "You are not allowed to check stacks: %s"
+msgstr "Vi ne estas rajtigita kontroli stakojn: %s"
+
+#, python-format
+msgid "You are not allowed to delete stacks: %s"
+msgstr "Vi ne estas rajtigita forigi stakojn: %s"
+
+#, python-format
+msgid "You have selected \"%s\"."
+msgid_plural "You have selected \"%s\"."
+msgstr[0] "Vi selektis \"%s\"."
+msgstr[1] "Vi selektis \"%s\"."
+
+#, python-format
+msgid "You have selected \"%s\". Deleted stack is not recoverable."
+msgid_plural "You have selected \"%s\". Deleted stacks are not recoverable."
+msgstr[0] "Vi selektis \"%s\". Forigita stako ne estas restaŭrebla."
+msgstr[1] "Vi selektis \"%s\". Forigitaj stakoj ne estas restaŭreblaj."
