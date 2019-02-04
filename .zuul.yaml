@@ -1,3 +1,26 @@
+- job:
+    name: heat-dashboard-integration-tests
+    parent: horizon-integration-tests
+    required-projects:
+      - name: openstack/horizon
+      - name: openstack/heat
+      - name: openstack/python-heatclient
+      - name: openstack/heat-dashboard
+    roles:
+      - zuul: openstack-infra/devstack
+      - zuul: openstack/horizon
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^releasenotes/.*$
+    vars:
+      devstack_plugins:
+        heat: https://git.openstack.org/openstack/heat
+        heat-dashboard: https://git.openstack.org/openstack/heat-dashboard
+      devstack_services:
+        horizon: true
+      tox_envlist: integration
+
 - project:
     templates:
       - check-requirements
@@ -10,6 +33,8 @@
     check:
       jobs:
         - horizon-openstack-tox-python3-django111
+        - heat-dashboard-integration-tests:
+            voting: false
     gate:
       jobs:
         - horizon-openstack-tox-python3-django111
