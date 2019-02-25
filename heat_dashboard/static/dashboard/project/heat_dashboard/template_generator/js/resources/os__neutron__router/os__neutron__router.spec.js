@@ -18,6 +18,7 @@
 
             hotgenGlobals.update_resource_options({
                     networks: [{id: 'network1-id', name: 'network1-id'}],
+                    floating_networks: [{id: 'network2-id', name: 'network2'}],
                     subnets: [{id: 'subnet1-id', name: 'subnet-id'}]
                     });
             $scope.resource = {};
