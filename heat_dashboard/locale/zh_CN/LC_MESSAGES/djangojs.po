@@ -2,15 +2,16 @@
 # Tony <tfu@redhat.com>, 2016. #zanata
 # Tony <tfu@redhat.com>, 2017. #zanata
 # Tony <tfu@redhat.com>, 2018. #zanata
+# Tony <tfu@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-23 08:04+0000\n"
+"POT-Creation-Date: 2019-03-18 17:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-06 01:53+0000\n"
+"PO-Revision-Date: 2019-03-20 03:41+0000\n"
 "Last-Translator: Tony <tfu@redhat.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh_CN\n"
@@ -20,11 +21,37 @@ msgstr ""
 msgid "Cancel"
 msgstr "取消"
 
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "检查堆栈"
+
+#, python-format
+msgid "Checked Stack: %s."
+msgid_plural "Checked Stacks: %s."
+msgstr[0] "检查的堆栈: %s."
+
+msgid "Confirm Check Stack"
+msgid_plural "Confirm Check Stacks"
+msgstr[0] "确认检查堆栈"
+
+msgid "Confirm Delete Stack"
+msgid_plural "Confirm Delete Stacks"
+msgstr[0] "确认删除堆栈"
+
 msgid "Create Stack"
 msgstr "创建堆栈"
 
 msgid "Delete Resource"
 msgstr "删除资源"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "删除堆栈"
+
+#, python-format
+msgid "Deleted Stack: %s."
+msgid_plural "Deleted Stacks: %s."
+msgstr[0] "删除的堆栈: %s。"
 
 msgid "Download"
 msgstr "下载"
@@ -43,3 +70,35 @@ msgstr "保存的草稿"
 
 msgid "Show More Properties"
 msgstr "显示所有属性"
+
+#, python-format
+msgid "Stack %s was successfully created."
+msgstr "堆栈 %s 已被成功创建。"
+
+#, python-format
+msgid "Unable to check Stack: %s."
+msgid_plural "Unable to check Stacks: %s."
+msgstr[0] "无法检查堆栈: %s."
+
+#, python-format
+msgid "Unable to delete Stack: %s."
+msgid_plural "Unable to delete Stacks: %s."
+msgstr[0] "无法删除堆栈: %s."
+
+#, python-format
+msgid "You are not allowed to check stacks: %s"
+msgstr "您不被允许检查堆栈：%s"
+
+#, python-format
+msgid "You are not allowed to delete stacks: %s"
+msgstr "您不被允许删除堆栈： %s"
+
+#, python-format
+msgid "You have selected \"%s\"."
+msgid_plural "You have selected \"%s\"."
+msgstr[0] "您已选择了 \"%s\"。"
+
+#, python-format
+msgid "You have selected \"%s\". Deleted stack is not recoverable."
+msgid_plural "You have selected \"%s\". Deleted stacks are not recoverable."
+msgstr[0] "您已经选定了“%s”。删除的堆栈无法被恢复。"
