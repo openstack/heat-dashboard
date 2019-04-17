@@ -24,7 +24,7 @@ Bug tracker
     https://storyboard.openstack.org/#!/project/992
 
 Code Hosting
-    https://git.openstack.org/cgit/openstack/heat-dashboard
+    https://opendev.org/openstack/heat-dashboard/
 
 Code Review
-    https://review.openstack.org/#/q/status:open+project:openstack/heat-dashboard,n,z
+    https://review.opendev.org/#/q/status:open+project:openstack/heat-dashboard,n,z
