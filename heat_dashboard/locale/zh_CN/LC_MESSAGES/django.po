@@ -12,15 +12,16 @@
 # bkb <bakbad2015@gmail.com>, 2017. #zanata
 # zhonghuali <lizhonghua.li@huawei.com>, 2017. #zanata
 # Tony <tfu@redhat.com>, 2018. #zanata
+# Tony <tfu@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-10-03 05:25+0000\n"
+"POT-Creation-Date: 2019-04-11 17:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-13 01:55+0000\n"
+"PO-Revision-Date: 2019-03-20 01:38+0000\n"
 "Last-Translator: Tony <tfu@redhat.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh_CN\n"
@@ -418,6 +419,9 @@ msgstr "堆栈创建超时，以分钟计。"
 msgid "Stack update started."
 msgstr "开始更新堆栈。"
 
+msgid "Stack updating timeout in minutes."
+msgstr "堆栈更新超时，以分钟计。"
+
 msgid "Stacks"
 msgstr "堆栈"
 
@@ -580,6 +584,9 @@ msgstr ""
 
 msgid "Updated"
 msgstr "已更新"
+
+msgid "Updating Timeout (minutes)"
+msgstr "更新超时（分钟）"
 
 msgid ""
 "Use one of the available template source options to specify the template to "
