@@ -8,16 +8,17 @@
 # Loic Nicolle <loic.nicolle@orange.com>, 2017. #zanata
 # Pascal Larivée <pascal@larivee.photo>, 2017. #zanata
 # François Magimel <magimel.francois@gmail.com>, 2018. #zanata
+# Corinne Verheyde <cverheyd@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-08-14 00:21+0000\n"
+"POT-Creation-Date: 2019-04-22 09:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-10 03:31+0000\n"
-"Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
+"PO-Revision-Date: 2019-05-02 09:40+0000\n"
+"Last-Translator: Corinne Verheyde <cverheyd@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -183,6 +184,9 @@ msgstr "Environment source"
 msgid "Events"
 msgstr "Événements"
 
+msgid "Export Draft"
+msgstr "Exporter un brouillon"
+
 msgid "File"
 msgstr "Fichier"
 
@@ -191,6 +195,9 @@ msgstr "Fonction"
 
 msgid "ID"
 msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Importer un brouillon"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -218,6 +225,12 @@ msgstr "Lancer la pile"
 
 msgid "Links"
 msgstr "Liens"
+
+msgid "Load Draft"
+msgstr "Charger un brouillon"
+
+msgid "Manage Drafts"
+msgstr "Gérer les brouillons"
 
 msgid "Minutes"
 msgstr "Minutes"
@@ -337,6 +350,9 @@ msgstr "Annulation en cours"
 
 msgid "Rollback On Failure"
 msgstr "Annulation en cas d'échec"
+
+msgid "Save Draft"
+msgstr "Sauvegarder un brouillon"
 
 msgid "Select Template"
 msgstr "Sélectionner un modèle"
@@ -577,6 +593,13 @@ msgid ""
 msgstr ""
 "Utiliser une des options de modèle source disponibles pour préciser le "
 "modèle à utiliser lors du changement de cette Stack."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Utiliser une des options de source de modèle disponible pour définir le "
+"modèle à utiliser lors de la création de cette pile. "
 
 msgid ""
 "Use one of the available template source options to specify the template to "
