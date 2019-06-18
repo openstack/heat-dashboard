@@ -1,0 +1,625 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Surit Aryal <aryalsurit@gmail.com>, 2018. #zanata
+# Surit Aryal <aryalsurit@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-05-22 15:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-06-13 11:25+0000\n"
+"Last-Translator: Surit Aryal <aryalsurit@gmail.com>\n"
+"Language-Team: Nepali\n"
+"Language: ne\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
+
+msgid "A local environment to upload."
+msgstr "अपलोड गर्नका लागि लोकल वातावरण"
+
+msgid "A local template to upload."
+msgstr "अपलोड गर्नका लागि एउटा स्थानीय टेम्प्लेट"
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"एक टेम्पलेट आधारभूत संरचना, सेवाहरु, र अनुप्रयोगहरुको तैनाती स्वचालित गर्न को लागी प्रयोग "
+"गरिन्छ।"
+
+msgctxt "current status of stack"
+msgid "Adopt Complete"
+msgstr "Adopt Complete"
+
+msgctxt "current status of stack"
+msgid "Adopt Failed"
+msgstr "Adopt Failed"
+
+msgctxt "current status of stack"
+msgid "Adopt In Progress"
+msgstr "Adopt In Progress"
+
+msgid "An external (HTTP) URL to load the template from."
+msgstr "बाट टेम्प्लेट लोड गर्नका लागि एउटा बाह्य (HTTP) URL"
+
+msgid "Attributes"
+msgstr "विशेषताहरू"
+
+msgid "Case sensitive"
+msgstr "केस संवेदनशील"
+
+msgid "Case-sensitive"
+msgstr "केस संवेदनशील"
+
+msgid "Change Stack Template"
+msgstr "स्टेक स्टेम्प्लेट परिवर्तन गर्नुहोस्"
+
+msgid "Change Template"
+msgstr "टेम्प्लेट परिवर्तन गर्नुहोस्"
+
+msgctxt "current status of stack"
+msgid "Check Complete"
+msgstr "Check Complete"
+
+msgctxt "current status of stack"
+msgid "Check Failed"
+msgstr "Check Failed"
+
+msgctxt "current status of stack"
+msgid "Check In Progress"
+msgstr "Check In Progress"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "स्ट्याक जाँच गर्नुहोस्"
+msgstr[1] "स्ट्याकहरू जाँच गर्नुहोस्"
+
+msgid "Checked Stack"
+msgid_plural "Checked Stacks"
+msgstr[0] "जाँच गरिएको स्ट्याक"
+msgstr[1] "जाँच गरिएका स्ट्याकहरू"
+
+msgid "Clear Canvas"
+msgstr "खाली क्यानवास"
+
+msgid "Close"
+msgstr "बन्द"
+
+msgctxt "current status of stack"
+msgid "Create Complete"
+msgstr "सिर्जना सम्पन्न भयो"
+
+msgctxt "current status of stack"
+msgid "Create Failed"
+msgstr "सिर्जना असफल भयो"
+
+msgctxt "current status of stack"
+msgid "Create In Progress"
+msgstr "सिर्जना हुदैछ"
+
+msgid "Create Stack"
+msgstr "स्टेक बनाउनुहोस्"
+
+msgid "Create a new stack with the provided values."
+msgstr "प्रदान गरिएका मानहरूको साथ नयाँ स्ट्याक सिर्जना गर्नुहोस्।"
+
+msgid "Created"
+msgstr "सृष्टि भयो"
+
+msgid "Creation Timeout (minutes)"
+msgstr "बनाउने समय सकियो( मिनटहरू)"
+
+msgid "Date Updated"
+msgstr "तारिक अपडेट गरिएको छ"
+
+msgctxt "current status of stack"
+msgid "Delete Complete"
+msgstr "मेटाईयो"
+
+msgctxt "current status of stack"
+msgid "Delete Failed"
+msgstr "मेट्न असफल भयो"
+
+msgctxt "current status of stack"
+msgid "Delete In Progress"
+msgstr "मेटाउँदै"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "स्ट्याक मेटाउनुहोस्"
+msgstr[1] "स्ट्याकहरू मेटाउनुहोस्"
+
+msgid "Deleted Stack"
+msgid_plural "Deleted Stacks"
+msgstr[0] "मेटिएको स्ट्याक"
+msgstr[1] "मेटिएको स्ट्याकहरू"
+
+msgid "Description"
+msgstr "विबरण"
+
+msgid "Description:"
+msgstr "विवरण:"
+
+msgid "Direct Input"
+msgstr "सिधा इनपुट"
+
+msgid "Disabled"
+msgstr "निस्क्रीय गरिएको"
+
+msgid "Edit Template"
+msgstr "टेम्प्लेट सम्पादन गर्नुहोस्"
+
+msgid "Enable rollback on create/update failure."
+msgstr "बनाउनु/अपडेट असफलतामा फर्किनु सक्रीय गर्नुहोस्।"
+
+msgid "Enabled"
+msgstr "सक्रीय गरियो"
+
+msgid "Environment Data"
+msgstr "वातावरण डाटा"
+
+msgid "Environment File"
+msgstr "वातावरण फाइल"
+
+msgid "Environment Source"
+msgstr "वातावरण स्रोत"
+
+msgid "Events"
+msgstr "इभेन्टहरू"
+
+msgid "Export Draft"
+msgstr "ड्राफ्ट निर्यात गर्नुहोस्"
+
+msgid "File"
+msgstr "फाइल"
+
+msgid "Function"
+msgstr "प्रकार्य"
+
+msgid "ID"
+msgstr "आई डि"
+
+msgid "Import Draft"
+msgstr "ड्राफ्ट आयात गर्नुहोस्"
+
+msgctxt "current status of stack"
+msgid "Init Complete"
+msgstr "Init Complete"
+
+msgctxt "current status of stack"
+msgid "Init Failed"
+msgstr "Init Failed"
+
+msgctxt "current status of stack"
+msgid "Init In Progress"
+msgstr "Init In Progress"
+
+msgid "Last Updated"
+msgstr "अघिल्लोपल्ट अपडेट गरिएको "
+
+msgid "Launch"
+msgstr "शुरू गर्नुहोस्"
+
+msgid "Launch Parameters"
+msgstr "प्यारामिटर सुरू गर्नुहोस्"
+
+msgid "Launch Stack"
+msgstr "स्टेक आरम्भ गर्नुहोस्"
+
+msgid "Links"
+msgstr "लिङ्कहरू"
+
+msgid "Load Draft"
+msgstr "ड्राफ्ट लोड गर्नुहोस्"
+
+msgid "Manage Drafts"
+msgstr "ड्राफ्टहरू व्यवस्थापन गर्नुहोस्"
+
+msgid "Minutes"
+msgstr "मिनेट"
+
+msgid "Name"
+msgstr "नाम"
+
+msgid ""
+"Name must start with a letter and may only contain letters, numbers, "
+"underscores, periods and hyphens."
+msgstr ""
+"नाम आवश्यक रूपमा अक्षरबाट थालिनुपर्छ अनि यसमा अक्षर, सङ्ख्या, अन्डरस्कोर, पिरियडहूर अनि "
+"हाइफनहरू मात्र हुनुपर्छ।"
+
+msgid "Name of the stack to create."
+msgstr "बनाउनुपर्ने स्टेकको नाम।"
+
+msgid "Next"
+msgstr "अर्को"
+
+msgid "Orchestration"
+msgstr "अर्केस्ट्रेसन"
+
+msgid "Outputs"
+msgstr "निर्गतहरू"
+
+msgid "Overview"
+msgstr "ओभरभ्यु"
+
+msgid "Parameters"
+msgstr "प्यारामिटर"
+
+#, python-format
+msgid "Password for user \"%s\""
+msgstr "उपभोक्ता \"%s\"को लागि पासवर्ड"
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"कृपया टेम्पलेटको संसाधन परिभाषित गर्नको लागी केन्द्र क्यानवासमा स्रोत आइकनहरू ड्र्याग "
+"गर्नुहोस् र ड्रप गर्नुहोस्।"
+
+#, python-format
+msgid "Please specify a %s using only one source method."
+msgstr "एउटा मात्र स्रोत बिधि प्रयोग गरेर कृपया एउटा %s तोक्नुहोस्"
+
+msgid "Preview"
+msgstr "पूर्वावलोकन"
+
+msgid "Preview Stack"
+msgstr "स्ट्याक पूर्वावलोकन गर्नुहोस्"
+
+msgid "Preview Stack Details"
+msgstr "स्ट्याक विवरणहरू पूर्वावलोकन गर्नुहोस्"
+
+msgid "Preview Stack Parameters"
+msgstr "स्ट्याक प्यारामिटरहरू पूर्वावलोकन गर्नुहोस्"
+
+msgid "Preview Template"
+msgstr "टेम्प्लेट पूर्वावलोकन गर्नुहोस्"
+
+msgid "Preview a new stack with the provided values."
+msgstr "प्रदान गरिएका मानहरूको साथ नयाँ स्ट्याक सिर्जना गर्नुहोस्।"
+
+msgid "Properties"
+msgstr "गुणहरू"
+
+msgid "Referenced Files"
+msgstr "सन्दर्भ गरिएका फाइलहरू"
+
+msgid "Resource"
+msgstr "सामग्री"
+
+msgid "Resource ID"
+msgstr "रिसोर्स ID"
+
+msgid "Resource Metadata"
+msgstr "रिसोर्स मेटाडाटा"
+
+msgid "Resource Types"
+msgstr "स्रोत प्रकारहरू"
+
+msgid "Resources"
+msgstr "रिसोर्सहरू"
+
+msgctxt "current status of stack"
+msgid "Resume Complete"
+msgstr "Resume Complete"
+
+msgctxt "current status of stack"
+msgid "Resume Failed"
+msgstr "Resume Failed"
+
+msgctxt "current status of stack"
+msgid "Resume In Progress"
+msgstr "Resume In Progress"
+
+msgid "Resume Stack"
+msgid_plural "Resume Stacks"
+msgstr[0] "स्ट्याक पुन: सुरु गर्नुहोस्"
+msgstr[1] "स्ट्याकहरू पुन: सुरु गर्नुहोस्"
+
+msgid "Resumed Stack"
+msgid_plural "Resumed Stacks"
+msgstr[0] "पुन: सुरु भएको स्ट्याक"
+msgstr[1] "पुन: सुरु भएको स्ट्याकहरू"
+
+msgid "Rollback"
+msgstr "पछि फर्किनु"
+
+msgctxt "current status of stack"
+msgid "Rollback Complete"
+msgstr "Rollback Complete"
+
+msgctxt "current status of stack"
+msgid "Rollback Failed"
+msgstr "Rollback Failed"
+
+msgctxt "current status of stack"
+msgid "Rollback In Progress"
+msgstr "Rollback In Progress"
+
+msgid "Rollback On Failure"
+msgstr "असफलतामा फर्किनुहोस्"
+
+msgid "Save Draft"
+msgstr "ड्राफ्ट बचत गर्नुहोस्"
+
+msgid "Select Template"
+msgstr "टेम्प्लेट चयन गर्नुहोस्"
+
+msgid "Select a new template to preview a stack."
+msgstr "स्ट्याक पूर्वावलोकन गर्न नयाँ टेम्प्लेट चयन गर्नुहोस्।"
+
+msgid "Select a new template to re-launch a stack."
+msgstr "एउटा स्टेक पुनःआरम्भ गर्नका लागि एउटा नयाँ टेम्प्लेट चन गर्नुहोस्।"
+
+msgid "Select a template to launch a stack."
+msgstr "एउटा स्टेक आरम्भ गर्नका लागि एउटा टेम्पलेट चयन गर्नुहोस्।"
+
+msgctxt "current status of stack"
+msgid "Snapshot Complete"
+msgstr "Snapshot Complete"
+
+msgctxt "current status of stack"
+msgid "Snapshot Failed"
+msgstr "Snapshot Failed"
+
+msgctxt "current status of stack"
+msgid "Snapshot In Progress"
+msgstr "Snapshot In Progress"
+
+msgid "Stack Events"
+msgstr "स्टेक इभेन्टहरू"
+
+msgid "Stack ID"
+msgstr "स्टेक ID"
+
+msgid "Stack ID ="
+msgstr "स्ट्याक आईडी ="
+
+msgid "Stack Name"
+msgstr "स्टेक नाम"
+
+msgid "Stack Name ="
+msgstr "स्ट्याक नाम ="
+
+msgid "Stack Parameters"
+msgstr "स्ट्याक प्यारामिटर"
+
+msgid "Stack Preview"
+msgstr "स्ट्याक पूर्वावलोकन"
+
+msgid "Stack Resource"
+msgstr "स्टेक स्रोत"
+
+msgid "Stack Resource ID"
+msgstr "स्ट्याक  रिसोर्स ID"
+
+msgid "Stack Resource Type"
+msgstr "स्टेक रिसोर्स प्रकार"
+
+msgid "Stack Resources"
+msgstr "स्टेक रिसोर्सहरू"
+
+msgid "Stack creation started."
+msgstr "स्टेक बनाउने शुरू गरिएको छ।"
+
+msgid "Stack creation timeout in minutes."
+msgstr "मिनटमा स्टेक बनाउने समय सकियो।"
+
+msgid "Stack update started."
+msgstr "स्टेक अपडेट शुरू गरिएको छ।"
+
+msgid "Stack updating timeout in minutes."
+msgstr "मिनेटमा समयसिमा अद्यावधिक थुपार्नुहोस्।"
+
+msgid "Stacks"
+msgstr "स्टेकहरू"
+
+msgid "Status"
+msgstr "स्टाटस"
+
+msgid "Status ="
+msgstr "स्टाटस ="
+
+msgid "Status Reason"
+msgstr "स्टाटस कारण"
+
+msgctxt "current status of stack"
+msgid "Suspend Complete"
+msgstr "Suspend Complete"
+
+msgctxt "current status of stack"
+msgid "Suspend Failed"
+msgstr "Suspend Failed"
+
+msgctxt "current status of stack"
+msgid "Suspend In Progress"
+msgstr "Suspend In Progress"
+
+msgid "Suspend Stack"
+msgid_plural "Suspend Stacks"
+msgstr[0] "स्ट्याक निलम्बन गर्नुहोस्"
+msgstr[1] "स्ट्याकहरू निलम्बन गर्नुहोस्"
+
+msgid "Suspended Stack"
+msgid_plural "Suspended Stacks"
+msgstr[0] "निलम्बित  स्ट्याक"
+msgstr[1] "निलम्बित  स्ट्याकहरू"
+
+msgid "Template"
+msgstr "टेम्प्लेट"
+
+msgid "Template Data"
+msgstr "टेम्प्लेट डाटा"
+
+msgid "Template File"
+msgstr "टेम्प्लेट फाइल"
+
+msgid "Template Functions"
+msgstr "टेम्प्लेट प्रकार्यहरू"
+
+msgid "Template Generator"
+msgstr "टेम्पलेट सर्जक"
+
+msgid "Template Source"
+msgstr "टेम्प्लेट स्रोत"
+
+msgid "Template URL"
+msgstr "टेम्प्लेट URL"
+
+msgid "Template Version"
+msgstr "टेम्प्लेट संस्करण"
+
+msgid "Template Versions"
+msgstr "टेम्पलेट संस्करणहरू"
+
+msgid "The raw contents of the environment file."
+msgstr "वातावरण फाइलको काँचो कन्टेन्टहरू।"
+
+msgid "The raw contents of the template."
+msgstr "टेम्पलेटको काँचो सामग्री"
+
+#, python-format
+msgid "There was a problem parsing the %(prefix)s: %(error)s"
+msgstr "%(prefix)s: %(error)s पार्सिङ गर्ने क्रममा समस्या भएको थियो"
+
+msgid ""
+"This is required for operations to be performed throughout the lifecycle of "
+"the stack"
+msgstr "यो स्टेकको सम्पूर्ण जीवनक्रममा कार्यान्वयन गर्ने अभियानका लागि आवस्यक पर्दछ।"
+
+msgid "Time Since Event"
+msgstr "घटनादेखिको समय"
+
+msgid "Timeout"
+msgstr "समय सकियो"
+
+msgid "Topology"
+msgstr "टोपोलोजी"
+
+msgid "Type"
+msgstr "विवरण"
+
+msgid "Type ="
+msgstr "प्रकार ="
+
+msgid "URL"
+msgstr "URL"
+
+#, python-format
+msgid "Unable to get events for stack \"%s\"."
+msgstr "\"%s\" स्टेकका लागि इभेन्टहरू प्राप्त गर्न असमर्थ"
+
+#, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr "टेम्प्लेट संस्करण \"%s\" को लागि कार्यहरू प्राप्त गर्न असक्षम।"
+
+#, python-format
+msgid "Unable to get resources for stack \"%s\"."
+msgstr "\"%s\" स्टेकका लागि रिसोर्सहरू प्राप्त गर्न असमर्थ"
+
+msgid "Unable to retrieve metadata."
+msgstr "मेटाडाटा प्राप्त गर्न असमर्थ।"
+
+msgid "Unable to retrieve resource type details."
+msgstr "संसाधन प्रकारको जानकारी पुन: प्राप्त गर्न असक्षम।"
+
+msgid "Unable to retrieve resource."
+msgstr "रिसोर्स प्राप्त गर्न असमर्थ"
+
+msgid "Unable to retrieve stack list."
+msgstr "स्टेक सूची प्राप्त गर्न असमर्थ"
+
+msgid "Unable to retrieve stack resource types."
+msgstr "स्ट्याक संसाधन प्रकारहरू पुनःप्राप्त गर्न असमर्थ।"
+
+msgid "Unable to retrieve stack template."
+msgstr "स्टेक टेम्प्लेट प्राप्त गर्न असमर्थ"
+
+msgid "Unable to retrieve stack."
+msgstr "स्टेक प्राप्त गर्न असमर्थ"
+
+msgid "Unable to retrieve template functions."
+msgstr "टेम्प्लेट प्रकार्यहरू पुन: प्राप्त गर्न असमर्थ।"
+
+msgid "Unable to retrieve template versions."
+msgstr "टेम्प्लेट संस्करणहरू पुन: प्राप्त गर्न असमर्थ।"
+
+msgid "Update"
+msgstr "अपडेट गर्नुहोस्"
+
+msgctxt "current status of stack"
+msgid "Update Complete"
+msgstr "अद्यावधिक सम्पन्न भयो"
+
+msgctxt "current status of stack"
+msgid "Update Failed"
+msgstr "अद्यावधिक असफल भयो"
+
+msgctxt "current status of stack"
+msgid "Update In Progress"
+msgstr "अद्यावधिक हुदैछ"
+
+msgid "Update Stack"
+msgstr "स्टेक अपडेट गर्नुहोस्"
+
+msgid "Update Stack Parameters"
+msgstr "स्टेक प्यारामिटरहरू अपडेट गर्नुहोस्"
+
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"प्रदान गरिएका मूल्यहरू लिएर एउटा स्टेक अपडेट गर्नुहोस्। कृपय नोट गर्नुहोस् कि कुना इन्क्रिप्ट "
+"गरिएको प्यारामिटर, जस्तै पासवर्डहरू, यदि तपाईँले परिवर्तन गर्नुभएन भने डिफल्टमा रिसेट हुन्छ।"
+
+msgid "Updated"
+msgstr "अपडेट गरिएको"
+
+msgid "Updating Timeout (minutes)"
+msgstr "समय समाप्त (मिनेट) अद्यावधिक गर्ने"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in changing this stack."
+msgstr ""
+"यो स्ट्याक परिवर्तन गर्न टेम्प्लेट निर्दिष्ट गर्न उपलब्ध टेम्प्लेट स्रोत विकल्प मध्ये एक प्रयोग "
+"गर्नुहोस्।"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"स्टेक बनाउने क्रममा प्रयोग गर्नका लागि टेम्प्लेक प्रयोग गर्नका लागि उपलब्ध कुनै एक टेम्प्ले "
+"स्रोतको प्रयोग गर्नुहोस्।"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"यो स्ट्याक पूर्वावलोकनमा प्रयोग हुने टेम्पलेट निर्दिष्ट गर्न उपलब्ध टेम्प्लेट स्रोत विकल्प मध्ये "
+"एक प्रयोग गर्नुहोस्।"
+
+msgid "Version"
+msgstr "संस्करण"
+
+msgid "You must specify a template via one of the available sources."
+msgstr "उपलब्ध स्रोतहरूमध्ये एउटाबाट तपाईँले आवश्यक रूपमा एउटा टेम्प्लेट निश्चित गर्नुपर्छ।"
+
+msgid "environment"
+msgstr "वातावरण"
+
+msgid "template"
+msgstr "टम्प्लेट"

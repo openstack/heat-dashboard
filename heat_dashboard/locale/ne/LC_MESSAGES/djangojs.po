@@ -1,0 +1,111 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Surit Aryal <aryalsurit@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-05-22 15:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-06-14 04:55+0000\n"
+"Last-Translator: Surit Aryal <aryalsurit@gmail.com>\n"
+"Language-Team: Nepali\n"
+"Language: ne\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "Cancel"
+msgstr "रद्ध गर्नुहोस्"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "स्ट्याक जाँच गर्नुहोस्"
+msgstr[1] "स्ट्याकहरू जाँच गर्नुहोस्"
+
+#, python-format
+msgid "Checked Stack: %s."
+msgid_plural "Checked Stacks: %s."
+msgstr[0] "जाँच गरिएको स्ट्याक: %s।"
+msgstr[1] "जाँच गरिएको स्ट्याकहरू: %s।"
+
+msgid "Confirm Check Stack"
+msgid_plural "Confirm Check Stacks"
+msgstr[0] "स्ट्याक जाँच पुष्टि गर्नुहोस्"
+msgstr[1] "स्ट्याकहरू जाँच पुष्टि गर्नुहोस्"
+
+msgid "Confirm Delete Stack"
+msgid_plural "Confirm Delete Stacks"
+msgstr[0] "स्ट्याक मेटाउनुहोस्"
+msgstr[1] "स्ट्याकहरू मेटाउनुहोस्"
+
+msgid "Create Stack"
+msgstr "स्टेक बनाउनुहोस्"
+
+msgid "Delete Resource"
+msgstr "सामग्री मेटाउनुहोस्"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "स्ट्याक मेटाउनुहोस्"
+msgstr[1] "स्ट्याकहरू मेटाउनुहोस्"
+
+#, python-format
+msgid "Deleted Stack: %s."
+msgid_plural "Deleted Stacks: %s."
+msgstr[0] "मेटिएको स्ट्याक %s"
+msgstr[1] "मेटिएको स्ट्याकहरू %s"
+
+msgid "Download"
+msgstr "डाउनलोड गर्नुहोस्"
+
+msgid "Heat Orchestration Template"
+msgstr "Heat Orchestration टम्प्लेट"
+
+msgid "OK"
+msgstr "ठिक छ"
+
+msgid "Save"
+msgstr "सेभ गर्नुहोस्"
+
+msgid "Saved Drafts"
+msgstr "सुरक्षित ड्राफ्टहरू"
+
+msgid "Show More Properties"
+msgstr "अधिक गुणहरू देखाउनुहोस्"
+
+#, python-format
+msgid "Stack %s was successfully created."
+msgstr "स्ट्याक %s सफलतापूर्वक सिर्जना गरियो।"
+
+#, python-format
+msgid "Unable to check Stack: %s."
+msgid_plural "Unable to check Stacks: %s."
+msgstr[0] "%s स्ट्याक जाँच गर्न सकिएन।"
+msgstr[1] "%s स्ट्याकहरू जाँच गर्न सकिएन।"
+
+#, python-format
+msgid "Unable to delete Stack: %s."
+msgid_plural "Unable to delete Stacks: %s."
+msgstr[0] "स्ट्याक: %s मेटाउन असमर्थ।"
+msgstr[1] "स्ट्याकहरू: %s मेटाउन असमर्थ।"
+
+#, python-format
+msgid "You are not allowed to check stacks: %s"
+msgstr "तपाईंलाई स्ट्याक: %s जाँच गर्न अनुमति छैन"
+
+#, python-format
+msgid "You are not allowed to delete stacks: %s"
+msgstr "तपाईंलाई स्ट्याक: %s जाँच गर्न अनुमति छैन"
+
+#, python-format
+msgid "You have selected \"%s\"."
+msgid_plural "You have selected \"%s\"."
+msgstr[0] "तपाईंले \"%s\".चयन गर्नुभएको छ।"
+msgstr[1] "तपाईंले \"%s\".चयन गर्नुभएको छ।"
+
+#, python-format
+msgid "You have selected \"%s\". Deleted stack is not recoverable."
+msgid_plural "You have selected \"%s\". Deleted stacks are not recoverable."
+msgstr[0] "तपाईंले \"%s\" चयन गर्नुभएको छ। हटाइएको स्ट्याक पुन: प्राप्ति योग्य छैन।"
+msgstr[1] "तपाईंले \"%s\" चयन गर्नुभएको छ। हटाइएको स्ट्याकहरू पुन: प्राप्ति योग्य छैन।"
