@@ -10,21 +10,30 @@
 # Artem <amikhalev90@gmail.com>, 2017. #zanata
 # Fedor Tarasenko <feodor.tarasenko@gmail.com>, 2017. #zanata
 # Ilya Alekseyev <ilyaalekseyev@acm.org>, 2017. #zanata
+# Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"POT-Creation-Date: 2019-08-05 05:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-09-16 08:03+0000\n"
-"Last-Translator: Ilya Alekseyev <ilyaalekseyev@acm.org>\n"
+"PO-Revision-Date: 2019-08-05 09:10+0000\n"
+"Last-Translator: Roman Gorshunov <roman.gorshunov@att.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "Локальная среда для загрузки."
@@ -45,7 +54,10 @@ msgid "Adopt In Progress"
 msgstr "Выполняется принятие"
 
 msgid "An external (HTTP) URL to load the template from."
-msgstr "Внешний (HTTP) URL для скачивания шаблона."
+msgstr "Внешняя (HTTP) ссылка для скачивания образа."
+
+msgid "Attributes"
+msgstr "Аттрибуты"
 
 msgid "Case sensitive"
 msgstr "Чувствительно к регистру"
@@ -82,6 +94,9 @@ msgid_plural "Checked Stacks"
 msgstr[0] "Стек проверен"
 msgstr[1] "Стеки проверены"
 msgstr[2] "Стеки проверены"
+
+msgid "Close"
+msgstr "Закрыть"
 
 msgctxt "current status of stack"
 msgid "Create Complete"
@@ -137,11 +152,17 @@ msgstr "Описание"
 msgid "Direct Input"
 msgstr "Непосредственный ввод"
 
+msgid "Disabled"
+msgstr "Выключен"
+
 msgid "Edit Template"
 msgstr "Редактировать шаблон"
 
 msgid "Enable rollback on create/update failure."
 msgstr "Разрешить откат при сбое создания/обновления."
+
+msgid "Enabled"
+msgstr "Включен"
 
 msgid "Environment Data"
 msgstr "Данные среды"
@@ -173,11 +194,23 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "Выполняется инициализация"
 
+msgid "Last Updated"
+msgstr "Обновлено"
+
 msgid "Launch"
 msgstr "Запустить"
 
+msgid "Launch Parameters"
+msgstr "Параметры запуска"
+
 msgid "Launch Stack"
 msgstr "Запустить стек"
+
+msgid "Links"
+msgstr "Ссылки"
+
+msgid "Minutes"
+msgstr "Минуты"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -187,7 +220,7 @@ msgstr ""
 "нижнее подчеркивание, точки и дефисы."
 
 msgid "Name of the stack to create."
-msgstr "Имя стека для создания."
+msgstr "Имя создаваемого стека."
 
 msgid "Next"
 msgstr "Далее"
@@ -195,8 +228,14 @@ msgstr "Далее"
 msgid "Orchestration"
 msgstr "Оркестрация"
 
+msgid "Outputs"
+msgstr "Вывод"
+
 msgid "Overview"
 msgstr "Обзор"
+
+msgid "Parameters"
+msgstr "Параметры"
 
 #, python-format
 msgid "Password for user \"%s\""
@@ -221,8 +260,20 @@ msgstr "Предварительный просмотр параметров с�
 msgid "Preview Template"
 msgstr "Предварительный просмотр шаблона"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Предварительный просмотр стека с предоставленными значениями."
+
+msgid "Properties"
+msgstr "Свойства"
+
 msgid "Resource"
 msgstr "Ресурс"
+
+msgid "Resource ID"
+msgstr "ID ресурса"
+
+msgid "Resource Metadata"
+msgstr "Метаданные ресурса"
 
 msgid "Resource Types"
 msgstr "Типы ресурсов"
@@ -254,6 +305,9 @@ msgstr[0] "Стек возобновлен"
 msgstr[1] "Стеки возобновлены"
 msgstr[2] "Стеки возобновлены"
 
+msgid "Rollback"
+msgstr "Откат"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "Откат изменений завершен"
@@ -273,7 +327,7 @@ msgid "Select Template"
 msgstr "Выбрать шаблон"
 
 msgid "Select a new template to preview a stack."
-msgstr "Выберите новый шаблон для предварительного просмотра стека"
+msgstr "Выберите новый шаблон для предварительного просмотра стека."
 
 msgid "Select a new template to re-launch a stack."
 msgstr "Выбрать новый шаблон для перезапуска стека."
@@ -308,8 +362,17 @@ msgstr "Имя стека"
 msgid "Stack Name ="
 msgstr "Имя стека ="
 
+msgid "Stack Parameters"
+msgstr "Параметры стека"
+
+msgid "Stack Preview"
+msgstr "Предварительный просмотр стека"
+
 msgid "Stack Resource"
 msgstr "Ресурсы стека"
+
+msgid "Stack Resource ID"
+msgstr "ID ресурса стека"
 
 msgid "Stack Resource Type"
 msgstr "Тип ресурса стека"
@@ -374,6 +437,9 @@ msgstr "Файл шаблона"
 msgid "Template Functions"
 msgstr "Функции шаблона"
 
+msgid "Template Generator"
+msgstr "Генератор шаблона"
+
 msgid "Template Source"
 msgstr "Источник шаблона"
 
@@ -400,6 +466,9 @@ msgstr "Это необходимо для выполнения операций
 
 msgid "Time Since Event"
 msgstr "Время после события"
+
+msgid "Timeout"
+msgstr "Таймаут"
 
 msgid "Topology"
 msgstr "Топология"
@@ -429,7 +498,7 @@ msgid "Unable to retrieve metadata."
 msgstr "Не удалось получить метаданные."
 
 msgid "Unable to retrieve resource type details."
-msgstr "Не удалось получить детали типа ресурса"
+msgstr "Не удалось получить детали типа ресурса."
 
 msgid "Unable to retrieve resource."
 msgstr "Не удалось получить ресурс."
@@ -438,7 +507,7 @@ msgid "Unable to retrieve stack list."
 msgstr "Не удалось получить список стеков."
 
 msgid "Unable to retrieve stack resource types."
-msgstr "Не удалось получить типы ресурсов стека"
+msgstr "Не удалось получить типы ресурсов стека."
 
 msgid "Unable to retrieve stack template."
 msgstr "Не удалось получить шаблон стека."
@@ -473,8 +542,31 @@ msgstr "Обновить стек"
 msgid "Update Stack Parameters"
 msgstr "Обновить параметры стека"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Обновить стек с заданными параметрами. Обратите внимание, что любые "
+"зашифрованные параметры, такие как пароли, будут сброшены в значения по "
+"умолчанию, если вы не измените их здесь."
+
 msgid "Updated"
 msgstr "Обновлено"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Используйте одну из доступных опций источника шаблона для выбора шаблона, "
+"который будет использоваться при создании этого стека."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Используйте одну из доступных опций источника шаблона для выбора шаблона, "
+"который будет использоваться в предварительном просмотре стека."
 
 msgid "Version"
 msgstr "Версия"
