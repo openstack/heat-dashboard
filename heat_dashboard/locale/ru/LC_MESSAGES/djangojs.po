@@ -1,0 +1,124 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
+# Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: heat-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-08-05 13:28+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-08-05 09:56+0000\n"
+"Last-Translator: Roman Gorshunov <roman.gorshunov@att.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Check Stack"
+msgid_plural "Check Stacks"
+msgstr[0] "Проверить стек"
+msgstr[1] "Проверить стеки"
+msgstr[2] "Проверить стеки"
+
+#, python-format
+msgid "Checked Stack: %s."
+msgid_plural "Checked Stacks: %s."
+msgstr[0] "Проверенный стек: %s."
+msgstr[1] "Проверенные стеки: %s."
+msgstr[2] "Проверенные стеки: %s."
+
+msgid "Confirm Check Stack"
+msgid_plural "Confirm Check Stacks"
+msgstr[0] "Проверить стек"
+msgstr[1] "Проверить стеки"
+msgstr[2] "Проверить стеки"
+
+msgid "Confirm Delete Stack"
+msgid_plural "Confirm Delete Stacks"
+msgstr[0] "Подтвердить удаление стека"
+msgstr[1] "Подтвердить удаление стеков"
+msgstr[2] "Подтвердить удаление стеков"
+
+msgid "Create Stack"
+msgstr "Создать стек"
+
+msgid "Delete Resource"
+msgstr "Удалить ресурс"
+
+msgid "Delete Stack"
+msgid_plural "Delete Stacks"
+msgstr[0] "Удалить стек"
+msgstr[1] "Удалить стеки"
+msgstr[2] "Удалить стеки"
+
+#, python-format
+msgid "Deleted Stack: %s."
+msgid_plural "Deleted Stacks: %s."
+msgstr[0] "Удаленный стек: %s."
+msgstr[1] "Удаленные стеки: %s."
+msgstr[2] "Удаленные стеки: %s."
+
+msgid "Download"
+msgstr "Скачать"
+
+msgid "Heat Orchestration Template"
+msgstr "Шаблон оркестрации Heat"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Saved Drafts"
+msgstr "Сохранённые черновики"
+
+msgid "Show More Properties"
+msgstr "Показать больше"
+
+#, python-format
+msgid "Stack %s was successfully created."
+msgstr "Стек %s успешно создан."
+
+#, python-format
+msgid "Unable to check Stack: %s."
+msgid_plural "Unable to check Stacks: %s."
+msgstr[0] "Не удалось проверить стек: %s."
+msgstr[1] "Не удалось проверить стеки: %s."
+msgstr[2] "Не удалось проверить стеки: %s."
+
+#, python-format
+msgid "Unable to delete Stack: %s."
+msgid_plural "Unable to delete Stacks: %s."
+msgstr[0] "Не удалось удалить стек: %s."
+msgstr[1] "Не удалось удалить стеки: %s."
+msgstr[2] "Не удалось удалить стеки: %s."
+
+#, python-format
+msgid "You are not allowed to check stacks: %s"
+msgstr "Вам не разрешено проверять стеки: %s"
+
+#, python-format
+msgid "You are not allowed to delete stacks: %s"
+msgstr "Вам не разрешено удалять стеки: %s"
+
+#, python-format
+msgid "You have selected \"%s\"."
+msgid_plural "You have selected \"%s\"."
+msgstr[0] "Вы выбрали \"%s\"."
+msgstr[1] "Вы выбрали \"%s\"."
+msgstr[2] "Вы выбрали \"%s\"."
+
+#, python-format
+msgid "You have selected \"%s\". Deleted stack is not recoverable."
+msgid_plural "You have selected \"%s\". Deleted stacks are not recoverable."
+msgstr[0] "Вы выбрали \"%s\". Удаленный стек не подлежит восстановлению."
+msgstr[1] "Вы выбрали \"%s\". Удаленные стеки не подлежат восстановлению."
+msgstr[2] "Вы выбрали \"%s\". Удаленные стеки не подлежат восстановлению."
