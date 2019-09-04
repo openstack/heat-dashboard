@@ -24,6 +24,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'openstackdocstheme',
     # 'sphinx.ext.intersphinx',
+    'sphinxcontrib.rsvgconverter',
 ]
 
 # autodoc generation is a bit aggressive and a nuisance when doing heavy
@@ -73,10 +74,21 @@ htmlhelp_basename = '%sdoc' % project
 # [howto/manual]).
 latex_documents = [
     ('index',
-     '%s.tex' % project,
-     u'%s Documentation' % project,
-     u'OpenStack Developers', 'manual'),
+     'doc-heat-dashboard.tex',
+     u'Heat Dashboard Documentation',
+     u'OpenStack Developers', 'manual', True),
 ]
+
+latex_domain_indices = False
+
+latex_elements = {
+    # Additional stuff for the LaTeX preamble.
+    # openany: Skip blank pages in generated PDFs
+    'extraclassoptions': 'openany,oneside',
+    'makeindex': '',
+    'printindex': '',
+    'preamble': r'\setcounter{tocdepth}{3}',
+}
 
 man_pages = [
     ('index', u'Heat Dashboard Documentation',
