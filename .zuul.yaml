@@ -24,6 +24,7 @@
 - project:
     templates:
       - check-requirements
+      - horizon-non-primary-django-jobs
       - horizon-nodejs10-jobs
       - openstack-lower-constraints-jobs
       - openstack-python-jobs-horizon
@@ -32,9 +33,5 @@
       - release-notes-jobs-python3
     check:
       jobs:
-        - horizon-openstack-tox-python3-django111
         - heat-dashboard-integration-tests:
             voting: false
-    gate:
-      jobs:
-        - horizon-openstack-tox-python3-django111

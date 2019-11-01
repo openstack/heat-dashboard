@@ -13,7 +13,6 @@
 import json
 import re
 
-import django
 from django.conf import settings
 from django.core import exceptions
 from django.test.utils import override_settings
@@ -353,23 +352,13 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if (1, 10) <= django.VERSION < (2, 1):
-            pattern = ('<input class="form-control" '
-                       'id="id___param_public_string" '
-                       'name="__param_public_string" type="text" required/>')
-            secret = ('<input class="form-control" '
-                      'id="id___param_secret_string" '
-                      'name="__param_secret_string" '
-                      'type="password" required>')
-        else:
-            pattern = ('<input class="form-control" '
-                       'id="id___param_public_string" '
-                       'name="__param_public_string" type="text" />')
-            secret = ('<input class="form-control" '
-                      'id="id___param_secret_string" '
-                      'name="__param_secret_string" '
-                      'type="password" />')
-
+        pattern = ('<input class="form-control" '
+                   'id="id___param_public_string" '
+                   'name="__param_public_string" type="text" required/>')
+        secret = ('<input class="form-control" '
+                  'id="id___param_secret_string" '
+                  'name="__param_secret_string" '
+                  'type="password" required>')
         self.assertContains(res, pattern, html=True)
         self.assertContains(res, secret, html=True)
         self.mock_template_validate.assert_called_once_with(
@@ -511,32 +500,16 @@ class StackTests(test.TestCase):
         self.assertTemplateUsed(res, 'project/stacks/create.html')
 
         # ensure the fields were rendered correctly
-        if (1, 10) <= django.VERSION < (2, 1):
-            input_str = ('<input class="form-control" '
-                         'id="id___param_param{0}" '
-                         'name="__param_param{0}" type="{1}" required/>')
-        else:
-            input_str = ('<input class="form-control" '
-                         'id="id___param_param{0}" '
-                         'name="__param_param{0}" type="{1}"/>')
+        input_str = ('<input class="form-control" '
+                     'id="id___param_param{0}" '
+                     'name="__param_param{0}" type="{1}" required/>')
         self.assertContains(res, input_str.format(3, 'text'), html=True)
         self.assertContains(res, input_str.format(4, 'text'), html=True)
 
-        if (1, 11) <= django.VERSION < (2, 1):
-            input_str_param2 = ('<input type="number" name="__param_param2" '
-                                'autocomplete="off" '
-                                'required class="form-control" '
-                                'id="id___param_param2" />')
-        elif (1, 10) <= django.VERSION < (1, 11):
-            input_str_param2 = ('<input autocomplete="off" '
-                                'class="form-control" id="id___param_param2" '
-                                'name="__param_param2" type="number" '
-                                'required />')
-        else:
-            input_str_param2 = ('<input autocomplete="off" '
-                                'class ="form-control" '
-                                'id="id___param_param2" '
-                                'name="__param_param2" type="number" />')
+        input_str_param2 = ('<input type="number" name="__param_param2" '
+                            'autocomplete="off" '
+                            'required class="form-control" '
+                            'id="id___param_param2" />')
         self.assertContains(res, input_str_param2, html=True)
 
         # post some sample data and make sure it validates
