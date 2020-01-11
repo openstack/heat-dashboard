@@ -12,7 +12,7 @@
 
 import contextlib
 
-from six.moves.urllib import request
+from urllib import request
 
 from django.conf import settings
 from oslo_serialization import jsonutils
