@@ -20,7 +20,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.debug import sensitive_variables
 
 from oslo_utils import strutils
-import six
 
 from horizon import exceptions
 from horizon import forms
@@ -172,7 +171,7 @@ class TemplateForm(forms.SelfHandlingForm):
             cleaned['template_validate']['files'] = files
             cleaned['template_validate']['template'] = tpl
         except Exception as e:
-            raise forms.ValidationError(six.text_type(e))
+            raise forms.ValidationError(str(e))
 
         return cleaned
 
@@ -211,7 +210,7 @@ class TemplateForm(forms.SelfHandlingForm):
             except Exception as e:
                 msg = _('There was a problem parsing the'
                         ' %(prefix)s: %(error)s')
-                msg = msg % {'prefix': prefix, 'error': six.text_type(e)}
+                msg = msg % {'prefix': prefix, 'error': str(e)}
                 raise forms.ValidationError(msg)
 
         # URL handler

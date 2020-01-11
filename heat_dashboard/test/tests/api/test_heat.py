@@ -9,6 +9,9 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+
+import io
+
 import mock
 import six
 
@@ -273,7 +276,7 @@ class HeatApiTests(test.APITestCase):
         expected_files = {u'http://test.example/example': b'echo "test"'}
         url = 'http://test.example/example'
         data = b'echo "test"'
-        mock_request.return_value = six.BytesIO(data)
+        mock_request.return_value = io.BytesIO(data)
 
         files = api.heat.get_template_files(template_data=tmpl)[0]
         self.assertEqual(files, expected_files)
@@ -299,7 +302,7 @@ class HeatApiTests(test.APITestCase):
         data2 = b'echo "test"'
         expected_files = {'http://test.example/example': b'echo "test"'}
         mock_request.side_effect = \
-            [six.BytesIO(data), six.BytesIO(data2)]
+            [io.BytesIO(data), io.BytesIO(data2)]
 
         files = api.heat.get_template_files(template_url=url)[0]
         self.assertEqual(files, expected_files)

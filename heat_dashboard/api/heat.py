@@ -12,8 +12,6 @@
 
 import contextlib
 
-import six
-
 from six.moves.urllib import request
 
 from django.conf import settings
@@ -103,7 +101,7 @@ def stacks_list(request, marker=None, sort_dir='desc', sort_key='created_at',
 def _ignore_if(key, value):
     if key != 'get_file' and key != 'type':
         return True
-    if not isinstance(value, six.string_types):
+    if not isinstance(value, str):
         return True
     if (key == 'type' and not value.endswith(('.yaml', '.template'))):
         return True
@@ -121,7 +119,7 @@ def get_template_files(template_data=None, template_url=None, files=None):
         return {}, None
     if not tpl:
         return {}, None
-    if isinstance(tpl, six.binary_type):
+    if isinstance(tpl, bytes):
         tpl = tpl.decode('utf-8')
     template = template_format.parse(tpl)
     if files is None:

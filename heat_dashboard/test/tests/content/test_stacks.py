@@ -19,7 +19,6 @@ from django.test.utils import override_settings
 from django.urls import reverse
 from django.utils import html
 import mock
-import six
 
 from heatclient.common import template_format as hc_format
 from openstack_dashboard import api as dashboard_api
@@ -92,11 +91,7 @@ class MappingsTests(test.TestCase):
         self.assertEqual(u'', mappings.stack_output(None))
 
         outputs = ['one', 'two', 'three']
-        # On Python 3, the pretty JSON output doesn't add space before newline
-        if six.PY3:
-            expected_text = """[\n  "one",\n  "two",\n  "three"\n]"""
-        else:
-            expected_text = """[\n  "one", \n  "two", \n  "three"\n]"""
+        expected_text = """[\n  "one",\n  "two",\n  "three"\n]"""
 
         self.assertEqual(u'<pre>%s</pre>' % html.escape(expected_text),
                          mappings.stack_output(outputs))
