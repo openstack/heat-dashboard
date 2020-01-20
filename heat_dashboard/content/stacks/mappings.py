@@ -12,6 +12,7 @@
 
 import json
 import logging
+import urllib.parse as urlparse
 
 from django.conf import settings
 from django.template.defaultfilters import register
@@ -19,8 +20,6 @@ from django.urls import reverse
 from django.utils import html
 from django.utils import safestring
 
-import six
-import six.moves.urllib.parse as urlparse
 
 from openstack_dashboard.api import swift
 
@@ -133,7 +132,7 @@ def resource_to_url(resource):
 def stack_output(output):
     if not output:
         return u''
-    if isinstance(output, six.string_types):
+    if isinstance(output, str):
         parts = urlparse.urlsplit(output)
         if parts.netloc and parts.scheme in ('http', 'https'):
             url = html.escape(output)

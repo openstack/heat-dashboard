@@ -36,9 +36,6 @@ from openstack_auth import user
 from openstack_auth import utils
 from requests.packages.urllib3.connection import HTTPConnection
 
-import six
-from six import moves
-
 from horizon.test import helpers as horizon_helpers
 
 from openstack_dashboard import api as project_api
@@ -203,7 +200,7 @@ class TestCase(horizon_helpers.TestCase):
         processing the view which is redirected to.
         """
         if django.VERSION >= (1, 9):
-            loc = six.text_type(response._headers.get('location', None)[1])
+            loc = str(response._headers.get('location', None)[1])
             loc = http.urlunquote(loc)
             expected_url = http.urlunquote(expected_url)
             self.assertEqual(loc, expected_url)
@@ -241,7 +238,7 @@ class TestCase(horizon_helpers.TestCase):
             assert len(errors) == count, \
                 "%d errors were found on the form, %d expected" % \
                 (len(errors), count)
-            if message and message not in six.text_type(errors):
+            if message and message not in str(errors):
                 self.fail("Expected message not found, instead found: %s"
                           % ["%s: %s" % (key, [e for e in field_errors]) for
                              (key, field_errors) in errors.items()])
@@ -265,13 +262,13 @@ class TestCase(horizon_helpers.TestCase):
     def getAndAssertTableRowAction(self, response, table_name,
                                    action_name, row_id):
         table = response.context[table_name + '_table']
-        rows = list(moves.filter(lambda x: x.id == row_id,
-                                 table.data))
+        rows = list(filter(lambda x: x.id == row_id,
+                           table.data))
         self.assertEqual(1, len(rows),
                          "Did not find a row matching id '%s'" % row_id)
         row_actions = table.get_row_actions(rows[0])
-        actions = list(moves.filter(lambda x: x.name == action_name,
-                                    row_actions))
+        actions = list(filter(lambda x: x.name == action_name,
+                              row_actions))
 
         msg_args = (action_name, table_name, row_id)
         self.assertGreater(
@@ -289,8 +286,8 @@ class TestCase(horizon_helpers.TestCase):
 
         table = response.context[table_name + '_table']
         table_actions = table.get_table_actions()
-        actions = list(moves.filter(lambda x: x.name == action_name,
-                                    table_actions))
+        actions = list(filter(lambda x: x.name == action_name,
+                              table_actions))
         msg_args = (action_name, table_name)
         self.assertGreater(
             len(actions), 0,
