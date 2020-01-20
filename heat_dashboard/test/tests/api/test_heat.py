@@ -35,7 +35,7 @@ class HeatApiTests(test.APITestCase):
                                                        sort_dir='desc',
                                                        sort_key='created_at',
                                                        )
-        self.assertItemsEqual(stacks, api_stacks)
+        self.assertCountEqual(stacks, api_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
 
@@ -54,7 +54,7 @@ class HeatApiTests(test.APITestCase):
         stacks, has_more, has_prev = api.heat.stacks_list(self.request,
                                                           sort_dir=sort_dir,
                                                           sort_key=sort_key)
-        self.assertItemsEqual(stacks, api_stacks)
+        self.assertCountEqual(stacks, api_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
         heatclient.stacks.list.assert_called_once_with(
@@ -76,7 +76,7 @@ class HeatApiTests(test.APITestCase):
                                                           sort_key=sort_key,
                                                           paginate=True)
         expected_stacks = api_stacks[:page_size]
-        self.assertItemsEqual(stacks, expected_stacks)
+        self.assertCountEqual(stacks, expected_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
         heatclient.stacks.list.assert_called_once_with(
@@ -100,7 +100,7 @@ class HeatApiTests(test.APITestCase):
                                                           sort_key=sort_key,
                                                           paginate=True)
         expected_stacks = api_stacks[:page_size]
-        self.assertItemsEqual(stacks, expected_stacks)
+        self.assertCountEqual(stacks, expected_stacks)
         self.assertFalse(has_more)
         self.assertFalse(has_prev)
         heatclient.stacks.list.assert_called_once_with(
@@ -127,7 +127,7 @@ class HeatApiTests(test.APITestCase):
                                                           sort_key=sort_key,)
 
         self.assertEqual(len(stacks), page_size)
-        self.assertItemsEqual(stacks, api_stacks[:page_size])
+        self.assertCountEqual(stacks, api_stacks[:page_size])
         self.assertTrue(has_more)
         self.assertTrue(has_prev)
         heatclient.stacks.list.assert_called_once_with(
@@ -154,7 +154,7 @@ class HeatApiTests(test.APITestCase):
                                                           sort_key=sort_key,)
 
         self.assertEqual(len(stacks), page_size)
-        self.assertItemsEqual(stacks, api_stacks[:page_size])
+        self.assertCountEqual(stacks, api_stacks[:page_size])
         self.assertTrue(has_more)
         self.assertTrue(has_prev)
         heatclient.stacks.list.assert_called_once_with(
@@ -235,7 +235,7 @@ class HeatApiTests(test.APITestCase):
 
         returned_snapshots = api.heat.snapshot_list(self.request, stack_id)
 
-        self.assertItemsEqual(returned_snapshots, snapshot_list)
+        self.assertCountEqual(returned_snapshots, snapshot_list)
         heatclient.stacks.snapshot_list.assert_called_once_with(stack_id)
 
     def test_get_template_files_with_template_data(self):
@@ -333,7 +333,7 @@ class HeatApiTests(test.APITestCase):
 
         template_versions = api.heat.template_version_list(self.request)
 
-        self.assertItemsEqual(template_versions, api_template_versions)
+        self.assertCountEqual(template_versions, api_template_versions)
         heatclient.template_versions.list.assert_called_once_with()
 
     def test_template_function_list(self):
@@ -347,6 +347,6 @@ class HeatApiTests(test.APITestCase):
         template_functions = api.heat.template_function_list(
             self.request, template_version)
 
-        self.assertItemsEqual(template_functions, api_template_functions)
+        self.assertCountEqual(template_functions, api_template_functions)
         heatclient.template_versions.get.assert_called_once_with(
             template_version)
