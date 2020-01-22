@@ -13,7 +13,6 @@
 import io
 
 import mock
-import six
 
 from django.conf import settings
 from django.test.utils import override_settings
@@ -257,8 +256,8 @@ class HeatApiTests(test.APITestCase):
         files = api.heat.get_template_files(template_data=tmpl)[0]
         self.assertEqual(files, expected_files)
 
-    @mock.patch.object(six.moves.urllib.request, 'urlopen')
-    def test_get_template_files(self, mock_request):
+    @mock.patch('heatclient.common.utils.read_url_content')
+    def test_get_template_files(self, mock_read_url_content):
         tmpl = '''
     # comment
 
@@ -276,14 +275,16 @@ class HeatApiTests(test.APITestCase):
         expected_files = {u'http://test.example/example': b'echo "test"'}
         url = 'http://test.example/example'
         data = b'echo "test"'
-        mock_request.return_value = io.BytesIO(data)
+        mock_read_url_content.return_value = data
 
         files = api.heat.get_template_files(template_data=tmpl)[0]
         self.assertEqual(files, expected_files)
-        mock_request.assert_called_once_with(url)
+        mock_read_url_content.assert_called_once_with(url)
 
-    @mock.patch.object(six.moves.urllib.request, 'urlopen')
-    def test_get_template_files_with_template_url(self, mock_request):
+    @mock.patch('urllib.request.urlopen')
+    @mock.patch('heatclient.common.utils.read_url_content')
+    def test_get_template_files_with_template_url(self, mock_read_url_content,
+                                                  mock_request):
         url = 'https://test.example/example.yaml'
         data = b'''
     # comment
@@ -301,11 +302,14 @@ class HeatApiTests(test.APITestCase):
     '''
         data2 = b'echo "test"'
         expected_files = {'http://test.example/example': b'echo "test"'}
-        mock_request.side_effect = \
-            [io.BytesIO(data), io.BytesIO(data2)]
+        mock_request.return_value = io.BytesIO(data)
+        mock_read_url_content.return_value = data2
 
         files = api.heat.get_template_files(template_url=url)[0]
         self.assertEqual(files, expected_files)
+        mock_request.assert_called_once_with(url)
+        mock_read_url_content.assert_called_once_with(
+            'http://test.example/example')
 
     def test_get_template_files_invalid(self):
         tmpl = '''
