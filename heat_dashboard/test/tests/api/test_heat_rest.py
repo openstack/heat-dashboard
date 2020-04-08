@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import json
-
-import mock
+from unittest import mock
 
 from heat_dashboard.api.rest import heat
 from heat_dashboard.test import helpers as test
