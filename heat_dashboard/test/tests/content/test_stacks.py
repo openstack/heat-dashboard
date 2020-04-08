@@ -12,13 +12,13 @@
 
 import json
 import re
+from unittest import mock
 
 from django.conf import settings
 from django.core import exceptions
 from django.test.utils import override_settings
 from django.urls import reverse
 from django.utils import html
-import mock
 
 from heatclient.common import template_format as hc_format
 from openstack_dashboard import api as dashboard_api

@@ -20,6 +20,7 @@ from importlib import import_module
 import os
 import traceback
 import unittest
+from unittest import mock
 
 import django
 from django.conf import settings
@@ -30,7 +31,6 @@ from django.utils import http
 
 from heatclient import client as heat_client
 from keystoneclient.v2_0 import client as keystone_client
-import mock
 from neutronclient.v2_0 import client as neutron_client
 from openstack_auth import user
 from openstack_auth import utils
