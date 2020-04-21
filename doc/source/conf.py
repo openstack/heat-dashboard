@@ -43,9 +43,7 @@ copyright = u'2017, OpenStack Developers'
 
 # openstackdocstheme options
 repository_name = 'openstack/heat-dashboard'
-bug_project = '992'
-bug_tag = 'doc'
-html_last_updated_fmt = '%Y-%m-%d %H:%M'
+use_storyboard = True
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = True
