@@ -57,9 +57,7 @@ copyright = u'2017, OpenStack Foundation'
 
 # openstackdocstheme options
 repository_name = 'openstack/heat-dashboard'
-bug_project = 'heat-dashboard'
-bug_tag = 'doc'
-html_last_updated_fmt = '%Y-%m-%d %H:%M'
+use_storyboard = True
 
 # Release notes are version independent, no need to set version and release
 release = ''
