@@ -56,8 +56,9 @@ project = u'Heat Dashboard Release Notes'
 copyright = u'2017, OpenStack Foundation'
 
 # openstackdocstheme options
-repository_name = 'openstack/heat-dashboard'
-use_storyboard = True
+openstackdocs_repo_name = 'openstack/heat-dashboard'
+openstackdocs_use_storyboard = True
+openstackdocs_auto_name = False
 
 # Release notes are version independent, no need to set version and release
 release = ''
@@ -93,7 +94,7 @@ exclude_patterns = []
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
