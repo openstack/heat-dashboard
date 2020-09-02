@@ -15,6 +15,7 @@ import logging
 
 import django
 from django.conf import settings
+from django.template.defaultfilters import filesizeformat
 from django.utils import html
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.debug import sensitive_variables
@@ -34,6 +35,36 @@ from openstack_dashboard.dashboards.project.instances \
 
 
 LOG = logging.getLogger(__name__)
+
+
+def image_field_data(request, include_empty_option=False):
+    """Returns a list of tuples of all images.
+
+    Generates a sorted list of images available. And returns a list of
+    (id, name) tuples.
+
+    :param request: django http request object
+    :param include_empty_option: flag to include a empty tuple in the front of
+        the list
+
+    :return: list of (id, name) tuples
+
+    """
+    try:
+        images = image_utils.get_available_images(
+            request, request.user.project_id)
+    except Exception:
+        exceptions.handle(request, _('Unable to retrieve images'))
+    images.sort(key=lambda c: c.name)
+    images_list = [('', _('Select Image'))]
+    for image in images:
+        image_label = u"{} ({})".format(image.name, filesizeformat(image.size))
+        images_list.append((image.id, image_label))
+
+    if not images:
+        return [("", _("No images available")), ]
+
+    return images_list
 
 
 def create_upload_form_attributes(prefix, input_type, name):
@@ -417,7 +448,7 @@ class CreateStackForm(forms.SelfHandlingForm):
         if custom_type == 'nova.keypair':
             return instance_utils.keypair_field_data(self.request, True)
         if custom_type == 'glance.image':
-            return image_utils.image_field_data(self.request, True)
+            return image_field_data(self.request, True)
         if custom_type == 'nova.flavor':
             return instance_utils.flavor_field_data(self.request, True)
         return []
