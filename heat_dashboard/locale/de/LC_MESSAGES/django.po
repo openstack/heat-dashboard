@@ -6,16 +6,17 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2018. #zanata
 # Robert Simai <robert.simai@suse.com>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2020. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-08-14 00:21+0000\n"
+"POT-Creation-Date: 2020-09-29 07:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-07-25 02:40+0000\n"
-"Last-Translator: Robert Simai <robert.simai@suse.com>\n"
+"PO-Revision-Date: 2020-10-05 06:22+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -250,6 +251,9 @@ msgstr "Name des Stacks, der erzeugt werden soll."
 msgid "Next"
 msgstr "Weiter"
 
+msgid "No images available"
+msgstr "Keine Abbilder verfügbar"
+
 msgid "Orchestration"
 msgstr "Orchestrierung"
 
@@ -358,6 +362,9 @@ msgstr "Zurückrollen nach einem Fehler"
 
 msgid "Save Draft"
 msgstr "Entwurf speichern"
+
+msgid "Select Image"
+msgstr "Abbild auswählen"
 
 msgid "Select Template"
 msgstr "Vorlage auswählen"
@@ -536,6 +543,9 @@ msgstr ""
 #, python-format
 msgid "Unable to get resources for stack \"%s\"."
 msgstr "Außerstande Ressourcen für Stack \"%s\" zu bekommen."
+
+msgid "Unable to retrieve images"
+msgstr "Abbilder können nicht abgerufen werden"
 
 msgid "Unable to retrieve metadata."
 msgstr "Metadaten können nicht abgerufen werden."

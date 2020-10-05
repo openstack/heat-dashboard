@@ -5,15 +5,16 @@
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
 # Julie Pichon <jpichon@redhat.com>, 2017. #zanata
 # Andi Chandler <andi@gowling.com>, 2018. #zanata
+# Andi Chandler <andi@gowling.com>, 2020. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-05-15 05:59+0000\n"
+"POT-Creation-Date: 2020-09-29 07:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-05-15 10:04+0000\n"
+"PO-Revision-Date: 2020-10-03 10:27+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -248,6 +249,9 @@ msgstr "Name of the stack to create."
 msgid "Next"
 msgstr "Next"
 
+msgid "No images available"
+msgstr "No images available"
+
 msgid "Orchestration"
 msgstr "Orchestration"
 
@@ -356,6 +360,9 @@ msgstr "Rollback On Failure"
 
 msgid "Save Draft"
 msgstr "Save Draft"
+
+msgid "Select Image"
+msgstr "Select Image"
 
 msgid "Select Template"
 msgstr "Select Template"
@@ -533,6 +540,9 @@ msgstr "Unable to get functions for template version \"%s\"."
 #, python-format
 msgid "Unable to get resources for stack \"%s\"."
 msgstr "Unable to get resources for stack \"%s\"."
+
+msgid "Unable to retrieve images"
+msgstr "Unable to retrieve images"
 
 msgid "Unable to retrieve metadata."
 msgstr "Unable to retrieve metadata."
