@@ -21,7 +21,11 @@ OPENSTACK_HEAT_STACK = {
 }
 
 settings.POLICY_FILES.update({
-    'orchestration': 'heat_policy.json',
+    'orchestration': 'heat_policy.yaml',
+})
+
+settings.DEFAULT_POLICY_FILES.update({
+    'orchestration': 'default_policies/heat.yaml',
 })
 
 # Sample

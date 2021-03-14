@@ -1,0 +1,1356 @@
+- check_str: (role:admin and is_admin_project:True) OR (role:admin and system_scope:all)
+  description: Decides what is required for the 'is_admin:True' check to succeed.
+  name: context_is_admin
+  operations: []
+  scope_types: null
+- check_str: role:admin
+  description: Default rule for project admin.
+  name: project_admin
+  operations: []
+  scope_types: null
+- check_str: not role:heat_stack_user
+  description: Default rule for deny stack user.
+  name: deny_stack_user
+  operations: []
+  scope_types: null
+- check_str: '!'
+  description: Default rule for deny everybody.
+  name: deny_everybody
+  operations: []
+  scope_types: null
+- check_str: ''
+  description: Default rule for allow everybody.
+  name: allow_everybody
+  operations: []
+  scope_types: null
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:action
+  deprecated_since: W
+  description: Performs non-lifecycle operations on the stack (Snapshot, Resume, Cancel
+    update, or check stack resources). This is the default for all actions but can
+    be overridden by more specific policies for individual actions.
+  name: actions:action
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types: null
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:snapshot
+  deprecated_since: W
+  description: Create stack snapshot
+  name: actions:snapshot
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:suspend
+  deprecated_since: W
+  description: Suspend a stack.
+  name: actions:suspend
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:resume
+  deprecated_since: W
+  description: Resume a suspended stack.
+  name: actions:resume
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:check
+  deprecated_since: W
+  description: Check stack resources.
+  name: actions:check
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:cancel_update
+  deprecated_since: W
+  description: Cancel stack operation and roll back.
+  name: actions:cancel_update
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The actions API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: actions:cancel_without_rollback
+  deprecated_since: W
+  description: Cancel stack operation without rolling back.
+  name: actions:cancel_without_rollback
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The build API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: build_info:build_info
+  deprecated_since: W
+  description: Show build information.
+  name: build_info:build_info
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/build_info
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:ListStacks
+  deprecated_since: W
+  description: null
+  name: cloudformation:ListStacks
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:CreateStack
+  deprecated_since: W
+  description: null
+  name: cloudformation:CreateStack
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:DescribeStacks
+  deprecated_since: W
+  description: null
+  name: cloudformation:DescribeStacks
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:DeleteStack
+  deprecated_since: W
+  description: null
+  name: cloudformation:DeleteStack
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:UpdateStack
+  deprecated_since: W
+  description: null
+  name: cloudformation:UpdateStack
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:CancelUpdateStack
+  deprecated_since: W
+  description: null
+  name: cloudformation:CancelUpdateStack
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:DescribeStackEvents
+  deprecated_since: W
+  description: null
+  name: cloudformation:DescribeStackEvents
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:ValidateTemplate
+  deprecated_since: W
+  description: null
+  name: cloudformation:ValidateTemplate
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:GetTemplate
+  deprecated_since: W
+  description: null
+  name: cloudformation:GetTemplate
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:EstimateTemplateCost
+  deprecated_since: W
+  description: null
+  name: cloudformation:EstimateTemplateCost
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+    or (role:heat_stack_user and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:allow_everybody
+    name: cloudformation:DescribeStackResource
+  deprecated_since: W
+  description: null
+  name: cloudformation:DescribeStackResource
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:DescribeStackResources
+  deprecated_since: W
+  description: null
+  name: cloudformation:DescribeStackResources
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The cloud formation API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: cloudformation:ListStackResources
+  deprecated_since: W
+  description: null
+  name: cloudformation:ListStackResources
+  operations: []
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The events API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: events:index
+  deprecated_since: W
+  description: List events.
+  name: events:index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The events API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: events:show
+  deprecated_since: W
+  description: Show event.
+  name: events:show
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The resources API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: resource:index
+  deprecated_since: W
+  description: List resources.
+  name: resource:index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+    or (role:heat_stack_user and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The resources API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:allow_everybody
+    name: resource:metadata
+  deprecated_since: W
+  description: Show resource metadata.
+  name: resource:metadata
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+    or (role:heat_stack_user and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The resources API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:allow_everybody
+    name: resource:signal
+  deprecated_since: W
+  description: Signal resource.
+  name: resource:signal
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The resources API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: resource:mark_unhealthy
+  deprecated_since: W
+  description: Mark resource as unhealthy.
+  name: resource:mark_unhealthy
+  operations:
+  - method: PATCH
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name_or_physical_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The resources API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: resource:show
+  deprecated_since: W
+  description: Show resource.
+  name: resource:show
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}
+  scope_types:
+  - system
+  - project
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Nova::Flavor
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Cinder::EncryptedVolumeType
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Cinder::VolumeType
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Cinder::Quota
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::Quota
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Nova::Quota
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Octavia::Quota
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Manila::ShareType
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::ProviderNet
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::QoSPolicy
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::QoSBandwidthLimitRule
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::QoSDscpMarkingRule
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::QoSMinimumBandwidthRule
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Neutron::Segment
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Nova::HostAggregate
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Cinder::QoSSpecs
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Cinder::QoSAssociation
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Keystone::*
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Blazar::Host
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Octavia::Flavor
+  operations: []
+  scope_types: null
+- check_str: rule:project_admin
+  description: null
+  name: resource_types:OS::Octavia::FlavorProfile
+  operations: []
+  scope_types: null
+- check_str: role:reader and system_scope:all
+  deprecated_reason: '
+
+    The service API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:context_is_admin
+    name: service:index
+  deprecated_since: W
+  description: null
+  name: service:index
+  operations: []
+  scope_types: null
+- check_str: role:reader and system_scope:all
+  deprecated_reason: '
+
+    The software configuration API now support system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_everybody
+    name: software_configs:global_index
+  deprecated_since: W
+  description: List configs globally.
+  name: software_configs:global_index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_configs
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software configuration API now support system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_configs:index
+  deprecated_since: W
+  description: List configs.
+  name: software_configs:index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_configs
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software configuration API now support system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_configs:create
+  deprecated_since: W
+  description: Create config.
+  name: software_configs:create
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/software_configs
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software configuration API now support system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_configs:show
+  deprecated_since: W
+  description: Show config details.
+  name: software_configs:show
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_configs/{config_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software configuration API now support system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_configs:delete
+  deprecated_since: W
+  description: Delete config.
+  name: software_configs:delete
+  operations:
+  - method: DELETE
+    path: /v1/{tenant_id}/software_configs/{config_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software deployment API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_deployments:index
+  deprecated_since: W
+  description: List deployments.
+  name: software_deployments:index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_deployments
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software deployment API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_deployments:create
+  deprecated_since: W
+  description: Create deployment.
+  name: software_deployments:create
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/software_deployments
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software deployment API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_deployments:show
+  deprecated_since: W
+  description: Show deployment details.
+  name: software_deployments:show
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_deployments/{deployment_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software deployment API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_deployments:update
+  deprecated_since: W
+  description: Update deployment.
+  name: software_deployments:update
+  operations:
+  - method: PUT
+    path: /v1/{tenant_id}/software_deployments/{deployment_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The software deployment API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: software_deployments:delete
+  deprecated_since: W
+  description: Delete deployment.
+  name: software_deployments:delete
+  operations:
+  - method: DELETE
+    path: /v1/{tenant_id}/software_deployments/{deployment_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+    or (role:heat_stack_user and project_id:%(project_id)s)
+  description: Show server configuration metadata.
+  name: software_deployments:metadata
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/software_deployments/metadata/{server_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:abandon
+  deprecated_since: W
+  description: Abandon stack.
+  name: stacks:abandon
+  operations:
+  - method: DELETE
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:create
+  deprecated_since: W
+  description: Create stack.
+  name: stacks:create
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:delete
+  deprecated_since: W
+  description: Delete stack.
+  name: stacks:delete
+  operations:
+  - method: DELETE
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:detail
+  deprecated_since: W
+  description: List stacks in detail.
+  name: stacks:detail
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:export
+  deprecated_since: W
+  description: Export stack.
+  name: stacks:export
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/export
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:generate_template
+  deprecated_since: W
+  description: Generate stack template.
+  name: stacks:generate_template
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
+  scope_types:
+  - system
+  - project
+- check_str: role:reader and system_scope:all
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_everybody
+    name: stacks:global_index
+  deprecated_since: W
+  description: List stacks globally.
+  name: stacks:global_index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:index
+  deprecated_since: W
+  description: List stacks.
+  name: stacks:index
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:list_resource_types
+  deprecated_since: W
+  description: List resource types.
+  name: stacks:list_resource_types
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/resource_types
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:list_template_versions
+  deprecated_since: W
+  description: List template versions.
+  name: stacks:list_template_versions
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/template_versions
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:list_template_functions
+  deprecated_since: W
+  description: List template functions.
+  name: stacks:list_template_functions
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/template_versions/{template_version}/functions
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+    or (role:heat_stack_user and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:allow_everybody
+    name: stacks:lookup
+  deprecated_since: W
+  description: Find stack.
+  name: stacks:lookup
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_identity}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:preview
+  deprecated_since: W
+  description: Preview stack.
+  name: stacks:preview
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/preview
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:resource_schema
+  deprecated_since: W
+  description: Show resource type schema.
+  name: stacks:resource_schema
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/resource_types/{type_name}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:show
+  deprecated_since: W
+  description: Show stack.
+  name: stacks:show
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_identity}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:template
+  deprecated_since: W
+  description: Get stack template.
+  name: stacks:template
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:environment
+  deprecated_since: W
+  description: Get stack environment.
+  name: stacks:environment
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/environment
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:files
+  deprecated_since: W
+  description: Get stack files.
+  name: stacks:files
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/files
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:update
+  deprecated_since: W
+  description: Update stack.
+  name: stacks:update
+  operations:
+  - method: PUT
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:update_patch
+  deprecated_since: W
+  description: Update stack (PATCH).
+  name: stacks:update_patch
+  operations:
+  - method: PATCH
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:preview_update
+  deprecated_since: W
+  description: Preview update stack.
+  name: stacks:preview_update
+  operations:
+  - method: PUT
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:preview_update_patch
+  deprecated_since: W
+  description: Preview update stack (PATCH).
+  name: stacks:preview_update_patch
+  operations:
+  - method: PATCH
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:validate_template
+  deprecated_since: W
+  description: Validate template.
+  name: stacks:validate_template
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/validate
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:snapshot
+  deprecated_since: W
+  description: Snapshot Stack.
+  name: stacks:snapshot
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:show_snapshot
+  deprecated_since: W
+  description: Show snapshot.
+  name: stacks:show_snapshot
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:delete_snapshot
+  deprecated_since: W
+  description: Delete snapshot.
+  name: stacks:delete_snapshot
+  operations:
+  - method: DELETE
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:list_snapshots
+  deprecated_since: W
+  description: List snapshots.
+  name: stacks:list_snapshots
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+  scope_types:
+  - system
+  - project
+- check_str: (role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:restore_snapshot
+  deprecated_since: W
+  description: Restore snapshot.
+  name: stacks:restore_snapshot
+  operations:
+  - method: POST
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:list_outputs
+  deprecated_since: W
+  description: List outputs.
+  name: stacks:list_outputs
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/outputs
+  scope_types:
+  - system
+  - project
+- check_str: (role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)
+  deprecated_reason: '
+
+    The stack API now supports system scope and default roles.
+
+    '
+  deprecated_rule:
+    check_str: rule:deny_stack_user
+    name: stacks:show_output
+  deprecated_since: W
+  description: Show outputs.
+  name: stacks:show_output
+  operations:
+  - method: GET
+    path: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/outputs/{output_key}
+  scope_types:
+  - system
+  - project
