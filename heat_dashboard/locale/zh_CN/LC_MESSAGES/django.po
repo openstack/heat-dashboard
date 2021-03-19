@@ -13,16 +13,17 @@
 # zhonghuali <lizhonghua.li@huawei.com>, 2017. #zanata
 # Tony <tfu@redhat.com>, 2018. #zanata
 # Tony <tfu@redhat.com>, 2019. #zanata
+# TigerFang <tigerfun@126.com>, 2021. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-03-18 17:15+0000\n"
+"POT-Creation-Date: 2021-03-19 01:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-03-20 01:38+0000\n"
-"Last-Translator: Tony <tfu@redhat.com>\n"
+"PO-Revision-Date: 2021-03-08 09:20+0000\n"
+"Last-Translator: TigerFang <tigerfun@126.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh_CN\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -248,6 +249,9 @@ msgstr "待创建堆栈的名称"
 msgid "Next"
 msgstr "下一项"
 
+msgid "No images available"
+msgstr "没有可用的镜像"
+
 msgid "Orchestration"
 msgstr "编排"
 
@@ -352,6 +356,9 @@ msgstr "失败回滚"
 
 msgid "Save Draft"
 msgstr "保存草稿"
+
+msgid "Select Image"
+msgstr "选择镜像"
 
 msgid "Select Template"
 msgstr "选择模板"
@@ -525,6 +532,9 @@ msgstr "无法为模板版本 \"%s\" 获得功能。"
 #, python-format
 msgid "Unable to get resources for stack \"%s\"."
 msgstr "无法获取堆栈“%s”的资源。"
+
+msgid "Unable to retrieve images"
+msgstr "无法获取镜像"
 
 msgid "Unable to retrieve metadata."
 msgstr "无法检索元数据。"
