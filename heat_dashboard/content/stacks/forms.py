@@ -55,13 +55,16 @@ def image_field_data(request, include_empty_option=False):
     except Exception:
         exceptions.handle(request, _('Unable to retrieve images'))
     images.sort(key=lambda c: c.name)
-    images_list = [('', _('Select Image'))]
+    images_list = []
     for image in images:
         image_label = u"{} ({})".format(image.name, filesizeformat(image.size))
         images_list.append((image.id, image_label))
 
     if not images:
         return [("", _("No images available")), ]
+
+    if include_empty_option:
+        return [("", _("Select Image")), ] + images_list
 
     return images_list
 
@@ -443,13 +446,13 @@ class CreateStackForm(forms.SelfHandlingForm):
 
     def _populate_custom_choices(self, custom_type):
         if custom_type == 'neutron.network':
-            return instance_utils.network_field_data(self.request, True)
+            return instance_utils.network_field_data(self.request, False)
         if custom_type == 'nova.keypair':
-            return instance_utils.keypair_field_data(self.request, True)
+            return instance_utils.keypair_field_data(self.request, False)
         if custom_type == 'glance.image':
-            return image_field_data(self.request, True)
+            return image_field_data(self.request, False)
         if custom_type == 'nova.flavor':
-            return instance_utils.flavor_field_data(self.request, True)
+            return instance_utils.flavor_field_data(self.request, False)
         return []
 
 
