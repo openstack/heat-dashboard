@@ -17,3 +17,13 @@ Contents
    Configuration Guide <configuration/index>
    User Documentation <user/index>
    contributor/index
+
+For Contributors
+----------------
+
+* If you are a new contributor to heat-dashboard please refer: :doc:`contributor/contributing`
+
+  .. toctree::
+     :hidden:
+
+     contributor/contributing
