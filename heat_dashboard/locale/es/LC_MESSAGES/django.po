@@ -3,26 +3,42 @@
 # Jose Porrua <jose.porrua@netapp.com>, 2016. #zanata
 # Carlos Camacho <ccamacho@redhat.com>, 2017. #zanata
 # Zeus Arias Lucero <zeusariaslucero@gmail.com>, 2017. #zanata
+# Alberto Molina Coballes <alberto@tinaja.es>, 2021. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: heat-dashboard 0.0.1.dev938\n"
+"Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-12-07 18:26+0000\n"
+"POT-Creation-Date: 2021-03-21 07:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-24 11:28+0000\n"
-"Last-Translator: Zeus Arias Lucero <zeusariaslucero@gmail.com>\n"
+"PO-Revision-Date: 2021-06-07 07:06+0000\n"
+"Last-Translator: Alberto Molina Coballes <alberto@tinaja.es>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, python-format
+msgid "%(resource_status)s: %(resource_status_reason)s"
+msgstr "%(resource_status)s: %(resource_status_reason)s"
+
+#, python-format
+msgid "%(stack_status_title)s: %(stack_status_reason)s"
+msgstr "%(stack_status_title)s: %(stack_status_reason)s"
 
 msgid "A local environment to upload."
 msgstr "Entorno local a cargar"
 
 msgid "A local template to upload."
 msgstr "Una plantilla local a cargar."
+
+msgid ""
+"A template is used to automate the deployment of infrastructure, services, "
+"and applications."
+msgstr ""
+"Una plantilla se usa para automatizar el despliegue de infraestructura, "
+"servicios y aplicaciones."
 
 msgctxt "current status of stack"
 msgid "Adopt Complete"
@@ -38,6 +54,15 @@ msgstr "Adoptar en curso"
 
 msgid "An external (HTTP) URL to load the template from."
 msgstr "Una URL externa (HTTP) desde la que cargar la plantilla."
+
+msgid "Attributes"
+msgstr "Atributos"
+
+msgid "Case sensitive"
+msgstr "Se distinguen mayúsculas de minúsculas"
+
+msgid "Case-sensitive"
+msgstr "Se distinguen mayúsculas de minúsculas"
 
 msgid "Change Stack Template"
 msgstr "Cambiar plantilla de la pila"
@@ -67,6 +92,12 @@ msgid_plural "Checked Stacks"
 msgstr[0] "Pila comprobada"
 msgstr[1] "Pilas comprobadas"
 
+msgid "Clear Canvas"
+msgstr "Limpiar el lienzo"
+
+msgid "Close"
+msgstr "Cerrar"
+
 msgctxt "current status of stack"
 msgid "Create Complete"
 msgstr "Creación completada"
@@ -81,6 +112,9 @@ msgstr "Crear en curso"
 
 msgid "Create Stack"
 msgstr "Crear pila"
+
+msgid "Create a new stack with the provided values."
+msgstr "Crear una nueva pila con los valores proporcionados."
 
 msgid "Created"
 msgstr "Creado"
@@ -116,14 +150,23 @@ msgstr[1] "Pilas suprimidas"
 msgid "Description"
 msgstr "Descripción "
 
+msgid "Description:"
+msgstr "Descripción:"
+
 msgid "Direct Input"
 msgstr "Entrada directa"
+
+msgid "Disabled"
+msgstr "Deshablitado"
 
 msgid "Edit Template"
 msgstr "Editar plantilla"
 
 msgid "Enable rollback on create/update failure."
 msgstr "Habilitar restauración tras fallo de creación/actualización."
+
+msgid "Enabled"
+msgstr "Habilitado"
 
 msgid "Environment Data"
 msgstr "Datos del entorno"
@@ -137,8 +180,20 @@ msgstr "Origen de entorno"
 msgid "Events"
 msgstr "Sucesos"
 
+msgid "Export Draft"
+msgstr "Exportar borrador"
+
 msgid "File"
 msgstr "Archivo"
+
+msgid "Function"
+msgstr "Función"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Draft"
+msgstr "Importar borrador"
 
 msgctxt "current status of stack"
 msgid "Init Complete"
@@ -152,11 +207,32 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "Inicio en curso"
 
+msgid "Last Updated"
+msgstr "Última actualización"
+
 msgid "Launch"
 msgstr "Iniciar "
 
+msgid "Launch Parameters"
+msgstr "Lanzar parámetros"
+
 msgid "Launch Stack"
 msgstr "Lanzar pila"
+
+msgid "Links"
+msgstr "Enlaces"
+
+msgid "Load Draft"
+msgstr "Cargar borrador"
+
+msgid "Manage Drafts"
+msgstr "Gestionar borradores"
+
+msgid "Minutes"
+msgstr "Minutos"
+
+msgid "Name"
+msgstr "Nombre"
 
 msgid ""
 "Name must start with a letter and may only contain letters, numbers, "
@@ -171,15 +247,31 @@ msgstr "Nombre de la pila a crear."
 msgid "Next"
 msgstr "Siguiente"
 
+msgid "No images available"
+msgstr "No hay imágenes disponibles"
+
 msgid "Orchestration"
 msgstr "Orquestación"
+
+msgid "Outputs"
+msgstr "Salidas"
 
 msgid "Overview"
 msgstr "Visión general"
 
+msgid "Parameters"
+msgstr "Parámetros"
+
 #, python-format
 msgid "Password for user \"%s\""
 msgstr "Contraseña del usuario \"%s\""
+
+msgid ""
+"Please drag and drop resource icons into center canvas to define resource "
+"for template."
+msgstr ""
+"Por favor arrastre y suelte los iconos de los recursos en el centro del "
+"lienzo para definir recursos para la plantilla."
 
 #, python-format
 msgid "Please specify a %s using only one source method."
@@ -200,8 +292,23 @@ msgstr "Vista preliminar de parámetros de la pila"
 msgid "Preview Template"
 msgstr "Previsualizar plantilla"
 
+msgid "Preview a new stack with the provided values."
+msgstr "Vista preliminar de una nueva pila con los valores proporcionados."
+
+msgid "Properties"
+msgstr "Propiedades"
+
+msgid "Referenced Files"
+msgstr "Ficheros referenciados"
+
 msgid "Resource"
 msgstr "Recurso"
+
+msgid "Resource ID"
+msgstr "ID del recurso"
+
+msgid "Resource Metadata"
+msgstr "Metadatos de los recursos"
 
 msgid "Resource Types"
 msgstr "Tipos de recurso"
@@ -231,6 +338,9 @@ msgid_plural "Resumed Stacks"
 msgstr[0] "Pila reanudada"
 msgstr[1] "Pilas reanudadas"
 
+msgid "Rollback"
+msgstr "Restauración"
+
 msgctxt "current status of stack"
 msgid "Rollback Complete"
 msgstr "Retroceso completado"
@@ -245,6 +355,12 @@ msgstr "Retroceso en curso"
 
 msgid "Rollback On Failure"
 msgstr "Restauración tras fallo"
+
+msgid "Save Draft"
+msgstr "Gaurdar borrador"
+
+msgid "Select Image"
+msgstr "Seleccionar imagen"
 
 msgid "Select Template"
 msgstr "Seleccionar plantilla"
@@ -276,11 +392,26 @@ msgstr "Sucesos de pilas"
 msgid "Stack ID"
 msgstr "ID de pila"
 
+msgid "Stack ID ="
+msgstr "ID de la pila ="
+
 msgid "Stack Name"
 msgstr "Nombre de la pila"
 
+msgid "Stack Name ="
+msgstr "Nombre de la pila ="
+
+msgid "Stack Parameters"
+msgstr "Parámetros de la pila"
+
+msgid "Stack Preview"
+msgstr "Vista previa de la pila"
+
 msgid "Stack Resource"
 msgstr "Recurso de pila"
+
+msgid "Stack Resource ID"
+msgstr "ID de los recursos de la pila"
 
 msgid "Stack Resource Type"
 msgstr "Tipo de recurso de pila"
@@ -296,6 +427,9 @@ msgstr "Tiempo de espera para la creación de la pila en minutos."
 
 msgid "Stack update started."
 msgstr "Se ha comenzado la actualización de la pila"
+
+msgid "Stack updating timeout in minutes."
+msgstr "Tiempo de espera de actualización de la pila en minutos."
 
 msgid "Stacks"
 msgstr "Pilas"
@@ -343,11 +477,20 @@ msgstr "Archivo de plantilla"
 msgid "Template Functions"
 msgstr "Plantilla de funciones"
 
+msgid "Template Generator"
+msgstr "Generados de plantillas"
+
 msgid "Template Source"
 msgstr "Origen de la plantilla"
 
 msgid "Template URL"
 msgstr "URL de plantilla"
+
+msgid "Template Version"
+msgstr "Versión de plantilla"
+
+msgid "Template Versions"
+msgstr "Versiones de plantilla"
 
 msgid "The raw contents of the environment file."
 msgstr "Los contenidos planos de el archivo de entorno."
@@ -369,11 +512,17 @@ msgstr ""
 msgid "Time Since Event"
 msgstr "Tiempo desde el suceso"
 
+msgid "Timeout"
+msgstr "Tiempo de espera"
+
 msgid "Topology"
 msgstr "Topología"
 
 msgid "Type"
 msgstr "Tipo"
+
+msgid "Type ="
+msgstr "Tipo ="
 
 msgid "URL"
 msgstr "URL"
@@ -383,8 +532,16 @@ msgid "Unable to get events for stack \"%s\"."
 msgstr "No se han podido obtener sucesos para la pila \"%s\"."
 
 #, python-format
+msgid "Unable to get functions for template version \"%s\"."
+msgstr ""
+"No ha sido posible obtener las funciones para la versión de plantilla \"%s\"."
+
+#, python-format
 msgid "Unable to get resources for stack \"%s\"."
 msgstr "No se han podido obtener recursos para la pila \"%s\"."
+
+msgid "Unable to retrieve images"
+msgstr "No ha sido posible obtener las imágenes."
 
 msgid "Unable to retrieve metadata."
 msgstr "No se han podido recuperar los metadatos."
@@ -407,6 +564,12 @@ msgstr "No se ha podido recuperar la plantilla de la pila"
 msgid "Unable to retrieve stack."
 msgstr "No se han podido recuperar las pilas."
 
+msgid "Unable to retrieve template functions."
+msgstr "No ha sido posible obtener las funciones de plantilla."
+
+msgid "Unable to retrieve template versions."
+msgstr "No ha sido posible obtener las versiones de plantilla."
+
 msgid "Update"
 msgstr "Actualizar"
 
@@ -428,8 +591,41 @@ msgstr "Actualizar plantilla"
 msgid "Update Stack Parameters"
 msgstr "Actualizar los parámetros de la pila"
 
+msgid ""
+"Update a stack with the provided values. Please note that any encrypted "
+"parameters, such as passwords, will be reset to default if you do not change "
+"them here."
+msgstr ""
+"Actualizar una pila con los valores proporcionados. Importante: cualquier "
+"parámetro cifrado, como contraseñas, se restablecerán con parámetros "
+"predeterminados si no los cambia aquí."
+
 msgid "Updated"
 msgstr "Actualizado"
+
+msgid "Updating Timeout (minutes)"
+msgstr "Actualizando tiempo de espera (minutos)"
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in changing this stack."
+msgstr ""
+"Use una de las opciones disponibles de origen para especificar la plantilla "
+"a usar al cambiar esta pila."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in creating this stack."
+msgstr ""
+"Utilice una las opciones de recurso de plantilla disponible para especificar "
+"la plantilla que se utilizará al crear esta pila."
+
+msgid ""
+"Use one of the available template source options to specify the template to "
+"be used in previewing this stack."
+msgstr ""
+"Use una de las opciones de origen disponibles para especificar la plantilla "
+"que se va a usar en la pre-visualización de esta pila."
 
 msgid "Version"
 msgstr "Versión"
