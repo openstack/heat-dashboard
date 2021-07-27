@@ -12,10 +12,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from cinderclient.v2 import volume_backups as vol_backups
-from cinderclient.v2 import volume_snapshots as vol_snaps
-from cinderclient.v2 import volume_types
-from cinderclient.v2 import volumes
+from cinderclient.v3 import volume_backups as vol_backups
+from cinderclient.v3 import volume_snapshots as vol_snaps
+from cinderclient.v3 import volume_types
+from cinderclient.v3 import volumes
 
 from openstack_dashboard import api
 
@@ -114,12 +114,12 @@ def data(TEST):
                                          'description': 'type 3 description'})
     TEST.cinder_volume_types.add(vol_type1, vol_type2, vol_type3)
 
-    # Volumes - Cinder v2
-    volume_v2 = volumes.Volume(
+    # Volumes - Cinder v3 (v2 removed in Xena)
+    volume_v3 = volumes.Volume(
         volumes.VolumeManager(None),
         {'id': "31023e92-8008-4c8b-8059-7f2293ff1234",
-         'name': 'v2_volume',
-         'description': "v2 Volume Description",
+         'name': 'v3_volume',
+         'description': "v3 Volume Description",
          'status': 'available',
          'size': 20,
          'created_at': '2014-01-27 10:30:00',
@@ -127,9 +127,8 @@ def data(TEST):
          'os-vol-host-attr:host': 'host@backend-name#pool',
          'bootable': 'true',
          'attachments': []})
-    volume_v2.bootable = 'true'
-
-    TEST.cinder_volumes.add(api.cinder.Volume(volume_v2))
+    volume_v3.bootable = 'true'
+    TEST.cinder_volumes.add(api.cinder.Volume(volume_v3))
 
     snapshot = vol_snaps.Snapshot(
         vol_snaps.SnapshotManager(None),
@@ -143,7 +142,7 @@ def data(TEST):
         vol_snaps.SnapshotManager(None),
         {'id': 'c9d0881a-4c0b-4158-a212-ad27e11c2b0f',
          'name': '',
-         'description': 'v2 volume snapshot description',
+         'description': 'v3 volume snapshot description',
          'size': 80,
          'status': 'available',
          'volume_id': '31023e92-8008-4c8b-8059-7f2293ff1234'})
@@ -151,7 +150,7 @@ def data(TEST):
         vol_snaps.SnapshotManager(None),
         {'id': 'c9d0881a-4c0b-4158-a212-ad27e11c2b0e',
          'name': '',
-         'description': 'v2 volume snapshot description 2',
+         'description': 'v3 volume snapshot description 2',
          'size': 80,
          'status': 'available',
          'volume_id': '31023e92-8008-4c8b-8059-7f2293ff1234'})
@@ -159,7 +158,7 @@ def data(TEST):
         vol_snaps.SnapshotManager(None),
         {'id': 'cd6be1eb-82ca-4587-8036-13c37c00c2b1',
          'name': '',
-         'description': 'v2 volume snapshot with metadata description',
+         'description': 'v3 volume snapshot with metadata description',
          'size': 80,
          'status': 'available',
          'volume_id': '31023e92-8008-4c8b-8059-7f2293ff1234',
