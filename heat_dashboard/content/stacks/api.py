@@ -12,25 +12,25 @@
 
 import json
 
+from heatclient.v1 import stacks
+
 from heat_dashboard.api import heat
 
 from heat_dashboard.content.stacks import mappings
 from heat_dashboard.content.stacks import sro
 
 
-class Stack(object):
-    pass
-
-
 def d3_data(request, stack_id=''):
     try:
         stack = heat.stack_get(request, stack_id)
     except Exception:
-        stack = Stack()
-        stack.id = stack_id
-        stack.stack_name = request.session.get('stack_name', '')
-        stack.stack_status = 'DELETE_COMPLETE'
-        stack.stack_status_reason = 'DELETE_COMPLETE'
+        stack_data = {
+            'id': stack_id,
+            'stack_name': request.session.get('stack_name', ''),
+            'stack_status': 'DELETE_COMPLETE',
+            'stack_status_reason': 'DELETE_COMPLETE',
+        }
+        stack = stacks.Stack(stacks.StackManager(None), stack_data)
 
     try:
         resources = heat.resources_list(request, stack.stack_name)
