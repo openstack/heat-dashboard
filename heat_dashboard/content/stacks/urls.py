@@ -10,29 +10,29 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from heat_dashboard.content.stacks import views
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^select_template$',
-        views.SelectTemplateView.as_view(),
-        name='select_template'),
-    url(r'^launch$', views.CreateStackView.as_view(), name='launch'),
-    url(r'^preview_template$',
-        views.PreviewTemplateView.as_view(), name='preview_template'),
-    url(r'^preview$', views.PreviewStackView.as_view(), name='preview'),
-    url(r'^preview_details$',
-        views.PreviewStackDetailsView.as_view(), name='preview_details'),
-    url(r'^stack/(?P<stack_id>[^/]+)/$',
-        views.DetailView.as_view(), name='detail'),
-    url(r'^(?P<stack_id>[^/]+)/change_template$',
-        views.ChangeTemplateView.as_view(), name='change_template'),
-    url(r'^(?P<stack_id>[^/]+)/edit_stack$',
-        views.EditStackView.as_view(), name='edit_stack'),
-    url(r'^stack/(?P<stack_id>[^/]+)/(?P<resource_name>[^/]+)/$',
-        views.ResourceView.as_view(), name='resource'),
-    url(r'^get_d3_data/(?P<stack_id>[^/]+)/$',
-        views.JSONView.as_view(), name='d3_data'),
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^select_template$',
+            views.SelectTemplateView.as_view(),
+            name='select_template'),
+    re_path(r'^launch$', views.CreateStackView.as_view(), name='launch'),
+    re_path(r'^preview_template$',
+            views.PreviewTemplateView.as_view(), name='preview_template'),
+    re_path(r'^preview$', views.PreviewStackView.as_view(), name='preview'),
+    re_path(r'^preview_details$',
+            views.PreviewStackDetailsView.as_view(), name='preview_details'),
+    re_path(r'^stack/(?P<stack_id>[^/]+)/$',
+            views.DetailView.as_view(), name='detail'),
+    re_path(r'^(?P<stack_id>[^/]+)/change_template$',
+            views.ChangeTemplateView.as_view(), name='change_template'),
+    re_path(r'^(?P<stack_id>[^/]+)/edit_stack$',
+            views.EditStackView.as_view(), name='edit_stack'),
+    re_path(r'^stack/(?P<stack_id>[^/]+)/(?P<resource_name>[^/]+)/$',
+            views.ResourceView.as_view(), name='resource'),
+    re_path(r'^get_d3_data/(?P<stack_id>[^/]+)/$',
+            views.JSONView.as_view(), name='d3_data'),
 ]
