@@ -17,7 +17,7 @@ import django
 from django.conf import settings
 from django.template.defaultfilters import filesizeformat
 from django.utils import html
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.debug import sensitive_variables
 
 from oslo_utils import strutils
