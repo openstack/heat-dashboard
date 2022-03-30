@@ -308,7 +308,6 @@ class TestCase(horizon_helpers.TestCase):
     def mock_rest_request(**args):
         mock_args = {
             'user.is_authenticated.return_value': True,
-            'is_ajax.return_value': True,
             'policy.check.return_value': True,
             'body': ''
         }
@@ -396,6 +395,12 @@ class APITestCase(TestCase):
             heat_client.Client = mock.Mock()
             self.heatclient = heat_client.Client
         return self.heatclient
+
+
+class RestAPITestCase(TestCase):
+    def setUp(self):
+        super().setUp()
+        mock.patch('horizon.utils.http.is_ajax', return_value=True).start()
 
 
 # Need this to test both Glance API V1 and V2 versions

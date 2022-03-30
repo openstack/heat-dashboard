@@ -19,7 +19,7 @@ from heat_dashboard.test import helpers as test
 from openstack_dashboard import api
 
 
-class ValidateRestTestCase(test.TestCase):
+class ValidateRestTestCase(test.RestAPITestCase):
     @mock.patch.object(heat.api, 'heat')
     def test_validate_post(self, hc):
         body = '''{"template_url":"http://localhost/template.yaml"}'''
@@ -32,7 +32,7 @@ class ValidateRestTestCase(test.TestCase):
         hc.template_validate.assert_called_once_with(request, **kwargs)
 
 
-class HeatRestTestCase(test.TestCase):
+class HeatRestTestCase(test.RestAPITestCase):
     #
     # Services
     #
