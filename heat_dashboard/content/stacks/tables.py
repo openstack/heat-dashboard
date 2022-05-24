@@ -14,9 +14,9 @@ from django import urls
 
 from django.http import Http404
 from django.template.defaultfilters import title
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 from django.utils.translation import pgettext_lazy
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
 
 from heatclient import exc
 from horizon import messages
@@ -55,7 +55,7 @@ class CheckStack(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Check Stack",
             u"Check Stacks",
             count
@@ -63,7 +63,7 @@ class CheckStack(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Checked Stack",
             u"Checked Stacks",
             count
@@ -81,7 +81,7 @@ class SuspendStack(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Suspend Stack",
             u"Suspend Stacks",
             count
@@ -89,7 +89,7 @@ class SuspendStack(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Suspended Stack",
             u"Suspended Stacks",
             count
@@ -108,7 +108,7 @@ class ResumeStack(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Resume Stack",
             u"Resume Stacks",
             count
@@ -116,7 +116,7 @@ class ResumeStack(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Resumed Stack",
             u"Resumed Stacks",
             count
@@ -141,7 +141,7 @@ class ChangeStackTemplate(tables.LinkAction):
 class DeleteStack(tables.DeleteAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Stack",
             u"Delete Stacks",
             count
@@ -149,7 +149,7 @@ class DeleteStack(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Deleted Stack",
             u"Deleted Stacks",
             count
