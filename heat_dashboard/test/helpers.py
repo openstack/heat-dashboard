@@ -21,13 +21,13 @@ import os
 import traceback
 import unittest
 from unittest import mock
+from urllib import parse
 
 import django
 from django.conf import settings
 from django.contrib.messages.storage import default_storage
 from django.core.handlers import wsgi
 from django.test.client import RequestFactory
-from django.utils import http
 
 from heatclient import client as heat_client
 from keystoneclient.v2_0 import client as keystone_client
@@ -206,8 +206,8 @@ class TestCase(horizon_helpers.TestCase):
                 loc = response['location']
             else:
                 loc = ''
-            loc = http.urlunquote(loc)
-            expected_url = http.urlunquote(expected_url)
+            loc = parse.unquote(loc)
+            expected_url = parse.unquote(expected_url)
             self.assertEqual(loc, expected_url)
         else:
             self.assertEqual(response._headers.get('location', None),
