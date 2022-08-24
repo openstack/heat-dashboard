@@ -131,16 +131,16 @@ def resource_to_url(resource):
 @register.filter
 def stack_output(output):
     if not output:
-        return u''
+        return ''
     if isinstance(output, str):
         parts = urlparse.urlsplit(output)
         if parts.netloc and parts.scheme in ('http', 'https'):
             url = html.escape(output)
-            safe_link = u'<a href="%s" target="_blank">%s</a>' % (url, url)
+            safe_link = '<a href="%s" target="_blank">%s</a>' % (url, url)
             return safestring.mark_safe(safe_link)
     if isinstance(output, dict) or isinstance(output, list):
         output = json.dumps(output, indent=2)
-    return safestring.mark_safe(u'<pre>%s</pre>' % html.escape(output))
+    return safestring.mark_safe('<pre>%s</pre>' % html.escape(output))
 
 
 static_url = getattr(settings, "STATIC_URL", "/static/")
