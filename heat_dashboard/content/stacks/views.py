@@ -178,7 +178,13 @@ class CreateStackView(forms.ModalFormView):
         if 'environment_data' in self.kwargs:
             initial['environment_data'] = self.kwargs['environment_data']
         if 'parameters' in self.kwargs:
-            initial['parameters'] = json.dumps(self.kwargs['parameters'])
+            parameters = self.kwargs['parameters']
+            # if instead of a dict we got a bytestring of
+            #  serialized json we don't double dumps it
+            if isinstance(parameters, bytes):
+                initial['parameters'] = parameters
+            else:
+                initial['parameters'] = json.dumps(parameters)
         return initial
 
     def get_form_kwargs(self):
