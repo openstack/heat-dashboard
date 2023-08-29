@@ -271,7 +271,7 @@ class HeatApiTests(test.APITestCase):
             user_data:
               get_file: http://test.example/example
     '''
-        expected_files = {u'http://test.example/example': b'echo "test"'}
+        expected_files = {'http://test.example/example': b'echo "test"'}
         url = 'http://test.example/example'
         data = b'echo "test"'
         mock_read_url_content.return_value = data

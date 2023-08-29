@@ -87,22 +87,22 @@ class MappingsTests(test.TestCase):
             'aaa')
 
     def test_stack_output(self):
-        self.assertEqual(u'<pre>foo</pre>', mappings.stack_output('foo'))
-        self.assertEqual(u'', mappings.stack_output(None))
+        self.assertEqual('<pre>foo</pre>', mappings.stack_output('foo'))
+        self.assertEqual('', mappings.stack_output(None))
 
         outputs = ['one', 'two', 'three']
         expected_text = """[\n  "one",\n  "two",\n  "three"\n]"""
 
-        self.assertEqual(u'<pre>%s</pre>' % html.escape(expected_text),
+        self.assertEqual('<pre>%s</pre>' % html.escape(expected_text),
                          mappings.stack_output(outputs))
 
         outputs = {'foo': 'bar'}
         expected_text = """{\n  "foo": "bar"\n}"""
-        self.assertEqual(u'<pre>%s</pre>' % html.escape(expected_text),
+        self.assertEqual('<pre>%s</pre>' % html.escape(expected_text),
                          mappings.stack_output(outputs))
 
         self.assertEqual(
-            u'<a href="http://www.example.com/foo" target="_blank">'
+            '<a href="http://www.example.com/foo" target="_blank">'
             'http://www.example.com/foo</a>',
             mappings.stack_output('http://www.example.com/foo'))
 

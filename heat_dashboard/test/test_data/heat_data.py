@@ -415,7 +415,7 @@ def data(TEST):
                 'AWS::StackName': "teststack{0}".format(i),
                 'DBPassword': '******',
                 'AWS::Region': 'ap-southeast-1',
-                'DBName': u'wordpress'
+                'DBName': 'wordpress'
             },
             "stack_status_reason": "Stack successfully created",
             "stack_name": "stack-test{0}".format(i),

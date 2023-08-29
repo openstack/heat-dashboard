@@ -38,8 +38,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Heat Dashboard'
-copyright = u'2017, OpenStack Developers'
+project = 'Heat Dashboard'
+copyright = '2017, OpenStack Developers'
 
 # openstackdocstheme options
 openstackdocs_repo_name = 'openstack/heat-dashboard'
@@ -75,8 +75,8 @@ htmlhelp_basename = '%sdoc' % project
 latex_documents = [
     ('index',
      'doc-heat-dashboard.tex',
-     u'Heat Dashboard Documentation',
-     u'OpenStack Developers', 'manual', True),
+     'Heat Dashboard Documentation',
+     'OpenStack Developers', 'manual', True),
 ]
 
 latex_domain_indices = False
@@ -91,10 +91,10 @@ latex_elements = {
 }
 
 man_pages = [
-    ('index', u'Heat Dashboard Documentation',
+    ('index', 'Heat Dashboard Documentation',
      'Documentation for Heat Dashboard plugin to Openstack\
       Dashboard (Horizon)',
-     [u'OpenStack'], 1)
+     ['OpenStack'], 1)
 ]
 
 # Example configuration for intersphinx: refer to the Python standard library.

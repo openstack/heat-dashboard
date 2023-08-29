@@ -52,8 +52,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Heat Dashboard Release Notes'
-copyright = u'2017, OpenStack Foundation'
+project = 'Heat Dashboard Release Notes'
+copyright = '2017, OpenStack Foundation'
 
 # openstackdocstheme options
 openstackdocs_repo_name = 'openstack/heat-dashboard'
@@ -206,8 +206,8 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     ('index', 'HeatDashboardReleaseNotes.tex',
-     u'Heat Dashboard Release Notes Documentation',
-     u'OpenStack Foundation', 'manual'),
+     'Heat Dashboard Release Notes Documentation',
+     'OpenStack Foundation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -237,8 +237,8 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'HeatDashboardReleaseNotes',
-     u'Heat Dashboard  Release Notes Documentation',
-     [u'OpenStack Foundation'], 1)
+     'Heat Dashboard  Release Notes Documentation',
+     ['OpenStack Foundation'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -252,8 +252,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index', 'HeatDashboardReleaseNotes',
-     u'Heat Dashboard Release Notes Documentation',
-     u'OpenStack Foundation', 'HeatDashboardReleaseNotes',
+     'Heat Dashboard Release Notes Documentation',
+     'OpenStack Foundation', 'HeatDashboardReleaseNotes',
      'Dashboard for Heat',
      'Miscellaneous'),
 ]

@@ -55,7 +55,7 @@ def data(TEST):
         {'id': "21023e92-8008-1234-8059-7f2293ff3889",
          'status': 'in-use',
          'size': 10,
-         'display_name': u'my_volume',
+         'display_name': 'my_volume',
          'display_description': '',
          'created_at': '2013-04-01 10:30:00',
          'volume_type': None,
@@ -67,7 +67,7 @@ def data(TEST):
          'name': 'my_volume2',
          'status': 'in-use',
          'size': 10,
-         'display_name': u'my_volume2',
+         'display_name': 'my_volume2',
          'display_description': '',
          'created_at': '2013-04-01 10:30:00',
          'volume_type': 'vol_type_2',
@@ -78,7 +78,7 @@ def data(TEST):
         {'id': "21023e92-8008-1234-8059-7f2293ff3890",
          'status': 'in-use',
          'size': 10,
-         'display_name': u'my_volume',
+         'display_name': 'my_volume',
          'display_description': '',
          'created_at': '2013-04-01 10:30:00',
          'volume_type': None,
@@ -97,19 +97,19 @@ def data(TEST):
     TEST.cinder_volumes.add(api.cinder.Volume(non_bootable_volume))
 
     vol_type1 = volume_types.VolumeType(volume_types.VolumeTypeManager(None),
-                                        {'id': u'1',
-                                         'name': u'vol_type_1',
+                                        {'id': '1',
+                                         'name': 'vol_type_1',
                                          'description': 'type 1 description',
                                          'extra_specs': {'foo': 'bar',
                                                          'volume_backend_name':
                                                          'backend_1'}})
     vol_type2 = volume_types.VolumeType(volume_types.VolumeTypeManager(None),
-                                        {'id': u'2',
-                                         'name': u'vol_type_2',
+                                        {'id': '2',
+                                         'name': 'vol_type_2',
                                          'description': 'type 2 description'})
     vol_type3 = volume_types.VolumeType(volume_types.VolumeTypeManager(None),
-                                        {'id': u'3',
-                                         'name': u'vol_type_3',
+                                        {'id': '3',
+                                         'name': 'vol_type_3',
                                          'is_public': False,
                                          'description': 'type 3 description'})
     TEST.cinder_volume_types.add(vol_type1, vol_type2, vol_type3)
