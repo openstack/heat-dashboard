@@ -1,96 +1,844 @@
+# Decides what is required for the 'is_admin:True' check to succeed.
 #"context_is_admin": "(role:admin and is_admin_project:True) OR (role:admin and system_scope:all)"
+
+# Default rule for project admin.
 #"project_admin": "role:admin"
+
+# Default rule for deny stack user.
 #"deny_stack_user": "not role:heat_stack_user"
+
+# Default rule for deny everybody.
 #"deny_everybody": "!"
+
+# Default rule for allow everybody.
 #"allow_everybody": ""
-#"actions:action": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"actions:snapshot": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"actions:suspend": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"actions:resume": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"actions:check": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"actions:cancel_update": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"actions:cancel_without_rollback": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"build_info:build_info": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:ListStacks": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:CreateStack": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"cloudformation:DescribeStacks": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:DeleteStack": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"cloudformation:UpdateStack": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"cloudformation:CancelUpdateStack": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"cloudformation:DescribeStackEvents": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:ValidateTemplate": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:GetTemplate": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:EstimateTemplateCost": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:DescribeStackResource": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
-#"cloudformation:DescribeStackResources": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"cloudformation:ListStackResources": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"events:index": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"events:show": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"resource:index": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"resource:metadata": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
-#"resource:signal": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
-#"resource:mark_unhealthy": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"resource:show": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
+
+# Performs non-lifecycle operations on the stack (Snapshot, Resume,
+# Cancel update, or check stack resources). This is the default for
+# all actions but can be overridden by more specific policies for
+# individual actions.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:action": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:action":"rule:deny_stack_user" has been deprecated since W
+# in favor of "actions:action":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Create stack snapshot
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:snapshot": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:snapshot":"rule:deny_stack_user" has been deprecated since
+# W in favor of "actions:snapshot":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Suspend a stack.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:suspend": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:suspend":"rule:deny_stack_user" has been deprecated since W
+# in favor of "actions:suspend":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Resume a suspended stack.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:resume": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:resume":"rule:deny_stack_user" has been deprecated since W
+# in favor of "actions:resume":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Check stack resources.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:check": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:check":"rule:deny_stack_user" has been deprecated since W
+# in favor of "actions:check":"role:reader and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Cancel stack operation and roll back.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:cancel_update": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:cancel_update":"rule:deny_stack_user" has been deprecated
+# since W in favor of "actions:cancel_update":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Cancel stack operation without rolling back.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+# Intended scope(s): project
+#"actions:cancel_without_rollback": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "actions:cancel_without_rollback":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "actions:cancel_without_rollback":"role:member and
+# project_id:%(project_id)s".
+# The actions API now supports system scope and default roles.
+
+# Show build information.
+# GET  /v1/{tenant_id}/build_info
+# Intended scope(s): project
+#"build_info:build_info": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "build_info:build_info":"rule:deny_stack_user" has been deprecated
+# since W in favor of "build_info:build_info":"role:reader and
+# project_id:%(project_id)s".
+# The build API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:ListStacks": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:ListStacks":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:ListStacks":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:CreateStack": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:CreateStack":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:CreateStack":"role:member and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:DescribeStacks": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:DescribeStacks":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:DescribeStacks":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:DeleteStack": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:DeleteStack":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:DeleteStack":"role:member and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:UpdateStack": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:UpdateStack":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:UpdateStack":"role:member and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:CancelUpdateStack": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:CancelUpdateStack":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:CancelUpdateStack":"role:member and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:DescribeStackEvents": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:DescribeStackEvents":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:DescribeStackEvents":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:ValidateTemplate": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:ValidateTemplate":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:ValidateTemplate":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:GetTemplate": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:GetTemplate":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:GetTemplate":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:EstimateTemplateCost": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:EstimateTemplateCost":"rule:deny_stack_user" has
+# been deprecated since W in favor of
+# "cloudformation:EstimateTemplateCost":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:DescribeStackResource": "(role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
+
+# DEPRECATED
+# "cloudformation:DescribeStackResource":"rule:allow_everybody" has
+# been deprecated since W in favor of
+# "cloudformation:DescribeStackResource":"(role:reader and
+# project_id:%(project_id)s) or (role:heat_stack_user and
+# project_id:%(project_id)s)".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:DescribeStackResources": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:DescribeStackResources":"rule:deny_stack_user" has
+# been deprecated since W in favor of
+# "cloudformation:DescribeStackResources":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# Intended scope(s): project
+#"cloudformation:ListStackResources": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "cloudformation:ListStackResources":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "cloudformation:ListStackResources":"role:reader and
+# project_id:%(project_id)s".
+# The cloud formation API now supports system scope and default roles.
+
+# List events.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events
+# Intended scope(s): project
+#"events:index": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "events:index":"rule:deny_stack_user" has been deprecated since W in
+# favor of "events:index":"role:reader and project_id:%(project_id)s".
+# The events API now supports system scope and default roles.
+
+# Show event.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}
+# Intended scope(s): project
+#"events:show": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "events:show":"rule:deny_stack_user" has been deprecated since W in
+# favor of "events:show":"role:reader and project_id:%(project_id)s".
+# The events API now supports system scope and default roles.
+
+# List resources.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
+# Intended scope(s): project
+#"resource:index": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "resource:index":"rule:deny_stack_user" has been deprecated since W
+# in favor of "resource:index":"role:reader and
+# project_id:%(project_id)s".
+# The resources API now supports system scope and default roles.
+
+# Show resource metadata.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata
+# Intended scope(s): project
+#"resource:metadata": "(role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
+
+# DEPRECATED
+# "resource:metadata":"rule:allow_everybody" has been deprecated since
+# W in favor of "resource:metadata":"(role:reader and
+# project_id:%(project_id)s) or (role:heat_stack_user and
+# project_id:%(project_id)s)".
+# The resources API now supports system scope and default roles.
+
+# Signal resource.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal
+# Intended scope(s): project
+#"resource:signal": "(role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
+
+# DEPRECATED
+# "resource:signal":"rule:allow_everybody" has been deprecated since W
+# in favor of "resource:signal":"(role:reader and
+# project_id:%(project_id)s) or (role:heat_stack_user and
+# project_id:%(project_id)s)".
+# The resources API now supports system scope and default roles.
+
+# Mark resource as unhealthy.
+# PATCH  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name_or_physical_id}
+# Intended scope(s): project
+#"resource:mark_unhealthy": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "resource:mark_unhealthy":"rule:deny_stack_user" has been deprecated
+# since W in favor of "resource:mark_unhealthy":"role:member and
+# project_id:%(project_id)s".
+# The resources API now supports system scope and default roles.
+
+# Show resource.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}
+# Intended scope(s): project
+#"resource:show": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "resource:show":"rule:deny_stack_user" has been deprecated since W
+# in favor of "resource:show":"role:reader and
+# project_id:%(project_id)s".
+# The resources API now supports system scope and default roles.
+
+# Intended scope(s): project
 #"resource_types:OS::Nova::Flavor": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Cinder::EncryptedVolumeType": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Cinder::VolumeType": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Cinder::Quota": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::Quota": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Nova::Quota": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Octavia::Quota": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Manila::ShareType": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::ProviderNet": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::QoSPolicy": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::QoSBandwidthLimitRule": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::QoSDscpMarkingRule": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::QoSMinimumBandwidthRule": "rule:project_admin"
+
+# Intended scope(s): project
+#"resource_types:OS::Neutron::QoSMinimumPacketRateRule": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Neutron::Segment": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Nova::HostAggregate": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Cinder::QoSSpecs": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Cinder::QoSAssociation": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Keystone::*": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Blazar::Host": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Octavia::Flavor": "rule:project_admin"
+
+# Intended scope(s): project
 #"resource_types:OS::Octavia::FlavorProfile": "rule:project_admin"
-#"service:index": "role:reader and system_scope:all"
-#"software_configs:global_index": "role:reader and system_scope:all"
-#"software_configs:index": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"software_configs:create": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"software_configs:show": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"software_configs:delete": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"software_deployments:index": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"software_deployments:create": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"software_deployments:show": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"software_deployments:update": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"software_deployments:delete": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"software_deployments:metadata": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
-#"stacks:abandon": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:create": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:delete": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:detail": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:export": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:generate_template": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:global_index": "role:reader and system_scope:all"
-#"stacks:index": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:list_resource_types": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:list_template_versions": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:list_template_functions": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:lookup": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
-#"stacks:preview": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:resource_schema": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:show": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:template": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:environment": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:files": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:update": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:update_patch": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:preview_update": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:preview_update_patch": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:validate_template": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:snapshot": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:show_snapshot": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:delete_snapshot": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:list_snapshots": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:restore_snapshot": "(role:admin and system_scope:all) or (role:member and project_id:%(project_id)s)"
-#"stacks:list_outputs": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
-#"stacks:show_output": "(role:reader and system_scope:all) or (role:reader and project_id:%(project_id)s)"
+
+# Intended scope(s): project
+#"service:index": "role:admin and project_id:%(project_id)s"
+
+# DEPRECATED
+# "service:index":"rule:context_is_admin" has been deprecated since W
+# in favor of "service:index":"role:admin and
+# project_id:%(project_id)s".
+# The service API now supports system scope and default roles.
+
+# List configs globally.
+# GET  /v1/{tenant_id}/software_configs
+#"software_configs:global_index": "rule:deny_everybody"
+
+# List configs.
+# GET  /v1/{tenant_id}/software_configs
+# Intended scope(s): project
+#"software_configs:index": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_configs:index":"rule:deny_stack_user" has been deprecated
+# since W in favor of "software_configs:index":"role:reader and
+# project_id:%(project_id)s".
+# The software configuration API now support system scope and default
+# roles.
+
+# Create config.
+# POST  /v1/{tenant_id}/software_configs
+# Intended scope(s): project
+#"software_configs:create": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_configs:create":"rule:deny_stack_user" has been deprecated
+# since W in favor of "software_configs:create":"role:member and
+# project_id:%(project_id)s".
+# The software configuration API now support system scope and default
+# roles.
+
+# Show config details.
+# GET  /v1/{tenant_id}/software_configs/{config_id}
+# Intended scope(s): project
+#"software_configs:show": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_configs:show":"rule:deny_stack_user" has been deprecated
+# since W in favor of "software_configs:show":"role:reader and
+# project_id:%(project_id)s".
+# The software configuration API now support system scope and default
+# roles.
+
+# Delete config.
+# DELETE  /v1/{tenant_id}/software_configs/{config_id}
+# Intended scope(s): project
+#"software_configs:delete": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_configs:delete":"rule:deny_stack_user" has been deprecated
+# since W in favor of "software_configs:delete":"role:member and
+# project_id:%(project_id)s".
+# The software configuration API now support system scope and default
+# roles.
+
+# List deployments.
+# GET  /v1/{tenant_id}/software_deployments
+# Intended scope(s): project
+#"software_deployments:index": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_deployments:index":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "software_deployments:index":"role:reader and
+# project_id:%(project_id)s".
+# The software deployment API now supports system scope and default
+# roles.
+
+# Create deployment.
+# POST  /v1/{tenant_id}/software_deployments
+# Intended scope(s): project
+#"software_deployments:create": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_deployments:create":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "software_deployments:create":"role:member and
+# project_id:%(project_id)s".
+# The software deployment API now supports system scope and default
+# roles.
+
+# Show deployment details.
+# GET  /v1/{tenant_id}/software_deployments/{deployment_id}
+# Intended scope(s): project
+#"software_deployments:show": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_deployments:show":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "software_deployments:show":"role:reader and
+# project_id:%(project_id)s".
+# The software deployment API now supports system scope and default
+# roles.
+
+# Update deployment.
+# PUT  /v1/{tenant_id}/software_deployments/{deployment_id}
+# Intended scope(s): project
+#"software_deployments:update": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_deployments:update":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "software_deployments:update":"role:member and
+# project_id:%(project_id)s".
+# The software deployment API now supports system scope and default
+# roles.
+
+# Delete deployment.
+# DELETE  /v1/{tenant_id}/software_deployments/{deployment_id}
+# Intended scope(s): project
+#"software_deployments:delete": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "software_deployments:delete":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "software_deployments:delete":"role:member and
+# project_id:%(project_id)s".
+# The software deployment API now supports system scope and default
+# roles.
+
+# Show server configuration metadata.
+# GET  /v1/{tenant_id}/software_deployments/metadata/{server_id}
+# Intended scope(s): project
+#"software_deployments:metadata": "(role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
+
+# Abandon stack.
+# DELETE  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon
+# Intended scope(s): project
+#"stacks:abandon": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:abandon":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:abandon":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Create stack.
+# POST  /v1/{tenant_id}/stacks
+# Intended scope(s): project
+#"stacks:create": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:create":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:create":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Delete stack.
+# DELETE  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+# Intended scope(s): project
+#"stacks:delete": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:delete":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:delete":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List stacks in detail.
+# GET  /v1/{tenant_id}/stacks
+# Intended scope(s): project
+#"stacks:detail": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:detail":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:detail":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Export stack.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/export
+# Intended scope(s): project
+#"stacks:export": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:export":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:export":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Generate stack template.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
+# Intended scope(s): project
+#"stacks:generate_template": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:generate_template":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:generate_template":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List stacks globally.
+# GET  /v1/{tenant_id}/stacks
+#"stacks:global_index": "rule:deny_everybody"
+
+# List stacks.
+# GET  /v1/{tenant_id}/stacks
+# Intended scope(s): project
+#"stacks:index": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:index":"rule:deny_stack_user" has been deprecated since W in
+# favor of "stacks:index":"role:reader and project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List resource types.
+# GET  /v1/{tenant_id}/resource_types
+# Intended scope(s): project
+#"stacks:list_resource_types": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:list_resource_types":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:list_resource_types":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List template versions.
+# GET  /v1/{tenant_id}/template_versions
+# Intended scope(s): project
+#"stacks:list_template_versions": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:list_template_versions":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:list_template_versions":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List template functions.
+# GET  /v1/{tenant_id}/template_versions/{template_version}/functions
+# Intended scope(s): project
+#"stacks:list_template_functions": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:list_template_functions":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:list_template_functions":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Find stack.
+# GET  /v1/{tenant_id}/stacks/{stack_identity}
+# Intended scope(s): project
+#"stacks:lookup": "(role:reader and project_id:%(project_id)s) or (role:heat_stack_user and project_id:%(project_id)s)"
+
+# DEPRECATED
+# "stacks:lookup":"rule:allow_everybody" has been deprecated since W
+# in favor of "stacks:lookup":"(role:reader and
+# project_id:%(project_id)s) or (role:heat_stack_user and
+# project_id:%(project_id)s)".
+# The stack API now supports system scope and default roles.
+
+# Preview stack.
+# POST  /v1/{tenant_id}/stacks/preview
+# Intended scope(s): project
+#"stacks:preview": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:preview":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:preview":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Show resource type schema.
+# GET  /v1/{tenant_id}/resource_types/{type_name}
+# Intended scope(s): project
+#"stacks:resource_schema": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:resource_schema":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:resource_schema":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Show stack.
+# GET  /v1/{tenant_id}/stacks/{stack_identity}
+# Intended scope(s): project
+#"stacks:show": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:show":"rule:deny_stack_user" has been deprecated since W in
+# favor of "stacks:show":"role:reader and project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Get stack template.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
+# Intended scope(s): project
+#"stacks:template": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:template":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:template":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Get stack environment.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/environment
+# Intended scope(s): project
+#"stacks:environment": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:environment":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:environment":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Get stack files.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/files
+# Intended scope(s): project
+#"stacks:files": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:files":"rule:deny_stack_user" has been deprecated since W in
+# favor of "stacks:files":"role:reader and project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Update stack.
+# PUT  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+# Intended scope(s): project
+#"stacks:update": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:update":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:update":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Update stack (PATCH).
+# PATCH  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+# Intended scope(s): project
+#"stacks:update_patch": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:update_patch":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:update_patch":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Update stack (PATCH) with no changes.
+# PATCH  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+# Intended scope(s): project
+#"stacks:update_no_change": "rule:stacks:update_patch"
+
+# Preview update stack.
+# PUT  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
+# Intended scope(s): project
+#"stacks:preview_update": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:preview_update":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:preview_update":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Preview update stack (PATCH).
+# PATCH  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
+# Intended scope(s): project
+#"stacks:preview_update_patch": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:preview_update_patch":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:preview_update_patch":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Validate template.
+# POST  /v1/{tenant_id}/validate
+# Intended scope(s): project
+#"stacks:validate_template": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:validate_template":"rule:deny_stack_user" has been
+# deprecated since W in favor of
+# "stacks:validate_template":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Snapshot Stack.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+# Intended scope(s): project
+#"stacks:snapshot": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:snapshot":"rule:deny_stack_user" has been deprecated since W
+# in favor of "stacks:snapshot":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Show snapshot.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+# Intended scope(s): project
+#"stacks:show_snapshot": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:show_snapshot":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:show_snapshot":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Delete snapshot.
+# DELETE  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+# Intended scope(s): project
+#"stacks:delete_snapshot": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:delete_snapshot":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:delete_snapshot":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List snapshots.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+# Intended scope(s): project
+#"stacks:list_snapshots": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:list_snapshots":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:list_snapshots":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Restore snapshot.
+# POST  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore
+# Intended scope(s): project
+#"stacks:restore_snapshot": "role:member and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:restore_snapshot":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:restore_snapshot":"role:member and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# List outputs.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/outputs
+# Intended scope(s): project
+#"stacks:list_outputs": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:list_outputs":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:list_outputs":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
+# Show outputs.
+# GET  /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/outputs/{output_key}
+# Intended scope(s): project
+#"stacks:show_output": "role:reader and project_id:%(project_id)s"
+
+# DEPRECATED
+# "stacks:show_output":"rule:deny_stack_user" has been deprecated
+# since W in favor of "stacks:show_output":"role:reader and
+# project_id:%(project_id)s".
+# The stack API now supports system scope and default roles.
+
