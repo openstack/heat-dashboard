@@ -426,7 +426,7 @@ class CreateStackForm(forms.SelfHandlingForm):
         fields = {
             'stack_name': data.get('stack_name'),
             'timeout_mins': data.get('timeout_mins'),
-            'disable_rollback': not(data.get('enable_rollback')),
+            'disable_rollback': not data.get('enable_rollback'),
             'parameters': dict(params_list),
             'files': json.loads(data.get('parameters')).get('files'),
             'template': json.loads(data.get('parameters')).get('template')
@@ -482,7 +482,7 @@ class EditStackForm(CreateStackForm):
         fields = {
             'stack_name': data.get('stack_name'),
             'timeout_mins': data.get('timeout_mins'),
-            'disable_rollback': not(data.get('enable_rollback')),
+            'disable_rollback': not data.get('enable_rollback'),
             'parameters': dict(params_list),
             'files': json.loads(data.get('parameters')).get('files'),
             'template': json.loads(data.get('parameters')).get('template')
@@ -517,7 +517,7 @@ class PreviewStackForm(CreateStackForm):
         fields = {
             'stack_name': data.get('stack_name'),
             'timeout_mins': data.get('timeout_mins'),
-            'disable_rollback': not(data.get('enable_rollback')),
+            'disable_rollback': not data.get('enable_rollback'),
             'parameters': dict(params_list),
             'files': json.loads(data.get('parameters')).get('files'),
             'template': json.loads(data.get('parameters')).get('template')
