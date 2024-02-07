@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = heat_dashboard
+omit = heat_dashboard/tests/*
+
+[report]
+ignore_errors = True
+
