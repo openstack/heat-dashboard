@@ -128,7 +128,7 @@
                                 connected_options[property] = [];
                             }
                             connected_options[property].push({
-                                value: hotgenUtils.get_resource_string(hotgenStates.get_label_by_uuid(node.id)),
+                                value: { 'get_resource': hotgenStates.get_label_by_uuid(node.id) },
                                 id: node.id,
                                 resource_type: node.title,
                                 edge: edge

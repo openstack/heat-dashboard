@@ -94,9 +94,6 @@
             }
         }])
         .factory('hotgenUtils', function(){
-            var get_resource_string = function(identity){
-                return '{ get_resource: '+identity+' }';
-            }
             var filter_and_return_get_resource_element = function(array, property){
                 var return_val = [];
                 var idx = array.length-1;
@@ -201,7 +198,8 @@
             }
             var strip_property = function check_property(resource_data, property){
 
-                if (resource_data[property] == null || resource_data[property] == ''){
+                // remove empty properties or private Angular properties (start with $$)
+                if (resource_data[property] == null || resource_data[property] == '' || property.lastIndexOf("$$",0) === 0){
                     delete resource_data[property];
                 } else if (resource_data[property].constructor && resource_data[property].constructor == Object){
                     extract_dict(resource_data[property]);
@@ -217,7 +215,6 @@
             }
 
             return {
-                get_resource_string: get_resource_string,
                 escape_characters: escape_characters,
                 extract_keyvalue: extract_keyvalue,
                 extract_list_of_keyvalue: extract_list_of_keyvalue,

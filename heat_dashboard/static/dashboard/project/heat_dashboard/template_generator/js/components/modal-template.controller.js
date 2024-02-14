@@ -131,7 +131,7 @@
                             var output_key = resource_name + '_' + output_detail[idx].property;
                             outputs_root[output_key] = {
                                 description: 'The ' + output_detail[idx].property + ' of ' + resource_name +'.',
-                                value: '{ get_attr: ['+resource_name+', '+output_detail[idx].property+'] }',
+                                value: { 'get_attr': [resource_name, output_detail[idx].property] },
                             };
                         }
 
