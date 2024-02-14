@@ -126,9 +126,9 @@
                         name: item.value
                     })
                 }
-                return $scope.options.networks.concat(resource_networks);
+                return $scope.options.floating_networks.concat(resource_networks);
             }
-            return $scope.options.networks;
+            return $scope.options.floating_networks;
         }
 
         $scope.get_subnets_options = function(){
