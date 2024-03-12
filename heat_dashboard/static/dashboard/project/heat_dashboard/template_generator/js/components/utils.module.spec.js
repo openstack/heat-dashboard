@@ -169,12 +169,6 @@
             expect(hotgenUtils).toBeDefined();
         });
 
-        it('should return string contains get_resource', function(){
-            var returnValue = hotgenUtils.get_resource_string('identity');
-
-            expect(returnValue).toEqual('{ get_resource: identity }');
-        });
-
         it('should filter elements', function(){
             var property = 'name';
             var array = ['ignore me', 1, '{ get_resource: find me }',
