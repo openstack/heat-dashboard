@@ -189,11 +189,13 @@ def _get_network_resources(options, all_networks):
             options['networks'] = [
                 {'id': nw.id,
                  'name': nw.name if nw.name else '(%s)' % nw.id[: 6]}
-                for nw in all_networks if not getattr(nw, 'router:external')]
+                for nw in all_networks
+                if not getattr(nw, 'is_router_external')]
             options['floating_networks'] = [
                 {'id': nw.id,
                  'name': nw.name if nw.name else '(%s)' % nw.id[: 6]}
-                for nw in all_networks if getattr(nw, 'router:external')]
+                for nw in all_networks
+                if getattr(nw, 'is_router_external')]
         else:
             options['networks'] = []
             options['floating_networks'] = []

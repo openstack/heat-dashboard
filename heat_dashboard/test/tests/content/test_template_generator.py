@@ -44,8 +44,8 @@ class TemplateGeneratorTests(test.TestCase):
         volume_types = self.cinder_volume_types.list()
         volume_backups = self.cinder_volume_backups.list()
         images = self.imagesV2.list()
-        networks = self.networks.list()
-        subnets = self.subnets.list()
+        networks = self.api_networks_sdk
+        subnets = self.api_subnets_sdk
         floating_ips = self.floating_ips.list()
         ports = self.ports.list()
         security_groups = self.security_groups.list()
