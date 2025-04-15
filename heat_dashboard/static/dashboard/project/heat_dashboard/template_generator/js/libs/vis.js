@@ -8769,7 +8769,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 13 */
 /***/ function(module, exports) {
 
-  
+
   /**
    * Expose `Emitter`.
    */
@@ -14126,7 +14126,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   /**
    * used in Core to convert the options into a volatile variable
-   * 
+   *
    * @param Core
    */
   exports.convertHiddenOptions = function (body, hiddenDates) {

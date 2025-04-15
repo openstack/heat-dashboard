@@ -24,7 +24,7 @@
                 <label>Volume Type</label>
                 <md-select ng-model="$ctrl.volume.volume_type" >
                     <md-option ng-repeat="vtype in options.volume_types" ng-value="vtype.id">
-                        {$ vtype.name $} 
+                        {$ vtype.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -33,7 +33,7 @@
                 <label>Availability Zone</label>
                 <md-select ng-model="$ctrl.volume.availability_zone">
                     <md-option ng-repeat="az in options.availability_zones" ng-value="az.id">
-                      {$ az.name $} 
+                      {$ az.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -70,7 +70,7 @@
                 <label>Create from source</label>
                 <md-select ng-model="$ctrl.volume.boot_source">
                     <md-option ng-repeat="source in boot_sources" ng-value="source.id">
-                        {$ source.name $} 
+                        {$ source.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -79,7 +79,7 @@
                 <label>Backup ID</label>
                 <md-select ng-model="$ctrl.volume.backup_id" >
                     <md-option ng-repeat="backup in options.volume_backups" ng-value="backup.id">
-                        {$ backup.name $} 
+                        {$ backup.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -88,7 +88,7 @@
                 <label>Image</label>
                 <md-select ng-model="$ctrl.volume.image" >
                     <md-option ng-repeat="image in options.images" ng-value="image.id">
-                        {$ image.name $} 
+                        {$ image.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -97,7 +97,7 @@
                 <label>Snapshot</label>
                 <md-select ng-model="$ctrl.volume.snapshot_id" >
                     <md-option ng-repeat="snapshot in options.volume_snapshots" ng-value="snapshot.id">
-                        {$ snapshot.name $} 
+                        {$ snapshot.name $}
                     </md-option>
                 </md-select>
             </md-input-container>
@@ -106,7 +106,7 @@
                 <label>Source Volume</label>
                 <md-select ng-model="$ctrl.volume.source_volid" >
                     <md-option ng-repeat="volume in options.volumes" ng-value="volume.id">
-                        {$ volume.name $} 
+                        {$ volume.name $}
                     </md-option>
                 </md-select>
             </md-input-container>

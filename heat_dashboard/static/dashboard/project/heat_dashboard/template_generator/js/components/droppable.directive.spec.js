@@ -38,7 +38,7 @@
             }
             spyOn(mockEvent, 'preventDefault');
             $scope.dragoverHandler(mockEvent);
-            
+
             expect(mockEvent.preventDefault).toHaveBeenCalled();
         });
 

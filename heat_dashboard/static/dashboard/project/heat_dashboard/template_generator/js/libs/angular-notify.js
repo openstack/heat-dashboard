@@ -40,7 +40,7 @@ angular.module('cgNotify', []).factory('notify',['$timeout','$http','$compile','
 
                 var templateElement = $compile(template.data)(scope);
                 templateElement.bind('webkitTransitionEnd oTransitionEnd otransitionend transitionend msTransitionEnd', function(e){
-                    if (e.propertyName === 'opacity' || e.currentTarget.style.opacity === 0 || 
+                    if (e.propertyName === 'opacity' || e.currentTarget.style.opacity === 0 ||
                         (e.originalEvent && e.originalEvent.propertyName === 'opacity')){
 
                         templateElement.remove();
@@ -112,7 +112,7 @@ angular.module('cgNotify', []).factory('notify',['$timeout','$http','$compile','
             });
 
             var retVal = {};
-            
+
             retVal.close = function(){
                 if (scope.$close){
                     scope.$close();

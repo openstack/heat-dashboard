@@ -92,7 +92,7 @@
             $httpBackend.flush();
 
             $scope.load_template_version();
-            
+
             expect($scope.template_version).toEqual('template_version-1');
         });
     });

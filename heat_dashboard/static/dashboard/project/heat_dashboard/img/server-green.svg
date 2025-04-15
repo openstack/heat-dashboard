@@ -37,13 +37,13 @@
 			68.5,42.4 61.6,33 25.5,33 18.5,42.4 		"/>
 		<path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M39,55h29.5V42.4
 			c0,0,0,0,0,0H41H18.5c0,0,0,0.1,0,0.1V55H39z"/>
-		
+
 			<rect x="24" y="45" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7.3"/>
-		
+
 			<rect x="29" y="45" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7.3"/>
-		
+
 			<rect x="34" y="45" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7.3"/>
-		
+
 			<rect x="39" y="45" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7.3"/>
 	</g>
 </g>
