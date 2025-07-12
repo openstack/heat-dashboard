@@ -23,7 +23,6 @@ import unittest
 from unittest import mock
 from urllib import parse
 
-import django
 from django.conf import settings
 from django.contrib.messages.storage import default_storage
 from django.core.handlers import wsgi
@@ -201,17 +200,12 @@ class TestCase(horizon_helpers.TestCase):
         Asserts that the given response issued a 302 redirect without
         processing the view which is redirected to.
         """
-        if django.VERSION >= (1, 9):
-            if response.has_header('location'):
-                loc = response['location']
-            else:
-                loc = ''
-            loc = parse.unquote(loc)
-            expected_url = parse.unquote(expected_url)
-            self.assertEqual(loc, expected_url)
+        if response.has_header('location'):
+            loc = parse.unquote(response['location'])
         else:
-            self.assertEqual(response._headers.get('location', None),
-                             ('Location', settings.TESTSERVER + expected_url))
+            loc = ''
+        expected_url = parse.unquote(expected_url)
+        self.assertEqual(loc, expected_url)
         self.assertEqual(response.status_code, 302)
 
     def assertNoFormErrors(self, response, context_name="form"):
