@@ -78,4 +78,4 @@ Finally, restart your web server. For example, in case of apache:
 
 .. code-block:: console
 
-   $ sudo service apache2 restart
+   $ sudo systemctl restart apache2
