@@ -43,7 +43,7 @@ Configure the policy file for heat-dashboard in OpenStack Dashboard
 
 .. code-block:: python
 
-   POLICY_FILES['orchestration'] = '<heat-dashboard-dir>/conf/heat_policy.json'
+   POLICY_FILES['orchestration'] = '<heat-dashboard-dir>/conf/heat_policy.yaml'
 
 .. note::
 
