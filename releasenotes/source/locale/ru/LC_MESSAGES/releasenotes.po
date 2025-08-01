@@ -1,17 +1,17 @@
-# Artem <amikhalev90@gmail.com>, 2017. #zanata
 # Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
 # Roman Gorshunov <roman.gorshunov@att.com>, 2020. #zanata
 # Roman Gorshunov <roman.gorshunov@att.com>, 2021. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: Heat Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 12:10+0000\n"
+"POT-Creation-Date: 2025-07-31 12:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-09-06 04:18+0000\n"
-"Last-Translator: Roman Gorshunov <roman.gorshunov@att.com>\n"
+"PO-Revision-Date: 2025-07-31 09:44+0000\n"
+"Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -24,11 +24,32 @@ msgstr "1.0.0"
 msgid "1.1.0"
 msgstr "1.1.0"
 
+msgid "12.0.0"
+msgstr "12.0.0"
+
+msgid "2023.1 Series Release Notes"
+msgstr "Примечания к выпуску 2023.1"
+
+msgid "2023.2 Series Release Notes"
+msgstr "Примечания к выпуску 2023.2"
+
+msgid "2024.1 Series Release Notes"
+msgstr "Примечания к выпуску 2024.1"
+
+msgid "2024.2 Series Release Notes"
+msgstr "Примечания к выпуску 2024.2"
+
+msgid "2025.1 Series Release Notes"
+msgstr "Примечания к выпуску 2025.1"
+
 msgid "3.0.0"
 msgstr "3.0.0"
 
 msgid "5.0.0"
 msgstr "5.0.0"
+
+msgid "8.0.0"
+msgstr "8.0.0"
 
 msgid ""
 "A panel for ``Template Generator`` is newly added.  There is not specific "
@@ -43,10 +64,10 @@ msgstr ""
 "``Template Versions``)."
 
 msgid "Current Series Release Notes"
-msgstr "Примечания к текущему релизу"
+msgstr "Примечания к текущему выпуску"
 
 msgid "Heat Dashboard Release Notes"
-msgstr "Примечания о панели Heat"
+msgstr "Примечания к выпуску панели управления Heat"
 
 msgid ""
 "Heat support in OpenStack Dashboard is now split into a separated python "
@@ -94,7 +115,7 @@ msgstr ""
 "dashboard/+bug/1755308>`__]"
 
 msgid "New Features"
-msgstr "Новые особенности"
+msgstr "Новые возможности"
 
 msgid "Prelude"
 msgstr "Введение"
@@ -108,14 +129,35 @@ msgstr ""
 "dashboard, поддерживавшим Python 2.7 был OpenStack Train. Минимальная "
 "поддерживаемая heat-dashboard версия – Python 3.6."
 
+msgid ""
+"Python 3.6 & 3.7 support has been dropped. The minimum version of Python now "
+"supported is Python 3.8."
+msgstr ""
+"Поддержка Python 3.6 и 3.7 прекращена. Минимальная версия Python, которая "
+"теперь поддерживается — Python 3.8."
+
+msgid ""
+"Python 3.8 support was dropped. The minimum version of Python now supported "
+"is Python 3.9."
+msgstr ""
+"Поддержка Python 3.8 прекращена. Минимальная версия Python, которая теперь "
+"поддерживается — Python 3.9."
+
 msgid "Queens Series Release Notes"
-msgstr "Примечания к релизу Queens"
+msgstr "Примечания к выпуску Queens"
 
 msgid "Rocky Series Release Notes"
-msgstr "Примечания к релизу Rocky"
+msgstr "Примечания к выпуску Rocky"
 
 msgid "Stein Series Release Notes"
-msgstr "Примечания к релизу Stein"
+msgstr "Примечания к выпуску Stein"
+
+msgid ""
+"Support for Python 3.9 has been removed. Now Python 3.10 is the minimum "
+"version supported."
+msgstr ""
+"Поддержка Python 3.9 прекращена. Минимальная версия Python, которая теперь "
+"поддерживается — Python 3.10."
 
 msgid ""
 "The default configuration file has been updated and now includes the "
@@ -132,16 +174,25 @@ msgstr ""
 "подробности об этом функционале."
 
 msgid "Train Series Release Notes"
-msgstr "Примечания к релизу Train"
+msgstr "Примечания к выпуску Train"
 
 msgid "Upgrade Notes"
-msgstr "Информация об обновлении"
+msgstr "Примечания к обновлению"
 
 msgid "Ussuri Series Release Notes"
-msgstr "Примечания к релизу Ussuri"
+msgstr "Примечания к выпуску Ussuri"
 
 msgid "Victoria Series Release Notes"
-msgstr "Примечания к релизу Victoria"
+msgstr "Примечания к выпуску Victoria"
 
 msgid "Wallaby Series Release Notes"
-msgstr "Примечания к релизу Wallaby"
+msgstr "Примечания к выпуску Wallaby"
+
+msgid "Xena Series Release Notes"
+msgstr "Примечания к выпуску Xena"
+
+msgid "Yoga Series Release Notes"
+msgstr "Примечания к выпуску Yoga"
+
+msgid "Zed Series Release Notes"
+msgstr "Примечания к выпуску Zed"
