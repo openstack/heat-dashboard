@@ -2,16 +2,17 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
 # Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
+# Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2024-05-07 12:10+0000\n"
+"POT-Creation-Date: 2025-08-11 08:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-08-05 09:56+0000\n"
-"Last-Translator: Roman Gorshunov <roman.gorshunov@att.com>\n"
+"PO-Revision-Date: 2025-08-14 02:58+0000\n"
+"Last-Translator: Dmitriy Chubinidze <dcu995@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -36,9 +37,9 @@ msgstr[2] "Проверенные стеки: %s."
 
 msgid "Confirm Check Stack"
 msgid_plural "Confirm Check Stacks"
-msgstr[0] "Проверить стек"
-msgstr[1] "Проверить стеки"
-msgstr[2] "Проверить стеки"
+msgstr[0] "Подтвердите проверку стека"
+msgstr[1] "Подтвердите проверку стеков"
+msgstr[2] "Подтвердите проверку стеков"
 
 msgid "Confirm Delete Stack"
 msgid_plural "Confirm Delete Stacks"
@@ -78,10 +79,10 @@ msgid "Save"
 msgstr "Сохранить"
 
 msgid "Saved Drafts"
-msgstr "Сохранённые черновики"
+msgstr "Сохраненные черновики"
 
 msgid "Show More Properties"
-msgstr "Показать больше"
+msgstr "Показать больше свойств"
 
 #, python-format
 msgid "Stack %s was successfully created."
