@@ -76,7 +76,7 @@ class IndexView(tables.DataTableView):
         except Exception:
             self._prev = False
             self._more = False
-            msg = _('Unable to retrieve stack list.')
+            msg = _('Unable to retrieve stacks list.')
             exceptions.handle(self.request, msg)
         return stacks
 
