@@ -13,15 +13,16 @@
 # Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
 # Roman Gorshunov <roman.gorshunov@att.com>, 2021. #zanata
 # Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-08-11 08:02+0000\n"
+"POT-Creation-Date: 2025-08-15 09:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-08-14 02:56+0000\n"
+"PO-Revision-Date: 2025-08-27 11:22+0000\n"
 "Last-Translator: Dmitriy Chubinidze <dcu995@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -129,10 +130,10 @@ msgid "Create a new stack with the provided values."
 msgstr "Создать новый стек с предоставленными параметрами."
 
 msgid "Created"
-msgstr "Создано"
+msgstr "Создан"
 
 msgid "Creation Timeout (minutes)"
-msgstr "Таймаут создания (в минутах)"
+msgstr "Таймаут создания (мин.)"
 
 msgid "Date Updated"
 msgstr "Дата обновления"
@@ -168,16 +169,16 @@ msgid "Description:"
 msgstr "Описание:"
 
 msgid "Direct Input"
-msgstr "Непосредственный ввод"
+msgstr "Прямой ввод"
 
 msgid "Disabled"
 msgstr "Выключен"
 
 msgid "Edit Template"
-msgstr "Редактировать шаблон"
+msgstr "Изменить шаблон"
 
 msgid "Enable rollback on create/update failure."
-msgstr "Разрешить откат при сбое создания/обновления."
+msgstr "Включить откат при сбое создания/обновления."
 
 msgid "Enabled"
 msgstr "Включен"
@@ -222,7 +223,7 @@ msgid "Init In Progress"
 msgstr "Выполняется инициализация"
 
 msgid "Last Updated"
-msgstr "Обновлено"
+msgstr "Последнее обновление"
 
 msgid "Launch"
 msgstr "Запустить"
@@ -243,7 +244,7 @@ msgid "Manage Drafts"
 msgstr "Управление черновиками"
 
 msgid "Minutes"
-msgstr "Минуты"
+msgstr "Мин."
 
 msgid "Name"
 msgstr "Имя"
@@ -268,7 +269,7 @@ msgid "Orchestration"
 msgstr "Оркестрация"
 
 msgid "Outputs"
-msgstr "Вывод"
+msgstr "Выводы"
 
 msgid "Overview"
 msgstr "Обзор"
@@ -298,7 +299,7 @@ msgid "Preview Stack"
 msgstr "Предварительный просмотр стека"
 
 msgid "Preview Stack Details"
-msgstr "Предварительный просмотр деталей стека"
+msgstr "Предварительный просмотр подробностей стека"
 
 msgid "Preview Stack Parameters"
 msgstr "Предварительный просмотр параметров стека"
@@ -325,7 +326,7 @@ msgid "Resource Metadata"
 msgstr "Метаданные ресурса"
 
 msgid "Resource Types"
-msgstr "Типы ресурсов"
+msgstr "Типы ресурса"
 
 msgid "Resources"
 msgstr "Ресурсы"
@@ -379,7 +380,7 @@ msgid "Select Image"
 msgstr "Выберите образ"
 
 msgid "Select Template"
-msgstr "Выбрать шаблон"
+msgstr "Выберите шаблон"
 
 msgid "Select a new template to preview a stack."
 msgstr "Выберите новый шаблон для предварительного просмотра стека."
@@ -388,7 +389,7 @@ msgid "Select a new template to re-launch a stack."
 msgstr "Выберите новый шаблон для повторного запуска стека."
 
 msgid "Select a template to launch a stack."
-msgstr "Выбрать шаблон для запуска стека."
+msgstr "Выберите шаблон для запуска стека."
 
 msgctxt "current status of stack"
 msgid "Snapshot Complete"
@@ -424,7 +425,7 @@ msgid "Stack Preview"
 msgstr "Предварительный просмотр стека"
 
 msgid "Stack Resource"
-msgstr "Ресурсы стека"
+msgstr "Ресурс стека"
 
 msgid "Stack Resource ID"
 msgstr "ID ресурса стека"
@@ -436,7 +437,7 @@ msgid "Stack Resources"
 msgstr "Ресурсы стека"
 
 msgid "Stack creation started."
-msgstr "Создание стека началось."
+msgstr "Началось создание стека."
 
 msgid "Stack creation timeout in minutes."
 msgstr "Таймаут создания стека в минутах."
@@ -508,7 +509,7 @@ msgid "Template Version"
 msgstr "Версия шаблона"
 
 msgid "Template Versions"
-msgstr "Версии шаблонов"
+msgstr "Версии шаблона"
 
 msgid "The raw contents of the environment file."
 msgstr "Содержимое файла среды (raw). "
@@ -525,10 +526,10 @@ msgid ""
 "the stack"
 msgstr ""
 "Это необходимо для выполнения операций на протяжении всего жизненного цикла "
-"стека."
+"стека"
 
 msgid "Time Since Event"
-msgstr "Время после события"
+msgstr "Время с момента события"
 
 msgid "Timeout"
 msgstr "Таймаут"
@@ -551,7 +552,7 @@ msgstr "Не удалось получить события для стека \"
 
 #, python-format
 msgid "Unable to get functions for template version \"%s\"."
-msgstr "Не удалось получить функции шаблона версии \"%s\"."
+msgstr "Не удалось получить функции для шаблона версии \"%s\"."
 
 #, python-format
 msgid "Unable to get resources for stack \"%s\"."
@@ -564,7 +565,7 @@ msgid "Unable to retrieve metadata."
 msgstr "Не удалось получить метаданные."
 
 msgid "Unable to retrieve resource type details."
-msgstr "Не удалось получить детали типа ресурса."
+msgstr "Не удалось получить подробности типа ресурса."
 
 msgid "Unable to retrieve resource."
 msgstr "Не удалось получить ресурс."
@@ -573,7 +574,7 @@ msgid "Unable to retrieve stack list."
 msgstr "Не удалось получить список стеков."
 
 msgid "Unable to retrieve stack resource types."
-msgstr "Не удалось получить типы ресурсов стека."
+msgstr "Не удалось получить типы ресурса стека."
 
 msgid "Unable to retrieve stack template."
 msgstr "Не удалось получить шаблон стека."
@@ -618,10 +619,10 @@ msgstr ""
 "по умолчанию, если вы не измените их здесь."
 
 msgid "Updated"
-msgstr "Обновлено"
+msgstr "Обновлен"
 
 msgid "Updating Timeout (minutes)"
-msgstr "Обновление таймаута (в минутах)"
+msgstr "Обновление таймаута (мин.)"
 
 msgid ""
 "Use one of the available template source options to specify the template to "
