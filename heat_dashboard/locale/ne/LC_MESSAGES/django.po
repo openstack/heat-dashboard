@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-05-22 15:39+0000\n"
+"POT-Creation-Date: 2025-08-30 03:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -537,9 +537,6 @@ msgstr "संसाधन प्रकारको जानकारी पु
 
 msgid "Unable to retrieve resource."
 msgstr "रिसोर्स प्राप्त गर्न असमर्थ"
-
-msgid "Unable to retrieve stack list."
-msgstr "स्टेक सूची प्राप्त गर्न असमर्थ"
 
 msgid "Unable to retrieve stack resource types."
 msgstr "स्ट्याक संसाधन प्रकारहरू पुनःप्राप्त गर्न असमर्थ।"

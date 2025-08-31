@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-07-17 13:53+0000\n"
+"POT-Creation-Date: 2025-08-30 03:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,12 +25,10 @@ msgstr ""
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 #, python-format
 msgid "%(resource_status)s: %(resource_status_reason)s"
 msgstr "%(resource_status)s: %(resource_status_reason)s"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 #, python-format
 msgid "%(stack_status_title)s: %(stack_status_reason)s"
 msgstr "%(stack_status_title)s: %(stack_status_reason)s"
@@ -63,7 +61,6 @@ msgstr "Adopt In Progress"
 msgid "An external (HTTP) URL to load the template from."
 msgstr "템플릿을 외부 (HTTP) URL로 불러옵니다."
 
-# auto translated by TM merge from project: ironic-ui, version: master, DocId: ironic_ui/locale/djangojs
 msgid "Attributes"
 msgstr "특성"
 
@@ -102,7 +99,6 @@ msgstr[0] "Stack 확인됨"
 msgid "Clear Canvas"
 msgstr "캔버스 삭제"
 
-# auto translated by TM merge from project: horizon, version: master, DocId: horizon/locale/djangojs
 msgid "Close"
 msgstr "닫기"
 
@@ -121,7 +117,6 @@ msgstr "생성 진행 중"
 msgid "Create Stack"
 msgstr "Stack 생성"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Create a new stack with the provided values."
 msgstr "작성한 값에 가진 새로운 스택을 만들 수 있습니다."
 
@@ -154,18 +149,15 @@ msgid "Deleted Stack"
 msgid_plural "Deleted Stacks"
 msgstr[0] "Stack 삭제함"
 
-# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Description"
 msgstr "설명"
 
-# auto translated by TM merge from project: tripleo-ui, version: master, DocId: i18n/messages
 msgid "Description:"
 msgstr "설명:"
 
 msgid "Direct Input"
 msgstr "직접 입력"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/djangojs
 msgid "Disabled"
 msgstr "비활성화됨"
 
@@ -175,7 +167,6 @@ msgstr "템플릿 편집"
 msgid "Enable rollback on create/update failure."
 msgstr "생성/업데이트 실패시 롤백 사용."
 
-# auto translated by TM merge from project: murano-dashboard, version: master, DocId: muranodashboard/locale/django
 msgid "Enabled"
 msgstr "활성화됨"
 
@@ -200,7 +191,6 @@ msgstr "파일"
 msgid "Function"
 msgstr "기능"
 
-# auto translated by TM merge from project: designate-dashboard, version: master, DocId: designatedashboard/locale/django
 msgid "ID"
 msgstr "ID"
 
@@ -219,21 +209,18 @@ msgctxt "current status of stack"
 msgid "Init In Progress"
 msgstr "초기화 진행 중"
 
-# auto translated by TM merge from project: sahara-dashboard, version: master, DocId: sahara_dashboard/locale/django
 msgid "Last Updated"
 msgstr "마지막 업데이트 날짜"
 
 msgid "Launch"
 msgstr "실행"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Launch Parameters"
 msgstr "실행 매개 변수"
 
 msgid "Launch Stack"
 msgstr "Stack 시작"
 
-# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Links"
 msgstr "링크"
 
@@ -243,11 +230,9 @@ msgstr "초안 불러오기"
 msgid "Manage Drafts"
 msgstr "초안 관리"
 
-# auto translated by TM merge from project: Freezer Horizon Web UI, version: master, DocId: disaster_recovery/locale/django
 msgid "Minutes"
 msgstr "분"
 
-# auto translated by TM merge from project: designate-dashboard, version: master, DocId: designatedashboard/locale/django
 msgid "Name"
 msgstr "이름"
 
@@ -264,19 +249,15 @@ msgstr "생성하는 Stack 이름입니다."
 msgid "Next"
 msgstr "다음"
 
-# auto translated by TM merge from project: openstack-manuals, version: stable-liberty, DocId: doc/install-guide/source/locale/install-guide
 msgid "Orchestration"
 msgstr "Orchestration"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Outputs"
 msgstr "출력"
 
-# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Overview"
 msgstr "개요"
 
-# auto translated by TM merge from project: tripleo-ui, version: master, DocId: i18n/messages
 msgid "Parameters"
 msgstr "매개 변수"
 
@@ -310,11 +291,9 @@ msgstr "Stack 매개 변수 미리보기"
 msgid "Preview Template"
 msgstr "템플릿 미리보기"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Preview a new stack with the provided values."
 msgstr "제공된 값을 가지는 새 스택을 미리 봅니다."
 
-# auto translated by TM merge from project: ironic-ui, version: master, DocId: ironic_ui/locale/djangojs
 msgid "Properties"
 msgstr "속성"
 
@@ -324,11 +303,9 @@ msgstr "참조된 파일들"
 msgid "Resource"
 msgstr "리소스"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Resource ID"
 msgstr "리소스 ID"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Resource Metadata"
 msgstr "리소스 메타데이터"
 
@@ -358,7 +335,6 @@ msgid "Resumed Stack"
 msgid_plural "Resumed Stacks"
 msgstr[0] "Stack 재개됨"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Rollback"
 msgstr "롤백"
 
@@ -419,18 +395,15 @@ msgstr "Stack 이름"
 msgid "Stack Name ="
 msgstr "Stack 이름 ="
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Stack Parameters"
 msgstr "스택 매개 변수"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Stack Preview"
 msgstr "스택 미리보기"
 
 msgid "Stack Resource"
 msgstr "스택 리소스"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid "Stack Resource ID"
 msgstr "스택 리소스 ID"
 
@@ -529,14 +502,12 @@ msgstr "이 작업은 Stack 생명주기 동안 수행해야 하는 작업에 �
 msgid "Time Since Event"
 msgstr "이벤트 이후 시간"
 
-# auto translated by TM merge from project: octavia-dashboard, version: master, DocId: octavia_dashboard/locale/djangojs
 msgid "Timeout"
 msgstr "제한시간"
 
 msgid "Topology"
 msgstr "토폴로지"
 
-# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Type"
 msgstr "유형"
 
@@ -567,9 +538,6 @@ msgstr "리소스 유형 세부 정보를 찾지 못했습니다."
 msgid "Unable to retrieve resource."
 msgstr "리소스를 찾지 못했습니다."
 
-msgid "Unable to retrieve stack list."
-msgstr "Stack 목록을 찾지 못했습니다."
-
 msgid "Unable to retrieve stack resource types."
 msgstr "Stack 리소스 유형을 찾지 못했습니다."
 
@@ -585,7 +553,6 @@ msgstr "템플릿 기능을 찾지 못했습니다."
 msgid "Unable to retrieve template versions."
 msgstr "템플릿 버전을 찾지 못했습니다."
 
-# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
 msgid "Update"
 msgstr "업데이트"
 
@@ -607,7 +574,6 @@ msgstr "Stack 업데이트"
 msgid "Update Stack Parameters"
 msgstr "Stack 매개변수 업데이트"
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid ""
 "Update a stack with the provided values. Please note that any encrypted "
 "parameters, such as passwords, will be reset to default if you do not change "
@@ -629,7 +595,6 @@ msgstr ""
 "이 스택을 변경할 때 사용될 템플릿을 지정하기 위하여 사용할 수 있는 템플릿 소"
 "스 옵션 중 하나를 사용합니다."
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid ""
 "Use one of the available template source options to specify the template to "
 "be used in creating this stack."
@@ -637,7 +602,6 @@ msgstr ""
 "스택을 만드는데 필요한 템플릿을 지정하는데 사용할 수 있는 템플릿 소스 옵션 "
 "중 하나를 사용합니다."
 
-# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
 msgid ""
 "Use one of the available template source options to specify the template to "
 "be used in previewing this stack."

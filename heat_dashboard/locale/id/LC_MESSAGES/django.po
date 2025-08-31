@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-06-13 03:39+0000\n"
+"POT-Creation-Date: 2025-08-30 03:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -531,9 +531,6 @@ msgstr "Tidak dapat mengambil rincian jenis sumber daya."
 
 msgid "Unable to retrieve resource."
 msgstr "Tidak dapat mengambil sumber daya."
-
-msgid "Unable to retrieve stack list."
-msgstr "Tidak dapat mengambil daftar stack."
 
 msgid "Unable to retrieve stack resource types."
 msgstr "Tidak dapat mengambil jenis sumber daya stack."
