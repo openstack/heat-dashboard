@@ -645,7 +645,7 @@ class StackTests(test.TestCase):
                  'numbers, underscores, periods and hyphens.')
 
         self.assertFormErrors(res, 1)
-        self.assertFormError(res, "form", 'stack_name', error)
+        self.assertFormError(res.context["form"], 'stack_name', error)
 
     @test.create_mocks({api.heat: ('stacks_list', 'action_check',)})
     def test_check_stack(self):
