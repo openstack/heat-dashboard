@@ -22,8 +22,8 @@ Generate a template
 #. When in manipulate mode, click on CONNECT button to add an edge between
    icons.
 #. Click edges to show details of connections.
-#. Click the Generate Template button at the top-right of the page and 
-   generated template will be shown in a text box. You can also add 
+#. Click the Generate Template button at the top-right of the page and
+   generated template will be shown in a text box. You can also add
    modification to the template here.
 #. Click CREATE STACK to jump to continue to :guilabel:`Launch Stack`.
 #. Click DOWNLOAD STACK to download the generated template.
