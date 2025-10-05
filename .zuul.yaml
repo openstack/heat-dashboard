@@ -10,8 +10,10 @@
       - zuul: openstack-infra/devstack
       - zuul: openstack/horizon
     irrelevant-files:
-      - ^.*\.rst$
+      - ^\.gitreview$
+      - ^\.pre-commit-config\.yaml$
       - ^doc/.*$
+      - ^.*\.rst$
       - ^releasenotes/.*$
     vars:
       devstack_plugins:
