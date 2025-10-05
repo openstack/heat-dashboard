@@ -56,7 +56,7 @@ def image_field_data(request, include_empty_option=False):
     images.sort(key=lambda c: c.name)
     images_list = []
     for image in images:
-        image_label = u"{} ({})".format(image.name, filesizeformat(image.size))
+        image_label = "{} ({})".format(image.name, filesizeformat(image.size))
         images_list.append((image.id, image_label))
 
     if not images:
@@ -87,7 +87,7 @@ def create_upload_form_attributes(prefix, input_type, name):
 
 class TemplateForm(forms.SelfHandlingForm):
 
-    class Meta(object):
+    class Meta:
         name = _('Select Template')
         help_text = _('Select a template to launch a stack.')
 
@@ -167,10 +167,10 @@ class TemplateForm(forms.SelfHandlingForm):
 
     def __init__(self, *args, **kwargs):
         self.next_view = kwargs.pop('next_view')
-        super(TemplateForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def clean(self):
-        cleaned = super(TemplateForm, self).clean()
+        cleaned = super().clean()
 
         files = self.request.FILES
         self.clean_uploaded_files('template', _('template'), cleaned, files)
@@ -272,7 +272,7 @@ class TemplateForm(forms.SelfHandlingForm):
 
 
 class ChangeTemplateForm(TemplateForm):
-    class Meta(object):
+    class Meta:
         name = _('Edit Template')
         help_text = _('Select a new template to re-launch a stack.')
     stack_id = forms.CharField(label=_('Stack ID'),
@@ -283,7 +283,7 @@ class ChangeTemplateForm(TemplateForm):
 
 
 class PreviewTemplateForm(TemplateForm):
-    class Meta(object):
+    class Meta:
         name = _('Preview Template')
         help_text = _('Select a new template to preview a stack.')
 
@@ -292,7 +292,7 @@ class CreateStackForm(forms.SelfHandlingForm):
 
     param_prefix = '__param_'
 
-    class Meta(object):
+    class Meta:
         name = _('Create Stack')
 
     environment_data = forms.CharField(
@@ -325,7 +325,7 @@ class CreateStackForm(forms.SelfHandlingForm):
         # special case: load template data from API, not passed in params
         if kwargs.get('validate_me'):
             parameters = kwargs.pop('validate_me')
-        super(CreateStackForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         if self._stack_password_enabled():
             self.fields['password'] = forms.CharField(
@@ -448,7 +448,7 @@ class CreateStackForm(forms.SelfHandlingForm):
 
 class EditStackForm(CreateStackForm):
 
-    class Meta(object):
+    class Meta:
         name = _('Update Stack Parameters')
 
     stack_id = forms.CharField(
@@ -493,7 +493,7 @@ class EditStackForm(CreateStackForm):
 
 class PreviewStackForm(CreateStackForm):
 
-    class Meta(object):
+    class Meta:
         name = _('Preview Stack Parameters')
 
     def __init__(self, *args, **kwargs):

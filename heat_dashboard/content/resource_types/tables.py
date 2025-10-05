@@ -29,7 +29,7 @@ class ResourceTypesTable(tables.DataTable):
     def get_object_id(self, resource):
         return resource.resource_type
 
-    class Meta(object):
+    class Meta:
         name = "resource_types"
         verbose_name = _("Resource Types")
         table_actions = (ResourceTypesFilterAction,)

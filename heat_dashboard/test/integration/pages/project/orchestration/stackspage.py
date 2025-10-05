@@ -17,5 +17,5 @@ from openstack_dashboard.test.integration_tests.pages import basepage
 
 class StacksPage(basepage.BaseNavigationPage):
     def __init__(self, driver, conf):
-        super(StacksPage, self).__init__(driver, conf)
+        super().__init__(driver, conf)
         self._page_title = "Stacks"

@@ -17,5 +17,5 @@ from openstack_dashboard.test.integration_tests.pages import basepage
 
 class TemplateversionsPage(basepage.BaseNavigationPage):
     def __init__(self, driver, conf):
-        super(TemplateversionsPage, self).__init__(driver, conf)
+        super().__init__(driver, conf)
         self._page_title = "Template Versions"

@@ -73,14 +73,14 @@ def _apply_panel_mocks(patchers=None):
 
 class RequestFactoryWithMessages(RequestFactory):
     def get(self, *args, **kwargs):
-        req = super(RequestFactoryWithMessages, self).get(*args, **kwargs)
+        req = super().get(*args, **kwargs)
         req.user = utils.get_user(req)
         req.session = []
         req._messages = default_storage(req)
         return req
 
     def post(self, *args, **kwargs):
-        req = super(RequestFactoryWithMessages, self).post(*args, **kwargs)
+        req = super().post(*args, **kwargs)
         req.user = utils.get_user(req)
         req.session = []
         req._messages = default_storage(req)
@@ -128,10 +128,10 @@ class TestCase(horizon_helpers.TestCase):
 
         self.patchers = _apply_panel_mocks()
 
-        super(TestCase, self).setUp()
+        super().setUp()
 
     def _setup_test_data(self):
-        super(TestCase, self)._setup_test_data()
+        super()._setup_test_data()
         test_utils.load_test_data(self)
         self.context = {
             'authorized_tenants': self.tenants.list(),
@@ -159,7 +159,7 @@ class TestCase(horizon_helpers.TestCase):
         self.setActiveUser(**base_kwargs)
 
     def _setup_request(self):
-        super(TestCase, self)._setup_request()
+        super()._setup_request()
         self.request.session['token'] = self.token.id
 
     def tearDown(self):
@@ -167,7 +167,7 @@ class TestCase(horizon_helpers.TestCase):
         context_processors.openstack = self._real_context_processor
         utils.get_user = self._real_get_user
         mock.patch.stopall()
-        super(TestCase, self).tearDown()
+        super().tearDown()
 
         # cause a test failure if an unmocked API call was attempted
         if self.missing_mocks:
@@ -238,9 +238,10 @@ class TestCase(horizon_helpers.TestCase):
                 "%d errors were found on the form, %d expected" % \
                 (len(errors), count)
             if message and message not in str(errors):
-                self.fail("Expected message not found, instead found: %s"
-                          % ["%s: %s" % (key, [e for e in field_errors]) for
-                             (key, field_errors) in errors.items()])
+                self.fail(
+                    "Expected message not found, instead found: %s"
+                    % ["{}: {}".format(key, [e for e in field_errors]) for
+                       (key, field_errors) in errors.items()])
         else:
             assert len(errors) > 0, "No errors were found on the form"
 
@@ -251,9 +252,9 @@ class TestCase(horizon_helpers.TestCase):
         """
         if response.status_code == expected_code:
             return
-        self.fail('status code %r != %r: %s' % (response.status_code,
-                                                expected_code,
-                                                response.content))
+        self.fail('status code {!r} != {!r}: {}'.format(response.status_code,
+                                                        expected_code,
+                                                        response.content))
 
     def assertItemsCollectionEqual(self, response, items_list):
         self.assertEqual(response.json, {"items": items_list})
@@ -318,7 +319,7 @@ class BaseAdminViewTests(TestCase):
     def setActiveUser(self, *args, **kwargs):
         if "roles" not in kwargs:
             kwargs['roles'] = [self.roles.admin._info]
-        super(BaseAdminViewTests, self).setActiveUser(*args, **kwargs)
+        super().setActiveUser(*args, **kwargs)
 
     def setSessionValues(self, **kwargs):
         settings.SESSION_ENGINE = 'django.contrib.sessions.backends.file'
@@ -340,7 +341,7 @@ class APITestCase(TestCase):
     """
 
     def setUp(self):
-        super(APITestCase, self).setUp()
+        super().setUp()
         utils.patch_middleware_get_user()
 
         def fake_keystoneclient(request, admin=False):
@@ -361,7 +362,7 @@ class APITestCase(TestCase):
                                self.stub_heatclient())
 
     def tearDown(self):
-        super(APITestCase, self).tearDown()
+        super().tearDown()
         project_api.keystone.keystoneclient = self._original_keystoneclient
         api.heat.heatclient = self._original_heatclient
 
@@ -398,12 +399,12 @@ class RestAPITestCase(TestCase):
 
 
 # Need this to test both Glance API V1 and V2 versions
-class ResetImageAPIVersionMixin(object):
+class ResetImageAPIVersionMixin:
 
     def setUp(self):
-        super(ResetImageAPIVersionMixin, self).setUp()
+        super().setUp()
         project_api.glance.VERSIONS.clear_active_cache()
 
     def tearDown(self):
         project_api.glance.VERSIONS.clear_active_cache()
-        super(ResetImageAPIVersionMixin, self).tearDown()
+        super().tearDown()

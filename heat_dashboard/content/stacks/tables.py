@@ -56,16 +56,16 @@ class CheckStack(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Check Stack",
-            u"Check Stacks",
+            "Check Stack",
+            "Check Stacks",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Checked Stack",
-            u"Checked Stacks",
+            "Checked Stack",
+            "Checked Stacks",
             count
         )
 
@@ -82,16 +82,16 @@ class SuspendStack(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Suspend Stack",
-            u"Suspend Stacks",
+            "Suspend Stack",
+            "Suspend Stacks",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Suspended Stack",
-            u"Suspended Stacks",
+            "Suspended Stack",
+            "Suspended Stacks",
             count
         )
 
@@ -109,16 +109,16 @@ class ResumeStack(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Resume Stack",
-            u"Resume Stacks",
+            "Resume Stack",
+            "Resume Stacks",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Resumed Stack",
-            u"Resumed Stacks",
+            "Resumed Stack",
+            "Resumed Stacks",
             count
         )
 
@@ -142,16 +142,16 @@ class DeleteStack(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Stack",
-            u"Delete Stacks",
+            "Delete Stack",
+            "Delete Stacks",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted Stack",
-            u"Deleted Stacks",
+            "Deleted Stack",
+            "Deleted Stacks",
             count
         )
 
@@ -201,65 +201,65 @@ class StacksTable(tables.DataTable):
     )
     STACK_STATUS_DISPLAY_CHOICES = (
         ("init_in_progress", pgettext_lazy("current status of stack",
-                                           u"Init In Progress")),
+                                           "Init In Progress")),
         ("init_complete", pgettext_lazy("current status of stack",
-                                        u"Init Complete")),
+                                        "Init Complete")),
         ("init_failed", pgettext_lazy("current status of stack",
-                                      u"Init Failed")),
+                                      "Init Failed")),
         ("create_in_progress", pgettext_lazy("current status of stack",
-                                             u"Create In Progress")),
+                                             "Create In Progress")),
         ("create_complete", pgettext_lazy("current status of stack",
-                                          u"Create Complete")),
+                                          "Create Complete")),
         ("create_failed", pgettext_lazy("current status of stack",
-                                        u"Create Failed")),
+                                        "Create Failed")),
         ("delete_in_progress", pgettext_lazy("current status of stack",
-                                             u"Delete In Progress")),
+                                             "Delete In Progress")),
         ("delete_complete", pgettext_lazy("current status of stack",
-                                          u"Delete Complete")),
+                                          "Delete Complete")),
         ("delete_failed", pgettext_lazy("current status of stack",
-                                        u"Delete Failed")),
+                                        "Delete Failed")),
         ("update_in_progress", pgettext_lazy("current status of stack",
-                                             u"Update In Progress")),
+                                             "Update In Progress")),
         ("update_complete", pgettext_lazy("current status of stack",
-                                          u"Update Complete")),
+                                          "Update Complete")),
         ("update_failed", pgettext_lazy("current status of stack",
-                                        u"Update Failed")),
+                                        "Update Failed")),
         ("rollback_in_progress", pgettext_lazy("current status of stack",
-                                               u"Rollback In Progress")),
+                                               "Rollback In Progress")),
         ("rollback_complete", pgettext_lazy("current status of stack",
-                                            u"Rollback Complete")),
+                                            "Rollback Complete")),
         ("rollback_failed", pgettext_lazy("current status of stack",
-                                          u"Rollback Failed")),
+                                          "Rollback Failed")),
         ("suspend_in_progress", pgettext_lazy("current status of stack",
-                                              u"Suspend In Progress")),
+                                              "Suspend In Progress")),
         ("suspend_complete", pgettext_lazy("current status of stack",
-                                           u"Suspend Complete")),
+                                           "Suspend Complete")),
         ("suspend_failed", pgettext_lazy("current status of stack",
-                                         u"Suspend Failed")),
+                                         "Suspend Failed")),
         ("resume_in_progress", pgettext_lazy("current status of stack",
-                                             u"Resume In Progress")),
+                                             "Resume In Progress")),
         ("resume_complete", pgettext_lazy("current status of stack",
-                                          u"Resume Complete")),
+                                          "Resume Complete")),
         ("resume_failed", pgettext_lazy("current status of stack",
-                                        u"Resume Failed")),
+                                        "Resume Failed")),
         ("adopt_in_progress", pgettext_lazy("current status of stack",
-                                            u"Adopt In Progress")),
+                                            "Adopt In Progress")),
         ("adopt_complete", pgettext_lazy("current status of stack",
-                                         u"Adopt Complete")),
+                                         "Adopt Complete")),
         ("adopt_failed", pgettext_lazy("current status of stack",
-                                       u"Adopt Failed")),
+                                       "Adopt Failed")),
         ("snapshot_in_progress", pgettext_lazy("current status of stack",
-                                               u"Snapshot In Progress")),
+                                               "Snapshot In Progress")),
         ("snapshot_complete", pgettext_lazy("current status of stack",
-                                            u"Snapshot Complete")),
+                                            "Snapshot Complete")),
         ("snapshot_failed", pgettext_lazy("current status of stack",
-                                          u"Snapshot Failed")),
+                                          "Snapshot Failed")),
         ("check_in_progress", pgettext_lazy("current status of stack",
-                                            u"Check In Progress")),
+                                            "Check In Progress")),
         ("check_complete", pgettext_lazy("current status of stack",
-                                         u"Check Complete")),
+                                         "Check Complete")),
         ("check_failed", pgettext_lazy("current status of stack",
-                                       u"Check Failed")),
+                                       "Check Failed")),
     )
     name = tables.Column("stack_name",
                          verbose_name=_("Stack Name"),
@@ -285,7 +285,7 @@ class StacksTable(tables.DataTable):
     def get_object_display(self, stack):
         return stack.stack_name
 
-    class Meta(object):
+    class Meta:
         name = "stacks"
         verbose_name = _("Stacks")
         pagination_param = 'stack_marker'
@@ -330,7 +330,7 @@ class EventsTable(tables.DataTable):
     statusreason = tables.Column("resource_status_reason",
                                  verbose_name=_("Status Reason"),)
 
-    class Meta(object):
+    class Meta:
         name = "events"
         verbose_name = _("Stack Events")
         pagination_param = 'event_marker'
@@ -342,7 +342,7 @@ class ResourcesUpdateRow(tables.Row):
     def get_data(self, request, resource_name):
         try:
             stack = self.table.stack
-            stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
+            stack_identifier = '{}/{}'.format(stack.stack_name, stack.id)
             # return api.heat.resource_get(
             #     request, stack_identifier, resource_name)
             return api.heat.resource_get(request,
@@ -393,14 +393,14 @@ class ResourcesTable(tables.DataTable):
 
     def __init__(self, request, data=None,
                  needs_form_wrapper=None, **kwargs):
-        super(ResourcesTable, self).__init__(
+        super().__init__(
             request, data, needs_form_wrapper, **kwargs)
         self.stack = kwargs['stack']
 
     def get_object_id(self, datum):
         return datum.resource_name
 
-    class Meta(object):
+    class Meta:
         name = "resources"
         verbose_name = _("Stack Resources")
         status_columns = ["status_hidden", ]

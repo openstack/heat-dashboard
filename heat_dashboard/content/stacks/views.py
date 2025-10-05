@@ -42,7 +42,7 @@ class IndexView(tables.DataTableView):
     template_name = 'project/stacks/index.html'
 
     def __init__(self, *args, **kwargs):
-        super(IndexView, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self._more = None
 
     def has_prev_data(self, table):
@@ -105,7 +105,7 @@ class SelectTemplateView(forms.ModalFormView):
         return initial
 
     def get_form_kwargs(self):
-        kwargs = super(SelectTemplateView, self).get_form_kwargs()
+        kwargs = super().get_form_kwargs()
         kwargs['next_view'] = CreateStackView
         return kwargs
 
@@ -121,7 +121,7 @@ class ChangeTemplateView(forms.ModalFormView):
     page_title = _("Change Template")
 
     def get_context_data(self, **kwargs):
-        context = super(ChangeTemplateView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         args = (self.get_object().id,)
         context['submit_url'] = reverse(self.submit_url, args=args)
         return context
@@ -144,7 +144,7 @@ class ChangeTemplateView(forms.ModalFormView):
                 }
 
     def get_form_kwargs(self):
-        kwargs = super(ChangeTemplateView, self).get_form_kwargs()
+        kwargs = super().get_form_kwargs()
         kwargs['next_view'] = EditStackView
         return kwargs
 
@@ -159,7 +159,7 @@ class PreviewTemplateView(forms.ModalFormView):
     page_title = _("Preview Template")
 
     def get_form_kwargs(self):
-        kwargs = super(PreviewTemplateView, self).get_form_kwargs()
+        kwargs = super().get_form_kwargs()
         kwargs['next_view'] = PreviewStackView
         return kwargs
 
@@ -188,7 +188,7 @@ class CreateStackView(forms.ModalFormView):
         return initial
 
     def get_form_kwargs(self):
-        kwargs = super(CreateStackView, self).get_form_kwargs()
+        kwargs = super().get_form_kwargs()
         if 'parameters' in self.kwargs:
             kwargs['parameters'] = self.kwargs['parameters']
         else:
@@ -208,7 +208,7 @@ class EditStackView(CreateStackView):
     page_title = _("Update Stack")
 
     def get_initial(self):
-        initial = super(EditStackView, self).get_initial()
+        initial = super().get_initial()
 
         initial['stack'] = self.get_object()['stack']
         if initial['stack']:
@@ -218,7 +218,7 @@ class EditStackView(CreateStackView):
         return initial
 
     def get_context_data(self, **kwargs):
-        context = super(EditStackView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         args = (self.get_object()['stack'].id,)
         context['submit_url'] = reverse(self.submit_url, args=args)
         return context
@@ -258,8 +258,7 @@ class PreviewStackDetailsView(forms.ModalFormMixin, views.HorizonTemplateView):
     page_title = _("Preview Stack Details")
 
     def get_context_data(self, **kwargs):
-        context = super(
-            PreviewStackDetailsView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['stack_preview'] = self.kwargs['stack_preview'].to_dict()
         return context
 
@@ -270,7 +269,7 @@ class DetailView(tabs.TabView):
     page_title = "{{ stack.stack_name|default:stack.id }}"
 
     def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         stack = self.get_data(self.request, **kwargs)
         table = project_tables.StacksTable(self.request)
         context["stack"] = stack
@@ -319,7 +318,7 @@ class ResourceView(tabs.TabView):
                  "default:resource.logical_resource_id }}"
 
     def get_context_data(self, **kwargs):
-        context = super(ResourceView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["resource"] = self.get_data(self.request, **kwargs)
         context["metadata"] = self.get_metadata(self.request, **kwargs)
         return context

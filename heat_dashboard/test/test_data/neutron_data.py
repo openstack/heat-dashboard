@@ -202,7 +202,7 @@ def data(TEST):
                    'id': '443a4d7a-4bd2-4474-9a77-02b35c9f8c95',
                    'name': 'another_group'}
     groups = [sec_group_1, sec_group_2, sec_group_3]
-    sg_name_dict = dict([(sg['id'], sg['name']) for sg in groups])
+    sg_name_dict = {sg['id']: sg['name'] for sg in groups}
     for sg in groups:
         sg['security_group_rules'] = []
         # OpenStack Dashboard internaly API.

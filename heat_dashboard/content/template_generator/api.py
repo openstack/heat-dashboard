@@ -165,7 +165,7 @@ def get_template_versions(request):
             if version.type == 'hot']
 
 
-class APIThread(object):
+class APIThread:
     thread_pool = pool.ThreadPool(processes=API_PARALLEL)
     async_results = {}
 

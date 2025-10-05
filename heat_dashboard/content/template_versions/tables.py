@@ -30,7 +30,7 @@ class TemplateVersionsTable(tables.DataTable):
     def get_object_id(self, template_versions):
         return template_versions.version
 
-    class Meta(object):
+    class Meta:
         name = "template_versions"
         table_actions = (tables.FilterAction,)
         verbose_name = _("Template Versions")
@@ -45,7 +45,7 @@ class TemplateFunctionsTable(tables.DataTable):
     def get_object_id(self, template_functions):
         return template_functions.functions
 
-    class Meta(object):
+    class Meta:
         name = "template_functions"
         verbose_name = _("Template Functions")
         table_actions = (tables.FilterAction,)

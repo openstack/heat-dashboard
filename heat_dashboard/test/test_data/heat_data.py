@@ -333,18 +333,18 @@ SNAPSHOT_CREATE = """
 """
 
 
-class Environment(object):
+class Environment:
     def __init__(self, data):
         self.data = data
 
 
-class Template(object):
+class Template:
     def __init__(self, data, validate):
         self.data = data
         self.validate = validate
 
 
-class Snapshot(object):
+class Snapshot:
     def __init__(self, data):
         self.data = data
 
@@ -412,17 +412,17 @@ def data(TEST):
                 'AWS::StackId': (
                     'arn:openstack:heat::2ce287:stacks/teststack/88553ec'),
                 'DBRootPassword': '******',
-                'AWS::StackName': "teststack{0}".format(i),
+                'AWS::StackName': "teststack{}".format(i),
                 'DBPassword': '******',
                 'AWS::Region': 'ap-southeast-1',
                 'DBName': 'wordpress'
             },
             "stack_status_reason": "Stack successfully created",
-            "stack_name": "stack-test{0}".format(i),
+            "stack_name": "stack-test{}".format(i),
             "creation_time": "2013-04-22T00:11:39Z",
             "updated_time": "2013-04-22T00:11:39Z",
             "stack_status": "CREATE_COMPLETE",
-            "id": "05b4f39f-ea96-4d91-910c-e758c078a089{0}".format(i)
+            "id": "05b4f39f-ea96-4d91-910c-e758c078a089{}".format(i)
         }
         stack = stacks.Stack(stacks.StackManager(None), stack_data)
         TEST.stacks.add(stack)
@@ -492,7 +492,7 @@ def data(TEST):
 
             "creation_time": "2016-02-21T04:02:54",
             "status_reason": "Stack SNAPSHOT completed successfully",
-            "id": "01558a3b-ba05-4427-bbb4-1e4ab71cfca{0}".format(i)
+            "id": "01558a3b-ba05-4427-bbb4-1e4ab71cfca{}".format(i)
         }
         TEST.stack_snapshot.add(snapshot_data)
 

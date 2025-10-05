@@ -34,7 +34,7 @@ INDEX_URL = reverse('horizon:project:stacks:index')
 DETAIL_URL = 'horizon:project:stacks:detail'
 
 
-class MockResource(object):
+class MockResource:
     def __init__(self, resource_type, physical_resource_id):
         self.resource_type = resource_type
         self.physical_resource_id = physical_resource_id
@@ -132,17 +132,17 @@ class StackTests(test.TestCase):
         self.assertEqual(len(res.context['stacks_table'].data),
                          settings.API_RESULT_PAGE_SIZE)
 
-        url = "%s?%s=%s" % (reverse('horizon:project:stacks:index'),
-                            tables.StacksTable._meta.pagination_param,
-                            stacks[2].id)
+        url = "{}?{}={}".format(reverse('horizon:project:stacks:index'),
+                                tables.StacksTable._meta.pagination_param,
+                                stacks[2].id)
         res = self.client.get(url)
         # get second page (items 2-4)
         self.assertEqual(len(res.context['stacks_table'].data),
                          settings.API_RESULT_PAGE_SIZE)
 
-        url = "%s?%s=%s" % (reverse('horizon:project:stacks:index'),
-                            tables.StacksTable._meta.pagination_param,
-                            stacks[4].id)
+        url = "{}?{}={}".format(reverse('horizon:project:stacks:index'),
+                                tables.StacksTable._meta.pagination_param,
+                                stacks[4].id)
         res = self.client.get(url)
         # get third page (item 5)
         self.assertEqual(len(res.context['stacks_table'].data),
@@ -172,16 +172,16 @@ class StackTests(test.TestCase):
         self.assertEqual(len(res.context['stacks_table'].data),
                          settings.API_RESULT_PAGE_SIZE)
 
-        url = "%s?%s=%s" % (reverse('horizon:project:stacks:index'),
-                            tables.StacksTable._meta.pagination_param,
-                            stacks[2].id)
+        url = "{}?{}={}".format(reverse('horizon:project:stacks:index'),
+                                tables.StacksTable._meta.pagination_param,
+                                stacks[2].id)
         res = self.client.get(url)
         # get second page (item 3)
         self.assertEqual(len(res.context['stacks_table'].data), 1)
 
-        url = "%s?%s=%s" % (reverse('horizon:project:stacks:index'),
-                            tables.StacksTable._meta.prev_pagination_param,
-                            stacks[2].id)
+        url = "{}?{}={}".format(reverse('horizon:project:stacks:index'),
+                                tables.StacksTable._meta.prev_pagination_param,
+                                stacks[2].id)
         res = self.client.get(url)
         # prev back to get first page with 2 pages
         self.assertEqual(len(res.context['stacks_table'].data),
@@ -840,7 +840,7 @@ class StackTests(test.TestCase):
 
 class TemplateFormTests(test.TestCase):
 
-    class SimpleFile(object):
+    class SimpleFile:
         def __init__(self, name, data):
             self.name = name
             self.data = data

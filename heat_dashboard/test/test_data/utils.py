@@ -41,7 +41,7 @@ def load_test_data(load_onto=None):
         return TestData(*loaders)
 
 
-class TestData(object):
+class TestData:
     """Holder object for test data.
 
     Any functions passed to the init method will be called with the
@@ -69,7 +69,7 @@ class TestData(object):
             data_func(self)
 
 
-class TestDataContainer(object):
+class TestDataContainer:
     """A container for test data objects.
 
     The behavior of this class is meant to mimic a "manager" class, which

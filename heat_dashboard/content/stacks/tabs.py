@@ -99,7 +99,7 @@ class StackEventsTab(tabs.TableTab):
 
     def get_events_data(self):
         stack = self.tab_group.kwargs['stack']
-        stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
+        stack_identifier = '{}/{}'.format(stack.stack_name, stack.id)
         prev_marker = self.request.GET.get(
             project_tables.EventsTable._meta.prev_pagination_param)
         if prev_marker is not None:
@@ -156,7 +156,7 @@ class StackResourcesTab(tabs.Tab):
     def get_context_data(self, request):
         stack = self.tab_group.kwargs['stack']
         try:
-            stack_identifier = '%s/%s' % (stack.stack_name, stack.id)
+            stack_identifier = '{}/{}'.format(stack.stack_name, stack.id)
             resources = api.heat.resources_list(self.request, stack_identifier)
             LOG.debug('got resources %s', resources)
             # The stack id is needed to generate the resource URL.
