@@ -5,15 +5,16 @@
 # Andi Chandler <andi@gowling.com>, 2022. #zanata
 # Andi Chandler <andi@gowling.com>, 2023. #zanata
 # Andi Chandler <andi@gowling.com>, 2024. #zanata
+# Andi Chandler <andi@gowling.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: Heat Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-14 07:22+0000\n"
+"POT-Creation-Date: 2025-11-20 17:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-04-18 12:34+0000\n"
+"PO-Revision-Date: 2026-01-07 11:20+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -26,6 +27,12 @@ msgstr "1.0.0"
 msgid "1.1.0"
 msgstr "1.1.0"
 
+msgid "12.0.0"
+msgstr "12.0.0"
+
+msgid "14.0.0"
+msgstr "14.0.0"
+
 msgid "2023.1 Series Release Notes"
 msgstr "2023.1 Series Release Notes"
 
@@ -34,6 +41,15 @@ msgstr "2023.2 Series Release Notes"
 
 msgid "2024.1 Series Release Notes"
 msgstr "2024.1 Series Release Notes"
+
+msgid "2024.2 Series Release Notes"
+msgstr "2024.2 Series Release Notes"
+
+msgid "2025.1 Series Release Notes"
+msgstr "2025.1 Series Release Notes"
+
+msgid "2025.2 Series Release Notes"
+msgstr "2025.2 Series Release Notes"
 
 msgid "3.0.0"
 msgstr "3.0.0"
@@ -126,6 +142,13 @@ msgstr ""
 "Python 3.6 & 3.7 support has been dropped. The minimum version of Python now "
 "supported is Python 3.8."
 
+msgid ""
+"Python 3.8 support was dropped. The minimum version of Python now supported "
+"is Python 3.9."
+msgstr ""
+"Python 3.8 support was dropped. The minimum version of Python now supported "
+"is Python 3.9."
+
 msgid "Queens Series Release Notes"
 msgstr "Queens Series Release Notes"
 
@@ -134,6 +157,13 @@ msgstr "Rocky Series Release Notes"
 
 msgid "Stein Series Release Notes"
 msgstr "Stein Series Release Notes"
+
+msgid ""
+"Support for Python 3.9 has been removed. Now Python 3.10 is the minimum "
+"version supported."
+msgstr ""
+"Support for Python 3.9 has been removed. Now Python 3.10 is the minimum "
+"version supported."
 
 msgid ""
 "The default configuration file has been updated and now includes the "
