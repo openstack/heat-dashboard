@@ -10,6 +10,7 @@
       - zuul: openstack-infra/devstack
       - zuul: openstack/horizon
     irrelevant-files:
+      - ^\.gitignore$
       - ^\.gitreview$
       - ^\.pre-commit-config\.yaml$
       - ^doc/.*$
