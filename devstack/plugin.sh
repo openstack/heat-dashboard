@@ -3,15 +3,7 @@
 HEAT_DASHBOARD_DIR=$(cd $(dirname $BASH_SOURCE)/.. && pwd)
 
 function install_heat_dashboard {
-    # NOTE(shu-mutou): workaround for devstack bug: 1540328
-    # where devstack install 'test-requirements' but should not do it
-    # for heat-dashboard project as it installs Horizon from url.
-    # Remove following two 'mv' commands when mentioned bug is fixed.
-    mv $HEAT_DASHBOARD_DIR/test-requirements.txt $HEAT_DASHBOARD_DIR/_test-requirements.txt
-
     setup_develop ${HEAT_DASHBOARD_DIR}
-
-    mv $HEAT_DASHBOARD_DIR/_test-requirements.txt $HEAT_DASHBOARD_DIR/test-requirements.txt
 }
 
 function configure_heat_dashboard {
