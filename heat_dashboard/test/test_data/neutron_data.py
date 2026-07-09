@@ -31,13 +31,9 @@ def data(TEST):
     TEST.security_groups = utils.TestDataContainer()
     TEST.qos_policies = utils.TestDataContainer()
 
-    # Data return by neutronclient.
-    TEST.api_networks = utils.TestDataContainer()
-    TEST.api_subnets = utils.TestDataContainer()
-
     # Data returned by SDK:
-    TEST.api_networks_sdk = list()
-    TEST.api_subnets_sdk = list()
+    TEST.api_networks = list()
+    TEST.api_subnets = list()
 
     # 1st network.
     network_dict = {'is_admin_state_up': True,
@@ -82,12 +78,9 @@ def data(TEST):
         'ipv6_address_mode': 'slaac'
     }
 
-    TEST.api_networks.add(network_dict)
-    TEST.api_subnets.add(subnet_dict)
-    TEST.api_subnets.add(subnetv6_dict)
-    TEST.api_networks_sdk.append(sdk_net.Network(**network_dict))
-    TEST.api_subnets_sdk.append(sdk_subnet.Subnet(**subnet_dict))
-    TEST.api_subnets_sdk.append(sdk_subnet.Subnet(**subnetv6_dict))
+    TEST.api_networks.append(sdk_net.Network(**network_dict))
+    TEST.api_subnets.append(sdk_subnet.Subnet(**subnet_dict))
+    TEST.api_subnets.append(sdk_subnet.Subnet(**subnetv6_dict))
 
     network = copy.deepcopy(network_dict)
     subnet = neutron.Subnet(subnet_dict)
@@ -147,12 +140,9 @@ def data(TEST):
                    'network_id': network_dict['id'],
                    'tenant_id': network_dict['tenant_id']}
 
-    TEST.api_networks.add(network_dict)
-    TEST.api_subnets.add(subnet_dict)
-    TEST.api_subnets.add(subnetv6_dict)
-    TEST.api_networks_sdk.append(sdk_net.Network(**network_dict))
-    TEST.api_subnets_sdk.append(sdk_subnet.Subnet(**subnet_dict))
-    TEST.api_subnets_sdk.append(sdk_subnet.Subnet(**subnetv6_dict))
+    TEST.api_networks.append(sdk_net.Network(**network_dict))
+    TEST.api_subnets.append(sdk_subnet.Subnet(**subnet_dict))
+    TEST.api_subnets.append(sdk_subnet.Subnet(**subnetv6_dict))
 
     ext_net = network_dict
     network = copy.deepcopy(network_dict)
