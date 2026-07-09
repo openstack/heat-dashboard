@@ -30,7 +30,6 @@ from django.test.client import RequestFactory
 
 from heatclient import client as heat_client
 from keystoneclient.v2_0 import client as keystone_client
-from neutronclient.v2_0 import client as neutron_client
 from openstack_auth import user
 from openstack_auth import utils
 from requests.packages.urllib3.connection import HTTPConnection
@@ -378,12 +377,6 @@ class APITestCase(TestCase):
             keystone_client.Client.__dir__ = lambda: []
             self.keystoneclient = keystone_client.Client
         return self.keystoneclient
-
-    def stub_neutronclient(self):
-        if not hasattr(self, "neutronclient"):
-            neutron_client.Client = mock.Mock()
-            self.neutronclient = neutron_client.Client
-        return self.neutronclient
 
     def stub_heatclient(self):
         if not hasattr(self, "heatclient"):
