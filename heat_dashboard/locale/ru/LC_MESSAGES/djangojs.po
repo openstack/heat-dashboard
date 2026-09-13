@@ -4,15 +4,16 @@
 # Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
 # Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
 # Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-08-15 09:13+0000\n"
+"POT-Creation-Date: 2026-09-10 09:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-08-26 06:58+0000\n"
+"PO-Revision-Date: 2026-09-12 01:05+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -87,7 +88,7 @@ msgstr "Показать больше свойств"
 
 #, python-format
 msgid "Stack %s was successfully created."
-msgstr "Стек %s успешно создан."
+msgstr "Стек %s был успешно создан."
 
 #, python-format
 msgid "Unable to check Stack: %s."
