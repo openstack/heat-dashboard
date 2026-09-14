@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fixed a bug where the Template Generator panel failed with an opaque
+    "Cannot get openstack resources" HTTP 500 error, with no indication of
+    the actual underlying cause shown to the user.
