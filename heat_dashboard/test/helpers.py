@@ -389,15 +389,3 @@ class RestAPITestCase(TestCase):
     def setUp(self):
         super().setUp()
         mock.patch('horizon.utils.http.is_ajax', return_value=True).start()
-
-
-# Need this to test both Glance API V1 and V2 versions
-class ResetImageAPIVersionMixin:
-
-    def setUp(self):
-        super().setUp()
-        project_api.glance.VERSIONS.clear_active_cache()
-
-    def tearDown(self):
-        project_api.glance.VERSIONS.clear_active_cache()
-        super().tearDown()
