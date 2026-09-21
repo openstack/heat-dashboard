@@ -39,7 +39,7 @@ def handle_exception(func):
         try:
             ret = func(*args, **kwargs)
         except Exception as error:
-            err = error.message
+            err = str(error)
         return ret if ret else [], err
     return wrapped
 
@@ -132,7 +132,7 @@ def get_qos_policies(request):
 
 @handle_exception
 def get_availability_zones(request):
-    return [{'id': az.zoneName, 'name': az.zoneName}
+    return [{'id': az.name, 'name': az.name}
             for az in dashboard_api.nova.availability_zone_list(request)]
 
 
@@ -179,7 +179,7 @@ class APIThread:
             ret, err = self.async_results[apikey].get(
                 timeout=API_TIMEOUT)
         except Exception as error:
-            ret, err = [], error.message
+            ret, err = [], str(error)
         return ret, err
 
 

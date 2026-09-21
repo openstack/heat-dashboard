@@ -14,10 +14,12 @@
 
 import json
 
-from novaclient.v2 import availability_zones
 from novaclient.v2 import flavors
 from novaclient.v2 import keypairs
 from novaclient.v2 import servers
+
+from openstack.compute.v2 import availability_zone as az_resource
+from openstack.test import fakes
 
 from heat_dashboard.test.test_data import utils
 
@@ -184,17 +186,15 @@ def data(TEST):
     TEST.servers.add(server_1, server_2, server_4)
 
     # Availability Zones
-    TEST.availability_zones.add(availability_zones.AvailabilityZone(
-        availability_zones.AvailabilityZoneManager(None),
-        {
-            'zoneName': 'nova',
-            'zoneState': {'available': True},
-            'hosts': {
-                "host001": {
-                    "nova-network": {
-                        "active": True,
-                        "available": True,
-                    },
+    TEST.availability_zones.add(fakes.generate_fake_resource(
+        az_resource.AvailabilityZone,
+        name='nova',
+        state={'available': True},
+        hosts={
+            "host001": {
+                "nova-network": {
+                    "active": True,
+                    "available": True,
                 },
             },
         },
