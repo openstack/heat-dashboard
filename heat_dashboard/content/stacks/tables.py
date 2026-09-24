@@ -342,7 +342,7 @@ class ResourcesUpdateRow(tables.Row):
     def get_data(self, request, resource_name):
         try:
             stack = self.table.stack
-            stack_identifier = '{}/{}'.format(stack.stack_name, stack.id)
+            stack_identifier = f'{stack.stack_name}/{stack.id}'
             # return api.heat.resource_get(
             #     request, stack_identifier, resource_name)
             return api.heat.resource_get(request,

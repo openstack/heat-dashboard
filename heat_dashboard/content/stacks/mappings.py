@@ -136,7 +136,7 @@ def stack_output(output):
         parts = urlparse.urlsplit(output)
         if parts.netloc and parts.scheme in ('http', 'https'):
             url = html.escape(output)
-            safe_link = '<a href="{}" target="_blank">{}</a>'.format(url, url)
+            safe_link = f'<a href="{url}" target="_blank">{url}</a>'
             return safestring.mark_safe(safe_link)
     if isinstance(output, dict) or isinstance(output, list):
         output = json.dumps(output, indent=2)

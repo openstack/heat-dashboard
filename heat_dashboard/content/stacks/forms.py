@@ -56,7 +56,7 @@ def image_field_data(request, include_empty_option=False):
     images.sort(key=lambda c: c.name)
     images_list = []
     for image in images:
-        image_label = "{} ({})".format(image.name, filesizeformat(image.size))
+        image_label = f"{image.name} ({filesizeformat(image.size)})"
         images_list.append((image.id, image_label))
 
     if not images:

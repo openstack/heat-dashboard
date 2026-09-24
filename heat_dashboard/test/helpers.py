@@ -239,7 +239,7 @@ class TestCase(horizon_helpers.TestCase):
             if message and message not in str(errors):
                 self.fail(
                     "Expected message not found, instead found: %s"
-                    % ["{}: {}".format(key, [e for e in field_errors]) for
+                    % [f"{key}: {[e for e in field_errors]}" for
                        (key, field_errors) in errors.items()])
         else:
             assert len(errors) > 0, "No errors were found on the form"
