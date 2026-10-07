@@ -5,7 +5,6 @@
 # Artem <amikhalev90@gmail.com>, 2016. #zanata
 # Daisy <guoyingc@cn.ibm.com>, 2016. #zanata
 # Irina Kochetova <ikochetova@hystax.com>, 2016. #zanata
-# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
 # Nikita Burtsev <nikita.burtsev@gmail.com>, 2016. #zanata
 # Artem <amikhalev90@gmail.com>, 2017. #zanata
 # Fedor Tarasenko <feodor.tarasenko@gmail.com>, 2017. #zanata
@@ -14,15 +13,16 @@
 # Roman Gorshunov <roman.gorshunov@att.com>, 2021. #zanata
 # Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
 # Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: heat-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-08-30 03:38+0000\n"
+"POT-Creation-Date: 2026-09-27 10:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-08-30 11:21+0000\n"
+"PO-Revision-Date: 2026-09-26 06:06+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -64,10 +64,10 @@ msgid "Adopt In Progress"
 msgstr "Выполняется принятие"
 
 msgid "An external (HTTP) URL to load the template from."
-msgstr "Внешний (HTTP) URL для загрузки образа."
+msgstr "Внешняя (HTTP) ссылка для загрузки шаблона."
 
 msgid "Attributes"
-msgstr "Аттрибуты"
+msgstr "Атрибуты"
 
 msgid "Case sensitive"
 msgstr "Чувствительно к регистру"
@@ -79,7 +79,7 @@ msgid "Change Stack Template"
 msgstr "Изменить шаблон стека"
 
 msgid "Change Template"
-msgstr "Сменить шаблон"
+msgstr "Изменить шаблон"
 
 msgctxt "current status of stack"
 msgid "Check Complete"
@@ -144,7 +144,7 @@ msgstr "Удаление завершено"
 
 msgctxt "current status of stack"
 msgid "Delete Failed"
-msgstr "Удаление не удалось"
+msgstr "Ошибка удаления"
 
 msgctxt "current status of stack"
 msgid "Delete In Progress"
@@ -326,7 +326,7 @@ msgid "Resource Metadata"
 msgstr "Метаданные ресурса"
 
 msgid "Resource Types"
-msgstr "Типы ресурса"
+msgstr "Типы ресурсов"
 
 msgid "Resources"
 msgstr "Ресурсы"
@@ -397,7 +397,7 @@ msgstr "Снимок создан успешно"
 
 msgctxt "current status of stack"
 msgid "Snapshot Failed"
-msgstr "Ошибка создания снимка "
+msgstr "Ошибка создания снимка"
 
 msgctxt "current status of stack"
 msgid "Snapshot In Progress"
@@ -503,7 +503,7 @@ msgid "Template Source"
 msgstr "Источник шаблона"
 
 msgid "Template URL"
-msgstr "URL шаблона"
+msgstr "Ссылка на шаблон"
 
 msgid "Template Version"
 msgstr "Версия шаблона"
@@ -512,10 +512,10 @@ msgid "Template Versions"
 msgstr "Версии шаблона"
 
 msgid "The raw contents of the environment file."
-msgstr "Содержимое файла среды (raw). "
+msgstr "Исходное содержимое файла среды."
 
 msgid "The raw contents of the template."
-msgstr "Содержимое шаблона (raw)."
+msgstr "Исходное содержимое шаблона."
 
 #, python-format
 msgid "There was a problem parsing the %(prefix)s: %(error)s"
@@ -544,7 +544,7 @@ msgid "Type ="
 msgstr "Тип ="
 
 msgid "URL"
-msgstr "URL"
+msgstr "Ссылка"
 
 #, python-format
 msgid "Unable to get events for stack \"%s\"."
@@ -571,7 +571,7 @@ msgid "Unable to retrieve resource."
 msgstr "Не удалось получить ресурс."
 
 msgid "Unable to retrieve stack resource types."
-msgstr "Не удалось получить типы ресурса стека."
+msgstr "Не удалось получить типы ресурсов стека."
 
 msgid "Unable to retrieve stack template."
 msgstr "Не удалось получить шаблон стека."
